@@ -1,0 +1,37 @@
+/* Full-screen generated reference: docs/capture-atelier/fullscreen-stacked.png.
+   Stacked glass controls, pearl action artwork and crisp guidance symbols. */
+#phone-surface .beauty-capture{gap:11px}
+#phone-surface .beauty-capture .beauty-title h1{font:700 30px/1.06 var(--sans);letter-spacing:-.8px;margin:6px 0 2px}
+#phone-surface .beauty-capture .beauty-title .eyebrow{font:650 11px/1.4 var(--sans);letter-spacing:1.9px}
+#phone-surface .beauty-capture .beauty-capture-portrait{border:5px solid #fffaf1e8;border-radius:29px;min-height:120px;box-shadow:0 12px 28px -15px #9c644735}
+#phone-surface .beauty-capture-art{display:grid;place-items:center;flex:none;background:none}
+#phone-surface .beauty-capture-art .b-icon{display:block;width:29px;height:29px;color:#94512f}
+#phone-surface .beauty-capture-art .b-icon-solid{fill:none;stroke:currentColor;stroke-width:1.45}
+#phone-surface .beauty-capture-art .b-icon-line{fill:none;stroke:currentColor;stroke-width:1.5}
+#phone-surface .beauty-capture .beauty-photo-tips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;flex:none;padding:4px 0 3px}
+#phone-surface .beauty-capture .beauty-photo-tips>div{gap:5px;font:650 11.5px/1.22 var(--sans);color:var(--beauty-ink);justify-content:flex-start}
+#phone-surface .beauty-capture .beauty-photo-tips .beauty-capture-art{width:36px;height:36px}
+#phone-surface .beauty-capture .beauty-photo-tips>div>span:last-child{display:flex;justify-content:center;align-items:center;min-height:29px}
+#phone-surface .beauty-capture-actions{display:flex;flex-direction:column;gap:9px;flex:none}
+#phone-surface .beauty-capture-actions .beauty-capture-button{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr) 18px;align-items:center;gap:13px;width:100%;min-height:60px;padding:9px 16px 9px 13px;border-radius:24px;text-align:left;color:var(--beauty-ink);background:radial-gradient(ellipse at 10% 0%,#fffdf8e8,transparent 68%),linear-gradient(130deg,#fff9f1c9,#f5ddcd7a);border:1px solid #cc956e;box-shadow:inset 0 0 0 1px #fff9edce,inset 0 1px 2px #fff,0 8px 20px -15px #a5674355;overflow:hidden;font:650 16px/1.25 var(--sans);letter-spacing:-.3px}
+#phone-surface .beauty-capture-actions .beauty-capture-button.is-gallery{background:radial-gradient(ellipse at 100% 0%,#fffdf9cf,transparent 70%),linear-gradient(135deg,#fff9f3a8,#f6ded554);border-color:#fffaf3;box-shadow:inset 0 0 0 1px #fff9,0 8px 20px -17px #aa785144}
+#phone-surface .beauty-capture-button .beauty-capture-art{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#fffaf2a6,#f0cdbb40);border:1px solid #fffaf1;box-shadow:inset 0 1px 1px #fff,0 4px 9px #a567430c}
+#phone-surface .beauty-capture-button .beauty-capture-art .b-icon{width:23px;height:23px}
+#phone-surface .beauty-capture-label{min-width:0;text-wrap:balance}
+#phone-surface .beauty-capture-arrow{display:grid;place-items:center;color:#965435}
+#phone-surface .beauty-capture-arrow .b-icon{width:17px;height:17px}
+#phone-surface .beauty-capture-actions:has(.is-launch) .beauty-capture-button{min-height:50px;padding-top:6px;padding-bottom:6px;font-size:15px}
+#phone-surface .beauty-capture-actions:has(.is-launch) .beauty-capture-art{width:36px;height:36px}
+#phone-surface .beauty-capture>.beauty-note{font:500 11px/1.35 var(--sans);margin:0;text-align:center;color:var(--muted)}
+@container phone (max-height:740px){#phone-surface .beauty-capture{gap:8px}#phone-surface .beauty-capture .beauty-title h1{font-size:27px}#phone-surface .beauty-capture .beauty-photo-tips{padding:0}#phone-surface .beauty-capture-actions .beauty-capture-button{min-height:54px;padding-top:6px;padding-bottom:6px}#phone-surface .beauty-capture .beauty-capture-portrait{min-height:100px}}
+@container phone (max-width:350px){#phone-surface .beauty-capture-actions .beauty-capture-button{grid-template-columns:36px minmax(0,1fr) 16px;gap:10px;padding-left:10px;padding-right:12px;font-size:14px}#phone-surface .beauty-capture-button .beauty-capture-art{width:36px;height:36px}#phone-surface .beauty-capture .beauty-photo-tips>div{font-size:11px}}
+
+#phone-surface .beauty-capture-button .beauty-capture-art:is([data-capture-art="selfie"],[data-capture-art="photo-stack"]){background-image:url("/assets/capture-atelier/actions-clean.png");background-size:200% 100%;background-repeat:no-repeat;background-position:0% 50%;background-color:#fff5ed;overflow:hidden}
+#phone-surface .beauty-capture-button .beauty-capture-art[data-capture-art="photo-stack"]{background-position:100% 50%}
+
+/* Matching pearl miniatures: face unobscured, daylight, original photo. */
+#phone-surface .beauty-capture .beauty-photo-tips .beauty-capture-art{width:48px;height:48px;border-radius:15px;background-color:#fff5ed;background-image:url("/assets/capture-atelier/guidance-clear.png");background-size:300% 100%;background-repeat:no-repeat;background-position:0% 50%;border:1px solid #fffaf4;box-shadow:inset 0 0 0 1px #fff7,0 3px 8px #985c3510;overflow:hidden}
+#phone-surface .beauty-capture .beauty-photo-tips [data-capture-art="sun"]{background-position:50% 50%}
+#phone-surface .beauty-capture .beauty-photo-tips [data-capture-art="no-filter"]{background-position:100% 50%}
+
+#phone-surface .beauty-capture .beauty-photo-tips .beauty-capture-art:is([data-capture-art="face-front"],[data-capture-art="hair-clear"],[data-capture-art="skin-clean"]){background-image:url("/assets/capture-atelier/guidance-pearl.png")}

@@ -1,0 +1,16 @@
+/* Preserve the approved composition. High-resolution reference-derived assets
+   replace small source fragments without redesigning the interface. */
+#phone-surface #app .pv2-portrait{background-image:url('/assets/paywall-faithful-hq-v2/hero.webp')}
+#phone-surface #app .pv2-portrait-top,#phone-surface #app .pv2-portrait-lower{display:none}
+#phone-surface #app .pv2-portrait:before{background:linear-gradient(100deg,#fbefea85,#fae6dfc4 85%,transparent)}
+#phone-surface #app .pv2-page:before{background-image:url('/assets/paywall-faithful-hq-v2/silk.webp')}
+#phone-surface #app .pv2-best{background:#a65d3f;border-radius:calc(28 * var(--u))}
+#phone-surface #app .pv2-best-art{background:url('/assets/paywall-faithful-hq-v2/badge-base.webp') center/100% 100% no-repeat;border-radius:10.3% / 50%;clip-path:inset(0 round 10.3% / 50%)}
+#phone-surface #app .pv2-best-art:before,#phone-surface #app .pv2-best-art:after{display:none}
+#phone-surface #app .pv2-crown-ref{position:absolute;left:calc(27 * var(--u));top:calc(10 * var(--u));width:calc(46 * var(--u));height:calc(32 * var(--u));background:url('/assets/paywall-faithful-hq-v2/crown.webp') center/100% 100% no-repeat;mask:url('/assets/paywall-faithful-hq-v2/crown-mask.svg') center/100% 100% no-repeat;-webkit-mask:url('/assets/paywall-faithful-hq-v2/crown-mask.svg') center/100% 100% no-repeat;pointer-events:none}
+#phone-surface #app .pv2-cta{background-image:url('/assets/paywall-faithful-hq-v2/cta.webp');background-size:100% 100%;background-position:center;background-repeat:no-repeat;border-radius:8.1% / 50%}
+
+/* The benefit cards keep one type scale. Only the longer quota receives a
+   wider text box and tighter tracking so it stays on one line. */
+#phone-surface #app .pv2-version-2 .pv2-mini:nth-child(2) .pv2-mini-copy{left:calc(1 * var(--u));right:calc(1 * var(--u))}
+#phone-surface #app .pv2-version-2 .pv2-mini:nth-child(2) .pv2-mini-copy p{letter-spacing:calc(-1.2 * var(--u))}

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "hero",
+    "width": 1024,
+    "height": 1536,
+    "alpha": false,
+    "master": "docs/paywall-hq-originals/hero.png",
+    "app": "/assets/paywall-hq-v2/hero.webp"
+  },
+  {
+    "name": "silk",
+    "width": 1024,
+    "height": 1536,
+    "alpha": false,
+    "master": "docs/paywall-hq-originals/silk.png",
+    "app": "/assets/paywall-hq-v2/silk.webp"
+  },
+  {
+    "name": "crown",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "master": "docs/paywall-hq-originals/crown.png",
+    "app": "/assets/paywall-hq-v2/crown.webp"
+  },
+  {
+    "name": "palette",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "master": "docs/paywall-hq-originals/palette.png",
+    "app": "/assets/paywall-hq-v2/palette.webp"
+  },
+  {
+    "name": "hair",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "master": "docs/paywall-hq-originals/hair.png",
+    "app": "/assets/paywall-hq-v2/hair.webp"
+  },
+  {
+    "name": "bun",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "master": "docs/paywall-hq-originals/bun.png",
+    "app": "/assets/paywall-hq-v2/bun.webp"
+  },
+  {
+    "name": "care",
+    "width": 1254,
+    "height": 1254,
+    "alpha": true,
+    "master": "docs/paywall-hq-originals/care.png",
+    "app": "/assets/paywall-hq-v2/care.webp"
+  }
+]

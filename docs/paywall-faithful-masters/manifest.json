@@ -1,0 +1,92 @@
+[
+  {
+    "name": "hair",
+    "sourceWidth": 1242,
+    "sourceHeight": 1266,
+    "width": 1218,
+    "height": 1160,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/hair.png",
+    "asset": "/assets/paywall-faithful-hq-v2/hair.webp"
+  },
+  {
+    "name": "bun",
+    "sourceWidth": 1222,
+    "sourceHeight": 1287,
+    "width": 1188,
+    "height": 1185,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/bun.png",
+    "asset": "/assets/paywall-faithful-hq-v2/bun.webp"
+  },
+  {
+    "name": "care",
+    "sourceWidth": 1240,
+    "sourceHeight": 1269,
+    "width": 1200,
+    "height": 1160,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/care.png",
+    "asset": "/assets/paywall-faithful-hq-v2/care.webp"
+  },
+  {
+    "name": "palette",
+    "sourceWidth": 2191,
+    "sourceHeight": 718,
+    "width": 2118,
+    "height": 662,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/palette.png",
+    "asset": "/assets/paywall-faithful-hq-v2/palette.webp"
+  },
+  {
+    "name": "hero",
+    "sourceWidth": 1370,
+    "sourceHeight": 1148,
+    "width": 1370,
+    "height": 1148,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/hero.png",
+    "asset": "/assets/paywall-faithful-hq-v2/hero.webp"
+  },
+  {
+    "name": "silk",
+    "sourceWidth": 1441,
+    "sourceHeight": 1092,
+    "width": 1441,
+    "height": 1092,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/silk.png",
+    "asset": "/assets/paywall-faithful-hq-v2/silk.webp"
+  },
+  {
+    "name": "badge-base",
+    "sourceWidth": 2172,
+    "sourceHeight": 724,
+    "width": 2113,
+    "height": 433,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/badge-base.png",
+    "asset": "/assets/paywall-faithful-hq-v2/badge-base.webp"
+  },
+  {
+    "name": "crown",
+    "sourceWidth": 1254,
+    "sourceHeight": 1254,
+    "width": 1166,
+    "height": 780,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/crown.png",
+    "asset": "/assets/paywall-faithful-hq-v2/crown.webp"
+  },
+  {
+    "name": "cta",
+    "sourceWidth": 2149,
+    "sourceHeight": 732,
+    "width": 2113,
+    "height": 334,
+    "alpha": false,
+    "source": "docs/paywall-faithful-masters/cta.png",
+    "asset": "/assets/paywall-faithful-hq-v2/cta.webp"
+  }
+]

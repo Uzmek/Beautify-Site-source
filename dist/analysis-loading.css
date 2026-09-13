@@ -1,0 +1,26 @@
+/* Uzmek BeautyHalo / Pulse, composed with the current Beautify theme.
+   The existing analysis controller owns completion, interruption and navigation. */
+#phone-surface .beauty-analysis-loading{gap:0}
+#phone-surface .beauty-analysis-main{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(22px,4cqh,36px);padding:12px 0 20px}
+#phone-surface .beauty-analysis-halo{position:relative;display:grid;place-items:center;flex:none;width:min(300px,83cqw,39cqh);aspect-ratio:1;animation:beauty-halo-breathe 3.2s infinite}
+#phone-surface .beauty-analysis-bloom{position:absolute;width:102.4%;height:102.4%;border-radius:50%;background:radial-gradient(circle closest-side,#fffdfb00 55%,#fffdfb99 74%,#fffdfbf2 82%,#fff8f273 88%,#fbeee626 94%,#fbeee600 100%);pointer-events:none}
+#phone-surface .beauty-analysis-ring{position:absolute;border-radius:50%;pointer-events:none}
+#phone-surface .beauty-analysis-ring.is-outer{inset:0;border:1px solid #c4947530}
+#phone-surface .beauty-analysis-ring.is-inner{inset:5.333%;border:1px solid #fffc}
+#phone-surface .beauty-analysis-photo{position:relative;width:75.333%;height:75.333%;padding:6px;border-radius:50%;background:linear-gradient(110deg,#f3e4df,#e7d3cb,#d3aa92,#e7d3cb,#fff4ed);box-shadow:inset 0 0 0 3px #fff8,0 10px 24px #9b604511;overflow:hidden}
+#phone-surface .beauty-analysis-photo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+#phone-surface .beauty-analysis-copy{width:100%;text-align:center;color:var(--beauty-ink)}
+#phone-surface .beauty-analysis-eyebrow{display:block;font:650 11px/1.4 var(--sans);letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+#phone-surface .beauty-analysis-labels{display:grid;place-items:center;min-height:2.5em;margin:0 auto;max-width:300px;font:650 clamp(23px,6.2cqw,26px)/1.25 var(--sans);letter-spacing:-.6px;color:var(--beauty-ink);text-wrap:balance}
+#phone-surface .beauty-analysis-labels>span{grid-area:1/1;animation:beauty-analysis-stage var(--analysis-stage-duration) both;animation-delay:calc(var(--stage)*var(--analysis-stage-duration))}
+#phone-surface .beauty-analysis-labels>span.is-last{animation-name:beauty-analysis-last;animation-duration:.32s}
+#phone-surface .beauty-analysis-rail{display:flex;gap:3px;width:176px;margin:24px auto 0}
+#phone-surface .beauty-analysis-rail i{flex:1;height:3px;border-radius:4px;background:#b58a6c26;animation:beauty-analysis-segment .2s both;animation-delay:calc(var(--stage)*var(--analysis-stage-duration))}
+#phone-surface .beauty-analysis-footer{flex:none;text-align:center;padding:0 0 4px}
+#phone-surface .beauty-analysis-footer .text-button{font:600 14px/1.3 var(--sans);color:var(--ink-soft);min-height:44px;margin:0 auto;padding:12px 18px}
+#phone-surface .beauty-analysis-footer .beauty-note{font:500 11px/1.4 var(--sans);margin:5px 0 0;color:var(--muted)}
+@keyframes beauty-halo-breathe{0%,100%{transform:scale(1);animation-timing-function:cubic-bezier(.455,.03,.515,.955)}50%{transform:scale(1.03);animation-timing-function:cubic-bezier(.455,.03,.515,.955)}}
+@keyframes beauty-analysis-stage{0%{opacity:0;transform:translateY(10px)}11%,94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+@keyframes beauty-analysis-last{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes beauty-analysis-segment{from{background:#b58a6c26}to{background:var(--brand)}}
+@media(prefers-reduced-motion:reduce){#phone-surface .beauty-analysis-halo,#phone-surface .beauty-analysis-labels>span,#phone-surface .beauty-analysis-rail i{animation:none!important}#phone-surface .beauty-analysis-labels>span{display:none}#phone-surface .beauty-analysis-labels>span.is-last{display:block}#phone-surface .beauty-analysis-rail i{background:var(--brand)}}

@@ -1,0 +1,19 @@
+#phone-surface #app .ss-product-row[data-routine-id] { overflow:hidden; isolation:isolate; }
+#phone-surface #app .mg-row-content { display:flex; align-items:center; gap:5px; flex:1; min-width:0; min-height:64px; width:100%; position:relative; background:#fff8f0; transition:transform 180ms ease; }
+#phone-surface #app .mg-row-content .ss-product-main { user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+#phone-surface #app .ss-product-row.is-editing .mg-row-content>.ss-icon-button { width:44px; height:44px; min-width:44px; border-radius:12px; }
+#phone-surface #app .mg-swipe-actions { position:absolute; inset:0 0 0 auto; display:flex; width:124px; gap:4px; padding:5px 0 5px 4px; z-index:0; visibility:hidden; }
+#phone-surface #app .mg-swipe-actions button { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; min-width:44px; min-height:44px; padding:4px; border-radius:13px; border:1px solid #fff; font:600 12px/1.2 var(--sans); }
+#phone-surface #app .mg-swipe-actions .b-icon { width:18px; height:18px; }
+#phone-surface #app .mg-edit { background:#e9d6c5; color:#795139; }
+#phone-surface #app .mg-remove { background:#e9c7b8; color:#894b36; }
+#phone-surface #app .mg-revealed .mg-swipe-actions,#phone-surface #app .mg-swiping .mg-swipe-actions { visibility:visible; }
+#phone-surface #app .mg-revealed .mg-row-content { transform:translateX(-124px); }
+#phone-surface #app .mg-swiping .mg-row-content { transition:none; }
+#phone-surface #app .ss-product-row.mg-dragging { z-index:5; border-radius:15px; background:#fff8f0; outline:1px solid #c09371; box-shadow:0 7px 16px #80533238; transition:none; opacity:.95; }
+#phone-surface #app .ss-product-row.mg-drop-before::after,#phone-surface #app .ss-product-row.mg-drop-after::after { content:''; position:absolute; inset:0 0 auto; height:3px; background:#b67a54; z-index:6; pointer-events:none; }
+#phone-surface #app .ss-product-row.mg-drop-after::after { inset:auto 0 0; }
+#phone-surface #app .mg-hint { margin:0; padding:0 3px 3px; color:#967055; font:500 12px/1.3 var(--sans); flex:none; }
+#phone-surface #overlay .modal>#dialog-title { touch-action:pan-x; user-select:none; -webkit-user-select:none; }
+#phone-surface #app .ss-tabs { touch-action:pan-y; }
+@media(prefers-reduced-motion:reduce){#phone-surface #app .mg-row-content { transition:none; }}

@@ -1,0 +1,219 @@
+{
+  "project": "Beautify by UZMEK",
+  "method": "Built-in image_gen; 10 separate calls in two parallel batches; one generation per asset, no edits or retries.",
+  "materialFamily": "Pearl-white / champagne smoked-glass with warm copper depth, satin pearlescent surfaces, soft upper-left studio light.",
+  "alphaVerification": "Read-only Pillow inspection: all original PNGs are 1254×1254 RGBA with alpha extrema [0,255] and genuinely transparent pixels. No image edits or background removal performed.",
+  "visualNotes": "All ten subjects recognizable. Minor fine edge fringing is visible in the generated cutouts, most notably around the hanger; preserved per no-edit/no-retry instruction. Generated framing varies somewhat despite a shared 78% size target.",
+  "assets": [
+    {
+      "name": "hair",
+      "path": "dist/assets/icons/hair.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: A beautiful flowing chestnut-brown lock of hair with one soft S wave and fine natural strand highlights. Single compact lock only, elegant silky volumetric shape and warm chestnut/copper depth with soft champagne reflections. Absolutely no head, face, body, wig, hair clip, or tie.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 1179842,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-b61d08d2-abd7-42a9-82eb-9783312bd787.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "scissors",
+      "path": "dist/assets/icons/scissors.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One elegant pair of hairdresser scissors, slightly open, with two clearly readable rounded finger loops. Pearl-silver and satin champagne metal with subtly beveled blades. The two distinct blades and two finger holes must be clear in a small silhouette.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 1376102,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-b3938c33-4db5-45e6-b50b-43a92a106130.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "results",
+      "path": "dist/assets/icons/results.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One compact growth-results symbol formed by exactly three thick rounded vertical glass bars, rising in height from left to right, sharing a single baseline. Pearl-white, champagne smoked-glass and soft copper tones. Bars have clear silhouettes and softly beveled corners. No axes, no text, no arrows.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 970851,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-b13e4067-5fbf-47cc-a3c5-6a6882582ed7.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "history",
+      "path": "dist/assets/icons/history.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One small pearl-white clock with a satin champagne bezel and warm dark-copper hour and minute hands. Exactly three subtle hour tick marks only, no numbers. Clean circular clock object, no surrounding badge, no alarm bells, no stand.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 839574,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-f68ab75c-5d7f-41ce-b9ef-d3f2b4432996.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "lock",
+      "path": "dist/assets/icons/lock.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One closed pearl-white and champagne padlock, with a softly rounded solid pearl body and a clearly visible arch-shaped metal shackle. Small dark copper keyhole centered in the body. Shackle is fully closed.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 936584,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-e7ce65f0-a8ed-45ae-92a2-99de3e6a103a.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "palette",
+      "path": "dist/assets/icons/palette.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One fan of exactly four small overlapping softly rounded color-swatch cards in muted burgundy, peach, cream, and cool rose. Pearly glass edges and subtle dimensional thickness. Clear fan silhouette, no paint blobs, no brush, no labels.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 827241,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-2b6a2d98-01bd-45fa-bb16-ec6ef59e2ebd.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "skin",
+      "path": "dist/assets/icons/skin.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One single skincare serum droplet made of peach-champagne translucent glass, with a well-defined warm dimensional edge and a softly rounded teardrop silhouette. Clean pointed top and rounded lower bulb; no bottle, no splash, no additional droplets.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 1148947,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-3eacbb61-2ac6-4958-86e1-0af320a79a09.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "bottle",
+      "path": "dist/assets/icons/bottle.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One premium small pearl-white skincare pump bottle with a satin champagne pump. Unbranded, smooth softly rounded bottle body, clear pump silhouette, minimal luxury cosmetic packaging. No label, no lettering, no extra cap.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 1065164,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-abeca330-4e26-4d4a-b845-a6f2d566c9ca.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "makeup",
+      "path": "dist/assets/icons/makeup.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One refined makeup brush with warm brown rounded bristles and a pearl-white and satin champagne handle. Readable compact silhouette with a full softly domed bristle head and elegant handle, gentle natural bristle texture. No cosmetic powder, no extra brush.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 1229162,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-00a70356-6f32-4ffd-956d-e4d72b23a9a7.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    },
+    {
+      "name": "wardrobe",
+      "path": "dist/assets/icons/wardrobe.webp",
+      "prompt": "Use case: stylized-concept\nAsset type: bespoke 3D object icon for Beautify by UZMEK, a premium women's beauty mobile app.\nScene/backdrop: genuinely transparent background with alpha; isolated object cutout, transparent empty pixels around it, not a checkerboard illustration.\nStyle/medium: refined premium 3D product render, contemporary Apple-like industrial design, coherent pearl-white and champagne smoked-glass material family with restrained warm copper depth, satin pearlescent surfaces and softly beveled volumes. Elegant realism, not cartoon.\nComposition/framing: square PNG, a single centered recognizable object occupying about 78% of the square's maximum dimension, generous balanced consistent margins. Nearly frontal orthographic view with only very slight visible depth toward the right. Crisp simplified silhouette that remains recognizable at 36–64 pixels.\nLighting/mood: soft broad upper-left studio highlights, gentle dimensional self-shading, luxury calm, no glitter or harsh glare.\nConstraints: no circular badge, no square tile, no frame, no text, no logos, no watermark, no UI, no ground plane, no cast shadow on a backdrop, no scene, no doodle outline, no additional props. Preserve a genuinely transparent PNG background.\nSubject: One elegant pearl-white and satin champagne clothes hanger with a clearly visible curved hook and clean wide triangular hanger silhouette. Rounded softly beveled construction and a clear open inner area. No clothes, no accessories, no closet.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentPixelCount": 1317703,
+      "sourcePath": "/workspace/scratch/edad344d35cc/generated_images/exec-69f4b0af-955a-4e76-9b3f-842fb75b3b6d.png",
+      "export": {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "lossless": true,
+        "alpha": true
+      }
+    }
+  ]
+}

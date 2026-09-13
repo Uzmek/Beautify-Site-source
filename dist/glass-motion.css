@@ -1,0 +1,38 @@
+/* One press response for the whole phone, with no hover motion or layout changes. */
+#phone-surface :is(button,a,summary) {
+  transition:scale 260ms cubic-bezier(.2,.8,.2,1),translate 260ms cubic-bezier(.2,.8,.2,1),opacity 160ms ease-out,color 160ms ease-out;
+  -webkit-tap-highlight-color:transparent;
+}
+/* The JS pressure spring owns scale/translate where Web Animations is supported.
+   :active in liquid.css remains a useful fallback without that API. */
+@supports (animation-timeline:auto) {
+  #phone-surface :is(button,a,summary) { touch-action:manipulation; }
+}
+/* Existing reveal CSS would otherwise replay over every report state update. */
+#app .reveal-tiles { animation:none; }
+/* The only continuous movement accompanies an analysis that is actually running.
+   A pearl glint travels around the existing photo ring; the portrait stays still. */
+#phone-surface .beauty-analysis-halo { animation:none; }
+#phone-surface .beauty-analysis-ring.is-outer::after {
+  content:''; position:absolute; inset:-1px; border-radius:50%; pointer-events:none;
+  border:2px solid transparent; border-top-color:#fffc; border-left-color:#fff5;
+  animation:beautify-orbit 3.6s linear infinite;
+}
+#phone-surface .beauty-analysis-bloom { animation:beautify-breathe 3s ease-in-out infinite; }
+#phone-surface [data-motion-value].motion-counter {
+  display:inline-grid; place-items:center; min-width:.62em; overflow:hidden;
+  vertical-align:baseline; isolation:isolate;
+}
+#phone-surface [data-motion-value].motion-counter>span { grid-area:1/1; }
+#phone-surface :is(.ss-progress-value,.sc-progress-value) { font:inherit!important; color:inherit!important; font-weight:inherit!important; }
+#phone-surface .motion-counter-ghost { color:inherit; pointer-events:none; }
+#phone-surface [role="progressbar"] :is(.bar>span,.rw-question-progress>span,.canonical-progress>i) {
+  transform-origin:left center;
+}
+#phone-surface .ss-mini-progress { position:relative; }
+@keyframes beautify-orbit { to { transform:rotate(1turn); } }
+@keyframes beautify-breathe { 0%,100% { opacity:.72; transform:scale(.992); } 50% { opacity:1; transform:scale(1.015); } }
+@media(prefers-reduced-motion:reduce) {
+  #phone-surface *,#phone-surface *::before,#phone-surface *::after { animation:none!important; transition:none!important; }
+  #phone-surface :is(button,a,summary) { scale:none!important; translate:none!important; }
+}

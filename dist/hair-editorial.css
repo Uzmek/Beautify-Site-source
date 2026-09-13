@@ -1,0 +1,79 @@
+/* The generated editorial reference uses one pearl surface per card.
+   Every portrait uses the same straight-on head-and-upper-bust window and the
+   transparent artwork blends into the card instead of creating photo seams. */
+#phone-surface #app:has(.hair-report){background-image:linear-gradient(#fffaf557,#fff2e940),url('/assets/hair-pearl-background.png');background-position:center;background-size:cover}
+#phone-surface .hair-report{--hair-pearl:radial-gradient(ellipse at 50% 28%,#fffdf8e8 0%,#f8e9def0 62%,#fff7eef5 100%);--hair-edge:1px solid #fffdf4c7;--hair-shadow:inset 0 1px 2px #fff9,0 6px 20px #a0684612}
+#phone-surface img.hair-model-cutout{display:block;background:transparent!important;border:0;border-radius:0;object-fit:contain;object-position:center bottom;filter:none;-webkit-mask-image:linear-gradient(#000 96%,transparent 100%);mask-image:linear-gradient(#000 96%,transparent 100%)}
+/* Amina's source portraits were generated farther from the camera than the
+   other three sets. This single catalogue-wide correction aligns her face and
+   shoulders without altering the haircut assets or the other models. */
+#phone-surface img.hair-model-cutout[data-model="amina"]{transform:scale(1.11);transform-origin:center top}
+#phone-surface .hair-model-summary{display:grid;grid-template-columns:50px minmax(0,1fr) auto;align-items:center;gap:10px;padding:7px 8px;border:var(--hair-edge);border-radius:24px;background:linear-gradient(120deg,#fffdf7c7,#f5dfd09c);box-shadow:inset 0 1px 2px #fff9}
+#phone-surface .hair-model-summary-avatar{display:block;width:46px;height:46px;overflow:hidden;border-radius:50%;background:radial-gradient(circle,#fffaf5,#ead4c2);box-shadow:0 0 0 2px #fff9}
+#phone-surface .hair-model-summary-avatar img{display:block;width:100%;height:155%;object-fit:contain;object-position:center top}
+#phone-surface .hair-model-summary-avatar img[src*="/amina/"]{transform:scale(1.11);transform-origin:center top}
+#phone-surface .hair-model-summary-copy{display:flex;flex-direction:column;min-width:0;gap:2px;color:#65402d}
+#phone-surface .hair-model-summary-copy small{font:550 11px/1.2 var(--sans);color:#946c55}
+#phone-surface .hair-model-summary-copy strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:720 14px/1.2 var(--sans)}
+#phone-surface .hair-model-adjust{min-height:35px;padding:0 12px;border:1px solid #fff;border-radius:18px;background:#fff9;color:#805139;font:680 12px/1 var(--sans);box-shadow:0 3px 9px #98623d12}
+#phone-surface .hair-model-sheet>p{margin:0 0 16px;color:#7f5a45;font:520 14px/1.45 var(--sans)}
+#phone-surface .hair-model-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+#phone-surface .hair-model-avatar{display:block;width:58px;height:58px;overflow:hidden;border-radius:50%;background:radial-gradient(circle,#fffaf5,#ead4c2);box-shadow:0 0 0 2px #fff9}
+#phone-surface .hair-model-avatar img{display:block;width:100%;height:155%;object-fit:contain;object-position:center top}
+#phone-surface .hair-model-avatar img[src*="/amina/"]{transform:scale(1.11);transform-origin:center top}
+#phone-surface .hair-model-option{display:flex;flex-direction:column;align-items:center;gap:6px;border:1px solid transparent;padding:7px 3px;background:transparent;border-radius:18px;font:650 12px/1.1 var(--sans);color:#87614b;box-shadow:none}
+#phone-surface .hair-model-option.is-selected{background:#fff9;border-color:#c9916d;color:#552e1c;font-weight:750}
+#phone-surface .hair-model-option.is-selected .hair-model-avatar{box-shadow:0 0 0 2px #fff8,0 0 0 3.5px #b77750,0 4px 10px #9b6a4820}
+#phone-surface .hair-model-auto{display:flex;justify-content:center;width:100%;margin-top:14px;border:0;background:transparent;color:#8a5b40;font:650 13px/1.2 var(--sans);text-decoration:underline;text-underline-offset:4px}
+#phone-surface .hair-model-auto.is-active{color:#aa8068;text-decoration:none}
+#phone-surface .hair-carousel-page{gap:12px}
+#phone-surface .hair-carousel-page .hair-trial-title{padding:4px 0}
+#phone-surface .hair-carousel-filters{padding:4px;border:var(--hair-edge);border-radius:26px;background:linear-gradient(110deg,#fffc,#f8e5d977);box-shadow:inset 0 1px 2px #fff7;gap:1px}
+#phone-surface .hair-length-option{border-radius:22px;min-height:40px;font-size:14px;transition:background .18s,color .18s;white-space:normal}
+#phone-surface .hair-length-option[aria-pressed="true"]{background:var(--beauty-copper);color:#fff9f3;box-shadow:inset 0 1px 2px #ffe6cf99,0 3px 8px #9c603124}
+#phone-surface .hair-carousel-track{border-radius:28px;gap:12px;min-height:210px}
+#phone-surface .hair-carousel-slide{position:relative;display:block;border:var(--hair-edge);border-radius:28px;background:var(--hair-pearl);box-shadow:var(--hair-shadow);isolation:isolate}
+#phone-surface .hair-carousel-photo{position:absolute;inset:8px 4px 45px;background:transparent;overflow:hidden;display:block}
+#phone-surface .hair-carousel-photo img.hair-model-cutout{height:100%;width:100%;object-position:center bottom}
+#phone-surface .hair-carousel-caption{position:absolute;left:0;right:0;bottom:0;min-height:74px;padding:24px 17px 15px;background:linear-gradient(0deg,#fff7edb8,transparent);border:0;gap:8px}
+#phone-surface .hair-carousel-caption h2{font-size:25px;letter-spacing:-.65px}
+#phone-surface .hair-carousel-caption p{font-size:15px;margin-top:4px}
+#phone-surface .hair-carousel-detail{width:45px;height:45px;background:var(--beauty-copper);color:#fff9f0;border:1px solid #e8c9ae;box-shadow:inset 0 1px 2px #ffe0c1aa,0 5px 10px #9a623326}
+#phone-surface .hair-carousel-detail .b-icon{height:22px;width:22px}
+#phone-surface .hair-carousel-controls{gap:30px}
+#phone-surface .hair-carousel-arrow{box-shadow:inset 0 1px 2px #fff,0 3px 12px #98623d12;background:linear-gradient(135deg,#fffc,#f4dfd177)}
+#phone-surface .hair-carousel-primary{min-height:53px;box-shadow:inset 0 1px 2px #ffdeb9a8,0 5px 14px #93582f25;font-weight:700}
+
+/* Recommendations use the same continuous surface and transparent portrait. */
+#phone-surface .hair-report-feature{position:relative;background:var(--hair-pearl);border:var(--hair-edge);box-shadow:var(--hair-shadow);border-radius:26px;grid-template-columns:52% minmax(0,1fr);gap:7px;padding:0 13px 0 0}
+#phone-surface .hair-report-feature .hair-report-art{border:0;border-radius:0;background:transparent;padding:5px 3px 0;overflow:hidden}
+#phone-surface .hair-report-feature .hair-model-cutout{width:100%;height:100%;object-position:center bottom}
+#phone-surface .hair-report-feature .hair-report-cut-copy{position:relative;z-index:1;gap:6px;padding:12px 0}
+#phone-surface .hair-report-feature .hair-report-cut-copy>strong{font-size:24px;line-height:1.1;letter-spacing:-.6px}
+#phone-surface .hair-report-feature .hair-report-cut-copy>small:not(.hair-report-pick){font-size:13px;letter-spacing:0;text-transform:none}
+#phone-surface .hair-report-feature .hair-report-pick{padding:5px 8px;background:#fffc;color:#946448;border:1px solid #fff;border-radius:16px;font-size:11px}
+#phone-surface .hair-report-discover{min-height:40px;padding:9px 11px;border-color:#eed0b8;font-size:13px;box-shadow:inset 0 1px 2px #ffdabc8c,0 3px 9px #99624114}
+#phone-surface .hair-report-alternatives>div{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#phone-surface .hair-report-alternative{position:relative;display:flex;flex-direction:column;background:var(--hair-pearl);border:var(--hair-edge);box-shadow:var(--hair-shadow);border-radius:23px;padding:0;overflow:hidden}
+#phone-surface .hair-report-alternative .hair-report-art{position:relative;inset:auto;display:block;flex:1;min-height:0;padding:4px 2px 0;background:transparent;border:0;border-radius:0;overflow:hidden}
+#phone-surface .hair-report-alternative .hair-report-art .hair-model-cutout{width:100%;height:100%;object-position:center bottom}
+#phone-surface .hair-report-alternative .hair-report-cut-copy{position:relative;flex:none;min-height:64px;padding:8px 30px 10px 12px;gap:3px;background:transparent;border:0;justify-content:center}
+#phone-surface .hair-report-alternative strong{font:700 15px/1.1 var(--sans);letter-spacing:-.3px}
+#phone-surface .hair-report-alternative .hair-report-cut-copy>small{font-size:12px;letter-spacing:0;text-transform:none}
+#phone-surface .hair-report-alternative .hair-ref-circle{width:25px;height:25px;right:6px;background:#fff9;box-shadow:0 3px 9px #aa714218}
+#phone-surface .hair-report-face-cut .hair-report-mini-art{background:transparent;border:0;border-radius:0}
+#phone-surface .hair-report-detail-art{overflow:hidden;background:var(--hair-pearl);border:var(--hair-edge)}
+
+/* The trial gallery and preparation share the portrait treatment. */
+#phone-surface .hair-trials-card:has(.hair-model-cutout){position:relative;display:flex;flex-direction:column;background:var(--hair-pearl);padding:0;border:var(--hair-edge);box-shadow:var(--hair-shadow)}
+#phone-surface .hair-trials-card:has(.hair-model-cutout) .hair-trials-thumb{position:relative;inset:auto;flex:1;min-height:0;width:100%;padding:4px 3px 0;overflow:hidden}
+#phone-surface .hair-trials-card:has(.hair-model-cutout) .hair-trials-thumb .hair-model-cutout{width:100%;height:100%;object-position:center bottom}
+#phone-surface .hair-trials-card:has(.hair-model-cutout) .hair-trial-card-caption{position:relative;min-height:54px;flex:none;padding:7px 12px 10px;background:transparent}
+#phone-surface .hair-trial-chosen:has(.hair-model-cutout){position:relative;display:block;padding:0;background:var(--hair-pearl);border:var(--hair-edge);box-shadow:var(--hair-shadow)}
+#phone-surface .hair-trial-chosen:has(.hair-model-cutout) .hair-trial-large-art{position:absolute;inset:7px 4px 40px;width:auto;overflow:hidden}
+#phone-surface .hair-trial-chosen:has(.hair-model-cutout) .hair-trial-large-art .hair-model-cutout{width:100%;height:100%;object-position:center bottom}
+#phone-surface .hair-trial-chosen:has(.hair-model-cutout)>div{position:absolute;bottom:0;left:0;right:0;padding:14px 17px 10px;background:linear-gradient(0deg,#fff6ecb0,transparent)}
+#phone-surface .hair-trial-result-art:has(.hair-model-cutout){overflow:hidden;background:var(--hair-pearl);border:var(--hair-edge);box-shadow:var(--hair-shadow);padding:8px 4px 30px}
+#phone-surface .hair-trial-result-art:has(.hair-model-cutout) .hair-model-cutout{width:100%;height:100%;object-position:center bottom}
+@media(prefers-reduced-motion:reduce){#phone-surface .hair-length-option{transition:none}}
+@container phone (max-width:360px){#phone-surface .hair-carousel-page{gap:8px}#phone-surface .hair-model-summary{grid-template-columns:44px minmax(0,1fr) auto;gap:7px}#phone-surface .hair-model-summary-avatar{width:40px;height:40px}#phone-surface .hair-model-adjust{padding:0 9px}#phone-surface .hair-model-avatar{width:50px;height:50px}#phone-surface .hair-carousel-caption h2{font-size:22px}#phone-surface .hair-report-feature .hair-report-cut-copy>strong{font-size:21px}}

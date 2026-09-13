@@ -1,0 +1,351 @@
+/* Shared navigation, hierarchy and readable secondary screens. */
+#app .ux-secondary .lg-brand { margin-bottom:22px; }
+#app .ux-secondary .page-heading { margin-bottom:23px; }
+#app .ux-secondary h1 { font-size:30px; line-height:1.15; }
+#app .ux-secondary .page-heading>p { font-size:15px; line-height:1.5; margin-top:8px; }
+#app .ux-secondary :is(.field>span,.check-field,.choice-chip,.text-button,.list-row strong) { font-size:14px; }
+#app .ux-secondary .form-stack { gap:17px; }
+#app .ux-secondary input,#app .ux-secondary textarea,#app .ux-secondary select { font-size:16px; }
+#app .ux-small-note { font:500 12px/1.5 var(--sans); color:#89624a; margin:15px 3px; text-align:center; }
+#app .ux-resume { display:flex; width:100%; gap:12px; align-items:center; padding:12px 14px; margin:0 0 18px; background:var(--glass-control); border:1px solid #fff; border-radius:23px; box-shadow:var(--glass-control-shadow); text-align:left; }
+#app .ux-resume>.lg-bubble { width:39px; height:39px; flex:none; }
+#app .ux-resume>.lg-bubble .icon { width:23px; height:23px; }
+#app .ux-resume>span:not(.lg-bubble) { flex:1; min-width:0; }
+#app .ux-resume strong { display:block; font:600 14px/1.4 var(--sans); color:#71432c; }
+#app .ux-resume small { display:block; font:500 12px/1.4 var(--sans); color:#89674f; margin-top:3px; }
+#app .ux-resume>.icon { width:16px; height:16px; flex:none; }
+#app .ux-home-analyses { padding-top:22px; }
+#app .ux-home-analyses h2 { margin:10px 0 5px; }
+#app .ux-home-analyses>p { font-size:15px; max-width:245px; }
+#app .ux-home-analyses .lg-result-badge { float:right; }
+#app .ux-hair-catalog .choice-chips { display:flex; flex-wrap:wrap; gap:7px; margin:13px 0 20px; }
+#app .ux-hair-catalog .choice-chip { min-height:44px; font-size:14px; padding:8px 13px; }
+#app .ux-hair-catalog .studio-hair-grid { gap:13px; }
+#app .ux-hair-catalog .studio-hair-card { border-radius:24px; overflow:hidden; background:#fff6; border:1px solid #fff; box-shadow:inset 0 1px 1px #fff,0 7px 20px -13px #75452d33; }
+#app .ux-hair-catalog .studio-hair-card>span { display:block; padding:12px; }
+#app .ux-hair-catalog .studio-hair-card strong { font:600 15px/1.35 var(--sans); color:#643823; }
+#app .ux-hair-catalog .studio-hair-card small { font-size:12px; color:#8d654e; }
+#app .ux-hair-catalog .hair-reference { width:100%; height:177px; object-fit:cover; }
+#app .ux-quota { display:flex; gap:8px; align-items:center; color:#86553b; padding:4px 0; }
+#app .ux-quota strong { font:600 13px/1.4 var(--sans); }
+#app .ux-quota .icon { width:20px; height:20px; }
+#app .ux-simulations .result-simulation-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px; }
+#app .ux-simulations .result-simulation-card { border:1px solid #fff; border-radius:23px; overflow:hidden; background:#fff5; text-align:left; }
+#app .ux-simulations .result-simulation-card>.hair-reference { display:block; width:100%; height:181px; object-fit:cover; }
+#app .ux-simulations .result-simulation-card>span { display:block; padding:12px; }
+#app .ux-simulations .result-simulation-card strong { font:600 15px/1.35 var(--sans); display:block; }
+#app .ux-simulations .result-simulation-card small { font:500 12px/1.5 var(--sans); display:block; margin-top:5px; }
+#app .ux-domain-row,#app .ux-journal-row { display:flex; gap:12px; align-items:center; width:100%; background:#fff5; border:1px solid #fff; border-radius:23px; padding:16px; margin-bottom:12px; text-align:left; }
+#app .ux-domain-row>span:not(.lg-module-art),#app .ux-journal-row>span { flex:1; min-width:0; }
+#app .ux-domain-row strong,#app .ux-journal-row strong { display:block; font:600 16px/1.4 var(--sans); color:#693e28; }
+#app .ux-domain-row small,#app .ux-journal-row small,#app .ux-journal-row time { display:block; font:500 12px/1.5 var(--sans); color:#855e47; }
+#app .ux-domain-row>.icon,#app .ux-journal-row>.icon { width:17px; height:17px; }
+#app .ux-journal-row time { margin-bottom:6px; }
+#app .ux-journal-row small { margin-top:7px; font-size:14px; overflow-wrap:anywhere; }
+#app .ux-report-context { display:flex; justify-content:space-between; gap:10px; font:600 12px/1.4 var(--sans); color:#956950; margin:0 2px 14px; }
+#app .canonical-report-rail { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px; }
+#app .canonical-report-rail button { flex:1 0 auto; height:auto; min-height:44px; padding:8px 12px; border:1px solid #fff; border-radius:24px; background:#fff5; color:#8c664e; font:600 14px/1.35 var(--sans); }
+#app .canonical-report-rail button:before,#app .canonical-report-rail button:after { display:none; }
+#app .canonical-report-rail button.active { background:var(--glass-accent); box-shadow:var(--glass-control-shadow); color:#713a25; }
+#app .canonical-report-nav { gap:9px; }
+#app .canonical-report-nav>.primary { font-size:14px; }
+#app .ux-colour-use h2 { font-size:23px; margin-bottom:16px; }
+#app .ux-colour-use .canonical-color-grid { margin:0; }
+#app .ux-colour-use p { font-size:16px; }
+#app .ux-colour-names { display:flex; flex-wrap:wrap; gap:8px; }
+#app .ux-colour-names span { font:500 14px/1.4 var(--sans); padding:8px 12px; border-radius:20px; border:1px solid #fff; background:#fff4; }
+#app .ux-progress>.choice-chips { display:flex; justify-content:center; margin:0 0 17px; }
+#app .ux-progress .choice-chip { font-size:14px; min-height:44px; padding:9px 19px; }
+#app .ux-progress>.lg-action { margin:15px 0 20px; font-size:15px; }
+#app .ux-progress .lg-progress-summary>strong { font:600 21px/1.3 var(--sans); }
+#app .ux-details { padding:12px 1px; border-bottom:1px solid #b18c6c2c; margin:8px 0; }
+#app .ux-details>summary { min-height:44px; padding:12px 2px; color:#85583d; font:600 14px/1.4 var(--sans); cursor:pointer; }
+#app .ux-details .journal-entry { font-size:14px; }
+#app .ux-details .journal-entry small { font-size:12px; }
+#app .ux-journal-empty { padding:23px; text-align:center; }
+#app .ux-journal-empty h2 { font-size:25px; }
+#app .ux-secondary .faq summary { font:600 15px/1.45 var(--sans); padding:17px 4px; min-height:48px; color:#704a34; }
+#app .ux-secondary .faq p { font:500 15px/1.6 var(--sans); padding:0 4px 16px; }
+#app .ux-analysis-comparison { align-items:start; gap:12px; }
+#app .ux-analysis-comparison section { min-width:0; }
+#app .ux-analysis-comparison time { display:block; font:500 12px/1.5 var(--sans); color:#855e47; margin:10px 0; }
+#app .ux-analysis-comparison h2 { font-size:22px; overflow-wrap:anywhere; }
+#app .ux-analysis-comparison .body-copy { font-size:14px; line-height:1.5; }
+#app .ux-analysis-comparison button { min-height:44px; font:600 13px/1.4 var(--sans); margin-top:12px; }
+
+/* Reports are browsed freely; only the phone screen scrolls. */
+#app>.mock-screen:is([data-route="ANA-09"],[data-route="ANA-10"],[data-route="ANA-11"]) { overflow-y:auto; overflow-x:hidden; }
+#app .canonical-report { height:auto; min-height:0; }
+#app .canonical-report-panel { flex:none; overflow:visible; }
+#app .canonical-report-rail { margin-bottom:4px; }
+#app .ux-report-actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:10px; padding-bottom:4px; }
+#app .ux-report-actions>button { flex:1 1 140px; display:flex; justify-content:center; align-items:center; gap:7px; min-height:46px; padding:8px 6px; font:600 14px/1.35 var(--sans); }
+#app .ux-report-actions .icon { width:18px; height:18px; }
+
+/* Everyday care is actionable from Home, without opening a promotional card. */
+#app .ux-direct-home .lg-brand { margin-bottom:18px; }
+#app .ux-home-analyses { min-height:0; padding:18px; }
+#app .ux-home-analyses .lg-action { margin-top:15px; }
+#app .ux-home-care { padding:14px 16px 17px; }
+#app .ux-home-care-title { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px; }
+#app .ux-home-care-title h2 { font-size:26px; line-height:1.2; }
+#app .ux-home-care-title .text-button { min-height:44px; font:600 14px/1.4 var(--sans); color:#815237; }
+#app .ux-home-care .sc-moments { margin-bottom:8px; }
+#app .ux-home-care .sc-moment { min-height:44px; }
+#app .ux-home-care-row { display:flex; align-items:center; gap:10px; padding:11px 0; border-bottom:1px solid #ad805629; }
+#phone-surface .ux-home-care-row .sc-product-art { width:42px; height:45px; border-radius:13px; }
+#phone-surface .ux-home-care-row .sc-product-art img { width:40px; height:40px; }
+#app .ux-home-care-row>span:not(.sc-product-art) { flex:1; min-width:0; }
+#app .ux-home-care-row strong { display:block; color:#603420; font:600 15px/1.35 var(--sans); overflow-wrap:anywhere; }
+#app .ux-home-care-row small { display:block; color:#87654f; font:500 12px/1.4 var(--sans); margin-top:3px; }
+#app .ux-home-care-row .sc-step-check { margin:0 -5px 0 0; }
+#app .ux-home-care-row.is-done strong { color:#86634c; }
+#app .ux-home-care-count { margin-top:11px; color:#77543e; font:600 14px/1.4 var(--sans); text-align:right; }
+#app .ux-home-care-empty { padding:8px 0 14px; color:#77543e; font:500 16px/1.5 var(--sans); }
+#app .ux-home-care>.secondary { display:flex; justify-content:center; align-items:center; gap:8px; width:100%; min-height:46px; margin-top:8px; font:600 14px/1.4 var(--sans); }
+
+/* Fit the 393 × 852 phone by removing surplus space, never by scaling text. */
+#app .lg-brand { min-height:52px; margin:0 2px 12px; }
+#app .lg-wordmark { font-size:32px; }
+#app .lg-title { margin-bottom:14px; }
+#app :is(.sc-hub,.ux-secondary,.ux-direct-home) .lg-brand { margin-bottom:12px; }
+#phone-surface #app :is(.lg-wordmark small,.lg-intro-wordmark small,.lg-results-wordmark>small) { font-size:12px; letter-spacing:2px; }
+#phone-surface #app :is(.lg-bottom-nav button,.lg-launcher-future li>span:last-child) { font-size:14px; }
+#phone-surface #app :is(.lg-skin-intro .eyebrow,.lg-intro-heading .eyebrow,.lg-skin-intro-portrait figcaption,.lg-skin-intro-actions .lg-fine,.lg-home-result>.eyebrow) { font-size:12px; }
+#phone-surface #app :is(.lg-brand-control,.lg-results-profile,.lg-intro-back,.lg-launcher-back) { min-width:44px; min-height:44px; }
+
+/* Routine: one complete, readable row per care; editing lives in its sheet. */
+#app .sc-title-row { margin:0 2px 10px; gap:8px; }
+#app .sc-title-row .eyebrow { font-size:12px; letter-spacing:.025em; margin-bottom:3px; }
+#phone-surface #app .sc-title-row h1 { font-size:30px; line-height:1.16; }
+#app .sc-title-row>.text-button { font-size:14px; flex:none; }
+#app .sc-moments { padding:3px; gap:4px; }
+#app .sc-moment { min-height:44px; font-size:16px; }
+#app .sc-daily-progress { padding:12px 3px; gap:7px; font-size:14px; }
+#app .sc-steps { gap:8px; }
+#app .sc-step-compact { display:flex; align-items:center; flex-wrap:wrap; padding:7px 9px; gap:3px; border-radius:22px; }
+#app .sc-step-main { display:flex; align-items:center; gap:10px; flex:1; min-width:0; min-height:78px; padding:3px 0; text-align:left; background:none; border:0; border-radius:14px; color:#6b402b; }
+#phone-surface .sc-step-main .sc-product-art { width:43px; height:50px; border-radius:14px; }
+#phone-surface .sc-step-main .sc-product-art img { width:43px; height:43px; }
+#app .sc-step-copy { min-width:0; flex:1; }
+#phone-surface #app .sc-step-role { display:block; font:600 14px/1.3 var(--sans); color:#775741; }
+#phone-surface #app .sc-step-copy strong { display:block; margin:3px 0; font:600 16px/1.3 var(--sans); color:#603520; overflow-wrap:anywhere; }
+#phone-surface #app .sc-step-copy small { display:block; font:500 12px/1.3 var(--sans); color:#805c45; }
+#app .sc-step-main>.b-icon { width:13px; height:16px; color:#94735d; }
+#app .sc-step-compact>.sc-step-check { margin:0 -3px 0 0; }
+#app .sc-step.is-done .sc-step-copy strong { color:#785d48; }
+#app .sc-reorder { flex:1 0 100%; gap:10px; }
+#app .sc-reorder .text-button { min-height:44px; font-size:14px; }
+#app .sc-daily-actions { display:flex; align-items:center; gap:8px; margin:10px 0 0; }
+#app .sc-daily-actions .sc-add-step { flex:1; margin:0; min-height:46px; padding:8px; }
+#app .sc-complete-all { display:flex; align-items:center; justify-content:center; gap:6px; min-height:46px; padding:8px 12px; font:600 14px/1.35 var(--sans); border:1px solid #fff; background:var(--glass-accent); border-radius:24px; color:#70412b; }
+#app .sc-complete-all .b-icon { width:17px; height:17px; }
+#app .sc-bottom-links { margin-top:4px; gap:20px; }
+#app .sc-bottom-links .text-button { font-size:14px; }
+#app .sc-review-banner { display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; min-height:44px; border:1px solid #fff; border-radius:18px; background:#fff7; color:#794b32; padding:9px 12px; font:600 14px/1.35 var(--sans); }
+#app .sc-review-banner>.b-icon { width:16px; height:16px; }
+#app .sc-live-report { padding-top:10px; }
+#app .sc-live-report .sc-title-row h1 { font-size:25px; }
+#app .sc-live-report .sc-title-row .eyebrow { font-size:12px; }
+#app .ux-report-context { margin-bottom:9px; }
+#app .canonical-report-heading { margin-block:12px; }
+#app .ux-report-actions { margin-top:5px; }
+#app .canonical-report-panel:has(>.canonical-color-grid) { padding-block:13px; }
+#phone-surface #overlay .modal:has(.sc-sheet) { padding:20px 16px 18px; }
+#phone-surface #overlay .modal:has(.sc-sheet)>h2 { font-size:26px; padding-right:35px; margin-bottom:14px; }
+#phone-surface .sc-sheet :is(.sc-instruction,.sc-product-option strong) { font-size:16px; line-height:1.45; }
+#phone-surface .sc-sheet .sc-instruction { padding:12px 0; }
+#phone-surface .sc-sheet :is(h3,.sc-frequency-choice,.sc-remove-link,.sc-type-option strong) { font-size:14px; }
+#phone-surface .sc-sheet :is(.sc-picker-note,.sc-picker-kind) { font-size:12px; }
+#phone-surface .sc-sheet h3 { margin-top:14px; }
+#phone-surface .sc-sheet-product .sc-product-art { width:60px; height:65px; border-radius:19px; }
+#phone-surface .sc-sheet-product img { width:58px; height:58px; }
+#phone-surface .sc-frequency { gap:5px; margin-bottom:10px; }
+#phone-surface .sc-frequency-choice { padding:8px 4px; border-radius:18px; }
+#phone-surface .sc-days { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:2px; margin-bottom:14px; }
+#phone-surface .sc-day { min-height:44px; padding:4px 0; border:1px solid #fff; border-radius:14px; font:600 12px/1.4 var(--sans); color:#78503a; background:#fff5; }
+#phone-surface .sc-day[aria-pressed=true] { background:#996547; color:#fffaf4; }
+#phone-surface .sc-add-types { gap:7px; }
+#phone-surface .sc-type-option { min-height:73px; flex-direction:row; justify-content:flex-start; gap:7px; padding:8px; text-align:left; border-radius:18px; }
+#phone-surface .sc-type-option .sc-product-art { width:35px; height:40px; border-radius:12px; }
+#phone-surface .sc-type-option .sc-product-art img { width:34px; height:34px; }
+#phone-surface .sc-type-option strong { min-width:0; overflow-wrap:anywhere; }
+#phone-surface .sc-sheet>.sc-product-option { margin-bottom:7px; }
+
+/* Home keeps today's care and the analysis shortcut together. */
+#app .ux-home-care { padding:10px 14px 12px; margin-bottom:10px; }
+#app .ux-home-care-title { margin-bottom:4px; }
+#app .ux-home-care-title h2 { font-size:25px; }
+#app .ux-home-care-row { padding:8px 0; }
+#app .ux-home-care-row strong { font-size:16px; }
+#app .ux-home-care-count { margin-top:8px; }
+#app .ux-home-analyses { padding:13px 16px; }
+#app .ux-home-analyses h2 { font-size:24px; margin:6px 0; }
+#app .ux-home-analyses .lg-action { min-height:50px; margin-top:10px; font-size:16px; }
+#app .ux-home-analyses .lg-action-icon { width:32px; height:32px; }
+#app .ux-home-analyses .lg-result-badge { width:32px; height:32px; top:10px; right:12px; }
+#app .lg-home-links .text-button { min-height:44px; font-size:14px; }
+
+/* Large decorative art yields space to the actual controls. */
+#app .lg-visual-intro { min-height:0; }
+#app .lg-intro-brand { min-height:58px; margin-bottom:10px; }
+#phone-surface #app .lg-intro-heading h1 { font-size:33px; line-height:1.1; }
+#app .lg-visual-intro .lg-intro-art { width:320px; max-width:100%; margin:8px auto 0; }
+#app .lg-visual-intro-color .lg-intro-art { margin-top:12px; }
+#app .lg-intro-actions { padding-top:12px; }
+#app .lg-intro-privacy { margin-top:9px; }
+#app .lg-skin-intro-portrait { max-height:180px; }
+#app .lg-skin-outcomes { padding:10px 15px; }
+#app .lg-skin-outcome { min-height:67px; }
+#phone-surface #app .lg-skin-outcome h2 { font-size:22px; }
+#phone-surface #app .lg-skin-outcome p { font-size:14px; }
+#app .lg-welcome { min-height:0; }
+#app .lg-welcome .lg-brand { margin:6px 4px 22px; }
+#app .lg-welcome-art { min-height:270px; max-height:300px; }
+#app .lg-welcome .lg-action { min-height:58px; }
+#app .lg-welcome-note { margin:12px 0 0; }
+#app .lg-capture-card { padding:10px 12px 12px; }
+#app .lg-photo-orb { height:136px; }
+#app .lg-photo-rules { margin-bottom:12px; }
+#app .lg-photo-rules .lg-bubble { width:42px; height:42px; }
+#app .lg-upload .lg-action { min-height:52px; margin-top:10px; font-size:16px; }
+#app .lg-upload .lg-action-icon { width:34px; height:34px; }
+#app .lg-privacy-pill { margin-top:10px; padding:5px; min-height:40px; }
+#app .lg-reveal-summary { min-height:104px; padding:13px; }
+#app .lg-reveal-symbol { width:55px; height:55px; }
+#app .lg-lock-row { min-height:59px; padding:8px 12px; margin-bottom:7px; }
+#app .lg-locked-list { margin:12px 0; }
+#app .lg-paywall .lg-title { margin-bottom:14px; }
+#app .lg-benefits { padding:7px 15px; margin-bottom:10px; }
+#app .lg-benefit { min-height:51px; gap:13px; }
+#app .lg-benefit>.lg-bubble { width:38px; height:38px; }
+#app .lg-plan { min-height:58px; }
+#app .lg-paywall>.lg-action { min-height:54px; font-size:16px; }
+
+/* The approved four-card layout retains its artwork without a forced page height. */
+#app .lg-results-first-screen { min-height:0; }
+#app .lg-results-brand { height:62px; margin-bottom:8px; }
+#phone-surface #app .lg-results-grid-page h1 { font-size:36px; white-space:normal; }
+#app .lg-results-grid-page .lg-title { margin-bottom:12px; }
+#app .lg-result-tile { min-height:0; padding:7px; border-radius:29px; }
+#app .lg-result-illustration { width:min(100%,134px); }
+#app .lg-result-tile-arrow { width:32px; height:32px; margin-top:6px; }
+#phone-surface #app .lg-result-tile-tryon>strong { font-size:16px; white-space:normal; }
+#phone-surface #app .lg-results-cta { min-height:56px; margin-top:12px; font-size:18px; }
+#app .lg-launcher-brand { height:62px; margin-bottom:8px; }
+#phone-surface #app .lg-analysis-launcher>.lg-title h1 { font-size:31px; }
+#app .lg-launcher-copy { top:24px; }
+#app .lg-launcher-card-skin .lg-launcher-copy { top:24px; }
+#app .lg-launcher-future li { height:72px; }
+#phone-surface #app .lg-launcher-future li>span:last-child { font-size:12px; }
+
+/* Visual QA: give editorial photos a deliberate, continuous curved edge. */
+#app .lg-visual-intro .lg-intro-art {
+  border-radius:26px; border:1px solid #fff8;
+  -webkit-mask-image:none; mask-image:none;
+  box-shadow:0 7px 18px -14px #89573b50;
+}
+#app .lg-launcher-card:after { display:none; }
+#app .lg-launcher-art {
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 18%),linear-gradient(to bottom,transparent,#000 4% 94%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to right,transparent,#000 18%),linear-gradient(to bottom,transparent,#000 4% 94%,transparent);
+  mask-composite:intersect;
+}
+#app .lg-launcher-future-art {
+  -webkit-mask-image:radial-gradient(ellipse,#000 55%,transparent 76%);
+  mask-image:radial-gradient(ellipse,#000 55%,transparent 76%);
+}
+/* Keep the final profile action fully visible above the navigation. */
+#app .lg-profile .lg-title { margin-bottom:16px; }
+#app .lg-profile .lg-identity-card { min-height:90px; padding:12px 16px; }
+#app .lg-profile .lg-avatar { width:58px; height:58px; }
+#app .lg-profile>.lg-center-link { margin:8px auto 0; min-height:44px; }
+/* Desktop review tools already exist in the side panel: their duplicate
+   footer must not overlap the phone's home indicator or screenshot. */
+@media(min-width:1100px) { #review-tools { display:none; } }
+
+/* Skin report: each tab uses the available phone height, with no swipe deck.
+   Extra user-added steps can still scroll inside the list rather than hiding
+   actions or shrinking readable text. */
+#app>.mock-screen:has(.canonical-report--skin) { padding-top:12px!important; }
+#app .lg-page:has(>.canonical-report--skin) { height:100%; min-height:0; display:flex; flex-direction:column; }
+#app .lg-page:has(>.canonical-report--skin)>.lg-brand { flex:none; margin-bottom:8px; }
+#app .lg-page:has(>.canonical-report--skin)>.ux-report-context { flex:none; margin-bottom:6px; }
+#app .canonical-report--skin { flex:1; min-height:0; gap:8px; }
+#app .canonical-report--skin>.canonical-report-rail,
+#app .canonical-report--skin>.ux-report-actions { flex:none; margin:0; }
+#app .canonical-report--skin>.canonical-report-panel { flex:1; min-height:0; padding:10px 12px; overflow:auto; }
+#app .sc-live-report { height:100%; display:flex; flex-direction:column; min-height:0; padding:0; gap:4px; }
+#app .sc-live-report>.sc-title-row { flex:none; margin:0; min-height:44px; }
+#phone-surface #app .sc-live-report .sc-title-row h1 { font-size:24px; line-height:1.15; text-wrap:initial; }
+#app .sc-live-report .sc-title-row>.text-button { padding:6px 0 6px 8px; min-height:44px; }
+#app .sc-live-report>.sc-review-banner { flex:none; padding:7px 10px; }
+#app .sc-live-report>.sc-daily-progress { flex:none; padding:3px 2px 6px; gap:4px; }
+#app .sc-live-report>.sc-steps { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; display:flex; flex-direction:column; gap:6px; padding:2px; margin:0 -2px; }
+#app .sc-live-report .sc-step-compact { flex:1 0 auto; min-height:64px; padding:5px 7px; gap:0; border-radius:19px; }
+#app .sc-live-report .sc-step-main { min-height:52px; padding:0; gap:8px; }
+#phone-surface #app .sc-live-report .sc-step-main .sc-product-art { width:36px; height:44px; border-radius:12px; }
+#phone-surface #app .sc-live-report .sc-step-main .sc-product-art img { width:36px; height:36px; }
+#phone-surface #app .sc-live-report .sc-step-copy strong { font-size:16px; line-height:1.2; margin:3px 0 0; }
+#phone-surface #app .sc-live-report .sc-step-placeholder .sc-step-copy>small { display:none; }
+#app .sc-live-report .sc-step-role { font-size:14px; }
+#app .sc-live-report .sc-step-main>.b-icon { width:12px; flex:none; }
+#app .sc-live-report>.sc-daily-actions { flex:none; margin:3px 0 0; gap:6px; }
+#app .sc-live-report .sc-daily-actions :is(.sc-add-step,.sc-complete-all) { min-height:44px; font-size:14px; padding:7px; }
+#app .sc-live-report>.sc-bottom-links { flex:none; margin:0; justify-content:space-between; padding-inline:6px; }
+#app .sc-live-report.is-editing .sc-step-compact { flex-grow:0; }
+#app .sc-fit-bilan { min-height:100%; display:flex; flex-direction:column; gap:12px; }
+#app .sc-bilan-heading { display:flex; gap:12px; align-items:center; }
+#app .sc-bilan-heading>div:first-child { flex:1; min-width:0; }
+#phone-surface #app .sc-bilan-heading h1 { font-size:27px; line-height:1.12; margin:7px 0 0; text-wrap:initial; }
+#app .sc-bilan-photo { flex:none; width:76px; height:76px; }
+#app .sc-bilan-photo .canonical-halo { width:76px; height:76px; margin:0; }
+#app .sc-bilan-priorities { display:grid; gap:8px; flex:1; }
+#app .sc-bilan-priority { display:flex; align-items:center; gap:9px; padding:12px 10px; border:1px solid #fffc; border-radius:21px; background:var(--glass-fill); }
+#app .sc-bilan-priority>div { min-width:0; }
+#phone-surface #app .sc-bilan-priority .sc-product-art { width:34px; height:42px; flex:none; }
+#phone-surface #app .sc-bilan-priority .sc-product-art img { width:34px; height:34px; }
+#phone-surface #app .sc-bilan-priority h2 { font:600 16px/1.25 var(--sans); text-wrap:initial; }
+#phone-surface #app .sc-bilan-priority p { font:500 14px/1.3 var(--sans); margin:5px 0 0; }
+#phone-surface #app .sc-bilan-note { font:500 12px/1.35 var(--sans); margin:0 2px; color:var(--ink-soft); }
+
+#app .sc-bilan-photo .canonical-halo img { width:58px; height:58px; }
+
+/* A compact scorecard: one stable scale, no diagnostic percentages. */
+#app .sc-score-bilan { min-height:100%; display:flex; flex-direction:column; gap:5px; }
+#app .sc-score-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+#phone-surface #app .sc-score-heading h1 { font-size:27px; line-height:1.15; margin:0; text-wrap:initial; }
+#app .sc-score-demo-badge { padding:4px 9px; border:1px solid #fff; border-radius:20px; font:600 12px/1.3 var(--sans); color:#794b37; background:#fff7; }
+#app .sc-score-hero { display:flex; align-items:center; gap:15px; padding:4px 0; }
+#app .sc-score-ring { width:92px; height:92px; flex:none; border-radius:50%; padding:5px; background:conic-gradient(from -80deg,#b67651 var(--score),#d3a38426 0); box-shadow:0 0 0 1px #fff,0 8px 20px #97563617; }
+#app .sc-score-ring>span { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; border:2px solid #fff; border-radius:50%; background:linear-gradient(135deg,#fffaf4,#f6ddce); box-shadow:inset 0 2px 5px #fff; }
+#phone-surface #app .sc-score-ring strong { font:600 48px/1 var(--sans); letter-spacing:-2px; color:#63301e; }
+#phone-surface #app .sc-score-ring small { font:600 13px/1.4 var(--sans); color:#865c43; }
+#app .sc-score-overview { flex:1; min-width:0; }
+#app .sc-score-overview .eyebrow { font-size:12px; letter-spacing:.7px; }
+#phone-surface #app .sc-score-overview h2 { font:650 20px/1.2 var(--sans); margin:4px 0 5px; }
+#phone-surface #app .sc-score-overview p { font:500 14px/1.35 var(--sans); margin:0; }
+#app .sc-score-change { display:block; margin-top:5px; font:600 12px/1.3 var(--sans); color:#805238; }
+#phone-surface #app .sc-score-scale { margin:0; font:500 12px/1.35 var(--sans); color:#79563e; }
+#app .sc-score-grid { flex:1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+#app .sc-score-metric { display:flex; flex-direction:column; gap:3px; justify-content:center; text-align:left; min-width:0; min-height:90px; padding:8px 12px; border:1px solid #fffe; border-radius:21px; color:#613621; background:var(--glass-fill); box-shadow:inset 0 1px 2px #fff,0 4px 12px #b76d4c0c; }
+#app .sc-score-metric:before,#app .sc-score-metric:after { display:none; }
+#app .sc-score-metric-top { display:flex; align-items:center; justify-content:space-between; gap:4px; }
+#phone-surface #app .sc-score-metric-top strong { font:650 15px/1.2 var(--sans); }
+#app .sc-score-metric-top .b-icon { width:12px; height:12px; opacity:.7; }
+#app .sc-score-metric-value { display:flex; gap:4px; align-items:baseline; }
+#phone-surface #app .sc-score-metric-value b { font:650 25px/1.1 var(--sans); letter-spacing:-.6px; }
+#phone-surface #app .sc-score-metric-value small,#app .sc-score-metric-value em { font:600 12px/1.2 var(--sans); color:#866149; }
+#app .sc-score-metric-value em { margin-left:auto; }
+#app .sc-score-track { display:block; height:4px; background:#a5674420; border-radius:8px; overflow:hidden; margin:2px 0; }
+#app .sc-score-track i { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#c99470,#9b5b3b); }
+#phone-surface #app .sc-score-band { font:600 12px/1.3 var(--sans); color:#865c43; }
+#app .sc-score-routine { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:46px; padding:9px 13px; border:1px solid #fff; border-radius:20px; color:#704127; background:var(--glass-accent); box-shadow:var(--glass-control-shadow); }
+#app .sc-score-routine>span:first-child { font:650 16px/1.25 var(--sans); }
+#app .sc-score-routine>span:last-child { display:flex; align-items:center; gap:8px; font:600 13px/1.25 var(--sans); }
+#app .sc-score-routine .b-icon { width:14px; height:14px; }
+#phone-surface .sc-score-note { margin:0!important; font:500 12px/1.35 var(--sans)!important; color:#805b44; }
+#phone-surface .sc-score-detail-value { font:650 52px/1.2 var(--sans); color:#6d3520; margin:10px 0; }
+#phone-surface .sc-score-detail-value span { font:600 18px/1.3 var(--sans); }
+#phone-surface .sc-score-detail>p:not(.sc-score-detail-value,.sc-score-note) { font:500 16px/1.5 var(--sans); }

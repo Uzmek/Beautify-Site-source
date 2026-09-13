@@ -1,0 +1,177 @@
+/* Skin studio: compact, continuous product lists, within the 393 × 852 frame. */
+#phone-surface #app>.mock-screen:has(>.ss-shell) { padding:8px 16px 6px!important; overflow:hidden; }
+#phone-surface #app .ss-shell { --ss-ink:#51291c; --ss-muted:#89644f; --ss-line:#b38b7029; gap:9px; height:100%; min-height:0; color:var(--ss-ink); }
+#phone-surface .ss-shell :is(h1,h2,h3,p,figure) { margin:0; }
+#phone-surface .ss-shell :is(button,input,strong,h1,h2,h3) { font-family:var(--sans); }
+#phone-surface .ss-shell .b-icon,#phone-surface .ss-guide .b-icon { width:20px; height:20px; flex:none; }
+#phone-surface #app .ss-header { display:flex; align-items:center; gap:12px; flex:none; height:51px; padding:0 2px; }
+#phone-surface #app .ss-header>div { flex:1; }
+#phone-surface #app .ss-header>div>span { font:700 10px/1.2 var(--sans); letter-spacing:2px; color:#a96b4d; }
+#phone-surface #app .ss-header h1 { font:700 28px/1.05 var(--sans); letter-spacing:-1px; margin-top:3px; }
+#phone-surface .ss-icon-button { display:inline-flex; justify-content:center; align-items:center; width:42px; height:42px; min-width:42px; padding:0; border:1px solid #fff; border-radius:50%; background:linear-gradient(135deg,#fffdf7c9,#fff4e849); color:#79513a; box-shadow:inset 0 1px 2px #fff,0 4px 10px #9a654914; }
+#phone-surface .ss-icon-button:disabled { opacity:.3; }
+#phone-surface .ss-icon-button .b-icon { width:19px; height:19px; }
+#phone-surface #app .ss-tabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); flex:none; padding:4px; border:1px solid #fff; border-radius:21px; background:linear-gradient(130deg,#fffaf5be,#fff2); box-shadow:inset 0 1px 2px #fff,0 5px 12px #af795211; }
+#phone-surface .ss-tabs button { display:flex; justify-content:center; align-items:center; gap:7px; height:38px; padding:0 4px; border:1px solid transparent; border-radius:16px; color:#7c5845; font:650 14px/1 var(--sans); }
+#phone-surface .ss-tabs button[aria-selected=true] { border-color:#efd0b4; color:#fff9f3; background:linear-gradient(145deg,#d6a180,#b97552 52%,#9b5a39); box-shadow:inset 0 1px 2px #ffefd0c7,0 3px 8px #854e2921; }
+#phone-surface .ss-tabs .b-icon { width:17px; height:17px; }
+#phone-surface #app .ss-panel { display:flex; flex-direction:column; flex:1; min-height:0; padding:0; border:0; border-radius:0; background:none; box-shadow:none; overflow:hidden; }
+#phone-surface #app .ss-routine { display:flex; flex-direction:column; height:100%; min-height:0; gap:7px; padding:0; }
+#phone-surface #app .ss-routine-summary { display:flex; flex:none; position:relative; align-items:center; gap:11px; min-height:90px; padding:12px; border:1px solid #fff9; border-radius:24px; background:radial-gradient(ellipse at 15% 15%,#fff5cc9c,transparent 65%),linear-gradient(135deg,#fffaf3b8,#f5d6c56b); overflow:hidden; }
+#phone-surface #app .ss-shell[data-moment="Soir"] .ss-routine-summary { background:radial-gradient(ellipse at 12% 15%,#d5ccd378,transparent 66%),linear-gradient(135deg,#fff6edb3,#e0c9c282); }
+#phone-surface #app .ss-moment-orb { display:grid; place-items:center; width:43px; height:43px; flex:none; border-radius:50%; background:radial-gradient(circle at 34% 27%,#fffdf0,#f9dba394); box-shadow:0 0 24px #f5ce7a45,inset 0 1px 3px #fff; color:#b48650; }
+#phone-surface #app .ss-shell[data-moment="Soir"] .ss-moment-orb { background:radial-gradient(circle at 34% 27%,#fffaf6,#cbbcc7); color:#886c80; box-shadow:inset 0 1px 3px #fff,0 0 20px #cbbdc646; }
+#phone-surface #app .ss-moment-orb .b-icon { width:25px; height:25px; }
+#phone-surface #app .ss-summary-copy { flex:1; min-width:0; }
+#phone-surface #app .ss-eyebrow { display:block; font:600 11px/1.25 var(--sans); letter-spacing:.035em; color:#936a52; }
+#phone-surface #app .ss-summary-copy h2 { margin:4px 0; font:700 21px/1.1 var(--sans); letter-spacing:-.7px; text-wrap:initial; }
+#phone-surface #app .ss-summary-copy p { font:550 12px/1.3 var(--sans); color:#8d6551; }
+#phone-surface #app .ss-mini-progress { width:47px; height:47px; flex:none; display:grid; place-items:center; border-radius:50%; background:conic-gradient(#b47750 var(--progress),#ba937632 0); padding:3px; }
+#phone-surface #app .ss-mini-progress>span { width:100%; height:100%; display:flex; justify-content:center; align-items:center; border-radius:50%; background:#fcf1e8; font:700 17px/1 var(--sans); color:#774329; }
+#phone-surface #app .ss-mini-progress small { font:600 11px/1 var(--sans); color:#906c55; }
+#phone-surface #app .ss-list-heading { display:flex; flex:none; align-items:center; justify-content:space-between; gap:8px; min-height:35px; padding:0 2px; }
+#phone-surface #app .ss-filters { display:flex; align-items:center; gap:5px; }
+#phone-surface #app .ss-filter { display:flex; align-items:center; gap:5px; padding:8px 9px; border-radius:12px; border:1px solid transparent; color:#876650; font:650 13px/1.1 var(--sans); }
+#phone-surface #app .ss-filter>span { font:600 11px/1.1 var(--sans); opacity:.75; }
+#phone-surface #app .ss-filter[aria-pressed=true] { background:#fff8; border-color:#fff; color:#653b28; }
+#phone-surface #app .ss-organize { min-height:35px; padding:5px 2px; font:650 13px/1 var(--sans); color:#9a6245; }
+#phone-surface #app .ss-product-list { flex:1; min-height:0; display:flex; flex-direction:column; padding:3px 10px; border:1px solid #fffd; border-radius:23px; background:linear-gradient(130deg,#fffdf9c7,#fff8f180); box-shadow:inset 0 1px 2px #fff,0 8px 18px #9864450a; overflow:hidden; }
+#phone-surface #app .ss-product-row { flex:1 1 0; min-height:52px; max-height:83px; display:flex; align-items:center; gap:7px; position:relative; border-bottom:1px solid var(--ss-line); }
+#phone-surface #app .ss-product-row:last-child { border-bottom:0; }
+#phone-surface #app .ss-step-index { width:15px; flex:none; color:#a68670; font:600 10px/1 var(--sans); font-variant-numeric:tabular-nums; }
+#phone-surface #app .ss-product-main { display:flex; align-items:center; gap:9px; flex:1; min-width:0; min-height:46px; text-align:left; padding:5px 0; color:#542e20; background:none; border:0; box-shadow:none; }
+#phone-surface #app .ss-product-copy { display:block; flex:1; min-width:0; }
+#phone-surface #app .ss-product-copy>strong { display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#583222; font:650 15px/1.3 var(--sans); letter-spacing:-.2px; }
+#phone-surface #app .ss-product-copy>small { display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#896953; font:550 12px/1.4 var(--sans); margin-top:3px; }
+#phone-surface #app .ss-product-copy>small>span { margin-left:7px; color:#a08570; }
+#phone-surface #app .ss-product-row .sc-product-art { width:39px; height:47px; border-radius:10px; background:#f7eae18c; border:0; box-shadow:none; }
+#phone-surface #app .ss-product-row .sc-product-art img { width:39px; height:43px; }
+#phone-surface #app .ss-check { display:flex; align-items:center; justify-content:center; width:39px; height:44px; flex:none; padding:0; border:0; background:none; color:#fff; position:relative; isolation:isolate; }
+#phone-surface #app .ss-check:before { content:''; position:absolute; inset:9px 6px; z-index:-1; border:1.5px solid #b99b876e; border-radius:50%; background:#fff5; box-shadow:inset 0 1px 2px #b48c6417; }
+#phone-surface #app .ss-check[aria-pressed=true]:before { border-color:#c7906a; background:linear-gradient(140deg,#d6ab83,#ae6a42); box-shadow:inset 0 1px 2px #fff8; }
+#phone-surface #app .ss-check .b-icon { width:17px; height:17px; }
+#phone-surface #app .ss-product-row.is-done .ss-step-index { color:#ba8b68; }
+#phone-surface #app .ss-product-row.is-done .ss-product-copy>strong { color:#957158; }
+#phone-surface #app .ss-product-row.is-editing>.ss-icon-button { width:34px; min-width:34px; height:34px; border-radius:12px; }
+#phone-surface #app .ss-routine-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:none; }
+#phone-surface .ss-button { display:flex; align-items:center; justify-content:center; width:100%; gap:8px; padding:12px 10px; min-height:46px; border:1px solid #fff; border-radius:18px; font:650 14px/1.25 var(--sans); box-shadow:inset 0 1px 2px #fff9,0 5px 10px #95654415; }
+#phone-surface .ss-button .b-icon { width:18px; height:18px; flex:none; }
+#phone-surface .ss-glass { background:linear-gradient(135deg,#fffaf4c9,#ffece34d); color:#74462e; }
+#phone-surface .ss-copper { background:linear-gradient(145deg,#d5a280,#b6734e 53%,#9c5d3d); color:#fff9f4; border-color:#f4d7bf; }
+#phone-surface #app .ss-routine-note { display:flex; flex:none; align-items:center; justify-content:space-between; min-height:23px; padding:0 4px; color:#9a7c67; font:500 11px/1.3 var(--sans); }
+#phone-surface #app .ss-routine-note>span { margin-left:auto; }
+#phone-surface .ss-quiet { background:none; border:0; padding:4px 0; color:#946443; font:600 12px/1.4 var(--sans); min-height:27px; }
+#phone-surface #app .ss-footer { display:flex; justify-content:space-between; align-items:center; height:33px; flex:none; padding:0 5px; border-top:1px solid #d5b5a23d; }
+#phone-surface #app .ss-footer-link { display:flex; align-items:center; gap:6px; height:33px; padding:0; color:#906147; font:650 12px/1.1 var(--sans); }
+#phone-surface #app .ss-footer-link .b-icon { width:15px; height:15px; }
+#phone-surface #app .ss-review { display:flex; flex:none; align-items:center; justify-content:space-between; min-height:30px; padding:6px 11px; border:1px solid #fff; border-radius:12px; background:#edd4bd7a; color:#855333; font:650 12px/1.3 var(--sans); }
+#phone-surface #app .ss-review .b-icon { width:13px; height:13px; }
+#phone-surface #app .ss-list-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; flex:1; text-align:center; padding:18px 10px; }
+#phone-surface #app .ss-list-empty>.b-icon { width:31px; height:31px; color:#bd9777; }
+#phone-surface #app .ss-list-empty strong { font:650 16px/1.3 var(--sans); }
+#phone-surface #app .ss-list-empty p { font:500 14px/1.45 var(--sans); }
+#phone-surface #app .ss-empty { height:100%; display:flex; flex-direction:column; gap:12px; }
+#phone-surface #app .ss-empty-main { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; padding:14px 24px; }
+#phone-surface #app .ss-empty-main>.sc-product-art { width:112px; height:120px; }
+#phone-surface #app .ss-empty-main h2 { font:700 28px/1.15 var(--sans); }
+#phone-surface #app .ss-empty-main p { font:500 16px/1.5 var(--sans); }
+#phone-surface #app .ss-empty-actions { display:grid; gap:9px; }
+#phone-surface #app .ss-historical .ss-list-heading { font:600 12px/1.3 var(--sans); color:#956b53; }
+#phone-surface #app .ss-archive-note { font:500 13px/1.45 var(--sans); padding:7px; }
+/* The bilan stays a single viewport. Long explanations belong in their detail sheet. */
+#phone-surface #app .ss-bilan { display:flex; flex-direction:column; height:100%; min-height:0; gap:9px; }
+#phone-surface #app .ss-bilan-heading { display:flex; align-items:center; justify-content:space-between; flex:none; gap:10px; min-height:30px; }
+#phone-surface #app .ss-bilan-heading h2 { font:700 21px/1.15 var(--sans); letter-spacing:-.7px; }
+#phone-surface #app .ss-bilan-heading>span { font:550 11px/1.25 var(--sans); max-width:90px; color:#96755e; text-align:right; }
+#phone-surface #app .ss-bilan-overview { position:relative; display:flex; align-items:center; flex:none; gap:16px; height:112px; border:1px solid #fff; border-radius:24px; background:linear-gradient(135deg,#fffaf3ba,#f4d4c48a); overflow:hidden; }
+#phone-surface #app .ss-bilan-overview>figure { position:relative; width:103px; height:100%; flex:none; overflow:hidden; }
+#phone-surface #app .ss-bilan-overview>figure>img { width:100%; height:100%; object-fit:cover; object-position:67% 40%; }
+#phone-surface #app .ss-bilan-overview figcaption { position:absolute; left:6px; bottom:7px; font:600 10px/1 var(--sans); color:#7c5d46; padding:4px 6px; border-radius:8px; background:#fff9; }
+#phone-surface #app .ss-bilan-score { flex:1; }
+#phone-surface #app .ss-bilan-score p { display:flex; align-items:baseline; gap:4px; color:#633822; }
+#phone-surface #app .ss-bilan-score p>strong { font:700 45px/1.15 var(--sans); letter-spacing:-2px; }
+#phone-surface #app .ss-bilan-score p>span { font:600 15px/1 var(--sans); }
+#phone-surface #app .ss-bilan-score>span:last-child { color:#9f7759; font:550 11px/1.3 var(--sans); }
+#phone-surface #app .ss-score-orbit { width:43px; height:43px; display:grid; place-items:center; margin-right:13px; flex:none; border-radius:50%; background:conic-gradient(#ba8860 var(--progress),#fff5 0); box-shadow:inset 0 0 0 6px #fff7; }
+#phone-surface #app .ss-score-orbit>.b-icon { width:21px; height:21px; color:#895738; }
+#phone-surface #app .ss-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; flex:none; }
+#phone-surface #app .ss-metric { display:flex; flex-direction:column; gap:9px; min-width:0; padding:12px 10px 8px; border:1px solid #fff; border-radius:19px; color:#603923; text-align:left; background:linear-gradient(135deg,#fffdfaaf,#fcecdf74); box-shadow:0 5px 12px #9c634709; }
+#phone-surface #app .ss-metric-label { font:650 13px/1.25 var(--sans); min-height:17px; }
+#phone-surface #app .ss-metric>strong { display:flex; align-items:baseline; gap:2px; font:700 25px/1 var(--sans); }
+#phone-surface #app .ss-metric>strong>small { font:550 10px/1 var(--sans); color:#97745c; }
+#phone-surface #app .ss-metric-track { height:4px; background:#c4a2872b; border-radius:5px; overflow:hidden; }
+#phone-surface #app .ss-metric-track>i { display:block; height:100%; border-radius:5px; background:linear-gradient(90deg,#a8734d,#dfb28a); }
+#phone-surface #app .ss-metric-detail { display:flex; align-items:center; justify-content:space-between; color:#97765e; font:550 10px/1 var(--sans); }
+#phone-surface #app .ss-metric-detail .b-icon { width:10px; height:10px; }
+#phone-surface #app .ss-metrics.is-four { grid-template-columns:repeat(2,minmax(0,1fr)); }
+#phone-surface #app .ss-metrics.is-four .ss-metric { display:grid; grid-template-columns:1fr auto; align-items:center; padding:10px; gap:7px; }
+#phone-surface #app .ss-metrics.is-four .ss-metric>strong { font-size:22px; }
+#phone-surface #app .ss-metrics.is-four .ss-metric-track { grid-column:1/-1; }
+#phone-surface #app .ss-metrics.is-four .ss-metric-detail { display:none; }
+#phone-surface #app .ss-observations { display:flex; flex-direction:column; flex:1; min-height:0; padding:12px 14px; border:1px solid #fff9; border-radius:22px; background:#fff7; }
+#phone-surface #app .ss-observations>header { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+#phone-surface #app .ss-observations h3 { font:650 16px/1.3 var(--sans); }
+#phone-surface #app .ss-observations>div { display:flex; flex-direction:column; justify-content:center; flex:1; min-height:0; }
+#phone-surface #app .ss-observations p { display:flex; align-items:center; gap:10px; padding:6px 0; color:#855d45; font:550 13px/1.3 var(--sans); }
+#phone-surface #app .ss-observations p .b-icon { width:15px; height:15px; color:#b78f6c; }
+#phone-surface #app .ss-observations p>span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#phone-surface #app .ss-priorities { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:58px; padding:9px 13px; border:1px solid #fff; border-radius:20px; background:linear-gradient(135deg,#e9cbb59c,#fff7); flex:none; }
+#phone-surface #app .ss-priorities>div { min-width:0; }
+#phone-surface #app .ss-priorities strong { display:block; font:650 15px/1.25 var(--sans); margin-top:4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#phone-surface #app .ss-priorities .ss-icon-button { width:34px; min-width:34px; height:34px; color:#fff; background:linear-gradient(135deg,#c2916b,#9b6341); }
+#phone-surface #app .ss-disclaimer { margin:0; color:#96785f; font:500 11px/1.3 var(--sans); text-align:center; flex:none; }
+/* Shared sheet polish also applies to product details, frequency and replacement. */
+#phone-surface #overlay .modal:has(.sc-sheet) { padding:22px 20px 18px; border-radius:29px; background:linear-gradient(130deg,#fff9f3f7,#f7e2d6fa); }
+#phone-surface #overlay .modal:has(.sc-sheet)>h2 { font:700 25px/1.2 var(--sans); margin-bottom:17px; }
+#phone-surface .sc-sheet { display:flex; flex-direction:column; gap:9px; }
+#phone-surface .sc-sheet .ss-button { flex:none; }
+#phone-surface .ss-organize-product { display:flex; align-items:center; gap:16px; margin:2px 0 16px; }
+#phone-surface .ss-organize-product>strong { font:650 18px/1.4 var(--sans); }
+#phone-surface .ss-guide { display:flex; flex-direction:column; gap:12px; }
+#phone-surface .ss-guide-position { display:flex; align-items:center; gap:10px; font:600 14px/1.3 var(--sans); color:#9c7356; }
+#phone-surface .ss-guide-position>span { padding:5px 8px; border:1px solid #fff; border-radius:9px; background:#fff8; }
+#phone-surface .ss-guide-position>small { margin-left:auto; font-size:12px; }
+#phone-surface .ss-guide-art { display:grid; place-items:center; height:154px; border-radius:25px; background:radial-gradient(ellipse at 50% 45%,#fffaf3,#ecd5c280); }
+#phone-surface .ss-guide-art .sc-product-art { width:133px; height:140px; background:none; border:0; box-shadow:none; }
+#phone-surface .ss-guide-art .sc-product-art img { width:133px; height:133px; }
+#phone-surface .sc-sheet .ss-guide h3 { font:700 23px/1.2 var(--sans); letter-spacing:-.5px; margin:4px 0 0; color:#65402a; }
+#phone-surface .ss-guide-product-note { font:550 12px/1.3 var(--sans); color:#9b775c; margin:0; }
+#phone-surface .ss-guide-instruction { color:#815a43; font:500 15px/1.55 var(--sans); margin:0 0 8px; }
+#phone-surface .ss-guide-complete { display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; padding:27px 10px; }
+#phone-surface .ss-guide-complete>.b-icon { width:60px; height:60px; color:#b08058; }
+#phone-surface .sc-sheet .ss-guide-complete h3 { font:700 25px/1.2 var(--sans); margin:0; }
+#phone-surface .ss-observation-details p { display:flex; align-items:flex-start; gap:12px; color:#815a43; font:550 15px/1.6 var(--sans); }
+#phone-surface .ss-observation-details .b-icon { width:20px; height:20px; flex:none; margin-top:3px; }
+#phone-surface .ss-shell button:focus-visible,#phone-surface .sc-sheet button:focus-visible { outline:2px solid #8f5437; outline-offset:2px; }
+#phone-surface .ss-shell button:hover { filter:none; }
+/* A real raster atlas supplies every product silhouette, never placeholder CSS bottles. */
+#phone-surface .ss-product-atlas { display:block; width:100%; height:100%; background-image:url('/assets/skin-products-v2.png'); background-repeat:no-repeat; background-size:300% 200%; background-position:var(--product-x) var(--product-y); }
+#phone-surface .sc-product-art:has(.ss-product-atlas) { overflow:hidden; }
+@media (prefers-reduced-motion:reduce) { #phone-surface .ss-shell * { transition:none!important; } }
+
+/* Three purpose-made pearl glass symbols share one transparent atlas. */
+#phone-surface .ss-ritual-icon { display:inline-block; width:28px; height:28px; flex:none; background:url('/assets/skin-ritual-icons-v1.png') var(--ritual-x) 50% / 300% 100% no-repeat; pointer-events:none; }
+#phone-surface .ss-tabs button { gap:5px; }
+#phone-surface #app .ss-shell .ss-moment-orb { width:48px; height:48px; background:none; box-shadow:none; }
+#phone-surface #app .ss-shell[data-moment="Soir"] .ss-moment-orb { background:none; box-shadow:none; }
+#phone-surface .ss-moment-orb .ss-ritual-icon { width:48px; height:48px; }
+#phone-surface .ss-score-orbit .ss-ritual-icon { width:31px; height:31px; }
+
+/* Mobile routines: only products scroll; tabs, progress and actions stay visible. */
+#phone-surface #app .ss-routine-summary { min-height:74px; padding:9px 12px; }
+#phone-surface #app .ss-product-list { overflow-y:auto; overflow-x:hidden; overscroll-behavior-y:contain; touch-action:pan-y pinch-zoom; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:#ba927366 transparent; padding:2px 9px; scroll-padding-block:8px; }
+#phone-surface #app .ss-product-row { flex:0 0 auto; min-height:64px; max-height:none; gap:5px; }
+#phone-surface #app .ss-product-list.is-short .ss-product-row { flex:1 0 auto; max-height:none; }
+#phone-surface #app .ss-product-main { gap:7px; min-height:52px; }
+#phone-surface #app .ss-product-copy>strong { white-space:normal; overflow:visible; text-overflow:clip; font-size:15px; line-height:1.25; overflow-wrap:anywhere; }
+#phone-surface #app .ss-product-copy>small { font-size:12px; line-height:1.3; }
+#phone-surface #app .ss-product-row .sc-product-art { width:34px; height:40px; flex:none; }
+#phone-surface #app .ss-check { width:44px; height:48px; min-width:44px; }
+#phone-surface #app .ss-check:before { inset:10px 8px; }
+#phone-surface #app .ss-product-row.is-editing>.ss-icon-button { width:44px; min-width:44px; height:44px; }
+#phone-surface #app .ss-list-heading { min-height:44px; }
+#phone-surface #app .ss-filter,#phone-surface #app .ss-organize { min-height:44px; }
+#phone-surface #app .ss-tabs button { height:44px; }
+#phone-surface #app .ss-footer,#phone-surface #app .ss-footer-link { height:44px; }
+#phone-surface #app .ss-routine-note .ss-quiet { min-height:32px; }
+#phone-surface #app .ss-product-list:focus-visible { outline:2px solid #8f5437; outline-offset:-3px; }

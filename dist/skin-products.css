@@ -1,0 +1,111 @@
+/* Compact sheets use native form controls and generous touch areas. */
+#phone-surface .sp-sheet { display:flex; flex-direction:column; gap:12px; min-width:0; }
+#phone-surface .sp-sheet :is(h3,p,fieldset) { margin:0; }
+#phone-surface .sp-sheet h3 { font:650 14px/1.3 var(--sans); color:#89644f; margin:10px 0; }
+#phone-surface .sp-search { display:flex; align-items:center; gap:5px; border:1px solid #fff; border-radius:16px; background:#fff9; padding:3px 5px 3px 12px; }
+#phone-surface .sp-search input { flex:1; min-width:0; width:100%; border:0; outline:0; background:none; color:#623b27; font:500 16px/1.3 var(--sans); padding:10px 0; }
+#phone-surface .sp-search button { display:grid; place-items:center; width:44px; height:44px; flex:none; border-radius:12px; color:#825435; }
+#phone-surface .sp-search:focus-within { outline:2px solid #a66d4c; outline-offset:1px; }
+#phone-surface .sp-sheet .b-icon { width:20px; height:20px; flex:none; }
+#phone-surface .sp-entry-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+#phone-surface .sp-entry-actions .ss-button { font-size:14px; gap:5px; padding:12px 6px; }
+#phone-surface .sp-result { display:flex; align-items:center; width:100%; gap:10px; padding:10px 0; min-height:64px; border:0; border-bottom:1px solid #bd997a35; background:none; color:#69412d; text-align:left; }
+#phone-surface .sp-result>span:not(.sc-product-art) { flex:1; min-width:0; }
+#phone-surface .sp-result strong { display:block; font:650 15px/1.3 var(--sans); overflow-wrap:anywhere; }
+#phone-surface .sp-result small { display:block; font:500 13px/1.4 var(--sans); color:#956d54; margin-top:3px; }
+#phone-surface .sp-result .sc-product-art,#phone-surface .sp-photo { width:38px; height:44px; flex:none; object-fit:contain; border-radius:9px; }
+#phone-surface .sp-result>.b-icon { width:14px; height:14px; }
+#phone-surface .sp-empty { padding:13px 1px; font:500 14px/1.5 var(--sans); color:#896650; }
+#phone-surface .sp-source { font:500 12px/1.5 var(--sans); color:#987359; }
+#phone-surface .sp-source a { text-decoration:underline; text-underline-offset:3px; color:#815337; }
+#phone-surface .sp-preview { display:flex; align-items:center; gap:12px; padding:0 0 8px; }
+#phone-surface .sp-preview>.sc-product-art,#phone-surface .sp-preview>.sp-photo { width:54px; height:60px; flex:none; }
+#phone-surface .sp-preview>div { min-width:0; }
+#phone-surface .sp-preview strong { display:block; font:650 18px/1.3 var(--sans); overflow-wrap:anywhere; color:#633c27; }
+#phone-surface .sp-preview small { display:block; font:500 13px/1.4 var(--sans); color:#92694f; margin-top:5px; }
+#phone-surface .sp-sheet .form-stack { gap:11px; }
+#phone-surface .sp-sheet .field { gap:5px; }
+#phone-surface .sp-sheet .field>span { font:600 14px/1.3 var(--sans); }
+#phone-surface .sp-sheet :is(input,select) { font:500 16px/1.4 var(--sans); }
+#phone-surface .sp-sheet .field :is(input,select) { width:100%; min-width:0; min-height:46px; padding:10px 12px; border:1px solid #fff; border-radius:13px; background:#fff9; color:#603e29; }
+#phone-surface .sp-sheet fieldset { border:0; padding:0; min-width:0; }
+#phone-surface .sp-sheet legend { font:600 14px/1.3 var(--sans); margin-bottom:7px; }
+#phone-surface .sp-moments { display:flex; gap:7px; }
+#phone-surface .sp-moments label { flex:1; }
+#phone-surface .sp-moments label>span,#phone-surface .sp-days label>span { display:grid; place-items:center; min-height:44px; padding:5px 8px; border:1px solid #fff; border-radius:12px; background:#fff6; color:#84583d; font:600 14px/1.2 var(--sans); }
+#phone-surface .sp-moments input,#phone-surface .sp-days input { position:absolute; opacity:0; width:1px; height:1px; }
+#phone-surface .sp-sheet input:checked+span { background:linear-gradient(140deg,#d1a07b,#a96845); color:#fff; border-color:#e6bc9d; }
+#phone-surface .sp-sheet input:focus-visible+span { outline:2px solid #8c5535; outline-offset:2px; }
+#phone-surface .sp-days { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
+#phone-surface .sp-days[hidden] { display:none; }
+#phone-surface .sp-days legend { grid-column:1/-1; }
+#phone-surface .sp-back,#phone-surface .sp-remove { min-height:44px; width:100%; padding:10px; font:600 14px/1.4 var(--sans); color:#8d6247; }
+#phone-surface .sp-remove { color:#965c45; border-top:1px solid #bf967532; }
+#phone-surface .sp-frequency-label { display:flex; align-items:center; gap:7px; font:550 14px/1.4 var(--sans); color:#89624a; }
+#phone-surface .sp-instructions { border-top:1px solid #bc917133; padding-top:5px; }
+#phone-surface .sp-instructions summary { min-height:44px; padding:12px 0; font:600 14px/1.3 var(--sans); color:#7b543b; cursor:pointer; }
+#phone-surface .sp-instructions p { font:500 15px/1.5 var(--sans); color:#89644f; }
+#phone-surface .sp-camera { height:170px; border:1px solid #fff; border-radius:18px; overflow:hidden; background:#49352c; }
+#phone-surface .sp-camera video { width:100%; height:100%; object-fit:cover; }
+#phone-surface .sp-file { display:flex; align-items:center; justify-content:center; gap:7px; position:relative; min-height:46px; padding:10px; border:1px solid #fff; border-radius:15px; color:#7b543b; background:#fff6; font:600 14px/1.3 var(--sans); cursor:pointer; }
+#phone-surface .sp-file input { position:absolute; inset:0; opacity:0; width:100%; cursor:pointer; }
+#phone-surface .sp-file:focus-within { outline:2px solid #8c5535; }
+#phone-surface #app .ss-product-list.is-short { flex:0 1 auto; }
+#phone-surface #app .ss-product-list.is-short .ss-product-row { flex:0 0 auto; min-height:64px; }
+#phone-surface #app .ss-routine-actions { margin-top:auto; }
+#phone-surface #app .ss-routine-summary { min-height:64px; padding-block:8px; }
+#phone-surface #app .ss-summary-copy h2 { font-size:18px; margin:3px 0; }
+#phone-surface #app .ss-shell .ss-moment-orb,#phone-surface .ss-moment-orb .ss-ritual-icon { width:40px; height:40px; }
+#phone-surface #app .ss-icon-button { min-width:44px; width:44px; height:44px; }
+#phone-surface #app .ss-routine-note { display:none; }
+#phone-surface .sp-sheet :is(button,input,select,summary):focus-visible { outline:2px solid #8c5535; outline-offset:2px; }
+
+#phone-surface .sp-sheet label { margin:0; }
+#phone-surface #overlay .modal:has(.sp-sheet) .close { min-height:44px; min-width:44px; }
+#phone-surface #app .ss-product-row .sp-photo { width:34px; height:40px; flex:none; }
+
+/* Product editor: two grouped surfaces with a fixed, clearly primary action. */
+#phone-surface #overlay .modal:has(.sp-editor-sheet),#phone-surface #overlay .modal:has(.sp-picker-sheet) { display:flex; flex-direction:column; overflow:hidden; padding:26px 18px 14px; border-radius:30px; background:radial-gradient(ellipse at 4% 0%,#fffdf8,transparent 55%),linear-gradient(140deg,#fcf3eafa,#f4dfd1fa); box-shadow:inset 0 1px 2px #fff,0 16px 45px #58351c26; }
+#phone-surface #overlay .modal:has(.sp-editor-sheet)>h2,#phone-surface #overlay .modal:has(.sp-picker-sheet)>h2 { flex:none; font:700 25px/1.18 var(--sans); letter-spacing:-.7px; margin:0 0 20px; padding-right:42px; color:#623b29; }
+#phone-surface #overlay .modal:has(.sp-editor-sheet)>.sc-sheet,#phone-surface #overlay .modal:has(.sp-picker-sheet)>.sc-sheet { display:flex; flex-direction:column; flex:1; min-height:0; }
+#phone-surface #overlay .sp-editor-sheet,#phone-surface #overlay .sp-picker-sheet { flex:1; min-height:0; gap:14px; }
+#phone-surface #overlay .sp-product-form { display:flex; flex-direction:column; flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#caa88b66 transparent; padding:2px; gap:14px; }
+#phone-surface #overlay .sp-identity,#phone-surface #overlay .sp-schedule { flex:none; padding:3px 13px; border:1px solid #fff; border-radius:20px; background:linear-gradient(125deg,#fffefa9e,#fff9f447); box-shadow:inset 0 1px 2px #fff9; }
+#phone-surface #overlay .sp-identity>.field { display:flex; flex-direction:column; gap:2px; padding:10px 0; border-bottom:1px solid #ba95762b; }
+#phone-surface #overlay .sp-identity>.field:last-child { border:0; }
+#phone-surface #overlay .sp-identity input { min-height:29px; padding:3px 0; background:none; border:0; border-radius:0; box-shadow:none; color:#603b29; font:550 16px/1.4 var(--sans); }
+#phone-surface #overlay .sp-identity input::placeholder { color:#a18672; opacity:1; font-weight:450; }
+#phone-surface #overlay .sp-identity input:focus-visible { outline:0; }
+#phone-surface #overlay .sp-identity>.field:focus-within { border-bottom-color:#af704f; }
+#phone-surface #overlay .sp-identity>.field:has(select),#phone-surface #overlay .sp-schedule>.field { display:flex; flex-direction:row; align-items:center; gap:10px; padding:5px 0; }
+#phone-surface #overlay .sp-identity select,#phone-surface #overlay .sp-schedule select { flex:1; width:0; min-height:44px; padding:8px 4px; border:0; box-shadow:none; background:transparent; color:#6e432c; font:600 15px/1.3 var(--sans); text-align:right; }
+#phone-surface #overlay .sp-sheet :is(.field>span,legend) { font:600 14px/1.3 var(--sans); color:#76543d; letter-spacing:0; }
+#phone-surface #overlay .sp-schedule { padding-block:12px; }
+#phone-surface #overlay .sp-moments { gap:4px; padding:4px; margin-bottom:9px; border-radius:16px; background:#e7cdb938; }
+#phone-surface #overlay .sp-moments legend { margin-bottom:9px; }
+#phone-surface #overlay .sp-moments label>span { display:flex; align-items:center; justify-content:center; gap:5px; min-height:44px; border-color:transparent; background:none; border-radius:12px; padding:5px 2px; }
+#phone-surface #overlay .sp-moments .ss-ritual-icon,#phone-surface #overlay .sp-moments .b-icon { width:20px; height:20px; }
+#phone-surface #overlay .sp-moments input:checked+span { background:linear-gradient(145deg,#cf9a74,#a86c48); border-color:#deb693; color:#fffaf4; box-shadow:inset 0 1px 2px #fff8,0 3px 7px #76432916; }
+#phone-surface #overlay .sp-days { border-top:1px solid #ba95762b; padding-top:10px; gap:6px; }
+#phone-surface #overlay .sp-days legend { padding-top:8px; margin-bottom:7px; }
+#phone-surface #overlay .sp-days label>span { border-radius:13px; background:#fff7; border-color:#fffd; min-height:44px; }
+#phone-surface #overlay .sp-days input:checked+span { background:#ead0bb; border-color:#c5916f; color:#70442b; box-shadow:inset 0 1px 2px #fff8; }
+#phone-surface #overlay .sp-editor-footer { flex:none; display:flex; flex-direction:column; gap:2px; padding-top:4px; }
+#phone-surface #overlay .sp-editor-footer>.ss-button { min-height:49px; border-radius:17px; font-weight:700; background:linear-gradient(140deg,#d0a07b,#ad6d49 65%,#a36746); color:#fffaf5; border-color:#eccbb3; box-shadow:inset 0 1px 2px #fff9,0 5px 12px #92542e1f; }
+#phone-surface #overlay .sp-editor-footer .sp-back { font-size:13px; color:#946c50; }
+#phone-surface #overlay .sp-preview { padding:0 4px; }
+#phone-surface #overlay .sp-preview>.sp-photo,#phone-surface #overlay .sp-preview>.sc-product-art { width:42px; height:48px; }
+/* Search is one surface, without the old nested input rectangle. */
+#phone-surface #overlay .sp-search { flex:none; padding:4px 4px 4px 14px; border-radius:18px; background:#fffaf4d9; box-shadow:inset 0 1px 3px #b58b6510,0 1px 0 #fff; }
+#phone-surface #overlay .sp-search input { padding:6px 0; min-height:40px; margin:0; border:0; border-radius:0; box-shadow:none; background:transparent; font:500 16px/1.3 var(--sans); }
+#phone-surface #overlay .sp-search button { background:linear-gradient(140deg,#cd9b77,#aa6d49); color:#fff; border:1px solid #e8c5a8; border-radius:13px; }
+#phone-surface #overlay .sp-entry-actions { flex:none; gap:9px; }
+#phone-surface #overlay .sp-entry-actions .ss-button { border-radius:17px; padding:13px 8px; min-height:50px; font:650 14px/1.3 var(--sans); background:linear-gradient(135deg,#fffef9aa,#fff4e854); box-shadow:inset 0 1px 2px #fff; }
+#phone-surface #overlay .sp-picker-sheet #sp-results { min-height:0; max-height:360px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+#phone-surface #overlay .sp-results-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:2px 3px 9px; }
+#phone-surface #overlay .sp-results-heading h3 { margin:0; font:650 14px/1.3 var(--sans); color:#78523b; }
+#phone-surface #overlay .sp-results-heading>span { display:grid; place-items:center; min-width:23px; height:23px; padding:0 6px; border:1px solid #fff; border-radius:8px; background:#fff6; color:#9a7457; font:600 12px/1 var(--sans); }
+#phone-surface #overlay .sp-result-group { padding:0 11px; border:1px solid #fff; border-radius:18px; background:#fffbf675; }
+#phone-surface #overlay .sp-result { min-height:65px; }
+#phone-surface #overlay .sp-result:last-child { border-bottom:0; }
+#phone-surface #overlay .sp-result .sc-product-art { background:#f0e0d33d; border:0; box-shadow:none; }

@@ -1,0 +1,97 @@
+const fs=require('node:fs');
+const assert=require('node:assert/strict');
+const prefix=fs.readFileSync('tests/flow-runtime.cjs','utf8').split('let checks = 0;')[0];
+const runtime=new Function('require',prefix+'\nreturn runtime;')(require);
+const r=runtime();
+r.run(`
+  M.subscription.status='free';M.paywallVersion='v1';
+  assert.match(V['PRE-01'](),/pw-editorial/);
+  M.paywallVersion='v2';const html=V['PRE-01']();
+  assert.match(html,/<h1[^>]*>Tes couleurs/);
+  assert.match(html,/59,99 euros par an/);
+  assert.match(html,/soit 4,99 euros par mois/);
+  assert.ok(html.includes('soit <b>4,99 €</b>'));
+  assert.match(html,/>−50%</);
+  assert.doesNotMatch(html,/pv2-reference|pv2-hit|pv2-sr|paywall-reference-v2/);
+  assert.match(html,/paywall-faithful-hq-v2/);
+  assert.match(html,/hair\.webp/);
+  assert.match(html,/bun\.webp/);
+  assert.match(html,/care\.webp/);
+  assert.match(html,/palette\.webp/);
+  assert.ok(html.includes('<h2>Palette 12 saisons</h2>'));
+  assert.ok(html.includes('<h3>Tes rapports<br>complets</h3>'));
+  assert.ok(html.includes('<h3>Ta coupe<br>avant le salon</h3>'));
+  assert.ok(html.includes('<p>Jusqu’à 10 essais / mois</p>'));
+  assert.ok(html.includes('<h3>Routine matin<br>& soir</h3>'));
+  assert.ok(html.includes('<p>Adaptée à toi</p>'));
+  assert.doesNotMatch(html,/coiffure IA|>V2A<|>V2B</);
+  assert.match(html,/aria-pressed="true"[^>]*>V2</);
+  assert.doesNotMatch(html,/pv2-icon-disc/); // One glass disc per illustration, not a second opaque overlay.
+  assert.match(html,/class="pv2-meta"/);
+  assert.match(pv2Icon('palette'),/viewBox="0 0 24 24"/);
+  assert.match(pv2Icon('palette'),/aria-hidden="true"/);
+  const buttons=['yearly','monthly'].map(value=>({dataset:{value},setAttribute(k,v){this[k]=v;}}));
+  const renewal={textContent:''};
+  const page={classList:{toggle(k,v){this[k]=v;}},querySelectorAll:()=>buttons,querySelector:()=>renewal};
+  const baseQuery=document.querySelector;
+  document.querySelector=s=>s==='.pv2-page'?page:baseQuery(s);
+  ACTIONS['pv2-offer']({value:'monthly'});
+  assert.equal(M.subscription.offer,'monthly');assert.equal(buttons[1]['aria-pressed'],'true');assert.equal(buttons[0]['aria-pressed'],'false');
+  assert.equal(renewal.textContent,'Puis 9,99 € par mois. Annulable à tout moment.');
+  ACTIONS['pv2-offer']({value:'yearly'});
+  assert.equal(buttons[0]['aria-pressed'],'true');assert.equal(buttons[1]['aria-pressed'],'false');
+  assert.equal(renewal.textContent,'Puis 59,99 € par an. Annulable à tout moment.');
+  ACTIONS['pv2-offer']({value:'invalid'});assert.equal(M.subscription.offer,'yearly');
+  document.querySelector=baseQuery;
+  let purchases=0;const baseSubscribe=ACTIONS.subscribe;ACTIONS.subscribe=()=>{purchases++;};
+  const button={disabled:false,isConnected:true,classList:{add(){},remove(){}},setAttribute(){},removeAttribute(){}};
+  document.querySelector=s=>s==='.pv2-cta'?button:baseQuery(s);
+  window.matchMedia=()=>({matches:true});route='PRE-01';
+  ACTIONS['pv2-subscribe']();assert.equal(purchases,1);assert.equal(button.disabled,false);
+  button.disabled=true;ACTIONS['pv2-subscribe']();assert.equal(purchases,1);
+  button.disabled=false;button.isConnected=false;ACTIONS['pv2-subscribe']();assert.equal(purchases,1);
+  ACTIONS.subscribe=baseSubscribe;document.querySelector=baseQuery;
+`);
+r.run(`
+  M.paywallVersion='v2b';const legacy=V['PRE-01']();
+  assert.match(legacy,/pv2-version-2/);
+  assert.doesNotMatch(legacy,/>V2A<|>V2B</);
+  ACTIONS['paywall-version']({value:'v2'});assert.equal(M.paywallVersion,'v2');
+  ACTIONS['paywall-version']({value:'invalid'});assert.equal(M.paywallVersion,'v2');
+`);
+r.run(`
+  let delayedPurchases=0;ACTIONS.subscribe=()=>{delayedPurchases++;};
+  const delayedButton={disabled:false,isConnected:true,classList:{add(){},remove(){}},setAttribute(){},removeAttribute(){}};
+  document.querySelector=s=>s==='.pv2-cta'?delayedButton:null;
+  window.matchMedia=()=>({matches:false});route='PRE-01';
+  ACTIONS['pv2-subscribe']();ACTIONS['pv2-subscribe']();assert.equal(delayedPurchases,0);
+`);
+assert.equal(r.pending(260),1);
+r.tick(260);
+r.run(`assert.equal(delayedPurchases,1);assert.equal(delayedButton.disabled,false);ACTIONS['pv2-subscribe']();route='PRF-01';`);
+r.tick(260);
+r.run(`assert.equal(delayedPurchases,1);`);
+const css=fs.readFileSync('dist/paywall-v2-native.css','utf8');
+assert.match(css,/prefers-reduced-motion/);
+assert.match(css,/pv2-badge-settle/);
+assert.match(css,/pv2-edge-light/);
+assert.match(css,/pv2-radio:after/);
+assert.match(css,/#phone-surface #app \.pv2-legal p\{font:inherit;color:inherit\}/);
+assert.match(css,/100cqw \/ 852/);
+assert.match(css,/100cqh \/ 1847/);
+assert.match(css,/cta-left\.png/);
+assert.match(css,/cta-right\.png/);
+assert.doesNotMatch(css,/hair-crop\.svg|bun-crop\.svg|care-crop\.svg/);
+assert.match(css,/clip-path:none;mask-image:none/);
+assert.match(css,/best-middle\.png/);
+const finishCss=fs.readFileSync('dist/paywall-v2-faithful-finish.css','utf8');
+assert.match(finishCss,/pv2-version-2 \.pv2-mini:nth-child\(2\) \.pv2-mini-copy\{left:calc\(1 \* var\(--u\)\)/);
+assert.doesNotMatch(finishCss,/pv2-version-2[^{}]*nth-child\(2\)[^{]*\{[^}]*font-size/);
+// The reference frame fits both dimensions, including short phones and landscape.
+for(const [width,height] of [[393,852],[375,667],[320,568],[430,932],[852,393]]){
+  const unit=Math.min(width/852,height/1847);
+  assert.ok(852*unit<=width+.001);
+  assert.ok(1847*unit<=height+.001);
+  assert.ok(1606*unit<height); // Entire main action remains inside the screen.
+}
+console.log('Native paywall: text, V1 preservation, selection, motion hooks and purchase guard passed.');

@@ -1,0 +1,30 @@
+/* Independent artwork and resolution-independent material surfaces. */
+#phone-surface #app .pv2-page{
+  --pv-copper-surface:radial-gradient(ellipse at 20% 0%,#ffcbb599,transparent 38%),radial-gradient(ellipse at 93% 26%,#f9a17f8f,transparent 26%),linear-gradient(180deg,#d99171 0%,#b2694b 12%,#884528 43%,#783c25 70%,#a75e3b 93%,#df9870 100%);
+  background:linear-gradient(180deg,#fff3e800 55%,#fff3e857 73%,#fff3e8df 89%,#fff3e8e8),#f7e4db url('/assets/paywall-hq-v2/silk.webp') center/cover no-repeat;
+}
+#phone-surface #app .pv2-page:before{display:none}
+#phone-surface #app .pv2-portrait{height:calc(716 * var(--u));mask-image:linear-gradient(#000 74%,transparent 100%);overflow:hidden}
+#phone-surface #app .pv2-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+#phone-surface #app .pv2-portrait:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#fbece3e6,transparent 42%),linear-gradient(90deg,#fbece3d9 0%,#fbece3b3 35%,transparent 59%);pointer-events:none}
+#phone-surface #app :is(.pv2-palette,.pv2-mini){background:linear-gradient(135deg,#fffaf3ab,#f7e5dc80 60%,#eac4b670);backdrop-filter:blur(calc(10 * var(--u)));-webkit-backdrop-filter:blur(calc(10 * var(--u)));border-color:#fff9eed9;box-shadow:inset 0 calc(2 * var(--u)) calc(3 * var(--u)) #fffaf2b3,inset 0 calc(-1 * var(--u)) calc(2 * var(--u)) #b9775236,0 calc(12 * var(--u)) calc(22 * var(--u)) calc(-9 * var(--u)) #81503a30}
+#phone-surface #app .pv2-palette .pv2-art{inset:auto calc(-10 * var(--u)) calc(-16 * var(--u)) auto;width:calc(340 * var(--u));height:calc(242 * var(--u));mask-image:none;overflow:visible}
+#phone-surface #app .pv2-palette .pv2-art img{object-fit:contain;object-position:center}
+#phone-surface #app .pv2-mini .pv2-art{inset:calc(-3 * var(--u)) calc(25 * var(--u)) auto;width:calc(190 * var(--u));height:calc(181 * var(--u));mask-image:none;overflow:visible}
+#phone-surface #app .pv2-mini .pv2-art img{object-fit:contain;object-position:center bottom}
+#phone-surface #app .pv2-mini .pv2-art-hair{left:calc(13 * var(--u));width:calc(185 * var(--u));height:calc(179 * var(--u))}
+#phone-surface #app .pv2-mini .pv2-art-bun{left:calc(14 * var(--u));width:calc(201 * var(--u));height:calc(181 * var(--u));mask-image:linear-gradient(#000 85%,transparent)}
+#phone-surface #app .pv2-mini .pv2-art-care{left:calc(12 * var(--u));top:calc(5 * var(--u));width:calc(205 * var(--u));height:calc(163 * var(--u))}
+#phone-surface #app .pv2-icon-disc{position:absolute;display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;color:#a34d2d;border:calc(1 * var(--u)) solid #fff8eae0;border-radius:50%;background:radial-gradient(ellipse at 30% 15%,#fffdf4ed,transparent 56%),linear-gradient(145deg,#fff2e6b3,#efcaba66);box-shadow:inset 0 calc(2 * var(--u)) calc(2 * var(--u)) #fffdf4e6,inset 0 calc(-2 * var(--u)) calc(3 * var(--u)) #c5907852,0 calc(4 * var(--u)) calc(10 * var(--u)) #89533921;backdrop-filter:blur(calc(8 * var(--u)));-webkit-backdrop-filter:blur(calc(8 * var(--u)))}
+#phone-surface #app .pv2-icon-disc:after{content:'';position:absolute;inset:calc(3 * var(--u));border-radius:inherit;border:calc(1 * var(--u)) solid #fff4df70;pointer-events:none}
+#phone-surface #app .pv2-palette .pv2-icon-disc{left:calc(35 * var(--u));top:calc(18 * var(--u));width:calc(68 * var(--u));height:calc(68 * var(--u))}
+#phone-surface #app .pv2-palette .pv2-icon-disc .icon{width:calc(40 * var(--u));height:calc(40 * var(--u));filter:drop-shadow(0 1px 0 #fff5e4)}
+#phone-surface #app .pv2-mini .pv2-icon-disc{right:calc(13 * var(--u));top:calc(12 * var(--u));width:calc(59 * var(--u));height:calc(59 * var(--u))}
+#phone-surface #app .pv2-mini .pv2-icon-disc .icon{width:calc(34 * var(--u));height:calc(34 * var(--u));stroke-width:1.6;filter:drop-shadow(0 1px 0 #fff5e4)}
+#phone-surface #app .pv2-mini:last-child .pv2-icon-disc .icon{width:calc(23 * var(--u));height:calc(27 * var(--u));margin:calc(-1 * var(--u))}
+#phone-surface #app .pv2-best{padding:0 calc(17 * var(--u));gap:calc(12 * var(--u));justify-content:center;border:calc(1 * var(--u)) solid #efb99b;background:var(--pv-copper-surface);box-shadow:inset 0 calc(2 * var(--u)) calc(3 * var(--u)) #ffe8cfcf,inset 0 calc(-2 * var(--u)) calc(2 * var(--u)) #70341d80,0 calc(4 * var(--u)) calc(10 * var(--u)) #ad634240}
+#phone-surface #app .pv2-crown{display:block;width:calc(42 * var(--u));height:calc(42 * var(--u));object-fit:contain;flex:none;filter:drop-shadow(0 calc(1 * var(--u)) calc(2 * var(--u)) #602b2840)}
+#phone-surface #app .pv2-cta{background:var(--pv-copper-surface);border:calc(1.5 * var(--u)) solid #ffe0c4;box-shadow:inset 0 calc(3 * var(--u)) calc(5 * var(--u)) #ffe8ccb3,inset 0 calc(-3 * var(--u)) calc(4 * var(--u)) #64291480,0 0 0 calc(1 * var(--u)) #b86742,0 calc(9 * var(--u)) calc(22 * var(--u)) #9a4f3233}
+#phone-surface #app .pv2-cta:before{content:'';position:absolute;inset:calc(3 * var(--u));border-radius:inherit;border-top:calc(1 * var(--u)) solid #fff0dfb3;border-bottom:calc(1 * var(--u)) solid #ffbb856b;pointer-events:none}
+#phone-surface #app .pv2-page .pv2-year,#phone-surface #app .pv2-page .pv2-year[aria-pressed=false]{background-image:var(--pv-glass)}
+#phone-surface #app .pv2-discount{background:var(--pv-copper-surface)}

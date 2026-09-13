@@ -1,0 +1,35 @@
+/* Compact, data-driven chronological history shared by all analysis categories. */
+#phone-surface #app>.mock-screen:has(.compact-history) { overflow:hidden; padding:6px 18px 6px!important; }
+#phone-surface #app .compact-history { height:100%; min-height:0; display:flex; flex-direction:column; gap:0; padding:0; }
+#app .history-brand { display:flex; align-items:center; justify-content:center; position:relative; min-height:42px; flex:none; margin:0 0 8px; }
+#phone-surface #app .history-wordmark { padding:0; color:#a95236; font:500 29px/1.2 var(--serif); letter-spacing:-1px; }
+#app .history-back { position:absolute; left:0; top:0; display:grid; place-items:center; width:38px; min-height:38px; padding:0; border-radius:50%; border:1px solid #fff; background:var(--glass-control); box-shadow:var(--glass-control-shadow); }
+#app .compact-history>.lg-title { flex:none; margin:2px 0 13px; text-align:center; }
+#phone-surface #app .compact-history>.lg-title h1 { font:700 34px/1.1 var(--serif); letter-spacing:-.035em; }
+#phone-surface #app .compact-history>.lg-title p { font:500 14px/1.4 var(--sans); margin-top:5px; }
+#app .history-new { flex:none; position:relative; display:flex; align-items:center; justify-content:center; min-height:46px; width:100%; border:1.5px solid #fff; border-radius:24px; padding:8px 16px; margin:0 0 13px; color:#60341f; background:radial-gradient(ellipse at 20% 0%,#fff9,transparent 75%),linear-gradient(140deg,#fff8,#f7d8c9a1); box-shadow:inset 0 1px 2px #fff,0 6px 14px -11px #8f563e80; font:650 16px/1.3 var(--sans); }
+#app .history-new>.icon { position:absolute; left:16px; width:22px; height:22px; }
+#app .history-records { flex:1; min-height:0; overflow-y:auto; overflow-x:hidden; padding:0 1px 4px; scrollbar-width:thin; scrollbar-color:#bd927b66 transparent; overscroll-behavior:contain; }
+#app .history-month { margin:0 0 14px; }
+#phone-surface #app .history-month>h2 { margin:0 6px 8px; font:650 12px/1.4 var(--sans); letter-spacing:1.8px; text-transform:uppercase; color:#956953; }
+#app .history-month>ul { list-style:none; display:grid; gap:6px; margin:0; padding:0; }
+#app .history-entry { width:100%; display:flex; align-items:center; gap:11px; padding:8px 10px; min-height:64px; border:1px solid #fff; border-radius:18px; text-align:left; color:#63351f; background:linear-gradient(135deg,#fffaf4b5,#fce8df85 62%,#fff6efa6); box-shadow:inset 0 1px 2px #fff,0 4px 9px -8px #a8795d66; }
+#app .history-date-tile { display:grid; place-content:center; text-align:center; width:44px; min-height:47px; flex:none; border:1px solid #fff; border-radius:13px; background:linear-gradient(145deg,#fff9,#fff2); box-shadow:inset 0 1px 2px #fff; }
+#phone-surface #app .history-date-tile strong { font:700 24px/1 var(--serif); }
+#phone-surface #app .history-date-tile small { margin-top:3px; font:500 10px/1 var(--sans); text-transform:uppercase; color:#98654b; }
+#app .history-entry-copy { display:grid; gap:5px; flex:1; min-width:0; }
+#app .history-entry-heading { display:flex; align-items:center; gap:6px; min-width:0; }
+#phone-surface #app .history-entry-heading>strong { font:650 17px/1.15 var(--serif); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:-.02em; }
+#phone-surface #app .history-latest-badge { flex:none; border-radius:12px; padding:3px 6px; background:#efc4b270; color:#954f34; font:600 10px/1.2 var(--sans); }
+#app .history-entry-meta { display:grid; gap:2px; color:#92705d; font:500 12px/1.3 var(--sans); }
+#app .history-partial { color:#a05b3b; font-size:12px; }
+#app .history-entry>.icon { width:15px; height:19px; flex:none; color:#a77457; }
+#app .history-compare { display:flex; align-items:center; justify-content:flex-end; gap:7px; min-height:33px; padding:6px 4px 0; color:#995735; font:500 14px/1.3 var(--sans); flex:none; }
+#app .history-compare .icon { width:18px; height:18px; }
+#app .history-empty { padding:35px 12px; text-align:center; }
+#app .history-empty>.icon { width:38px; height:38px; margin-bottom:10px; }
+#phone-surface #app .history-empty h2 { font-size:23px; }
+#phone-surface #app .history-empty p { font-size:14px; }
+#phone-surface #app .compact-history .b-icon-art { display:none; }
+#phone-surface #app .compact-history .b-icon-symbol { display:block; stroke:currentColor; }
+#phone-surface #app .compact-history .b-icon-solid { fill:none; }

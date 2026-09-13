@@ -1,0 +1,109 @@
+/* Approved pearl / copper layout. The result panel takes the remaining height. */
+#phone-surface .beauty-applications-v3 { height:100%; min-height:440px; display:grid; grid-template-rows:auto auto minmax(220px,1fr) auto; gap:10px; }
+#phone-surface .beauty-applications-v3 .beauty-title h1 { font-size:32px; line-height:1.02; margin:2px 0; }
+#phone-surface .beauty-application-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
+#phone-surface .beauty-application-tab { min-width:0; min-height:66px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:8px 2px; border:1px solid #fffe; border-radius:15px; color:#68412c; background:var(--beauty-pane); font:600 14px/1.2 var(--sans); box-shadow:inset 0 1px 2px #fff7; }
+#phone-surface .beauty-application-tab.is-active { background:var(--beauty-copper); color:#fffaf5; border-color:#f5d4ba; box-shadow:inset 0 1px 3px #fff8,0 5px 12px #9f624718; }
+#phone-surface .beauty-application-tab>.b-icon { width:26px; height:26px; flex:none; }
+#phone-surface .beauty-application-tab .b-icon-solid { fill:none; }
+#phone-surface .beauty-application-content { min-height:0; display:flex; flex-direction:column; padding:10px; border:1px solid #fff; border-radius:23px; background:var(--beauty-pane); box-shadow:inset 0 1px 1px #fff8,0 7px 17px #a5634110; }
+#phone-surface .beauty-application-content>header { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:0 3px 5px; }
+#phone-surface .beauty-application-content h2 { margin:0; color:#542b19; font:700 24px/1.12 var(--serif); letter-spacing:-.4px; }
+#phone-surface .beauty-application-all { flex:none; display:flex; align-items:center; justify-content:center; gap:3px; min-height:40px; padding:2px 0 2px 4px; border:0; background:none; color:#895336; font:600 14px/1.2 var(--sans); }
+#phone-surface .beauty-application-all>.b-icon { width:14px; height:14px; }
+#phone-surface .beauty-application-rows { flex:1; min-height:0; display:flex; flex-direction:column; padding:0 5px; }
+#phone-surface .beauty-application-row { flex:1; min-width:0; min-height:50px; display:flex; align-items:center; gap:15px; padding:8px 3px; background:none; border:0; border-radius:0; color:#593321; text-align:left; font:600 16px/1.25 var(--sans); }
+#phone-surface .beauty-application-row+.beauty-application-row { border-top:1px solid #bc8d7129; }
+#phone-surface .beauty-application-row>span:not(:first-child) { flex:1; min-width:0; overflow-wrap:anywhere; }
+#phone-surface .beauty-application-labels { display:flex; flex-direction:column; gap:4px; }
+#phone-surface .beauty-application-row>.b-icon { width:16px; height:16px; flex:none; }
+#phone-surface .beauty-application-row>.beauty-small-swatches { gap:0; flex:none; }
+#phone-surface .beauty-application-row .beauty-small-swatches i { width:45px; height:45px; border-width:1.5px; box-shadow:0 3px 7px #75482e20; }
+#phone-surface .beauty-application-row .beauty-small-swatches i+i { margin-left:-13px; }
+#phone-surface .beauty-application-row .beauty-small-swatches i.is-light { border-color:#a9a29b; }
+#phone-surface .beauty-application-rows.is-singles .beauty-application-row { gap:12px; }
+#phone-surface .beauty-application-rows.is-singles:has(>:nth-child(4)) { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; padding:4px 0 7px; }
+#phone-surface .beauty-application-rows.is-singles:has(>:nth-child(4)) .beauty-application-row { flex-direction:column; justify-content:center; gap:6px; border:1px solid #fffb; border-radius:14px; background:#ffffff30; padding:7px 5px; font-size:14px; text-align:center; }
+#phone-surface .beauty-application-rows.is-singles:has(>:nth-child(4)) .beauty-application-row>span { flex:none; }
+#phone-surface .beauty-application-rows.is-singles:has(>:nth-child(4)) .beauty-application-row>.b-icon { display:none; }
+#phone-surface .beauty-application-rows.is-singles:has(>:nth-child(4)) .beauty-small-swatches i { width:30px; height:30px; }
+#phone-surface .beauty-application-row>.beauty-hair-sample { width:42px; height:38px; border-radius:12px; }
+#phone-surface .beauty-application-row>.beauty-metal-sample { width:42px; height:42px; flex:none; }
+#phone-surface .beauty-application-advice { min-height:42px; display:flex; flex:none; align-items:center; gap:12px; padding:8px 12px; border:1px solid #fff; border-radius:16px; background:#fff5; color:#67402a; text-align:left; font:600 16px/1.25 var(--sans); }
+#phone-surface .beauty-application-advice>span { flex:1; min-width:0; }
+#phone-surface .beauty-application-advice>.b-icon { width:22px; height:22px; flex:none; }
+#phone-surface .beauty-application-advice>.b-icon:last-child { width:16px; height:16px; }
+#phone-surface .beauty-application-tip { min-height:46px; border-radius:20px; background:var(--beauty-pane); }
+#phone-surface .beauty-application-caption { margin:0 0 7px; font:500 12px/1.3 var(--sans); text-align:center; color:#89644e; }
+#phone-surface .beauty-application-empty { font:500 14px/1.4 var(--sans); }
+#phone-surface .beauty-page:has(.beauty-applications-v3) .beauty-brand-star { visibility:hidden; }
+#phone-surface .beauty-application-pair-detail { padding:22px 0; }
+#phone-surface .beauty-application-pair-detail>.beauty-small-swatches { display:flex; justify-content:center; gap:0; margin-bottom:22px; }
+#phone-surface .beauty-application-pair-detail .beauty-small-swatches i { width:90px; height:90px; }
+#phone-surface .beauty-application-pair-detail .beauty-small-swatches i+i { margin-left:-20px; }
+#phone-surface .beauty-application-pair-detail p { display:flex; justify-content:space-between; gap:12px; padding:10px; border-bottom:1px solid #bc8d7130; font:500 14px/1.4 var(--sans); }
+/* Alternatives: a compact comparison, with explanations on demand. */
+#phone-surface #overlay .modal:has(.beauty-avoid-refined) { padding:25px 18px 18px; }
+#phone-surface #overlay .modal:has(.beauty-avoid-refined)>h2 { max-width:290px; margin:0 0 12px; padding-right:38px; font:700 26px/1.12 var(--sans); letter-spacing:-.6px; text-wrap:initial; }
+#phone-surface .beauty-avoid-refined { gap:12px; }
+#phone-surface .beauty-avoid-context { display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+#phone-surface .beauty-avoid-context>span { padding:5px 10px; border:1px solid #fffe; border-radius:20px; background:#ecd0bb52; color:#805034; font:650 12px/1.2 var(--sans); }
+#phone-surface #overlay .beauty-avoid-context>p { margin:0 0 2px; color:#89654f; font:500 14px/1.35 var(--sans); }
+#phone-surface .beauty-avoid-legend { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding:0 12px; color:#88654f; font:600 12px/1.3 var(--sans); }
+#phone-surface .beauty-avoid-legend>span:last-child { color:#704129; }
+#phone-surface .beauty-avoid-options { display:flex; flex-direction:column; gap:10px; }
+#phone-surface .beauty-avoid-option { border:1px solid #fffe; border-radius:21px; background:linear-gradient(135deg,#fffaf4a6,#fff3e95c); box-shadow:inset 0 1px 1px #fff9,0 5px 12px #97653e0b; overflow:hidden; }
+#phone-surface .beauty-avoid-option>summary { list-style:none; padding:11px 10px 0; cursor:pointer; }
+#phone-surface .beauty-avoid-option>summary::-webkit-details-marker { display:none; }
+#phone-surface .beauty-avoid-option>summary::after { display:none; }
+#phone-surface .beauty-avoid-option>summary:focus-visible { outline:2px solid #a36540; outline-offset:-3px; border-radius:20px; }
+#phone-surface .beauty-avoid-comparison { display:grid; grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr); gap:4px; align-items:stretch; }
+#phone-surface .beauty-avoid-choice { min-width:0; display:flex; flex-direction:column; gap:9px; align-items:flex-start; padding:9px; border:1px solid transparent; border-radius:14px; }
+#phone-surface .beauty-avoid-choice.is-recommended { background:#fffc; border-color:#fff; box-shadow:0 2px 6px #8d593317; }
+#phone-surface .beauty-avoid-dot { display:block; width:100%; height:32px; border:1px solid #6e4e3426; border-radius:10px; box-shadow:inset 0 0 0 1px #ffffff40; }
+#phone-surface .beauty-avoid-dot.is-light { border-color:#9c8c7b8c; box-shadow:inset 0 0 0 1px #fff9; }
+#phone-surface .beauty-avoid-name { min-height:36px; display:flex; align-items:center; color:#785944; font:600 14px/1.25 var(--sans); overflow-wrap:anywhere; }
+#phone-surface .is-recommended .beauty-avoid-name { color:#573722; font-weight:700; }
+#phone-surface .beauty-avoid-direction { align-self:center; color:#ae7855; display:grid; place-items:center; }
+#phone-surface .beauty-avoid-direction .b-icon { width:18px; height:18px; }
+#phone-surface .beauty-avoid-explain { min-height:34px; display:flex; align-items:center; justify-content:space-between; gap:10px; margin:5px 8px 0; color:#8c674e; font:550 12px/1.3 var(--sans); }
+#phone-surface .beauty-avoid-explain>.b-icon { width:13px; height:13px; transform:rotate(90deg); }
+#phone-surface .beauty-avoid-option[open] .beauty-avoid-explain>.b-icon { transform:rotate(-90deg); }
+#phone-surface #overlay .beauty-avoid-reason { margin:0 18px 13px; padding-top:10px; border-top:1px solid #a5785524; color:#77553d; font:500 14px/1.4 var(--sans); }
+#phone-surface #overlay .modal:has(.beauty-avoid-refined)>.beauty-button { margin-top:14px; min-height:44px; }
+
+/* Report actions: aligned icon medallions, fine glass edges, deeper copper. */
+#phone-surface .beauty-report-actions { gap:9px; padding-top:3px; }
+#phone-surface .beauty-report-actions>.beauty-button { position:relative; isolation:isolate; min-height:52px; padding:9px 10px; gap:8px; border-radius:19px; font:650 14px/1.2 var(--sans); letter-spacing:-.2px; justify-content:center; box-shadow:inset 0 1px 1px #fff9,0 4px 8px -5px #71472c33; }
+#phone-surface .beauty-report-actions>.beauty-button>span { flex:none; }
+#phone-surface .beauty-report-actions>.beauty-button>span:last-child { white-space:nowrap; }
+#phone-surface .beauty-report-actions>.is-secondary { background:linear-gradient(145deg,#fffdf8bb,#fff3e958); border:1px solid #fffef9ed; color:#72492f; box-shadow:inset 0 1px 2px #fff, inset 0 -1px 1px #bc866c1a,0 5px 12px -8px #82553742; }
+#phone-surface .beauty-report-actions>.is-copper { color:#fffaf4; background:linear-gradient(125deg,#bd8a64,#a86c46 55%,#915636); border:1px solid #ddb08b; box-shadow:inset 0 1px 1px #ffe3cbb3,inset 0 -1px 1px #63351f24,0 6px 14px -7px #95583666; }
+#phone-surface .beauty-report-actions .beauty-action-symbol { display:grid; place-items:center; width:27px; height:27px; flex:none; border:1px solid #ffffffb0; border-radius:50%; background:#ffffff60; box-shadow:inset 0 1px 1px #fff8; }
+#phone-surface .beauty-report-actions .is-copper .beauty-action-symbol { background:#fff3df18; border-color:#ffe9d647; box-shadow:inset 0 1px 1px #ffffff28; }
+#phone-surface .beauty-report-actions .beauty-action-symbol .b-icon { width:17px; height:17px; }
+#phone-surface .beauty-report-actions>.beauty-button:hover { filter:none; }
+#phone-surface .beauty-report-actions>.beauty-button:active { box-shadow:inset 0 2px 5px #6e3c2426,0 1px 3px #84512e18; }
+
+/* Color and label tracks are independent: long names never shrink one sample. */
+#phone-surface .beauty-swatches.is-neutral .beauty-swatch { display:grid; grid-template-rows:32px auto; gap:5px; align-content:start; font-size:12px; min-height:0; }
+#phone-surface .beauty-swatches.is-neutral .beauty-swatch-color { height:32px; min-height:0; }
+#phone-surface .beauty-swatches.is-neutral .beauty-swatch>span:last-child { min-height:2.5em; display:flex; align-items:flex-start; justify-content:center; line-height:1.25; overflow-wrap:anywhere; }
+#phone-surface .beauty-swatches.is-signature .beauty-swatch { display:grid; min-height:0; grid-template-rows:minmax(0,1fr) 2.4em; }
+#phone-surface .beauty-swatches.is-signature .beauty-swatch>span:last-child { align-items:flex-start; line-height:1.2; overflow-wrap:anywhere; }
+@supports(grid-template-rows:subgrid) {
+  #phone-surface .beauty-swatches.is-neutral { grid-template-rows:32px auto; row-gap:5px; }
+  #phone-surface .beauty-swatches.is-signature { grid-template-rows:repeat(4,minmax(0,1fr) auto); row-gap:4px; }
+  #phone-surface .beauty-swatches:is(.is-neutral,.is-signature) .beauty-swatch { grid-row:span 2; grid-template-rows:subgrid; row-gap:inherit; }
+  #phone-surface .beauty-swatches.is-signature .beauty-swatch>span:last-child { min-height:2.4em; padding-bottom:0; }
+}
+
+/* Share the available report height; labels never compete with fixed chip minima. */
+#phone-surface .beauty-palette-panel { min-height:0; gap:8px; }
+#phone-surface .beauty-palette-panel>.beauty-title { flex:none; }
+#phone-surface .beauty-palette-panel>.beauty-title h1 { font-size:28px; line-height:1.05; margin:3px 0; }
+#phone-surface .beauty-palette-panel>.beauty-title p { font-size:14px; margin:4px 0 0; }
+#phone-surface .beauty-palette-panel>.beauty-swatches.is-signature { flex:1 1 0; min-height:0; }
+#phone-surface .beauty-swatches.is-signature .beauty-swatch-color { min-height:0; height:100%; }
+#phone-surface .beauty-palette-panel .beauty-neutrals { padding-top:7px; }
+#phone-surface .beauty-palette-panel .beauty-neutrals h2 { font-size:22px; margin-bottom:7px; }

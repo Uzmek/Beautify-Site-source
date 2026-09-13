@@ -1,0 +1,94 @@
+/* Product audit pass: readable controls, honest analysis states and denser studios. */
+#app .studio-mini small,
+#app .studio-entry small,
+#app .studio-entry em,
+#app .quota-card small,
+#app .studio-hair-card small,
+#app .studio-badge,
+#app .cut-meta span,
+#app .color-example-list span,
+#app .coming-pill,
+#app .coming-copy p,
+#app .coming-list p,
+#app .coming-inline p,
+#app .coming-inline > span { font-size: 12px; line-height: 1.45; }
+
+.analysis-choice { display: grid; gap: 10px; margin: 15px 0; }
+.analysis-choice .secondary { margin-top: 0 !important; }
+.analysis-honesty { display: flex; gap: 10px; align-items: flex-start; padding: 12px 13px; margin: 14px 0; border: 1px solid #a987704d; border-radius: 16px; background: #d7a47d0b; }
+.analysis-honesty .icon { width: 20px; height: 20px; flex: none; color: var(--peach); }
+.analysis-honesty p { margin: 0; color: #d7c5ba; font-size: 13px; line-height: 1.55; }
+
+.studio-hair-card .hair-reference { width: 100%; height: 151px; object-fit: cover; object-position: center 28%; display: block; background: #0e0d10; }
+.studio-hair-card .match-reason { color: #e8b995; font-size: 12px; margin-top: 6px; }
+.hair-filters { margin: 12px 0 17px; }
+.hair-filters > small { display: block; color: #cab5a7; font-size: 13px; margin-bottom: 8px; }
+.hair-draft { margin: 10px 0 16px; border-color: #d09a7366 !important; }
+.hair-color-list strong { font-size: 13px; }
+
+.skin-plan { margin: 14px 0; }
+.skin-plan-column { padding: 14px; margin: 10px 0; border: 1px solid #ffffff16; border-radius: 18px; background: #fff04; }
+.skin-plan-column h3 { font-size: 18px; margin-bottom: 9px; }
+.skin-plan-column ol { margin: 0; padding-left: 22px; color: #d7c7bc; }
+.skin-plan-column li { padding: 5px 0; font-size: 14px; line-height: 1.5; }
+.routine-studio-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 13px; margin: 9px 0; border: 1px solid #ffffff16; border-radius: 18px; background: #fff04; }
+.routine-studio-row strong, .routine-studio-row small { display: block; }
+.routine-studio-row strong { font-size: 14px; line-height: 1.4; }
+.routine-studio-row small { margin-top: 4px; color: #c9b6aa; font-size: 12px; line-height: 1.4; }
+.routine-studio-row .text-button { width: auto !important; white-space: nowrap; }
+
+.result-warning { border-color: #d3a06a70 !important; background: linear-gradient(145deg,#503a2780,#17151b) !important; }
+.result-warning .icon { color: #ffd0a4; width: 30px; height: 30px; }
+.preview-banner { padding: 13px 14px; margin-bottom: 14px; border: 1px solid #a9887366; border-radius: 17px; background: #b47e5620; }
+.preview-banner strong, .preview-banner small { display: block; }
+.preview-banner small { color: #ccb8aa; margin-top: 5px; font-size: 12px; line-height: 1.45; }
+.season-axis { display: grid; grid-template-columns: 98px 1fr; gap: 8px 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid #ffffff12; }
+.season-axis:last-child { border-bottom: 0; }
+.season-axis small { color: #c8ad9b; font-size: 12px; }
+.season-axis strong { font-size: 13px; font-weight: 500; }
+.season-saved-card .saved-season-band { margin-bottom: 12px; }
+
+.coming-interest { padding: 13px; margin: 14px 0; border-radius: 16px; border: 1px solid #ffffff15; background: #fff04; }
+.coming-interest p { font-size: 13px; line-height: 1.5; color: #ccb9ad; }
+.quota-lock { text-align: center; }
+.quota-lock .quota-number { display: block; margin: 7px auto; }
+
+/* The color flow previously inherited several 8–10 px labels. All actionable
+   labels now stay readable on the fixed 393 px canvas. */
+#app .season-match small,
+#app .season-traits span,
+#app .season-alt-row small,
+#app .season-color-grid span,
+#app .family-top small,
+#app .season-family-card em,
+#app .family-variants,
+#app .family-detail p,
+#app .family-season-card small,
+#app .family-season-card em,
+#app .color-swap small,
+#app .color-swap strong,
+#app .color-swap > p,
+#app .hair-color-list span,
+#app .future-context small,
+#app .future-context p,
+#app .future-demo::after,
+#app .makeup-demo strong,
+#app .makeup-demo small,
+#app .wardrobe-demo strong,
+#app .wardrobe-demo small,
+#app .tutorial-demo strong,
+#app .tutorial-demo small,
+#app .coming-card p,
+#app .coming-card .card-type,
+#app .bottom-nav button { font-size: 12px; line-height: 1.35; }
+#app .season-match strong,
+#app .season-alt-row strong,
+#app .family-season-card strong,
+#app .color-check-result small,
+#app .check-alternative span,
+#app .check-alternative strong { font-size: 13px; }
+#app .coming-card h3 { font-size: 15px; }
+
+@media (max-width: 620px) {
+  #app .studio-hair-card .hair-reference { height: 145px; }
+}
