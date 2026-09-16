@@ -131,14 +131,14 @@ V['PRF-07']=()=>{
   const count=Object.keys(memoryPhotos).length;
   return lgPage(lgTitle('Photos et données')+
     lgCard(profileActionRow('Exporter mes données','Fichier JSON, sans les images','profile-export','bars')+
-      profileActionRow('Supprimer mes photos',count?count+' photo'+(count>1?'s':'')+' importée'+(count>1?'s':'')+' · Analyses conservées':'Aucune photo importée en mémoire','profile-remove-photos','image',{},!count)+
-      profileActionRow('Tout supprimer','Données locales et profil','profile-delete-open','shield'),'ux-profile-action-list')+
-    A('Où sont conservées mes données ?','profile-data-details',{},'text-button ux-profile-details')+
+      profileActionRow('Supprimer mes photos',count?count+' photo'+(count>1?'s':'')+' ajoutée'+(count>1?'s':'')+' · Analyses conservées':'Aucune photo ajoutée','profile-remove-photos','image',{},!count)+
+      profileActionRow('Tout supprimer','Données et profil','profile-delete-open','shield'),'ux-profile-action-list')+
+    A('Comprendre la gestion de mes données','profile-data-details',{},'text-button ux-profile-details')+
     B('Informations et confidentialité','PRF-11','text-button ux-profile-details',{document:'Données'}),'ux-profile-screen ux-profile-data-screen');
 };
 V['PRF-08']=()=>V['PRF-07']();
 V['PRF-09']=()=>lgPage(lgTitle('Tout supprimer','Cette action est irréversible.')+
-  lgCard(`<h2>${esc(M.profile.connected&&M.profile.email?M.profile.email:M.profile.name||'Sans compte')}</h2><p>Efface vos photos, analyses, essais, routines et autres données de ce navigateur. Vous serez déconnecté.</p><p>Cette suppression locale ne résilie pas votre abonnement.</p>`,'ux-profile-delete-summary')+
+  lgCard(`<h2>${esc(M.profile.connected&&M.profile.email?M.profile.email:M.profile.name||'Sans compte')}</h2><p>Efface vos photos, analyses, essais, routines et autres données Beautify. Vous serez déconnecté.</p><p>Cette suppression ne résilie pas votre abonnement.</p>`,'ux-profile-delete-summary')+
   A('Exporter avant de supprimer','profile-export',{},'secondary')+
   form('delete-account',field('confirmation','Écrivez SUPPRIMER pour confirmer','','text',true),'Supprimer définitivement')+
   B('Annuler','PRF-07','text-button ux-profile-details'),'ux-profile-screen ux-profile-delete');
@@ -176,7 +176,7 @@ Object.assign(ACTIONS,{
 });
 const PROFILE_DOCUMENT_COPY={
   'À propos':'Beautify by UZMEK réunit vos analyses cheveux, couleurs et peau, vos essais coiffure et vos routines. Le maquillage, la garde-robe et les tutoriels sont à venir.',
-  Données:'Votre profil, vos textes, vos produits et vos routines sont conservés dans ce navigateur sur cet appareil, si son stockage est disponible. Les photos importées restent en mémoire de la page et disparaissent au rechargement.<br><br>La recherche de produits transmet le nom recherché ou le code-barres à Open Beauty Facts. Les photos du scanner sont lues sur votre appareil.<br><br>Vous pouvez exporter vos données ou les supprimer depuis Photos et données. Les images ne sont pas incluses dans l’export.',
+  Données:'Votre profil, vos analyses, vos produits et vos routines sont réunis dans Beautify. Avec un compte, ils sont synchronisés pour être retrouvés sur vos appareils.<br><br>La recherche de produits transmet le nom recherché ou le code-barres à Open Beauty Facts. Les photos du scanner servent uniquement à identifier le produit demandé.<br><br>Vous pouvez exporter ou supprimer vos données depuis Photos et données. Les images ne sont pas incluses dans l’export.',
   Abonnement:'Consultez votre statut et vos essais disponibles depuis Mon accès Beautify. Cet écran permet aussi d’accéder à la gestion de votre abonnement et de restaurer un accès existant.<br><br>Une activation en attente ou non confirmée ne donne pas accès à Beautify Plus. Supprimer les données locales ne résilie pas un abonnement.',
   Crédits:'Les visuels proviennent des maquettes fournies et de portraits éditoriaux générés avec IA. Les textes de parcours s’appuient sur Beautify — Parcours et contenus, version 0.1.<br><br>Catalogue <a href="https://world.openbeautyfacts.org" target="_blank" rel="noopener noreferrer">Open Beauty Facts</a>, données <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL</a>, photos <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA</a>.'
 };
@@ -200,7 +200,7 @@ Object.assign(ACTIONS,{
   'profile-export':()=>{M.dataOperation={type:'Exporter',categories:['Profil','Préférences','Rapports','Essais','Suivi','Enregistrés','Routines']};ACTIONS['execute-data']();toast('Export JSON préparé. Images non incluses.');},
   'profile-remove-photos':()=>{if(!Object.keys(memoryPhotos).length)return;M.dataOperation={type:'Retirer',categories:['Photos']};confirmAction('Supprimer les photos importées ?','Toutes les photos importées en mémoire seront supprimées. Les textes de vos analyses, vos essais enregistrés et votre suivi seront conservés. Cette action ne peut pas être annulée.','execute-data');},
   'profile-delete-open':()=>go('PRF-09'),
-  'profile-data-details':()=>profileHelpSheet('Vos données, sur cet appareil','<div class="ux-help-facts"><div><strong>Textes, analyses et routines</strong><p>Sauvegardés dans ce navigateur, si son stockage est disponible. Aucune synchronisation réelle.</p></div><div><strong>Photos importées</strong><p>En mémoire de la page uniquement. Elles disparaissent au rechargement. Les supprimer conserve les textes de vos analyses.</p></div><div><strong>Votre export</strong><p>Profil, préférences, analyses, essais, suivi, éléments enregistrés, routines, produits et rappels. Les images et demandes de contact ne sont pas incluses.</p></div></div>'+B('Informations et confidentialité','PRF-11','secondary',{document:'Données'})),
+  'profile-data-details':()=>profileHelpSheet('Gestion de vos données','<div class="ux-help-facts"><div><strong>Profil, analyses et routines</strong><p>Ils restent disponibles dans Beautify. Activez la synchronisation pour les retrouver sur vos appareils.</p></div><div><strong>Photos ajoutées</strong><p>Vous pouvez les supprimer séparément tout en conservant les conclusions écrites de vos analyses.</p></div><div><strong>Votre export</strong><p>Il réunit profil, préférences, analyses, essais, suivi, éléments enregistrés, routines, produits et rappels. Les images et demandes de contact ne sont pas incluses.</p></div></div>'+B('Informations et confidentialité','PRF-11','secondary',{document:'Données'})),
   'profile-account-details':()=>profileHelpSheet('À propos du compte','<div class="ux-help-facts"><div><strong>Compte facultatif</strong><p>Vous pouvez utiliser Beautify sans connexion. Vos données restent sur cet appareil.</p></div><div><strong>Modifier votre email</strong><p>Une vérification est demandée pour confirmer la nouvelle adresse.</p></div></div>'),
   'profile-open-analyses':()=>{M.historyDomain='Tous';go('ANA-12');},
   'profile-open-routine':()=>ACTIONS['skin-open-routine']({moment:'Matin'}),

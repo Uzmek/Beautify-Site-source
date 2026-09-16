@@ -1,0 +1,78 @@
+@font-face { font-family:ProfileDisplay; src:url('/assets/fonts/dm-serif-display.ttf') format('truetype'); font-weight:400; font-display:swap; }
+@font-face { font-family:ProfileText; src:url('/assets/fonts/roboto-400.ttf') format('truetype'); font-weight:400; font-display:swap; }
+@font-face { font-family:ProfileText; src:url('/assets/fonts/roboto-700.ttf') format('truetype'); font-weight:700; font-display:swap; }
+
+/* Reference coordinates: 852 × 1846. The shared navigation stays unchanged. */
+#phone-surface #app:has(.pf-page) { container-type:inline-size; background:#fae6df url('/assets/profile-reference/background.png') center top/100% auto no-repeat; }
+#phone-surface #app:has(.pf-page)>.statusbar { height:13.7324cqw; min-height:13.7324cqw; padding:3.4cqw 8cqw 2cqw 12.9cqw; color:#090909; font:700 4.46cqw/1 ProfileText,sans-serif; align-items:center; }
+#phone-surface #app:has(.pf-page)>.statusbar .island { display:block; position:absolute; transform:none; width:30.52cqw; height:8.8cqw; top:2.7cqw; left:34.62cqw; border-radius:8cqw; background:#000; }
+#phone-surface #app:has(.pf-page)>.statusbar .island:after { content:''; position:absolute; right:3.6cqw; top:2.4cqw; width:4cqw; height:4cqw; border-radius:50%; background:radial-gradient(circle at 45% 40%,#263b79 0 9%,#111b36 15% 28%,#08090e 42% 65%,#13141a 72%); }
+#phone-surface #app:has(.pf-page)>.statusbar .status-icons { gap:1.8cqw; }
+#phone-surface #app:has(.pf-page)>.statusbar .icon { color:#090909; width:4.5cqw; height:4.2cqw; }
+#phone-surface #app:has(.pf-page)>.statusbar .icon:last-child { width:6.5cqw; }
+#phone-surface #app>.mock-screen:has(>.pf-page) { padding:0!important; container-type:normal; overflow-x:hidden; overflow-y:auto; max-width:none; }
+#phone-surface #app>.mock-screen[data-route="PRF-01"]>.pf-page { --pu:calc(100cqw / 852); display:flex; flex-direction:column; gap:0; height:auto; min-height:100%; padding:0 calc(40 * var(--pu)) calc(12 * var(--pu)); font-family:ProfileText,sans-serif; color:#1a0b07; }
+#phone-surface #app .pf-heading { flex:none; height:calc(259 * var(--pu)); padding:calc(73 * var(--pu)) calc(24 * var(--pu)) 0; margin:0; text-align:left; }
+#phone-surface #app .pf-heading h1 { margin:0; font:400 calc(99 * var(--pu))/1.047 ProfileDisplay,Georgia,serif; letter-spacing:-.035em; color:#301b13; text-wrap:nowrap; }
+#phone-surface #app .pf-heading p { margin:calc(10 * var(--pu)) 0 0; color:#60483d; font:400 calc(35.2 * var(--pu))/1.2 ProfileText,sans-serif; letter-spacing:-.025em; white-space:nowrap; }
+#phone-surface #app .pf-card { position:relative; flex:none; margin:0; padding:0; width:100%; min-width:0; border:calc(5 * var(--pu)) solid #fff9f5; border-radius:calc(60 * var(--pu)); background:linear-gradient(120deg,#ffffff5c,#fffaf221 57%,#fff4ee2e); box-shadow:inset 0 0 calc(30 * var(--pu)) #fff7,0 calc(22 * var(--pu)) calc(36 * var(--pu)) calc(-10 * var(--pu)) #b7806740; text-align:left; color:inherit; font-family:inherit; isolation:isolate; }
+#phone-surface #app .pf-card:before { content:''; position:absolute; z-index:-1; inset:calc(7 * var(--pu)); border:calc(2 * var(--pu)) solid #fff9; border-radius:calc(49 * var(--pu)); pointer-events:none; }
+#phone-surface #app .pf-account { height:calc(220 * var(--pu)); margin-bottom:calc(26 * var(--pu)); display:flex; align-items:center; }
+#phone-surface #app .pf-medallion { position:absolute; width:calc(188 * var(--pu)); height:calc(188 * var(--pu)); left:calc(15 * var(--pu)); top:50%; transform:translateY(-50%); object-fit:contain; pointer-events:none; }
+#phone-surface #app .pf-copy { display:flex; flex-direction:column; align-items:flex-start; min-width:0; margin-left:calc(213 * var(--pu)); margin-right:calc(103 * var(--pu)); }
+#phone-surface #app .pf-copy strong { font:700 calc(44 * var(--pu))/1.12 ProfileText,sans-serif; letter-spacing:-.015em; color:#160906; text-wrap:nowrap; }
+#phone-surface #app .pf-account-badges { display:flex; gap:calc(12 * var(--pu)); margin-top:calc(20 * var(--pu)); max-width:100%; }
+#phone-surface #app .pf-badge { height:calc(63 * var(--pu)); padding:0 calc(22 * var(--pu)); display:flex; align-items:center; gap:calc(15 * var(--pu)); min-width:0; border:calc(2.5 * var(--pu)) solid #fffc; border-radius:calc(40 * var(--pu)); background:linear-gradient(130deg,#fff6,#ffefe926); box-shadow:0 calc(8 * var(--pu)) calc(12 * var(--pu)) #ba806815; color:#664c40; font-size:calc(26 * var(--pu)); white-space:nowrap; }
+#phone-surface #app .pf-badge:first-child { max-width:calc(190 * var(--pu)); }
+#phone-surface #app .pf-badge>span { overflow:hidden; text-overflow:ellipsis; }
+#phone-surface #app .pf-badge .icon { flex:none; width:calc(31 * var(--pu)); height:calc(32 * var(--pu)); }
+#phone-surface #app .pf-arrow { position:absolute; right:calc(28 * var(--pu)); top:50%; transform:translateY(-50%); display:grid; place-items:center; width:calc(80 * var(--pu)); height:calc(80 * var(--pu)); border:calc(3 * var(--pu)) solid #fff9; border-radius:50%; color:#653c29; background:linear-gradient(145deg,#fff5,#fff0); box-shadow:inset 0 0 calc(14 * var(--pu)) #fff5; }
+#phone-surface #app .pf-arrow .icon { width:calc(55 * var(--pu)); height:calc(55 * var(--pu)); stroke-width:2.1; }
+#phone-surface #app .pf-plus { min-height:calc(379 * var(--pu)); margin-bottom:calc(20 * var(--pu)); padding:0 calc(26 * var(--pu)) calc(26 * var(--pu)); }
+#phone-surface #app .pf-plus-summary { position:relative; display:flex; align-items:center; width:100%; min-height:calc(230 * var(--pu)); margin:0; padding:0; border:0; border-radius:calc(42 * var(--pu)); background:none; box-shadow:none; color:inherit; text-align:left; }
+#phone-surface #app .pf-plus-summary .pf-medallion { width:calc(212 * var(--pu)); height:calc(212 * var(--pu)); left:calc(-7 * var(--pu)); }
+#phone-surface #app .pf-plus-summary .pf-copy { margin-left:calc(216 * var(--pu)); }
+#phone-surface #app .pf-plus-summary .pf-arrow { right:calc(5 * var(--pu)); }
+#phone-surface #app .pf-status { display:inline-flex; align-items:center; gap:calc(16 * var(--pu)); min-height:calc(69 * var(--pu)); max-width:100%; padding:calc(9 * var(--pu)) calc(23 * var(--pu)); margin-top:calc(19 * var(--pu)); border:calc(2 * var(--pu)) solid #fffb; border-radius:calc(44 * var(--pu)); background:#fff5; color:#684733; font:400 calc(29 * var(--pu))/1.15 ProfileText,sans-serif; }
+#phone-surface #app .pf-status.is-active { color:#12531e; background:linear-gradient(105deg,#d3f4cfde,#efffe8b0); font-size:calc(34 * var(--pu)); font-weight:700; padding-left:calc(18 * var(--pu)); padding-right:calc(29 * var(--pu)); box-shadow:0 calc(10 * var(--pu)) calc(25 * var(--pu)) #bdce8a33; }
+#phone-surface #app .pf-check { display:grid; place-items:center; flex:none; width:calc(47 * var(--pu)); height:calc(47 * var(--pu)); border-radius:50%; border:calc(2 * var(--pu)) solid #e9ffe1; background:radial-gradient(circle at 24% 17%,#a3df92,#348e43 60%,#246e38); color:#fff; box-shadow:inset 0 0 calc(6 * var(--pu)) #fff9; }
+#phone-surface #app .pf-check .icon { width:calc(31 * var(--pu)); height:calc(31 * var(--pu)); stroke-width:3; }
+#phone-surface #app .pf-manage { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:max(44px,calc(112 * var(--pu))); padding:calc(15 * var(--pu)) calc(29 * var(--pu)); margin:0; border:calc(3.5 * var(--pu)) solid #fff; border-radius:calc(62 * var(--pu)); background:linear-gradient(125deg,#fff7,#ffe5d94a 65%,#fff5); box-shadow:inset 0 0 calc(20 * var(--pu)) #fffc,0 calc(7 * var(--pu)) calc(9 * var(--pu)) #a5634330; color:#4a281b; font:700 calc(35 * var(--pu))/1.25 ProfileText,sans-serif; letter-spacing:-.025em; }
+#phone-surface #app .pf-manage>.icon:first-child { width:calc(72 * var(--pu)); height:calc(72 * var(--pu)); flex:none; stroke-width:1.5; }
+#phone-surface #app .pf-manage>.icon:last-child { width:calc(43 * var(--pu)); height:calc(43 * var(--pu)); flex:none; }
+#phone-surface #app .pf-manage>span { padding-inline:calc(15 * var(--pu)); }
+#phone-surface #app .pf-row { height:calc(209 * var(--pu)); display:flex; align-items:center; margin-bottom:calc(18 * var(--pu)); }
+#phone-surface #app .pf-row .pf-medallion { width:calc(159 * var(--pu)); height:calc(159 * var(--pu)); left:calc(25 * var(--pu)); }
+#phone-surface #app .pf-row .pf-copy strong { font-size:calc(39 * var(--pu)); letter-spacing:-.015em; }
+#phone-surface #app .pf-subtitle { margin-top:calc(10 * var(--pu)); font:400 calc(33 * var(--pu))/1.19 ProfileText,sans-serif; letter-spacing:-.02em; color:#664c40; }
+#phone-surface #app .pf-page>.pf-row:last-of-type { height:calc(206 * var(--pu)); margin-bottom:0; }
+#phone-surface #app .pf-page>.ux-profile-documents { flex:none; display:flex; justify-content:space-between; align-items:center; gap:0; width:100%; margin:calc(29 * var(--pu)) 0 0; padding:0 calc(25 * var(--pu)); border:0; }
+#phone-surface #app .pf-page>.ux-profile-documents button { position:relative; width:auto; min-width:0; min-height:44px; margin:0; padding:0 calc(24 * var(--pu)); border:0; border-radius:0; background:none; box-shadow:none; color:#654d42; font:400 calc(25 * var(--pu))/1.2 ProfileText,sans-serif; white-space:nowrap; letter-spacing:-.02em; }
+#phone-surface #app .pf-page>.ux-profile-documents button+button:before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:1px; height:calc(28 * var(--pu)); background:#c59987; }
+#phone-surface #app .pf-page button:focus-visible { outline:2px solid #8a442b; outline-offset:3px; }
+@media(prefers-reduced-motion:reduce) { #phone-surface #app .pf-page button { transition:none; } }
+
+/* Match the reference’s filled account badges and stronger control strokes. */
+#phone-surface #app .pf-badge .b-icon-solid { fill:#87675a; stroke:#755143; }
+#phone-surface #app .pf-badge [data-icon="lock"] .b-icon-line { stroke:#fff4e9; stroke-width:2; }
+#phone-surface #app .pf-arrow .b-icon-line { stroke-width:1.8; }
+#phone-surface #app .pf-check .b-icon-line { stroke-width:2.6; }
+#phone-surface #app .pf-card { backdrop-filter:blur(calc(5 * var(--pu))); -webkit-backdrop-filter:blur(calc(5 * var(--pu))); }
+#phone-surface #app:has(.pf-page)>.statusbar .b-icon-solid { fill:#090909; stroke:#090909; }
+#phone-surface #app:has(.pf-page)>.statusbar .b-icon-line { stroke-width:2.5; }
+#phone-surface #app .pf-manage { display:grid; grid-template-columns:calc(72 * var(--pu)) minmax(0,1fr) calc(43 * var(--pu)); column-gap:calc(64 * var(--pu)); }
+#phone-surface #app .pf-manage>span { padding:0; white-space:nowrap; }
+#phone-surface #app .pf-manage .b-icon-solid { fill:none; }
+#phone-surface #app .pf-badge .pf-lock { width:calc(26 * var(--pu)); color:#785143; }
+#phone-surface #app .pf-manage>span { text-align:left; }
+
+/* The three status pills use real labels and independently rendered artwork. */
+#phone-surface #app .pf-badge { position:relative; isolation:isolate; height:calc(67 * var(--pu)); padding-inline:calc(18 * var(--pu)); gap:calc(12 * var(--pu)); border-color:#fffaf5; background:radial-gradient(ellipse at 20% 6%,#ffffffe0,transparent 57%),linear-gradient(145deg,#fff6 8%,#f7d3c44d 65%,#fff7); box-shadow:inset 0 calc(2 * var(--pu)) calc(6 * var(--pu)) #fff,inset 0 calc(-3 * var(--pu)) calc(5 * var(--pu)) #fffc,0 calc(10 * var(--pu)) calc(16 * var(--pu)) calc(-6 * var(--pu)) #b5796045; color:#75452f; }
+#phone-surface #app .pf-badge:first-child { width:calc(176 * var(--pu)); max-width:calc(190 * var(--pu)); flex:none; font-size:calc(28 * var(--pu)); }
+#phone-surface #app .pf-badge:last-child { flex:none; width:calc(236 * var(--pu)); padding-inline:calc(13 * var(--pu)); }
+#phone-surface #app .pf-badge:before,#phone-surface #app .pf-status.is-active:before { content:''; position:absolute; z-index:-1; inset:calc(4 * var(--pu)); border:calc(1.2 * var(--pu)) solid #fff9; border-radius:inherit; pointer-events:none; }
+#phone-surface #app .pf-badge:after { content:''; position:absolute; z-index:-1; inset:calc(2 * var(--pu)); border-radius:inherit; pointer-events:none; background:linear-gradient(167deg,#fff8 0%,#fff0 34%,#fff0 76%,#fff9 100%); }
+#phone-surface #app .pf-badge-art { flex:none; display:block; width:calc(41 * var(--pu)); height:calc(41 * var(--pu)); object-fit:contain; }
+#phone-surface #app .pf-status.is-active { position:relative; isolation:isolate; border:calc(2.7 * var(--pu)) solid #fbfff2; background:radial-gradient(ellipse at 24% 3%,#f4ffe5dd,transparent 62%),linear-gradient(115deg,#d4f4bca8,#e8f4d4b5 54%,#f5f6e3ba); box-shadow:inset 0 calc(2 * var(--pu)) calc(6 * var(--pu)) #fff,inset 0 calc(-4 * var(--pu)) calc(7 * var(--pu)) #f6ffeabd,0 calc(12 * var(--pu)) calc(22 * var(--pu)) calc(-7 * var(--pu)) #799b4145; color:#12551e; }
+#phone-surface #app .pf-check { position:relative; border-color:#edffdf; background:radial-gradient(ellipse at 27% 18%,#ddffc0 0%,#b1ee96 10%,#7dce68 25%,#329c40 58%,#348f35 77%,#90d178 100%); box-shadow:inset 0 0 calc(6 * var(--pu)) #e4ffdccc,inset calc(-2 * var(--pu)) calc(-3 * var(--pu)) calc(7 * var(--pu)) #0b702348,0 0 calc(7 * var(--pu)) #d0f7a866; }
+#phone-surface #app .pf-check:after { content:''; position:absolute; width:32%; height:15%; left:13%; top:13%; border-radius:50%; background:#fff9; transform:rotate(-38deg); filter:blur(calc(2 * var(--pu))); pointer-events:none; }

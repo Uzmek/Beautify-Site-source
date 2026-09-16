@@ -27,7 +27,7 @@ r.run(`
   assert.doesNotMatch(html,/coiffure IA|>V2A<|>V2B</);
   assert.match(html,/aria-pressed="true"[^>]*>V2</);
   assert.doesNotMatch(html,/pv2-icon-disc/); // One glass disc per illustration, not a second opaque overlay.
-  assert.match(html,/class="pv2-meta"/);
+  assert.doesNotMatch(html,/class="pv2-meta"|aucun débit réel|maquette/i);
   assert.match(pv2Icon('palette'),/viewBox="0 0 24 24"/);
   assert.match(pv2Icon('palette'),/aria-hidden="true"/);
   const buttons=['yearly','monthly'].map(value=>({dataset:{value},setAttribute(k,v){this[k]=v;}}));
