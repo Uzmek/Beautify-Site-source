@@ -42,7 +42,7 @@ function profileSyncCard(){
     const detail=M.profile.email||'Connexion avec '+provider;
     return lgCard(`<div class="ux-sync-heading">${lgBubble('check')}<div><span class="eyebrow">Sauvegarde et synchronisation</span><h2>Données synchronisées</h2></div></div><div class="ux-sync-account"><span>${esc(detail)}</span><small>Compte ${esc(provider)}</small></div>${A('Se déconnecter','logout-request',{},'text-button ux-sync-signout')}`,'ux-account-sync-card is-connected');
   }
-  return lgCard(`<div class="ux-sync-heading">${lgBubble('shield')}<div><span class="eyebrow">Sauvegarde et synchronisation</span><h2>Retrouvez tout, partout.</h2></div></div><p class="ux-sync-copy">Créez un compte pour sauvegarder vos analyses, vos essais et vos routines sur vos appareils.</p><div class="ux-sync-actions">${B('Créer un compte','ENT-05','primary')}${B('J’ai déjà un compte','ENT-06','secondary')}</div>`,'ux-account-sync-card');
+  return lgCard(`<div class="pi-sync-intro"><img class="pi-shield" src="/assets/profile-information/shield.png" width="1024" height="1024" alt="" aria-hidden="true"><div class="pi-sync-copy"><span class="eyebrow">Sauvegarde</span><h2>Retrouvez tout, partout.</h2><p class="ux-sync-copy">Analyses, essais et routines synchronisés sur tous vos appareils.</p></div></div><div class="ux-sync-actions">${B('Créer un compte','ENT-05','primary')}${B('J’ai déjà un compte','ENT-06','secondary')}</div>`,'ux-account-sync-card pi-card');
 }
 
 // PRF-01 keeps the supplied reference copy, explicitly confirmed by the user.
@@ -52,9 +52,10 @@ V['PRF-02']=()=>{
   const profile=M.profileEdit||M.profile;
   const photo=profile.avatar?`<div class="ux-profile-photo-row">${imageFor(profile.avatar,'avatar','Ma photo de profil')}<div>${A(icon('image')+' Changer','file-pick',{purpose:'profile'},'secondary ux-profile-photo-action')}${A('Retirer','avatar-remove-request',{},'text-button')}</div></div>`:
     A(icon('image')+' Ajouter une photo','file-pick',{purpose:'profile'},'secondary ux-profile-photo-action');
-  return lgPage(lgTitle('Mon profil','Vos informations personnelles.')+
-    lgCard(form('profile',field('name','Nom d’usage (facultatif)',profile.name)+photo,'Enregistrer'),'ux-profile-identity-card')+
-    profileSyncCard(),'ux-profile-screen ux-profile-account-screen');
+  const nameField=`<label class="field pi-name"><span class="pi-name-label">Nom d’usage <span class="pi-optional">Facultatif</span></span><input name="name" type="text" value="${esc(profile.name||'')}" maxlength="160" autocomplete="nickname" placeholder="Entrez votre nom"></label>`;
+  return lgPage(`<header class="pi-heading"><h1 tabindex="-1">Mon compte</h1><p>Profil et sauvegarde.</p></header>`+
+    lgCard(form('profile',nameField+photo,'Enregistrer'),'ux-profile-identity-card pi-card')+
+    profileSyncCard(),'ux-profile-screen ux-profile-account-screen pi-page');
 };
 
 V['ENT-05']=()=>lgPage(lgTitle('Créer un compte','Sauvegardez votre espace beauté et retrouvez-le partout.')+

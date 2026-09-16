@@ -1,0 +1,70 @@
+/* PRF-02 — reference canvas 852 × 1847, native form and existing route actions. */
+#phone-surface #app:has(.pi-page) { container-type:inline-size; background:#fae6df url('/assets/profile-reference/background.png') center top/100% auto no-repeat; }
+#phone-surface #app:has(.pi-page)>.statusbar { height:13.7324cqw; min-height:13.7324cqw; padding:3.4cqw 8cqw 2cqw 12.9cqw; color:#090909; font:700 4.46cqw/1 ProfileText,sans-serif; align-items:center; }
+#phone-surface #app:has(.pi-page)>.statusbar .island { display:block; position:absolute; transform:none; width:30.52cqw; height:8.8cqw; top:2.7cqw; left:34.62cqw; border-radius:8cqw; background:#000; }
+#phone-surface #app:has(.pi-page)>.statusbar .island:after { content:''; position:absolute; right:3.6cqw; top:2.4cqw; width:4cqw; height:4cqw; border-radius:50%; background:radial-gradient(circle at 45% 40%,#263b79 0 9%,#111b36 15% 28%,#08090e 42% 65%,#13141a 72%); }
+#phone-surface #app:has(.pi-page)>.statusbar .status-icons { gap:1.8cqw; }
+#phone-surface #app:has(.pi-page)>.statusbar .icon { color:#090909; width:5.3cqw; height:5.3cqw; }
+#phone-surface #app:has(.pi-page)>.statusbar .icon:last-child { width:7.2cqw; height:6cqw; }
+#phone-surface #app:has(.pi-page)>.statusbar .b-icon-solid { fill:#090909; stroke:#090909; }
+#phone-surface #app:has(.pi-page)>.statusbar .b-icon-line { stroke-width:2.5; }
+#phone-surface #app>.mock-screen[data-route="PRF-02"] { padding:0!important; container-type:normal; overflow-x:hidden; overflow-y:auto; max-width:none; }
+#phone-surface #app>.mock-screen[data-route="PRF-02"]>.pi-page:has(>.lg-page-controls) { --iu:calc(100cqw / 852); display:flex; flex-direction:column; position:relative; gap:0; min-height:100%; padding:0 calc(39 * var(--iu)) calc(22 * var(--iu)); font-family:ProfileText,Arial,sans-serif; color:#3d2015; }
+#phone-surface #app>.mock-screen[data-route="PRF-02"]>.pi-page>.lg-page-controls { position:absolute; top:calc(27 * var(--iu)); left:calc(51 * var(--iu)); width:calc(100 * var(--iu)); height:calc(100 * var(--iu)); min-height:0; margin:0; padding:0; }
+#phone-surface #app .pi-page>.lg-page-controls .flow-exit { width:100%; height:100%; min-height:44px; padding:0; margin:0; border:0; background:none; box-shadow:none; }
+#phone-surface #app .pi-page>.lg-page-controls .flow-exit>span:last-child { display:none; }
+#phone-surface #app .pi-page>.lg-page-controls .lg-bubble { width:100%; height:100%; border:calc(3 * var(--iu)) solid #fff9f4; color:#3c2418; background:radial-gradient(ellipse at 20% 2%,#fffc,transparent 56%),linear-gradient(135deg,#fff5,#f1c7b94d 70%,#fff9); box-shadow:inset 0 0 calc(10 * var(--iu)) #fffc,0 calc(14 * var(--iu)) calc(25 * var(--iu)) #a16b4e24; }
+#phone-surface #app .pi-page>.lg-page-controls .icon { width:calc(40 * var(--iu)); height:calc(40 * var(--iu)); stroke-width:1.8; }
+#phone-surface #app .pi-heading { flex:none; position:relative; height:calc(325 * var(--iu)); padding:calc(149 * var(--iu)) calc(18 * var(--iu)) 0; margin:0; }
+#phone-surface #app .pi-heading h1 { margin:0; padding:0; color:#341b12; font:400 calc(100 * var(--iu))/1.05 ProfileDisplay,Georgia,serif; letter-spacing:-.035em; text-wrap:nowrap; }
+#phone-surface #app .pi-heading p { margin:calc(3 * var(--iu)) 0 0; color:#60483d; font:400 calc(35 * var(--iu))/1.22 ProfileText,Arial,sans-serif; letter-spacing:-.02em; }
+#phone-surface #app .pi-page .pi-card { flex:none; position:relative; width:100%; min-width:0; margin:0; border:calc(5 * var(--iu)) solid #fffaf7; border-radius:calc(60 * var(--iu)); background:linear-gradient(120deg,#ffffff47,#fffaf20f 57%,#fff4ee30); box-shadow:inset 0 0 calc(30 * var(--iu)) #fff6,0 calc(22 * var(--iu)) calc(36 * var(--iu)) calc(-10 * var(--iu)) #b7806724; backdrop-filter:blur(calc(5 * var(--iu))); -webkit-backdrop-filter:blur(calc(5 * var(--iu))); }
+#phone-surface #app .pi-page .pi-card:before { inset:calc(7 * var(--iu)); border:calc(2 * var(--iu)) solid #fff9; border-radius:calc(49 * var(--iu)); box-shadow:none; }
+#phone-surface #app .pi-page .ux-profile-identity-card { padding:calc(46 * var(--iu)) calc(38 * var(--iu)) calc(43 * var(--iu)); }
+#phone-surface #app .pi-page .form-stack { display:flex; flex-direction:column; gap:calc(23 * var(--iu)); margin:0; }
+#phone-surface #app .pi-page .pi-name { display:flex; flex-direction:column; gap:calc(23 * var(--iu)); margin:0; padding:0; }
+#phone-surface #app .pi-page .pi-name-label { display:flex; align-items:center; gap:calc(25 * var(--iu)); min-height:calc(42 * var(--iu)); margin:0; padding-left:calc(16 * var(--iu)); color:#3e2115; font:400 calc(35 * var(--iu))/1.2 ProfileText,Arial,sans-serif; letter-spacing:-.025em; }
+#phone-surface #app .pi-page .pi-optional { display:inline-flex; align-items:center; justify-content:center; height:calc(43 * var(--iu)); padding:0 calc(24 * var(--iu)); border:calc(1.8 * var(--iu)) solid #fff9; border-radius:calc(25 * var(--iu)); background:linear-gradient(130deg,#fff5,#edbba954); color:#7a503c; font:400 calc(23 * var(--iu))/1 ProfileText,Arial,sans-serif; letter-spacing:0; }
+#phone-surface #app .pi-page .pi-name input { display:block; width:100%; height:calc(100 * var(--iu)); min-height:44px; padding:0 calc(40 * var(--iu)); margin:0; border:calc(3 * var(--iu)) solid #fff; border-radius:calc(45 * var(--iu)); background:#fff5; box-shadow:none; color:#542d1d; font:400 max(16px,calc(35 * var(--iu)))/1.2 ProfileText,Arial,sans-serif; }
+#phone-surface #app .pi-page .pi-name input::placeholder { color:#b79687; opacity:.9; font-style:italic; }
+#phone-surface #app .pi-page :is(.primary,.secondary) { display:flex; align-items:center; justify-content:center; flex:none; width:100%; min-width:0; min-height:44px; margin:0; padding:0 calc(25 * var(--iu)); border:calc(3.5 * var(--iu)) solid #fff; border-radius:calc(75 * var(--iu)); color:#693320; font:400 calc(35 * var(--iu))/1.2 ProfileText,Arial,sans-serif; letter-spacing:-.015em; background:radial-gradient(ellipse at 18% 0%,#ffffffe0,transparent 59%),linear-gradient(148deg,#fff5 3%,#edb9a782 70%,#fff9); box-shadow:inset 0 calc(2 * var(--iu)) calc(12 * var(--iu)) #fffe,inset 0 calc(-3 * var(--iu)) calc(9 * var(--iu)) #fffc,0 calc(15 * var(--iu)) calc(25 * var(--iu)) calc(-6 * var(--iu)) #bc7c6040; }
+#phone-surface #app .pi-page .ux-profile-photo-action { height:calc(128 * var(--iu)); gap:calc(38 * var(--iu)); color:#552817; background:radial-gradient(ellipse at 18% 0%,#fffffff0,transparent 62%),linear-gradient(135deg,#fff8,#eab7a875 75%,#fffb); }
+#phone-surface #app .pi-page .ux-profile-photo-action .icon { flex:none; width:calc(58 * var(--iu)); height:calc(62 * var(--iu)); color:#704331; }
+#phone-surface #app .pi-page .ux-profile-photo-action .b-icon-solid { fill:#fff4; }
+#phone-surface #app .pi-page .form-stack>.primary { height:calc(120 * var(--iu)); gap:calc(29 * var(--iu)); font-size:calc(37 * var(--iu)); }
+#phone-surface #app .pi-page .form-stack>.primary .icon { width:calc(42 * var(--iu)); height:calc(42 * var(--iu)); stroke-width:1.8; }
+#phone-surface #app .pi-page .ux-account-sync-card { display:block; margin-top:calc(18 * var(--iu)); padding:calc(43 * var(--iu)) calc(38 * var(--iu)) calc(43 * var(--iu)); }
+#phone-surface #app .pi-page .pi-sync-intro { display:flex; align-items:flex-start; gap:calc(32 * var(--iu)); min-height:calc(215 * var(--iu)); }
+#phone-surface #app .pi-page .pi-shield { flex:none; width:calc(172 * var(--iu)); height:calc(172 * var(--iu)); margin:calc(-9 * var(--iu)) calc(-12 * var(--iu)) calc(-15 * var(--iu)); object-fit:contain; clip-path:ellipse(42.4% 41% at 49.5% 47.8%); }
+#phone-surface #app .pi-page .pi-sync-copy { flex:1; min-width:0; padding-top:calc(12 * var(--iu)); }
+#phone-surface #app .pi-page .pi-sync-copy .eyebrow { display:block; color:#8c6251; font:400 calc(21 * var(--iu))/1.2 ProfileText,Arial,sans-serif; letter-spacing:.11em; }
+#phone-surface #app .pi-page .pi-sync-copy h2 { margin:calc(12 * var(--iu)) 0 0; color:#331a11; font:400 calc(50 * var(--iu))/1.12 ProfileDisplay,Georgia,serif; letter-spacing:-.04em; text-wrap:nowrap; }
+#phone-surface #app .pi-page .ux-sync-copy { margin:calc(17 * var(--iu)) 0 0; color:#6b5043; font:400 calc(27 * var(--iu))/1.3 ProfileText,Arial,sans-serif; letter-spacing:-.015em; }
+#phone-surface #app .pi-page .ux-sync-actions { display:grid; gap:calc(22 * var(--iu)); margin-top:calc(5 * var(--iu)); }
+#phone-surface #app .pi-page .ux-sync-actions>.primary { height:calc(116 * var(--iu)); font-weight:700; font-size:calc(34 * var(--iu)); }
+#phone-surface #app .pi-page .ux-sync-actions>.secondary { height:calc(108 * var(--iu)); }
+#phone-surface #app .pi-page .ux-profile-photo-row { height:calc(128 * var(--iu)); padding:0; }
+#phone-surface #app .pi-page .ux-profile-photo-row .avatar { width:calc(100 * var(--iu)); height:calc(100 * var(--iu)); flex-basis:calc(100 * var(--iu)); }
+#phone-surface #app .pi-page .ux-profile-photo-row .ux-profile-photo-action { height:calc(110 * var(--iu)); gap:calc(12 * var(--iu)); padding:0 calc(12 * var(--iu)); }
+#phone-surface #app .pi-page .ux-profile-photo-row .icon { width:calc(42 * var(--iu)); }
+#phone-surface #app .pi-page .ux-profile-photo-row .text-button { font:400 max(12px,calc(25 * var(--iu)))/1.2 ProfileText,sans-serif; }
+#phone-surface #app .pi-page :is(button,input):focus-visible { outline:2px solid #8a442b; outline-offset:3px; }
+#phone-surface #app .pi-page :is(.pi-name-label,.ux-profile-photo-action,.form-stack>.primary,.ux-sync-actions>.secondary) { -webkit-text-stroke:.12px currentColor; }
+#phone-surface #app .pi-page .ux-profile-photo-action { font-size:calc(36.5 * var(--iu)); padding-right:calc(47 * var(--iu)); }
+#phone-surface #app .pi-page .ux-profile-photo-action .icon { width:calc(69 * var(--iu)); height:calc(72 * var(--iu)); }
+#phone-surface #app .pi-page .form-stack>.primary { font-size:calc(39.5 * var(--iu)); padding-left:calc(38 * var(--iu)); }
+#phone-surface #app .pi-page .form-stack>.primary .icon { width:calc(50 * var(--iu)); height:calc(50 * var(--iu)); }
+#phone-surface #app .pi-page .ux-sync-actions>.primary { font-size:calc(36 * var(--iu)); }
+#phone-surface #app .pi-page .pi-optional { -webkit-text-stroke:0; }
+#phone-surface #app .pi-page .pi-sync-copy { transform:translateX(calc(3 * var(--iu))); }
+#phone-surface #app .pi-page .pi-name input { border-width:max(1.5px,calc(4.4 * var(--iu))); }
+#phone-surface #app .pi-page .ux-profile-photo-action .b-icon-solid { fill:#edc8b86b; stroke:#704331; }
+#phone-surface #app .pi-page .ux-profile-photo-action .b-icon-line { stroke:#704331; }
+#phone-surface #app .pi-page .pi-shield { filter:saturate(.75) brightness(1.04) drop-shadow(0 0 .5px #fff); }
+#phone-surface #app .pi-page .ux-account-sync-card.is-connected { min-height:calc(420 * var(--iu)); }
+#phone-surface #app:has(.pi-page)>.bottom-nav { flex-shrink:0; margin-top:calc(12 * (100cqw / 852)); }
+@media (max-width:350px) {
+  #phone-surface #app>.mock-screen[data-route="PRF-02"]>.pi-page>.lg-page-controls { width:44px; height:44px; }
+  #phone-surface #app .pi-page .pi-sync-copy h2 { white-space:normal; text-wrap:wrap; }
+  #phone-surface #app .pi-page .pi-sync-intro { min-height:0; margin-bottom:16px; }
+}

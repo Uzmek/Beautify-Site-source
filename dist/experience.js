@@ -107,7 +107,7 @@ function profileAccessLabel(){
   return ({free:'Accès découverte',active:'Beautify Plus · Actif',cancelled:'Beautify Plus · Renouvellement désactivé',pending:'Activation en attente',failed:'Activation non confirmée',expired:'Accès expiré'})[M.subscription.status]||'Statut indisponible';
 }
 function profileDocumentLinks(){
-  return `<footer class="ux-profile-documents" aria-label="Informations Beautify">${[['À propos','À propos'],['Confidentialité','Données'],['Conditions','Abonnement'],['Crédits','Crédits']].map(([label,document])=>B(label,'PRF-11','text-button',{document})).join('')}</footer>`;
+  return `<footer class="ux-profile-documents" aria-label="Informations Beautify">${[['À propos','À propos'],['Confidentialité','Données'],['Abonnement','Abonnement'],['Crédits','Crédits']].map(([label,document])=>B(label,'PRF-11','text-button',{document})).join('')}</footer>`;
 }
 const EXPERIENCE_PROFILE_GUARD=canonicalRouteGuard;
 canonicalRouteGuard=id=>EXPERIENCE_PROFILE_GUARD(['PRF-03','PRF-04'].includes(id)?'PRF-01':id==='PRF-08'?'PRF-07':id);
@@ -116,7 +116,7 @@ V['PRF-05']=()=>{
   const settings=M.formDrafts[draftKey('reminders')]||M.reminders;
   return lgPage(lgTitle('Rappel des routines')+
     form('reminders',check('routine','Rappel quotidien',settings.routine)+`<div class="ux-profile-reminder-time"${settings.routine?'':' hidden'}>`+field('routineTime','Heure du rappel',settings.routineTime||M.reminders.routineTime||'08:00','time').replace('<input ','<input '+(settings.routine?'':'disabled '))+'</div>','Enregistrer')+
-    `<p class="ux-small-note">Pour toutes vos routines.</p>`,'ux-profile-screen');
+    `<p class="ux-small-note">Le rappel s’applique à toutes vos routines.</p>`,'ux-profile-screen');
 };
 document.addEventListener('change',event=>{
   if(!event.target.matches('form[data-form="reminders"] input[name="routine"]'))return;
@@ -133,8 +133,7 @@ V['PRF-07']=()=>{
     lgCard(profileActionRow('Exporter mes données','Fichier JSON, sans les images','profile-export','bars')+
       profileActionRow('Supprimer mes photos',count?count+' photo'+(count>1?'s':'')+' ajoutée'+(count>1?'s':'')+' · Analyses conservées':'Aucune photo ajoutée','profile-remove-photos','image',{},!count)+
       profileActionRow('Tout supprimer','Données et profil','profile-delete-open','shield'),'ux-profile-action-list')+
-    A('Comprendre la gestion de mes données','profile-data-details',{},'text-button ux-profile-details')+
-    B('Informations et confidentialité','PRF-11','text-button ux-profile-details',{document:'Données'}),'ux-profile-screen ux-profile-data-screen');
+    B('Comprendre la gestion de mes données','PRF-11','text-button ux-profile-details',{document:'Données'}),'ux-profile-screen ux-profile-data-screen');
 };
 V['PRF-08']=()=>V['PRF-07']();
 V['PRF-09']=()=>lgPage(lgTitle('Tout supprimer','Cette action est irréversible.')+
@@ -143,9 +142,9 @@ V['PRF-09']=()=>lgPage(lgTitle('Tout supprimer','Cette action est irréversible.
   form('delete-account',field('confirmation','Écrivez SUPPRIMER pour confirmer','','text',true),'Supprimer définitivement')+
   B('Annuler','PRF-07','text-button ux-profile-details'),'ux-profile-screen ux-profile-delete');
 const PROFILE_HELP_TOPICS={
-  photo:{title:'Ma photo ne s’importe pas',glyph:'image',text:'Vérifiez que le fichier choisi est bien une image, puis réessayez l’import. Si le problème persiste, décrivez-le dans une demande de contact.',label:'Signaler le problème',action:'profile-contact-open'},
-  analyse:{title:'Mon analyse ne s’affiche pas',glyph:'bars',text:'Si l’analyse a été interrompue, relancez-la depuis le module concerné. Si un résultat enregistré ne s’ouvre plus, signalez le problème.',label:'Signaler le problème',action:'profile-contact-open'},
-  acces:{title:'Mon accès Plus n’est pas reconnu',glyph:'crown',text:'Une activation en attente ne donne pas encore accès à Plus. Si vous aviez déjà un accès, essayez de le restaurer.',label:'Restaurer mon accès',to:'PRE-04'}
+  photo:{title:'Ma photo ne s’importe pas',glyph:'image',steps:['Choisissez une image de moins de 15 Mo.','Vérifiez qu’elle s’ouvre correctement dans votre photothèque.','Revenez à l’écran concerné, puis relancez l’import.'],label:'Nous contacter',action:'profile-contact-open'},
+  analyse:{title:'Mon analyse ne s’affiche pas',glyph:'bars',steps:['Revenez dans Analyses.','Ouvrez le domaine concerné : cheveux, couleurs ou peau.','Relancez l’analyse. Si un résultat enregistré reste inaccessible, contactez-nous.'],label:'Nous contacter',action:'profile-contact-open'},
+  acces:{title:'Mon accès Plus n’est pas reconnu',glyph:'crown',facts:[['Activation en attente','Attendez sa confirmation avant d’utiliser les fonctions Plus.'],['Achat déjà effectué','Restaurez vos achats pour retrouver un accès existant.']],label:'Restaurer mes achats',to:'PRE-04'}
 };
 V['PRF-10']=()=>lgPage(lgTitle('Aide et contact')+
   lgAct('Nous contacter','profile-contact-open',{},'help','ux-help-contact-button')+
@@ -182,9 +181,10 @@ const PROFILE_DOCUMENT_COPY={
 };
 V['PRF-11']=()=>{
   const tab=Object.hasOwn(PROFILE_DOCUMENT_COPY,M.documentTab)?M.documentTab:'À propos';
+  const contact=tab==='Données'||tab==='Abonnement'?`<footer class="ux-profile-document-footer">${B('Nous contacter','PRF-10','secondary')}</footer>`:'';
   return lgPage(lgTitle('Informations')+chips(['À propos','Données','Abonnement','Crédits'],'documentTab',tab)+
     lgCard(`<div class="ux-profile-document-copy"><h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}</div>`+
-      `<footer class="ux-profile-document-footer">${B('Nous contacter','PRF-10','secondary')}</footer>`,'ux-profile-document-card'),'ux-profile-screen ux-profile-documents-screen');
+      contact,'ux-profile-document-card'),'ux-profile-screen ux-profile-documents-screen');
 };
 function profileViewportHeight(){
   const viewport=window.visualViewport;

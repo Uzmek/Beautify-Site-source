@@ -15,6 +15,8 @@ Reference: supplied portrait, 852 × 1846. QA viewport: iPhone 16, 393 × 852 CS
 
 The shared bottom navigation remains unchanged, as requested. The user additionally supplied close-up references for Invité, Sans compte and Actif; the pills were refined with separate copper assets and native glass/green-orb styling. Labels remain HTML. The exact reference wording was explicitly confirmed; PRF-02 retains the separate account/synchronization flow.
 
+All subscription states now share the raised glass pill and orb treatment: copper discovery, amber renewal-off/pending, soft rose unconfirmed activation, and muted copper expired/unknown. Only active remains green. Long labels wrap naturally, including at 320 px; icons are decorative native SVG and the underlying entitlement state is unchanged.
+
 ## Verification
 
 - Side-by-side inspection at 393 × 852 and 200% zoom, followed by spacing/font/contour corrections.

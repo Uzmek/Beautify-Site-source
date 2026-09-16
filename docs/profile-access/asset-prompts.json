@@ -1,0 +1,49 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "reference": "/var/folders/zb/xv0wnsxn0czfvhs2wtljyv380000gn/T/codex-clipboard-1446c73c-74da-4dc3-988e-1f85e11eee44.png",
+  "notes": "All PNGs RGB. Requested transparent background produced visible checkerboard outside icon medallions. Use CSS elliptical clipping around orb boundary. Icon dimensions 1254x1254, background 876x1796.",
+  "assets": [
+    {
+      "name": "crown",
+      "file": "exec-07baa891-ac7a-4b11-8ba6-bea00becf89d.png",
+      "prompt": "Use case: stylized-concept. Asset type: single high-definition isolated 3D glass UI medallion, 1024x1024 or higher square. Input image is a visual STYLE AND SUBJECT reference; recreate the specified medallion alone faithfully, not the screenshot. Match exact warm pale peach glass, copper metal, glossy thin white double rim, soft luminous reflections in supplied screenshot. One perfectly circular translucent peach clear glass orb centered, diameter 94% of image width, uniform 3% margins. Genuine transparent background OUTSIDE the orb, preserve alpha; interior pale peach translucent glass. Crisp high resolution detail, never a blurry screenshot crop. Subject centered and about 60% of orb width. No labels, no UI, no border around canvas, no extra objects or decorative bubbles. Subject: the same dimensional polished copper FIVE-POINT royal crown as the reference hero at top right. Tall center peak, medium outer peaks, small intermediate peaks, round bead tip on each of five points. Wide curved rolled double base band; front bronze gradient, soft luminous copper reflections. Faithfully reproduce crown proportions and style."
+    },
+    {
+      "name": "scissors",
+      "file": "exec-1e834235-e70d-4352-a3e2-6edc9c18492e.png",
+      "prompt": "Use case: stylized-concept. Asset type: single high-definition isolated 3D glass UI medallion, 1024x1024 or higher square. Input image is a visual STYLE AND SUBJECT reference; recreate the specified medallion alone faithfully, not the screenshot. Match exact warm pale peach glass, copper metal, glossy thin white double rim, soft luminous reflections in supplied screenshot. One perfectly circular translucent peach clear glass orb centered, diameter 94% of image width, uniform 3% margins. Genuine transparent background OUTSIDE the orb, preserve alpha; interior pale peach translucent glass. Crisp high resolution detail, never a blurry screenshot crop. Subject centered and about 60% of orb width. No labels, no UI, no border around canvas, no extra objects or decorative bubbles. Subject: the same copper hairdressing scissors as the small Essais coiffure medallion in the supplied image. Two teardrop finger loops at lower left and lower right, crossed slim softly rounded blades rising to upper left and upper right, circular joint at center. Symmetric diagonal crossed shape, extruded bronze copper metallic material. No other symbol."
+    },
+    {
+      "name": "credit",
+      "file": "exec-790d5b2c-cb4b-4977-b1df-f44b15614c78.png",
+      "prompt": "Use case: stylized-concept. Asset type: single high-definition isolated 3D glass UI medallion, 1024x1024 or higher square. Input image is a visual STYLE AND SUBJECT reference; recreate the specified medallion alone faithfully, not the screenshot. Match exact warm pale peach glass, copper metal, glossy thin white double rim, soft luminous reflections in supplied screenshot. One perfectly circular translucent peach clear glass orb centered, diameter 94% of image width, uniform 3% margins. Genuine transparent background OUTSIDE the orb, preserve alpha; interior pale peach translucent glass. Crisp high resolution detail, never a blurry screenshot crop. Subject centered and about 60% of orb width. No labels, no UI, no border around canvas, no extra objects or decorative bubbles. Subject: the same dimensional copper bronze credit card as reference G\u00e9rer mon abonnement medallion. Horizontal rounded rectangle card, slightly dimensional with dark bronze thin rim, glossy peach copper front, broad dark bronze horizontal magnetic stripe near upper third, one tiny dark rounded rectangle near bottom-left containing narrow pale horizontal inset. NO text or numbers."
+    },
+    {
+      "name": "bag",
+      "file": "exec-1b4cdac2-74f7-4afb-9a08-62d35ef7adc9.png",
+      "prompt": "Use case: stylized-concept. Asset type: single high-definition isolated 3D glass UI medallion, 1024x1024 or higher square. Input image is a visual STYLE AND SUBJECT reference; recreate the specified medallion alone faithfully, not the screenshot. Match exact warm pale peach glass, copper metal, glossy thin white double rim, soft luminous reflections in supplied screenshot. One perfectly circular translucent peach clear glass orb centered, diameter 94% of image width, uniform 3% margins. Genuine transparent background OUTSIDE the orb, preserve alpha; interior pale peach translucent glass. Crisp high resolution detail, never a blurry screenshot crop. Subject centered and about 60% of orb width. No labels, no UI, no border around canvas, no extra objects or decorative bubbles. Subject: the same dimensional bronze copper shopping bag as the Restaurer mes achats medallion. One standing trapezoidal shopping bag, wider lower edge, front facing slightly three-quarter so narrow right side is visible, pair of dark rounded arch handles at top, glossy copper face with soft bright reflection left and dark copper right side. No labels, logos, text."
+    },
+    {
+      "name": "information",
+      "file": "exec-05c8ded0-4c13-41bb-bc78-b6d977f641fc.png",
+      "prompt": "Use case: stylized-concept. Asset type: single high-definition isolated 3D glass UI medallion, 1024x1024 or higher square. Input image is a visual STYLE AND SUBJECT reference; recreate the specified medallion alone faithfully, not the screenshot. Match exact warm pale peach glass, copper metal, glossy thin white double rim, soft luminous reflections in supplied screenshot. One perfectly circular translucent peach clear glass orb centered, diameter 94% of image width, uniform 3% margins. Genuine transparent background OUTSIDE the orb, preserve alpha; interior pale peach translucent glass. Crisp high resolution detail, never a blurry screenshot crop. Subject centered and about 60% of orb width. No labels, no UI, no border around canvas, no extra objects or decorative bubbles. Subject: same round bronze information icon in Informations sur l\u2019abonnement medallion. One copper metallic circular coin centered in glass orb, thin dark bronze circumference, warm copper gradient face, and centered dark brown lowercase serif letter i with round dot. The i is the only mark and part of the icon. No other text."
+    },
+    {
+      "name": "background",
+      "file": "exec-7ed74f9c-58e3-439e-b913-965b762c4473.png",
+      "prompt": "Use case: stylized-concept. Asset type: mobile page background only. Generate a high-definition portrait background 1024x2100 or closest portrait aspect 1:2.05. Input image is style/composition reference. Recreate ONLY its exact warm pale peach silky glowing backdrop and the flowing clear-glass luminous S-shaped ribbons. NO UI, text, icons, objects, circles, bubbles, buttons, phone border, frame, or inset panel. Edge-to-edge light blush peach background, smooth softly luminous tonal waves. Preserve reference ribbon composition: a thin glowing translucent glass ribbon enters near 73% of the top edge, bends left to around 56% width at 16% height, bends right again at 28% height toward right edge around 43% height. A second thin glowing silky clear glass ribbon follows the lower left edge from 68% height, sweeping gently right to about 32% width at 83% height and flowing down to around 65% of bottom edge. Very fine double bright white refractive contours with subtle peach highlights, pale and delicate. Large central blank peach field for interface content. Exact pale peach palette and composition, no reinterpretation, no pasted screenshot or crop."
+    },
+    {
+      "name": "scissors-corrected",
+      "file": "exec-2a6e5284-8092-4051-9146-7455c546715a.png",
+      "generator": "built-in image_gen.imagegen",
+      "prompt": "Use case: precise-object-edit. Correct only the scissors symbol inside the glass orb. Image 1 is the original target visual reference showing the correct tiny rounded scissors. Image 2 is the previously generated medallion whose orb style, color and reflections must be preserved. Replace the oversized pointed scissors with EXACTLY the small four-rounded-end copper scissors symbol in the reference Essais coiffure circle: two narrow teardrop oval handles at UPPER left and UPPER right, crossed thin copper stems, two shorter rounded loop-like blade ends at LOWER left and LOWER right. Overall symbol is an X with four soft rounded loop-like ends, no sharp blade tips at top, no pointed or triangular blades. Match screenshot silhouette closely. Symbol occupies only 45% orb width and 50% orb height, centered. Thin dimensional polished bronze copper with pale highlights. Preserve existing orb as a centered round glossy pale peach glass medallion 94% square width. Render crisp at 1254x1254 or higher. Outside orb use smooth uniform pale peach #f9dacf instead of checkerboard. No checkerboard anywhere, no patterns. No UI, labels, buttons, typography or additional objects.",
+      "references": [
+        "codex-clipboard-1446c73c-74da-4dc3-988e-1f85e11eee44.png",
+        "exec-1e834235-e70d-4352-a3e2-6edc9c18492e.png"
+      ],
+      "verified": "Four rounded loop-like ends, centered small symbol, orb preserved, smooth peach exterior without checkerboard."
+    }
+  ],
+  "selected_scissors": "exec-2a6e5284-8092-4051-9146-7455c546715a.png"
+}

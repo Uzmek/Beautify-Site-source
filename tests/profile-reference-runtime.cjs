@@ -25,10 +25,12 @@ r.run(`
   assert.match(V['PRF-01'](),/Connecté/);
   M.profile.name='';M.profile.connected=false;
   assert.match(V['PRF-01'](),/Invité/);assert.match(V['PRF-01'](),/Sans compte/);
+  assert.match(V['PRF-01'](),/>Abonnement</);assert.doesNotMatch(V['PRF-01'](),/>Conditions</);
   go('PRF-01',{root:true});
   for(const target of ['PRF-02','PRF-06','PRF-07','PRF-10']) {
     assert.ok(V['PRF-01']().includes('data-go="'+target+'"'));
     go(target);assert.equal(route,target);back();assert.equal(route,'PRF-01');
   }
+  assert.equal((V['PRF-01']().match(/data-go="PRF-06"/g)||[]).length,1);
 `);
 console.log('Profile reference: six entitlement states, real account data, escaped names, unchanged destinations and return navigation passed.');

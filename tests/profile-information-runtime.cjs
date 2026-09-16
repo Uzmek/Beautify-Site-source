@@ -24,6 +24,8 @@ r.run(`
   assert.ok(V[route]().includes('<h2>Données</h2>'));
   ACTIONS.choice({key:'documentTab',value:'Crédits'});
   assert.equal(M.documentTab, 'Crédits');
+  assert.doesNotMatch(V[route](), /data-go="PRF-10"/);
+  ACTIONS.choice({key:'documentTab',value:'Abonnement'});
   assert.match(V[route](), /data-go="PRF-10"/);
   back();
   assert.equal(route, 'PRF-01');

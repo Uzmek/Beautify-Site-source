@@ -13,11 +13,11 @@ r.run(`
 
   go('PRF-02');
   const profile=V['PRF-02']();
-  assert.match(profile,/Vos informations personnelles/);
+  assert.match(profile,/Mon compte/);assert.match(profile,/Profil et sauvegarde\./);
   assert.match(profile,/data-form="profile"/);
-  assert.match(profile,/Sauvegarde et synchronisation/);
+  assert.match(profile,/Sauvegarde/);
   assert.match(profile,/Créer un compte/);assert.match(profile,/J’ai déjà un compte/);
-  assert.ok(profile.indexOf('Enregistrer')<profile.indexOf('Sauvegarde et synchronisation'));
+  assert.ok(profile.indexOf('Enregistrer')<profile.indexOf('Sauvegarde'));
   assert.doesNotMatch(profile,/Connexion facultative/);
 
   go('ENT-05');
