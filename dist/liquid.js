@@ -271,10 +271,10 @@ function lgAnalysisLauncher(){
     lgLauncherArtwork(x,y,width,height)+`<span class="lg-launcher-copy"><strong>${title}</strong><span>${subtitle}</span>${lgBubble('chev','lg-launcher-arrow')}</span>`,
     'lg-results-domain',{domain,label:'Choisir une action : '+title},'lg-launcher-card lg-launcher-card-'+kind
   )).join('');
-  const future=[['Maquillage',108,1471,140,100],['Garde-robe',374,1471,132,100],['Tutoriels',630,1471,125,100]]
-    .map(([title,x,y,width,height])=>`<li aria-disabled="true" aria-label="${title}, à venir">${lgLauncherArtwork(x,y,width,height,'lg-launcher-future-art')}<span>${title}</span></li>`).join('');
+  const future=['Maquillage','Garde-robe','Tutoriels']
+    .map(title=>`<li>${title}</li>`).join('');
   return `<div class="lg-page lg-analysis-launcher">`+
-    lgTitle('Votre espace beauté','Retrouvez vos résultats ou lancez<br>une nouvelle analyse.')+
+    lgTitle('Votre espace beauté','Vos résultats et vos nouvelles analyses.')+
     `<div class="lg-launcher-cards">${cards}</div><section class="lg-launcher-future" aria-labelledby="lg-coming-title"><h2 id="lg-coming-title">À venir</h2><ul>${future}</ul></section></div>`;
 }
 V['DEC-01']=lgAnalysisLauncher;
