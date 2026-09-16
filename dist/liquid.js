@@ -17,11 +17,12 @@ const lgSeasonName=season=>lgSeasonNames[M.colorProfile?.season]||season?.name||
 
 function lgBrand(plus=false){
   const profile=route==='PRF-01',root=ROOTS.includes(route);
-  const word=profile?'Profil':'Beautify'+(plus||canonicalOwned()?' Plus':'');
-  const control=route==='ENT-02'?'':profile?B(lgBubble('settings'),'PRF-04','lg-brand-control',{label:'Réglages'}):root
-    ?B(lgBubble('user'),'PRF-01','lg-brand-control',{label:'Mon profil'})
-    :A(lgBubble(plus?'x':'back')+'<span>'+(plus?'Fermer':'Retour')+'</span>',plus?'premium-return':'back',{label:plus?'Fermer l’abonnement':'Retour'},'lg-brand-control flow-exit');
-  return `<div class="lg-brand"><button type="button" class="lg-wordmark" data-act="home" aria-label="Accueil Beautify">${word}<small>BY UZMEK</small></button>${control}</div>`;
+  const branded=route==='ENT-02'||route==='ACC-01';
+  const word='Beautify'+(route==='ACC-01'&&canonicalOwned()?' Plus':'');
+  const control=route==='ENT-02'||profile||root?'':
+    A(lgBubble(plus?'x':'back')+'<span>'+(plus?'Fermer':'Retour')+'</span>',plus?'premium-return':'back',{label:plus?'Fermer l’abonnement':'Retour'},'lg-brand-control flow-exit');
+  if(!branded&&!control)return '';
+  return `<div class="lg-brand${branded?'':' lg-page-controls'}">${branded?`<button type="button" class="lg-wordmark" data-act="home" aria-label="Accueil Beautify">${word}</button>`:''}${control}</div>`;
 }
 const lgPage=(body,extra='',plus=false)=>`<div class="lg-page ${extra}">${lgBrand(plus)}${body}</div>`;
 const lgButtonContent=(text,glyph)=>`${lgBubble(glyph,'lg-action-icon')}<span class="lg-action-label">${text}</span>${icon('chev')}`;
@@ -63,7 +64,7 @@ function lgVisualAnalysisIntro(domain){
   const labels=hair?['Votre visage','Vos coupes','Essai sur photo']:['12 saisons','Votre palette','Vos nuances'];
   return `<div class="lg-page lg-visual-intro lg-visual-intro-${kind} lg-funnel"><div class="lg-intro-brand">`+
     A(lgBubble('back'),'back',{label:'Revenir à la page précédente'},'lg-intro-back')+
-    `<button type="button" class="lg-intro-wordmark" data-act="home" aria-label="Accueil Beautify">Beautify<small>by UZMEK</small></button></div>`+
+    `</div>`+
     `<header class="lg-intro-heading"><span class="eyebrow">${hair?'Analyse cheveux':'Analyse couleurs'}</span><h1 tabindex="-1">${hair?'Les coupes faites<br>pour vous.':'Vos couleurs,<br>naturellement.'}</h1></header>`+
     `<figure class="lg-intro-art" role="img" aria-label="${hair?'Illustration : un visage et trois idées de coupes, du carré aux cheveux longs.':'Illustration : éventail de nuances, soie et métaux pour une palette personnelle.'}"><img src="/assets/${kind}-intro-composition-v1.png" width="852" height="1847" alt=""></figure>`+
     `<ul class="lg-intro-outcomes" aria-label="Votre analyse">${labels.map(label=>`<li>${label}</li>`).join('')}</ul>`+
@@ -113,7 +114,7 @@ V['PRE-01']=()=>{
   return `<div class="lg-page lg-funnel pw-page">`+
     `<div class="pw-editorial"><img class="pw-editorial-composition" src="/assets/paywall-artwork-clean.png" width="853" height="1844" alt="" aria-hidden="true" draggable="false">`+
       A(lgPaywallArt('close'),'premium-return',{label:'Fermer l’abonnement et revenir à mon activité'},'pw-close')+
-      `<header class="pw-hero-copy"><p class="pw-brand">Beautify Plus</p><p class="pw-byline">BY UZMEK</p><h1 tabindex="-1">Tout ce qui<br>vous révèle.</h1><p class="pw-tagline">BEAUTÉ PLUS SIMPLE.<br>CHAQUE JOUR.</p></header>`+
+      `<header class="pw-hero-copy"><p class="pw-brand">Beautify Plus</p><h1 tabindex="-1">Tout ce qui<br>vous révèle.</h1><p class="pw-tagline">BEAUTÉ PLUS SIMPLE.<br>CHAQUE JOUR.</p></header>`+
       `<section class="pw-benefits-copy" aria-label="Inclus dans Beautify Plus">${benefits.map(([title,detail],i)=>`<div class="pw-benefit-copy pw-benefit-${i}"><strong>${['Rapports<br>complets','Palette<br>12 saisons','10 essais<br>coiffure IA','Routine<br>soin','Recommandations classées'][i]}</strong><p>${['Cheveux, couleurs<br>et peau','Personnalisée<br>pour vous','par mois','Matin et soir','et historique inclus'][i]}</p></div>`).join('')}</section></div>`+
     `<div class="pw-offers" role="group" aria-label="Choisir mon abonnement">`+
       [['yearly','Annuel','59,99 € / an'],['monthly','Mensuel','9,99 € / mois']].map(([value,title,price])=>A(`<span class="pw-radio" aria-hidden="true"></span><span class="pw-plan-copy"><strong>${title}</strong><small>${price}</small></span>${value==='yearly'?'<span class="pw-monthly-equivalent">≈ 5 € / mois</span>':''}`,'offer',{value,pressed:value===selected,label:title+' — '+price},'pw-plan '+(value===selected?'selected':''))).join('')+`</div>`+
@@ -154,7 +155,7 @@ V['ANA-12']=()=>{
     `<span class="history-date-tile" aria-hidden="true"><strong>${esc(date.day)}</strong><small>${esc(date.month)}</small></span><span class="history-entry-copy"><span class="history-entry-heading"><strong>${esc(lgHistorySummary(record))}</strong>${record===list[0]?`<span class="history-latest-badge">${skinHistory?'Dernier':'Dernière'}</span>`:''}</span><span class="history-entry-meta"><time datetime="${esc(record.createdAt||record.date||'')}">${esc(date.label)}${date.time?', '+esc(date.time):''}</time>${record.status==='partial'?'<span class="history-partial">Aperçu partiel</span>':''}</span></span>${icon('chev')}`,
     'lg-history-report-open',{id:record.id,domain,label:lgHistorySummary(record)+' — '+date.label+(date.time?' à '+date.time:'')},'history-entry')+`</li>`).join('')+`</ul></section>`).join('');
   const currentRoutine=skinHistory&&(skinRoutine('Matin')||skinRoutine('Soir'))?A(`${icon('refresh')}<span><strong>Routine actuelle</strong><small>Matin et soir, synchronisée</small></span>${icon('chev')}`,'skin-open-routine',{moment:skinRoutine('Matin')?'Matin':'Soir'},'history-current-routine'):'';
-  return `<div class="lg-page compact-history${skinHistory?' skin-bilan-history':''}"><div class="history-brand">${A(icon('back'),'back',{label:'Retour'},'history-back')}<button type="button" data-act="home" class="history-wordmark" aria-label="Accueil Beautify">Beautify</button></div>`+
+  return `<div class="lg-page compact-history${skinHistory?' skin-bilan-history':''}"><div class="history-brand">${A(icon('back'),'back',{label:'Retour'},'history-back')}</div>`+
     lgTitle(skinHistory?'Mes bilans':'Historique',skinHistory?list.length+' bilan'+(list.length>1?'s':'')+' de peau':title+', '+list.length+' analyse'+(list.length>1?'s':''))+
     currentRoutine+A(icon('plus')+`<span>${skinHistory?'Nouveau bilan':'Nouvelle analyse'}</span>`,'studio-analysis',{domain},'history-new')+
     (list.length?`<div class="history-records" tabindex="0" role="region" aria-label="${skinHistory?'Bilans de peau':'Historique '+esc(title)}">${rows}</div>`:`<section class="history-empty">${icon('clock')}<h2>${skinHistory?'Votre premier bilan vous attend':'Votre historique commence ici'}</h2><p>${skinHistory?'Vos bilans apparaîtront ici<br>après chaque analyse.':'Vos analyses apparaîtront ici<br>après votre premier résultat.'}</p></section>`)+`</div>`;
@@ -173,12 +174,12 @@ viewStateFor=id=>{
   return state;
 };
 
-// 07 — Identity, subscription and grouped settings.
-V['PRF-01']=()=>lgPage(lgTitle('Mon profil')+
-  lgCard(B(`<span class="lg-bubble lg-avatar">${M.profile.name?esc(M.profile.name[0].toUpperCase()):icon('user')}</span><strong>${esc(M.profile.name||'Votre profil')}</strong>${icon('chev')}`,'PRF-02','lg-profile-identity'),'lg-identity-card')+
-  lgCard(`<div class="lg-subscription-info">${lgBubble('crown')}<div><h2>${canonicalOwned()?'Beautify Plus':'Beautify'}</h2><p>${canonicalOwned()?studioRemaining()+' sur 10 essais disponibles':'Offre découverte'}</p></div>${canonicalOwned()?'<span class="lg-status">Actif</span>':''}</div>`+lgGo('Gérer mon abonnement','PRF-06','credit'),'lg-subscription-card')+
-  lgCard(lgRow(M.profile.connected?'Mon compte':'Compte facultatif','',M.profile.connected?'PRF-02':'ENT-05','user')+lgRow('Réglages','','PRF-04','settings')+lgRow('Notifications','','PRF-05','bell')+lgRow('Photos et confidentialité','','PRF-07','shield')+lgRow('Aide','','PRF-10','help'),'lg-settings-card')+
-  B('Mes préférences','PRF-03','text-button lg-center-link'),'lg-profile');
+// 07 — Four useful destinations, without duplicate identity or settings menus.
+V['PRF-01']=()=>lgPage(lgTitle('Mon profil','Votre compte et vos essentiels.')+
+  lgCard(lgRow('Mon compte',esc(M.profile.name||'Sans nom')+' · '+(M.profile.connected?'Connecté':'Sans compte'),'PRF-02','user'),'ux-profile-account')+
+  lgCard(`<div class="lg-subscription-info">${lgBubble('crown')}<div><h2>Mon accès Beautify</h2><p>${profileAccessLabel()}</p></div></div>`+lgGo(canonicalOwned()?'Gérer mon abonnement':M.subscription.status==='pending'?'Vérifier mon accès':'Découvrir Beautify Plus','PRF-06','credit'),'lg-subscription-card ux-profile-access')+
+  lgCard(lgRow('Photos et données','Conserver, exporter ou supprimer','PRF-07','shield')+lgRow('Aide et contact','Des réponses et un contact','PRF-10','help'),'lg-settings-card ux-profile-links')+
+  profileDocumentLinks(),'lg-profile ux-profile-v1');
 
 // 08 — Ranked hero, then three distinct alternatives; no changed ranking.
 V['HAI-01']=()=>{
@@ -272,9 +273,7 @@ function lgAnalysisLauncher(){
   )).join('');
   const future=[['Maquillage',108,1471,140,100],['Garde-robe',374,1471,132,100],['Tutoriels',630,1471,125,100]]
     .map(([title,x,y,width,height])=>`<li aria-disabled="true" aria-label="${title}, à venir">${lgLauncherArtwork(x,y,width,height,'lg-launcher-future-art')}<span>${title}</span></li>`).join('');
-  return `<div class="lg-page lg-analysis-launcher"><div class="lg-results-brand lg-launcher-brand">`+
-    `<button type="button" class="lg-results-wordmark" data-act="home" aria-label="Accueil Beautify">${icon('spark')}<span>Beautify</span><small>by UZMEK</small></button>`+
-    B(lgBubble('user'),'PRF-01','lg-results-profile',{label:'Mon profil'})+`</div>`+
+  return `<div class="lg-page lg-analysis-launcher">`+
     lgTitle('Votre espace beauté','Retrouvez vos résultats ou lancez<br>une nouvelle analyse.')+
     `<div class="lg-launcher-cards">${cards}</div><section class="lg-launcher-future" aria-labelledby="lg-coming-title"><h2 id="lg-coming-title">À venir</h2><ul>${future}</ul></section></div>`;
 }

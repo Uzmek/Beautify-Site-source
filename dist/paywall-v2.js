@@ -26,7 +26,7 @@ function paywallV2(){
     <header class="pv2-hero">
       <div class="pv2-portrait" aria-hidden="true"><span class="pv2-portrait-top"></span><span class="pv2-portrait-lower"></span></div>
       ${A('<svg class="pv2-close-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>','premium-return',{label:'Fermer le paywall'},'pv2-close')}
-      <div class="pv2-brand">Beautify Plus</div><p class="pv2-byline">BY UZMEK</p>
+      <div class="pv2-brand">Beautify Plus</div>
       <h1 tabindex="-1">Tes couleurs.<br>Ta coupe.<br>Ta routine.</h1>
       <p class="pv2-tagline">Sans te tromper. Chaque jour.</p>
       <section class="pv2-social pv2-glass" aria-label="Avis illustratif de la maquette">

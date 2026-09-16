@@ -15,7 +15,7 @@ function runtime() {
     replaceState(state, _, url) { if (cursor < 0) cursor = 0; entries[cursor] = { state, url }; location.hash = url; },
     back() { if (cursor > 0) { cursor--; location.hash = entries[cursor].url; listeners.popstate?.({ state: entries[cursor].state }); } }
   };
-  const document = { documentElement: {}, getElementById(id) { if (!elements.has(id)) elements.set(id, node()); return elements.get(id); },
+  const document = { documentElement: {style:{setProperty:noop}}, getElementById(id) { if (!elements.has(id)) elements.set(id, node()); return elements.get(id); },
     querySelector: () => null, querySelectorAll: () => [], createElement(tag) { const el = node(); if (tag === 'input') inputs.push(el); return el; },
     body: node(), addEventListener: noop };
   const context = { assert, console, Date, Math, JSON, Set, Map, Intl, Number, String, Array, Object, Boolean, Blob, FormData,

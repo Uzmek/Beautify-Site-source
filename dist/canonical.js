@@ -296,7 +296,7 @@ V['PRE-01']=function(){
   }
   const annual=M.subscription.offer!=='monthly';
   return '<div class="canonical-paywall">'+
-    '<div class="canonical-paywall-header">'+logo()+A(icon('x'),'premium-return',{label:'Fermer le paywall'},'canonical-paywall-close')+'</div>'+
+    '<div class="canonical-paywall-header">'+A(icon('x'),'premium-return',{label:'Fermer le paywall'},'canonical-paywall-close')+'</div>'+
     '<div class="canonical-paywall-hero">'+canonicalPaywallMotif('Colorimétrie')+canonicalPaywallMotif('Peau')+canonicalPaywallMotif('Cheveux')+'</div>'+
     '<div class="canonical-paywall-head"><h1 tabindex="-1">Votre profil beauté complet<br>vous attend</h1><p>Vos résultats personnalisés sont prêts. Beautify Plus débloque les analyses Couleur, Peau et Cheveux.</p></div>'+
     '<div class="canonical-benefits">'+

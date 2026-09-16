@@ -102,32 +102,132 @@ comparisonContent=list=>{
   return `<div class="comparison ux-analysis-comparison">${records.map(record=>`<section>${record.photo?imageFor(record.photo,'','Photo de cette analyse'):''}<time>${dateText(record.date)}</time><h2>${esc(canonicalTeaser(record).value)}</h2>${canonicalOwned()?P(esc((record.findings||[]).join(', '))):''}${A(canonicalOwned()?'Ouvrir le rapport':'Voir mon aperçu','lg-history-report-open',{domain:record.domain,id:record.id},'secondary')}</section>`).join('')}</div>`;
 };
 
-// Settings labels describe the actual destination; support answers match the V1.
-V['PRF-03']=()=>head('Mes préférences','Les centres d’intérêt de votre espace.')+chips(['Cheveux','Colorimétrie','Peau'],'interests',(M.preferenceEdit||M.prefs).interests)+
-  form('preferences','<p class="ux-small-note">Les analyses utilisent votre photo. Ces préférences ne modifient pas vos rapports.</p>','Enregistrer')+A('Retirer mes préférences','clear-prefs-request',{},'text-button lg-center-link');
-V['PRF-10']=()=>head('Aide')+`<div class="faq">${[
- ['Où retrouver mon analyse ?','Ouvrez Analyses, choisissez Cheveux, Couleurs ou Peau, puis Historique pour retrouver vos résultats. Nouvelle analyse lance une nouvelle photo.'],
- ['Que se passe-t-il si je quitte une analyse ?','L’analyse est annulée. Lancez une nouvelle analyse et attendez les 15 secondes complètes.'],
- ['Où sont mes essais coiffure ?','Dans Analyses → Essais coiffure IA. Chaque essai est ajouté automatiquement.'],
- ['Comment changer un produit ?','Ouvrez Ma routine depuis l’accueil, choisissez Matin ou Soir, touchez le soin, puis Remplacer le produit.'],
- ['Ai-je besoin d’un compte ?','Vous pouvez parcourir la démo sans compte. Les données restent dans cet onglet ; aucune synchronisation réelle n’est active.'],
- ['Les analyses et achats sont-ils réels ?','Ce site est un mockup : les résultats et les essais sont illustratifs, les produits proposés sont des exemples et aucun paiement réel n’est effectué.'],
- ['Pourquoi ma photo a disparu ?','Les photos importées restent en mémoire de la page. Après un rechargement, sélectionnez-les à nouveau. Vos textes restent dans la session de cet onglet.']
- ].map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div>`+
- `<details class="ux-details"><summary>Une autre question</summary>${form('support',select('topic','Sujet',['Photo','Analyse','Routine','Essai coiffure','Abonnement','Compte','Données'],'Routine')+area('message','Votre question'),'Prévisualiser ma demande')}<p class="ux-small-note">Demande simulée, aucun message envoyé.</p></details>`;
-V['PRF-08']=()=>head('Gérer mes données')+form('data',select('operation','Que souhaitez-vous faire ?',['Exporter','Retirer'],'Exporter')+['Profil','Préférences','Photos','Rapports','Essais','Suivi','Routines',...(M.saved.length||M.collections.length?['Enregistrés']:[]),...(M.clothes.length||M.outfits.length?['Dressing']:[]),...(M.orders.length?['Commandes']:[])].map(key=>check('data'+key,key==='Routines'?'Routines et produits':key==='Essais'?'Essais coiffure':key,false)).join(''),'Vérifier ma sélection')+`<p class="ux-small-note">Les images ne sont pas incluses dans l’export.</p>`;
-dataInventory=()=>[
- ['Profil',M.profile.name?'Renseigné':'Facultatif'],['Photos',Object.keys(memoryPhotos).length+' photos importées'],
- ['Rapports',M.analyses.length+' analyses'],['Essais coiffure',M.simulations.length+' essais'],
- ['Routines et produits',M.routines.length+' routines, '+(M.skinCareProducts||[]).length+' produits personnels'],
- ['Suivi',M.observations.length+' notes, '+M.sessions.length+' séances']
-].map(([title,value])=>`<div class="data-check"><strong>${title}</strong><p>${value}</p></div>`).join('');
+// Profile V1 uses the real routes, with explicit local-data and demo states.
+function profileAccessLabel(){
+  return ({free:'Accès découverte',active:'Beautify Plus · Actif',cancelled:'Beautify Plus · Renouvellement désactivé',pending:'Activation en attente',failed:'Activation non confirmée',expired:'Accès expiré'})[M.subscription.status]||'Statut indisponible';
+}
+function profileDocumentLinks(){
+  return `<footer class="ux-profile-documents" aria-label="Informations Beautify">${[['À propos','À propos'],['Confidentialité','Données'],['Conditions','Abonnement'],['Crédits','Crédits']].map(([label,document])=>B(label,'PRF-11','text-button',{document})).join('')}</footer>`;
+}
+const EXPERIENCE_PROFILE_GUARD=canonicalRouteGuard;
+canonicalRouteGuard=id=>EXPERIENCE_PROFILE_GUARD(['PRF-03','PRF-04'].includes(id)?'PRF-01':id==='PRF-08'?'PRF-07':id);
+for(const id of ['PRF-03','PRF-04','PRF-08']){const index=FLOW_INDEX.findIndex(page=>page.id===id);if(index>=0)FLOW_INDEX.splice(index,1);}
+V['PRF-05']=()=>{
+  const settings=M.formDrafts[draftKey('reminders')]||M.reminders;
+  return lgPage(lgTitle('Rappel des routines')+
+    form('reminders',check('routine','Rappel quotidien',settings.routine)+`<div class="ux-profile-reminder-time"${settings.routine?'':' hidden'}>`+field('routineTime','Heure du rappel',settings.routineTime||M.reminders.routineTime||'08:00','time').replace('<input ','<input '+(settings.routine?'':'disabled '))+'</div>','Enregistrer')+
+    `<p class="ux-small-note">Pour toutes vos routines.</p>`,'ux-profile-screen');
+};
+document.addEventListener('change',event=>{
+  if(!event.target.matches('form[data-form="reminders"] input[name="routine"]'))return;
+  const time=event.target.form.elements.namedItem('routineTime');if(time)time.disabled=!event.target.checked;
+  time?.closest('.ux-profile-reminder-time')?.toggleAttribute('hidden',!event.target.checked);
+});
+function profileActionRow(title,subtitle,action,glyph,data={},disabled=false){
+  const button=A(`${lgBubble(glyph)}<span class="lg-row-copy"><strong>${esc(title)}</strong><small>${esc(subtitle)}</small></span>${icon('chev')}`,action,{...data,label:title},'lg-row ux-profile-action-row');
+  return disabled?button.replace('<button ','<button disabled '):button;
+}
+V['PRF-07']=()=>{
+  const count=Object.keys(memoryPhotos).length;
+  return lgPage(lgTitle('Photos et données')+
+    lgCard(profileActionRow('Exporter mes données','Fichier JSON, sans les images','profile-export','bars')+
+      profileActionRow('Supprimer mes photos',count?count+' photo'+(count>1?'s':'')+' importée'+(count>1?'s':'')+' · Analyses conservées':'Aucune photo importée en mémoire','profile-remove-photos','image',{},!count)+
+      profileActionRow('Tout supprimer','Données locales et profil','profile-delete-open','shield'),'ux-profile-action-list')+
+    A('Où sont conservées mes données ?','profile-data-details',{},'text-button ux-profile-details')+
+    B('Informations et confidentialité','PRF-11','text-button ux-profile-details',{document:'Données'}),'ux-profile-screen ux-profile-data-screen');
+};
+V['PRF-08']=()=>V['PRF-07']();
+V['PRF-09']=()=>lgPage(lgTitle('Tout supprimer','Cette action est irréversible.')+
+  lgCard(`<h2>${esc(M.profile.connected&&M.profile.email?M.profile.email:M.profile.name||'Sans compte')}</h2><p>Efface vos photos, analyses, essais, routines et autres données de ce navigateur. Vous serez déconnecté.</p><p>Cette suppression locale ne résilie pas votre abonnement.</p>`,'ux-profile-delete-summary')+
+  A('Exporter avant de supprimer','profile-export',{},'secondary')+
+  form('delete-account',field('confirmation','Écrivez SUPPRIMER pour confirmer','','text',true),'Supprimer définitivement')+
+  B('Annuler','PRF-07','text-button ux-profile-details'),'ux-profile-screen ux-profile-delete');
+const PROFILE_HELP_TOPICS={
+  photo:{title:'Ma photo ne s’importe pas',glyph:'image',text:'Vérifiez que le fichier choisi est bien une image, puis réessayez l’import. Si le problème persiste, décrivez-le dans une demande de contact.',label:'Signaler le problème',action:'profile-contact-open'},
+  analyse:{title:'Mon analyse ne s’affiche pas',glyph:'bars',text:'Si l’analyse a été interrompue, relancez-la depuis le module concerné. Si un résultat enregistré ne s’ouvre plus, signalez le problème.',label:'Signaler le problème',action:'profile-contact-open'},
+  acces:{title:'Mon accès Plus n’est pas reconnu',glyph:'crown',text:'Une activation en attente ne donne pas encore accès à Plus. Si vous aviez déjà un accès, essayez de le restaurer.',label:'Restaurer mon accès',to:'PRE-04'}
+};
+V['PRF-10']=()=>lgPage(lgTitle('Aide et contact')+
+  lgAct('Nous contacter','profile-contact-open',{},'help','ux-help-contact-button')+
+  `<h2 class="ux-help-section-title">Un problème ?</h2>`+
+  lgCard(Object.entries(PROFILE_HELP_TOPICS).map(([id,topic])=>A(`${lgBubble(topic.glyph)}<span class="lg-row-copy"><strong>${esc(topic.title)}</strong></span>${icon('chev')}`,'profile-help-open',{id,label:topic.title},'lg-row ux-help-row')).join(''),'ux-help-topics')+
+  B('Informations et confidentialité','PRF-11','text-button ux-help-documents',{document:'Données'}),'ux-help-v2 ux-profile-screen');
+function profileHelpSheet(title,body){
+  modal(title,`<div class="ux-help-sheet">${body}</div>`);
+  const sheet=document.querySelector('#overlay .modal');
+  sheet.classList.add('ux-help-modal');
+  sheet.querySelector('.close')?.setAttribute('aria-label','Fermer');
+}
+Object.assign(ACTIONS,{
+  'profile-help-open':data=>{
+    const topic=PROFILE_HELP_TOPICS[data.id];if(!topic)return;
+    const steps=topic.steps?`<ol class="ux-help-steps">${topic.steps.map((step,index)=>`<li><span class="ux-help-number" aria-hidden="true">${index+1}</span><span>${esc(step)}</span></li>`).join('')}</ol>`:'';
+    const facts=topic.facts?`<div class="ux-help-facts">${topic.facts.map(([title,text])=>`<div><strong>${esc(title)}</strong><p>${esc(text)}</p></div>`).join('')}</div>`:'';
+    profileHelpSheet(topic.title,steps+facts+(topic.text?P(esc(topic.text)):'')+A(topic.label,'profile-help-shortcut',{id:data.id},'primary')+(data.id==='acces'?A('Nous contacter','profile-contact-open',{},'text-button ux-help-sheet-documents'):''));
+  },
+  'profile-help-shortcut':data=>{
+    const topic=PROFILE_HELP_TOPICS[data.id];if(!topic)return;
+    if(topic.to)go(topic.to);else ACTIONS[topic.action]?.();
+  },
+  'profile-contact-open':()=>{
+    captureDrafts();closeModal(false);
+    profileHelpSheet('Nous contacter',form('support','<label class="field"><span>Votre message</span><textarea name="message" rows="4" maxlength="2000" required placeholder="Comment pouvons-nous vous aider ?"></textarea></label>','Enregistrer ma demande'));
+  }
+});
+const PROFILE_DOCUMENT_COPY={
+  'À propos':'Beautify by UZMEK réunit vos analyses cheveux, couleurs et peau, vos essais coiffure et vos routines. Le maquillage, la garde-robe et les tutoriels sont à venir.',
+  Données:'Votre profil, vos textes, vos produits et vos routines sont conservés dans ce navigateur sur cet appareil, si son stockage est disponible. Les photos importées restent en mémoire de la page et disparaissent au rechargement.<br><br>La recherche de produits transmet le nom recherché ou le code-barres à Open Beauty Facts. Les photos du scanner sont lues sur votre appareil.<br><br>Vous pouvez exporter vos données ou les supprimer depuis Photos et données. Les images ne sont pas incluses dans l’export.',
+  Abonnement:'Consultez votre statut et vos essais disponibles depuis Mon accès Beautify. Cet écran permet aussi d’accéder à la gestion de votre abonnement et de restaurer un accès existant.<br><br>Une activation en attente ou non confirmée ne donne pas accès à Beautify Plus. Supprimer les données locales ne résilie pas un abonnement.',
+  Crédits:'Les visuels proviennent des maquettes fournies et de portraits éditoriaux générés avec IA. Les textes de parcours s’appuient sur Beautify — Parcours et contenus, version 0.1.<br><br>Catalogue <a href="https://world.openbeautyfacts.org" target="_blank" rel="noopener noreferrer">Open Beauty Facts</a>, données <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL</a>, photos <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA</a>.'
+};
+V['PRF-11']=()=>{
+  const tab=PROFILE_DOCUMENT_COPY[M.documentTab]?M.documentTab:'À propos';
+  return lgPage(lgTitle('Informations')+chips(['À propos','Données','Abonnement','Crédits'],'documentTab',tab)+
+    lgCard(`<h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}`)+B('Nous contacter','PRF-10','secondary'),'ux-profile-screen ux-profile-documents');
+};
+function profileViewportHeight(){
+  const viewport=window.visualViewport;
+  if(viewport&&viewport.scale!==1)return;
+  document.documentElement.style.setProperty('--profile-viewport-height',Math.round(viewport?.height||window.innerHeight)+'px');
+  document.documentElement.style.setProperty('--app-viewport-height',Math.round(viewport?.height||window.innerHeight)+'px');
+}
+window.visualViewport?.addEventListener('resize',profileViewportHeight);
+window.visualViewport?.addEventListener('scroll',profileViewportHeight);
+window.addEventListener('resize',profileViewportHeight);
+profileViewportHeight();
+Object.assign(ACTIONS,{
+  'profile-export':()=>{M.dataOperation={type:'Exporter',categories:['Profil','Préférences','Rapports','Essais','Suivi','Enregistrés','Routines']};ACTIONS['execute-data']();toast('Export JSON préparé. Images non incluses.');},
+  'profile-remove-photos':()=>{if(!Object.keys(memoryPhotos).length)return;M.dataOperation={type:'Retirer',categories:['Photos']};confirmAction('Supprimer les photos importées ?','Toutes les photos importées en mémoire seront supprimées. Les textes de vos analyses, vos essais enregistrés et votre suivi seront conservés. Cette action ne peut pas être annulée.','execute-data');},
+  'profile-delete-open':()=>go('PRF-09'),
+  'profile-data-details':()=>profileHelpSheet('Vos données, sur cet appareil','<div class="ux-help-facts"><div><strong>Textes, analyses et routines</strong><p>Sauvegardés dans ce navigateur, si son stockage est disponible. Aucune synchronisation réelle.</p></div><div><strong>Photos importées</strong><p>En mémoire de la page uniquement. Elles disparaissent au rechargement. Les supprimer conserve les textes de vos analyses.</p></div><div><strong>Votre export</strong><p>Profil, préférences, analyses, essais, suivi, éléments enregistrés, routines, produits et rappels. Les images et demandes de contact ne sont pas incluses.</p></div></div>'+B('Informations et confidentialité','PRF-11','secondary',{document:'Données'})),
+  'profile-account-details':()=>profileHelpSheet('À propos du compte','<div class="ux-help-facts"><div><strong>Compte facultatif</strong><p>Vous pouvez utiliser Beautify sans connexion. Vos données restent sur cet appareil.</p></div><div><strong>Modifier votre email</strong><p>Une vérification est demandée pour confirmer la nouvelle adresse.</p></div></div>'),
+  'profile-open-analyses':()=>{M.historyDomain='Tous';go('ANA-12');},
+  'profile-open-routine':()=>ACTIONS['skin-open-routine']({moment:'Matin'}),
+  'profile-open-data':()=>go('PRF-07')
+});
+F.support=data=>{
+  const message=data.message?.trim();if(!message)return formError('Écrivez votre question en quelques mots.');
+  if(message.length>2000)return formError('Limitez votre question à 2 000 caractères.');
+  M.supportDraft={topic:'Aide',message,attachment:''};clearDrafts('support');ACTIONS['send-support']();M.supportDraft=null;
+};
 const EXPERIENCE_ACCOUNT=V['ENT-05'];
 V['ENT-05']=()=>EXPERIENCE_ACCOUNT().replace('Sauvegarder mes données','Compte facultatif').replace('Facultatif : seulement pour les retrouver sur un autre appareil.','Parcours de démonstration.').replace(/<div class="account-benefits">[\s\S]*?<\/div>/,'').replace('Activer la synchronisation','Créer le compte démo');
-const EXPERIENCE_EDIT_PROFILE=V['PRF-02'];
-V['PRF-02']=()=>EXPERIENCE_EDIT_PROFILE().replace('Activer la synchronisation','Compte facultatif');
-const EXPERIENCE_SUBSCRIPTION=V['PRF-06'];
-V['PRF-06']=()=>EXPERIENCE_SUBSCRIPTION().replace('Ouvrir Hair Studio','Mes essais coiffure').replace('data-go="HAI-01"','data-go="ESS-04"').replace('pour découvrir Hair Studio','pour essayer une coupe');
+V['PRF-02']=()=>{
+  const profile=M.profileEdit||M.profile;
+  return lgPage(lgTitle('Mon compte')+
+    `<p class="ux-profile-status">${M.profile.connected?'Connecté':'Sans compte · Connexion facultative'}</p>`+
+    form('profile',field('name','Nom d’usage (facultatif)',profile.name)+(M.profile.connected?field('email','Adresse email',profile.email,'email',true):''),'Enregistrer')+
+    (M.profile.connected?A('Se déconnecter','logout-request',{},'secondary'):B('Se connecter','ENT-06','secondary')+B('Créer un compte','ENT-05','text-button ux-profile-details'))+
+    A('À propos du compte','profile-account-details',{},'text-button ux-profile-details'),'ux-profile-screen ux-profile-account-screen');
+};
+V['PRF-06']=()=>{
+  studioEnsure();const owned=canonicalOwned(),pending=M.subscription.status==='pending';
+  return lgPage(lgTitle('Mon accès Beautify')+
+    lgCard(`<div class="ux-profile-fact">${lgBubble('crown')}<div><h2>${profileAccessLabel()}</h2><p>${owned?studioRemaining()+' essais coiffure disponibles.':pending?'Votre accès Plus n’est pas confirmé.':'Essais disponibles dans le module Cheveux.'}</p></div></div>`,'ux-profile-access-detail')+
+    (owned?A('Gérer mon abonnement','manage-subscription',{},'primary'):pending?A('Vérifier mon accès','subscription-check',{},'primary'):B('Découvrir Beautify Plus','PRE-01','primary'))+
+    B('Restaurer mes achats','PRE-04','secondary')+
+    B('Informations sur l’abonnement','PRF-11','text-button ux-profile-details',{document:'Abonnement'}),'ux-profile-screen ux-profile-access-screen');
+};
 
 const EXPERIENCE_ROUTE_GROUPS=[
  ['Les trois repères',['ACC-01','SAV-01','PRF-01']],
@@ -147,7 +247,7 @@ viewStateFor=id=>{
   const state=EXPERIENCE_STATE(id),keys=/^ANA-(09|10|11)$/.test(id)?['canonicalReportStep']:id==='HAI-02'?['hairLengthFilter']:id==='PRO-01'?['progressMoment','lgJournal']:id==='PRO-02'?['compareDomain']:[];
   keys.forEach(key=>state[key]=M[key]??null);return state;
 };
-// All secondary forms share the same branded header and visible back control.
+// Secondary forms share navigation controls, not a repeated brand signature.
 for(const id of Object.keys(V)){
   const original=V[id];V[id]=()=>{const html=original();return /class="lg-page(?: |")/.test(html)?html:lgPage(html,'ux-secondary');};
 }

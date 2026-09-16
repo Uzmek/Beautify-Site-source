@@ -2,3 +2,4 @@ node_modules/
 .sites-runtime/
 .preview-build/
 *.log
+.DS_Store

@@ -72,7 +72,7 @@ V['ACC-01']=()=>{
     : actions.length
       ? `<section class="rw-home-focus"><div class="rw-section-heading"><span><small>AUJOURD’HUI</small><strong>Mon prochain geste</strong></span>${B('Ma journée','ACC-03','text-button')}</div>${calmTask(actions[0])}</section>`
       : `<section class="rw-home-hero"><div class="rw-home-portrait">${imageFor('beautify-home-hero-turkey-v3','','Portrait éditorial Beautify')}</div><div class="rw-home-copy"><small>${anyResult?'À VOUS DE CHOISIR':'VOTRE PREMIER RÉSULTAT'}</small><h2>${anyResult?'Retrouvez ce qui vous va.':'Commencez par vous.'}</h2>${B(anyResult?'Nouvelle analyse':'Choisir mon analyse','DEC-01','rw-hero-action')}</div></section>`;
-  return `<div class="rw-page-title"><span class="eyebrow">${M.profile.name?'Bonjour '+esc(M.profile.name):'Beautify by UZMEK'}</span><h1 tabindex="-1">Votre beauté,<br><em>plus simple.</em></h1></div>${hero}${rwResultSummary()}`;
+  return `<div class="rw-page-title"><span class="eyebrow">${M.profile.name?'Bonjour '+esc(M.profile.name):'Bonjour à vous'}</span><h1 tabindex="-1">Votre beauté,<br><em>plus simple.</em></h1></div>${hero}${rwResultSummary()}`;
 };
 
 // DEC-01 is retained as a route identifier for compatibility, but its product

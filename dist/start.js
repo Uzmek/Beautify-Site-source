@@ -1,4 +1,5 @@
-// Keep the full 393 × 852 design space; resizing changes only its scale.
+// Desktop preview scales the iPhone 16 frame. On mobile, responsive.css uses
+// the actual visual viewport without scaling text or controls.
 const previewStage=document.getElementById('preview-stage');
 const phonePreview=document.getElementById('phone-preview');
 function fitPhonePreview(){

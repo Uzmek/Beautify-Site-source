@@ -10,7 +10,7 @@ const elements = new Map();
 const location = {hash:''};
 const context = {
   assert,console,Date,Math,JSON,Set,Map,Intl,Number,String,Array,Object,Boolean,Blob,FormData,
-  document:{documentElement:{},getElementById(id){if(!elements.has(id))elements.set(id,element());return elements.get(id);},querySelector:()=>null,querySelectorAll:()=>[],createElement:element,body:element(),addEventListener:noop},
+  document:{documentElement:{style:{setProperty:noop}},getElementById(id){if(!elements.has(id))elements.set(id,element());return elements.get(id);},querySelector:()=>null,querySelectorAll:()=>[],createElement:element,body:element(),addEventListener:noop},
   location,history:{pushState(_s,_t,url){location.hash=url;},replaceState(_s,_t,url){location.hash=url;},back:noop},
   window:{scrollTo:noop,addEventListener:noop},URL:{createObjectURL:()=>'/photo',revokeObjectURL:noop},Image:function(){},
   sessionStorage:{getItem:()=>null,setItem:noop},setTimeout(fn,delay){const id=++timerId;timers.set(id,{fn,delay});return id;},clearTimeout(id){timers.delete(id);}

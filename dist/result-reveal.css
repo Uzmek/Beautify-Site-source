@@ -1,7 +1,7 @@
 /* Native controls over text-free editorial artwork, in the 393 × 852 phone space. */
 #phone-surface #app>.mock-screen:has(.result-reveal) { padding:0 0 16px!important; overflow-y:auto; }
 #phone-surface #app .result-reveal { --reveal-serif:var(--sans); display:flex; flex-direction:column; position:relative; isolation:isolate; height:100%; min-height:755px; gap:0; padding:0; background:#fcf0e9; }
-#app .reveal-brand { display:flex; align-items:flex-start; justify-content:space-between; flex:none; height:65px; padding:2px 15px 0; position:relative; }
+#app .reveal-brand { display:flex; align-items:flex-start; flex:none; height:46px; padding:2px 15px 0; position:relative; }
 #phone-surface #app .reveal-wordmark { font:700 36px/1 var(--reveal-serif); letter-spacing:-1.6px; color:#682f1c; padding:0; }
 #phone-surface #app .reveal-wordmark small { display:block; margin:8px 0 0; font:500 9px/1.2 var(--sans); letter-spacing:3px; color:#945a40; }
 #app .reveal-brand>span { width:34px; }

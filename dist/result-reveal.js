@@ -13,7 +13,7 @@ V['ANA-09']=()=>{
   const copy=REVEAL_COPY[r.domain];if(!copy)return canonicalLockedResult();
   const partial=r.status==='partial'||(r.domain==='Colorimétrie'&&!r.season);
   return `<div class="lg-page lg-funnel result-reveal reveal-${r.domain==='Cheveux'?'hair':r.domain==='Peau'?'skin':'color'}">`+
-    `<header class="reveal-brand">${A(icon('back'),'back',{label:'Retour'},'reveal-back')}<button type="button" data-act="home" class="reveal-wordmark" aria-label="Accueil Beautify">Beautify<small>BY UZMEK</small></button><span></span></header>`+
+    `<header class="reveal-brand">${A(icon('back'),'back',{label:'Retour'},'reveal-back')}</header>`+
     `<section class="reveal-scene"><div class="reveal-heading"><h1 tabindex="-1">${partial?'Votre premier<br>aperçu<br>vous attend.':copy.title}</h1><p>${partial?'Explorez les premiers éléments<br>de votre analyse.':copy.subtitle}</p></div><span class="reveal-inspiration">${icon('sparkles')}Inspiration</span></section>`+
     `<section class="reveal-tiles" aria-label="À découvrir dans votre rapport">${copy.tiles.map(([label,kind])=>B(`<span class="reveal-tile-art reveal-art-${kind}" aria-hidden="true"></span><span class="reveal-tile-label">${label}</span>`,'PRE-01','reveal-tile',{label:'Découvrir : '+label})).join('')}</section>`+
     `<footer class="reveal-actions">${B(icon('lock')+'<span class="reveal-cta-copy"><strong>Voir mon rapport complet</strong><small>Accès avec Beautify Plus</small></span>'+icon('chev'),'PRE-01','reveal-unlock')}${B('Plus tard','ANA-01','reveal-later')}<small class="reveal-demo">Démo : résultats illustratifs</small></footer></div>`;

@@ -4,7 +4,7 @@
 // remain the source of navigation and entitlement decisions.
 const BEAUTY_OLD={capture:V['ANA-04'],confirm:V['ANA-06'],loading:V['ANA-08'],reveal:V['ANA-09'],report:canonicalReport,color:V['COL-01'],families:V['COL-02'],skin:skinScorePanel};
 const BEAUTY_ASSET='/assets/beauty-v2/';
-function beautyHeader(){return `<header class="beauty-header">${A(icon('back'),'back',{label:'Retour'},'beauty-back')}<button type="button" class="beauty-wordmark" data-act="home" aria-label="Accueil Beautify">Beautify<small>by UZMEK</small></button><span class="beauty-brand-star" aria-hidden="true">${icon('sparkles')}</span></header>`;}
+function beautyHeader(){return `<header class="beauty-header">${A(icon('back'),'back',{label:'Retour'},'beauty-back')}</header>`;}
 function beautyPage(body,cls=''){return `<div class="lg-page beauty-page ${cls}">${beautyHeader()}${body}</div>`;}
 function beautyTitle(title,kicker='',subtitle=''){return `<header class="beauty-title">${kicker?`<span class="eyebrow">${esc(kicker)}</span>`:''}<h1 tabindex="-1">${title}</h1>${subtitle?`<p>${esc(subtitle)}</p>`:''}</header>`;}
 function beautyButton(text,action,data={},secondary=false,glyph=''){return A((glyph?icon(glyph):'')+`<span>${esc(text)}</span>`+icon('chev'),action,data,'beauty-button '+(secondary?'is-secondary':'is-copper'));}
