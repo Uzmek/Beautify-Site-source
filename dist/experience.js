@@ -180,28 +180,10 @@ const PROFILE_DOCUMENT_COPY={
   Abonnement:'Consultez votre statut et vos essais disponibles depuis Mon accès Beautify. Cet écran permet aussi d’accéder à la gestion de votre abonnement et de restaurer un accès existant.<br><br>Une activation en attente ou non confirmée ne donne pas accès à Beautify Plus. Supprimer les données locales ne résilie pas un abonnement.',
   Crédits:'Les visuels proviennent des maquettes fournies et de portraits éditoriaux générés avec IA. Les textes de parcours s’appuient sur Beautify — Parcours et contenus, version 0.1.<br><br>Catalogue <a href="https://world.openbeautyfacts.org" target="_blank" rel="noopener noreferrer">Open Beauty Facts</a>, données <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL</a>, photos <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA</a>.'
 };
-function profileOpenDocument(){
-  return M.documentTab===null?null:Object.hasOwn(PROFILE_DOCUMENT_COPY,M.documentTab)?M.documentTab:'À propos';
-}
 V['PRF-11']=()=>{
-  const current=profileOpenDocument();
-  const sections=[
-    ['À propos','Beautify en quelques mots','sparkles'],
-    ['Données','Stockage et confidentialité','shield'],
-    ['Abonnement','Votre accès à Beautify Plus','crown'],
-    ['Crédits','Visuels et sources','image']
-  ].map(([title,subtitle,glyph],index)=>{
-    const expanded=current===title,id='profile-document-'+index;
-    return `<section class="ux-info-section"><h2><button type="button" id="${id}-toggle" class="ux-info-toggle" data-act="profile-document-toggle" data-document="${esc(title)}" aria-expanded="${expanded}" aria-controls="${id}"><span class="ux-info-icon" aria-hidden="true">${icon(glyph)}</span><span class="ux-info-label"><strong>${esc(title)}</strong><small>${subtitle}</small></span>${icon('chev')}</button></h2><div id="${id}" class="ux-info-content" role="region" aria-labelledby="${id}-toggle"${expanded?'':' hidden'}>${PROFILE_DOCUMENT_COPY[title].split('<br><br>').map(P).join('')}</div></section>`;
-  }).join('');
-  return lgPage(lgTitle('Informations','L’essentiel sur Beautify.')+
-    `<div class="ux-info-list">${sections}</div>`+
-    `<footer class="ux-info-support"><p>Une question ?</p>${A('Nous contacter'+icon('chev'),'profile-contact-open',{},'ux-info-contact')}</footer>`,'ux-profile-screen ux-profile-documents-screen');
-};
-ACTIONS['profile-document-toggle']=data=>{
-  if(!Object.hasOwn(PROFILE_DOCUMENT_COPY,data.document))return;
-  M.documentTab=profileOpenDocument()===data.document?null:data.document;
-  render();
+  const tab=Object.hasOwn(PROFILE_DOCUMENT_COPY,M.documentTab)?M.documentTab:'À propos';
+  return lgPage(lgTitle('Informations')+chips(['À propos','Données','Abonnement','Crédits'],'documentTab',tab)+
+    lgCard(`<h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}`)+B('Nous contacter','PRF-10','secondary'),'ux-profile-screen ux-profile-documents-screen');
 };
 function profileViewportHeight(){
   const viewport=window.visualViewport;

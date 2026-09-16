@@ -122,30 +122,19 @@
 #phone-surface #app .ux-profile-v1 .ux-profile-links { padding:3px 14px; margin-bottom:0; }
 #phone-surface #app .ux-profile-v1 .ux-profile-documents { margin-top:auto; column-gap:12px; }
 #phone-surface #app .ux-profile-v1>.ux-small-note { margin:4px 3px 0; }
-/* One reading surface: section headings reveal their own content. */
+/* Keep the existing document choices and reading card on the same alignment. */
 #phone-surface #app .ux-profile-documents-screen { gap:16px; }
-#phone-surface #app .ux-info-list { border:1px solid #fff; border-radius:24px; background:linear-gradient(145deg,#fffaf5e8,#fff3eaa8); box-shadow:0 8px 24px -20px #81543d66; overflow:hidden; }
-#phone-surface #app .ux-info-section { margin:0; padding:0; }
-#phone-surface #app .ux-info-section+.ux-info-section { border-top:1px solid #b68f772b; }
-#phone-surface #app .ux-info-section>h2 { margin:0; font-family:var(--sans); }
-#phone-surface #app .ux-info-toggle { display:flex; align-items:center; gap:12px; width:100%; min-height:76px; margin:0; padding:16px; border:0; border-radius:0; background:none; box-shadow:none; color:var(--ink); text-align:left; }
-#phone-surface #app .ux-info-toggle:focus-visible { outline-offset:-4px; border-radius:12px; }
-#phone-surface #app .ux-info-icon { display:grid; place-items:center; flex:none; width:36px; height:36px; border-radius:12px; background:#ecd2bd42; color:#916348; }
-#phone-surface #app .ux-info-icon>.icon { width:21px; height:21px; }
-#phone-surface #app .ux-info-label { display:flex; flex-direction:column; flex:1; min-width:0; gap:4px; }
-#phone-surface #app .ux-info-label strong { font:600 18px/1.25 var(--sans); letter-spacing:-.3px; }
-#phone-surface #app .ux-info-label small { font:400 13px/1.4 var(--sans); color:#80614e; }
-#phone-surface #app .ux-info-toggle>.icon { flex:none; width:17px; height:17px; color:#96745d; transform:rotate(90deg); }
-#phone-surface #app .ux-info-toggle[aria-expanded="true"]>.icon { transform:rotate(-90deg); }
-#phone-surface #app .ux-info-toggle[aria-expanded="true"] .ux-info-icon { background:#eac3ac66; color:#9a4a30; }
-#phone-surface #app .ux-info-content { padding:0 18px 20px; }
-#phone-surface #app .ux-info-content .body-copy { margin:0; font:400 15px/1.55 var(--sans); color:#70503d; }
-#phone-surface #app .ux-info-content .body-copy+.body-copy { margin-top:14px; }
-#phone-surface #app .ux-info-content a { color:#8a4029; text-underline-offset:3px; overflow-wrap:anywhere; }
-#phone-surface #app .ux-info-support { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding:12px 2px 0; border-top:1px solid #b68f7733; }
-#phone-surface #app .ux-info-support p { margin:0; font:400 14px/1.4 var(--sans); color:#80614e; }
-#phone-surface #app .ux-info-contact { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:44px; padding:8px 0; border:0; background:none; box-shadow:none; color:#82442f; font:600 14px/1.4 var(--sans); }
-#phone-surface #app .ux-info-contact>.icon { width:16px; height:16px; }
+#phone-surface #app .ux-profile-documents-screen>.lg-page-controls+.lg-title { margin-bottom:4px; }
+#phone-surface #app .ux-profile-documents-screen>.choice-chips { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:0; overflow:visible; }
+#phone-surface #app .ux-profile-documents-screen>.choice-chips button { min-width:0; min-height:44px; padding:10px 12px; font-size:14px; line-height:1.35; white-space:normal; overflow-wrap:anywhere; }
+#phone-surface #app .ux-profile-documents-screen>.lg-card { margin:0; padding:20px; }
+#phone-surface #app .ux-profile-documents-screen>.lg-card>h2 { font-size:22px; line-height:1.25; margin:0 0 12px; }
+#phone-surface #app .ux-profile-documents-screen .body-copy { margin:0; font-size:15px; line-height:1.55; overflow-wrap:anywhere; }
+#phone-surface #app .ux-profile-documents-screen>.secondary { min-height:48px; margin:auto 0 0; }
+@container profile-screen (min-width:340px) {
+  #phone-surface #app .ux-profile-documents-screen>.choice-chips { grid-template-columns:1fr 1fr 1.4fr 1fr; gap:6px; }
+  #phone-surface #app .ux-profile-documents-screen>.choice-chips button { padding:10px 6px; font-size:13px; }
+}
 @container profile-screen (max-height:580px) {
   #phone-surface #app .ux-profile-v1 .lg-row { min-height:56px; }
   #phone-surface #app .ux-profile-v1 :is(.ux-profile-account,.ux-profile-access) { margin-bottom:8px; }
