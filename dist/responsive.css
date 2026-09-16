@@ -46,12 +46,12 @@
 /* The launcher has one heading, followed by fluid cards. */
 #phone-surface #app:has(.lg-analysis-launcher)>.statusbar { display:flex; }
 #phone-surface #app>.mock-screen:has(>.lg-analysis-launcher) { padding:12px 16px 10px!important; }
-#phone-surface #app .lg-analysis-launcher { position:relative; display:flex; flex-direction:column; min-height:100%; gap:var(--page-gap); padding:0; }
+#phone-surface #app .lg-analysis-launcher { position:relative; display:flex; flex-direction:column; min-height:100%; gap:20px; padding:0; }
 #phone-surface #app .lg-analysis-launcher>.lg-title { padding:0; min-height:44px; margin:0; text-align:left; }
 #phone-surface #app .lg-analysis-launcher>.lg-title h1 { font-size:clamp(27px,7.5cqw,31px); }
 #phone-surface #app .lg-analysis-launcher>.lg-title p { font-size:14px; margin-top:6px; }
 #phone-surface #app .lg-analysis-launcher>.lg-title p br { display:none; }
-#phone-surface #app .lg-launcher-cards { flex:none; grid-template-rows:repeat(3,clamp(120px,16cqh,144px)); gap:10px; }
+#phone-surface #app .lg-launcher-cards { flex:1; grid-template-rows:repeat(3,minmax(120px,1fr)); gap:14px; }
 #phone-surface #app .lg-launcher-card { aspect-ratio:auto; min-height:120px; }
 #phone-surface #app .lg-launcher-card>.lg-launcher-art { width:calc(var(--art-width) * .9); height:auto; aspect-ratio:var(--art-ratio); top:50%; transform:translateY(-50%); }
 #phone-surface #app .lg-launcher-copy { top:50%; left:20px; transform:translateY(-50%); }
@@ -158,6 +158,8 @@
 
 /* Dense report panels scroll before their photos or text become too small. */
 @container phone (max-height:740px) {
+  #phone-surface #app .lg-analysis-launcher { gap:14px; }
+  #phone-surface #app .lg-launcher-cards { gap:10px; }
   #phone-surface #app .ux-profile-v1 .lg-row { min-height:64px; }
   #phone-surface #app .ux-profile-v1 .ux-profile-access { padding:14px; }
   #phone-surface #app .beauty-report-panel { flex-basis:300px; }
