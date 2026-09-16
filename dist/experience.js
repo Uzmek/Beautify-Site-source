@@ -183,7 +183,7 @@ const PROFILE_DOCUMENT_COPY={
 V['PRF-11']=()=>{
   const tab=PROFILE_DOCUMENT_COPY[M.documentTab]?M.documentTab:'À propos';
   return lgPage(lgTitle('Informations')+chips(['À propos','Données','Abonnement','Crédits'],'documentTab',tab)+
-    lgCard(`<h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}`)+B('Nous contacter','PRF-10','secondary'),'ux-profile-screen ux-profile-documents');
+    lgCard(`<h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}`)+B('Nous contacter','PRF-10','secondary'),'ux-profile-screen ux-profile-documents-screen');
 };
 function profileViewportHeight(){
   const viewport=window.visualViewport;
