@@ -274,8 +274,8 @@ function lgAnalysisLauncher(){
   const future=[['Maquillage',108,1471,140,100],['Garde-robe',374,1471,132,100],['Tutoriels',630,1471,125,100]]
     .map(([title,x,y,width,height])=>`<li aria-disabled="true" aria-label="${title}, à venir">${lgLauncherArtwork(x,y,width,height,'lg-launcher-future-art')}<span>${title}</span></li>`).join('');
   return `<div class="lg-page lg-analysis-launcher">`+
-    lgTitle('Votre espace beauté','Retrouvez vos résultats ou lancez une nouvelle analyse.')+
-    `<div class="lg-launcher-cards">${cards}</div><section class="lg-launcher-future" aria-labelledby="lg-coming-title"><h2 id="lg-coming-title">À venir</h2><ul>${future}</ul></section></div>`;
+    lgTitle('Votre espace beauté','Retrouvez vos résultats<br>ou lancez une nouvelle analyse.')+
+    `<section class="lg-launcher-cards" aria-label="Vos analyses beauté">${cards}</section><section class="lg-launcher-future" aria-labelledby="lg-coming-title"><h2 id="lg-coming-title">À venir</h2><ul>${future}</ul></section></div>`;
 }
 V['DEC-01']=lgAnalysisLauncher;
 V['ANA-01']=lgAnalysisLauncher;
