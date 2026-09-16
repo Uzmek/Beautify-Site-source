@@ -216,7 +216,7 @@ V['ENT-05']=()=>EXPERIENCE_ACCOUNT().replace('Sauvegarder mes données','Compte 
 V['PRF-02']=()=>{
   const profile=M.profileEdit||M.profile;
   return lgPage(lgTitle('Mon compte')+
-    `<p class="ux-profile-status">${M.profile.connected?'Connecté':'Sans compte · Connexion facultative'}</p>`+
+    `<p class="ux-profile-status">${M.profile.connected?'Connecté':'Sans compte'}</p>`+
     form('profile',field('name','Nom d’usage (facultatif)',profile.name)+(M.profile.connected?field('email','Adresse email',profile.email,'email',true):''),'Enregistrer')+
     (M.profile.connected?A('Se déconnecter','logout-request',{},'secondary'):B('Se connecter','ENT-06','secondary')+B('Créer un compte','ENT-05','text-button ux-profile-details'))+
     A('À propos du compte','profile-account-details',{},'text-button ux-profile-details'),'ux-profile-screen ux-profile-account-screen');
