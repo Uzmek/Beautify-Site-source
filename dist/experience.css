@@ -83,6 +83,18 @@
   font-size:clamp(28px,8cqw,30px); line-height:1.15; overflow-wrap:anywhere;
 }
 #phone-surface #app>.mock-screen[data-route^="PRF-"] .lg-title>p { font-size:14px; line-height:1.45; margin-top:6px; }
+/* Separate navigation from the page heading; keep both in the normal flow.
+   Larger gaps divide sections, while headings stay close to their content. */
+#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page:has(>.lg-page-controls) { gap:16px; }
+#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>.lg-page-controls {
+  position:static; inset:auto; width:100%; min-height:44px; margin:0; justify-content:flex-start;
+}
+#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>.lg-page-controls+.lg-title {
+  min-height:0; padding:0; margin:0 0 8px; text-align:left;
+}
+#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>.lg-page-controls+.lg-title h1 {
+  font-size:clamp(30px,8.5cqw,32px); line-height:1.15; margin:0; text-wrap:balance;
+}
 #phone-surface #app .ux-profile-screen { gap:clamp(8px,1.5cqh,12px); }
 #phone-surface #app .ux-profile-screen .form-stack { gap:clamp(10px,1.8cqh,14px); margin:0; }
 #phone-surface #app .ux-profile-screen .form-stack>.primary { margin-top:0; }
@@ -124,18 +136,18 @@
 #phone-surface #app .ux-profile-v1>.ux-small-note { margin:4px 3px 0; }
 /* Keep the existing document choices and reading card on the same alignment. */
 #phone-surface #app .ux-profile-documents-screen { gap:16px; }
-#phone-surface #app .ux-profile-documents-screen>.lg-page-controls+.lg-title { margin-bottom:4px; }
 #phone-surface #app .ux-profile-documents-screen>.choice-chips { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:0; overflow:visible; }
 #phone-surface #app .ux-profile-documents-screen>.choice-chips button { min-width:0; min-height:44px; padding:10px 12px; font-size:14px; line-height:1.35; white-space:normal; overflow-wrap:anywhere; }
 #phone-surface #app .ux-profile-documents-screen>.lg-card { margin:0; padding:20px; }
 #phone-surface #app .ux-profile-documents-screen>.lg-card>h2 { font-size:22px; line-height:1.25; margin:0 0 12px; }
-#phone-surface #app .ux-profile-documents-screen .body-copy { margin:0; font-size:15px; line-height:1.55; overflow-wrap:anywhere; }
-#phone-surface #app .ux-profile-documents-screen>.secondary { min-height:48px; margin:auto 0 0; }
+#phone-surface #app .ux-profile-documents-screen .body-copy { margin:0; font-size:16px; line-height:1.55; overflow-wrap:anywhere; }
+#phone-surface #app .ux-profile-documents-screen>.secondary { min-height:48px; margin:8px 0 0; }
 @container profile-screen (min-width:340px) {
   #phone-surface #app .ux-profile-documents-screen>.choice-chips { grid-template-columns:1fr 1fr 1.4fr 1fr; gap:6px; }
-  #phone-surface #app .ux-profile-documents-screen>.choice-chips button { padding:10px 6px; font-size:13px; }
+  #phone-surface #app .ux-profile-documents-screen>.choice-chips button { padding:10px 6px; }
 }
 @container profile-screen (max-height:580px) {
+  #phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page:has(>.lg-page-controls) { gap:12px; }
   #phone-surface #app .ux-profile-v1 .lg-row { min-height:56px; }
   #phone-surface #app .ux-profile-v1 :is(.ux-profile-account,.ux-profile-access) { margin-bottom:8px; }
   #phone-surface #app .ux-profile-screen { gap:8px; }
