@@ -138,16 +138,32 @@
 #phone-surface #app .ux-profile-documents-screen { gap:16px; }
 #phone-surface #app .ux-profile-documents-screen>.choice-chips { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:0; overflow:visible; }
 #phone-surface #app .ux-profile-documents-screen>.choice-chips button { min-width:0; min-height:44px; padding:10px 12px; font-size:14px; line-height:1.35; white-space:normal; overflow-wrap:anywhere; }
-#phone-surface #app .ux-profile-documents-screen>.lg-card { margin:0; padding:20px; }
-#phone-surface #app .ux-profile-documents-screen>.lg-card>h2 { font-size:22px; line-height:1.25; margin:0 0 12px; }
-#phone-surface #app .ux-profile-documents-screen .body-copy { margin:0; font-size:16px; line-height:1.55; overflow-wrap:anywhere; }
-#phone-surface #app .ux-profile-documents-screen>.secondary { min-height:48px; margin:8px 0 0; }
+#phone-surface #app .ux-profile-documents-screen>.choice-chips button[aria-pressed="true"] {
+  background:#874831; border-color:#874831; color:#fff9f4; font-weight:700;
+  box-shadow:inset 0 1px 0 #ffffff26,0 3px 8px -5px #60311f66;
+}
+#phone-surface #app .ux-profile-documents-screen>.choice-chips button[aria-pressed="true"]::after {
+  content:''; position:absolute; bottom:5px; left:calc(50% - 8px); width:16px; height:2px;
+  border-radius:2px; background:currentColor; pointer-events:none;
+}
+/* Balance short documents without stretching them across the whole screen.
+   Long copy keeps its natural height and scrolls with the page. */
+#phone-surface #app .ux-profile-documents-screen>.ux-profile-document-card {
+  display:flex; flex-direction:column; gap:24px; min-height:clamp(320px,60cqh,440px);
+  margin:0; padding:24px 20px 20px;
+}
+#phone-surface #app .ux-profile-document-copy>h2 { font-size:22px; line-height:1.25; margin:0 0 12px; }
+#phone-surface #app .ux-profile-documents-screen .body-copy { margin:0; font-size:17px; line-height:1.6; overflow-wrap:anywhere; }
+#phone-surface #app .ux-profile-document-footer { margin-top:auto; padding-top:16px; border-top:1px solid #a875592e; }
+#phone-surface #app .ux-profile-document-footer>.secondary { min-height:48px; margin:0; font-size:15px; }
 @container profile-screen (min-width:340px) {
   #phone-surface #app .ux-profile-documents-screen>.choice-chips { grid-template-columns:1fr 1fr 1.4fr 1fr; gap:6px; }
   #phone-surface #app .ux-profile-documents-screen>.choice-chips button { padding:10px 6px; }
 }
 @container profile-screen (max-height:580px) {
   #phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page:has(>.lg-page-controls) { gap:12px; }
+  #phone-surface #app .ux-profile-documents-screen>.ux-profile-document-card { min-height:0; padding:20px; }
+  #phone-surface #app .ux-profile-documents-screen .body-copy { font-size:16px; line-height:1.55; }
   #phone-surface #app .ux-profile-v1 .lg-row { min-height:56px; }
   #phone-surface #app .ux-profile-v1 :is(.ux-profile-account,.ux-profile-access) { margin-bottom:8px; }
   #phone-surface #app .ux-profile-screen { gap:8px; }

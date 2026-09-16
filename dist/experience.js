@@ -183,7 +183,8 @@ const PROFILE_DOCUMENT_COPY={
 V['PRF-11']=()=>{
   const tab=Object.hasOwn(PROFILE_DOCUMENT_COPY,M.documentTab)?M.documentTab:'À propos';
   return lgPage(lgTitle('Informations')+chips(['À propos','Données','Abonnement','Crédits'],'documentTab',tab)+
-    lgCard(`<h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}`)+B('Nous contacter','PRF-10','secondary'),'ux-profile-screen ux-profile-documents-screen');
+    lgCard(`<div class="ux-profile-document-copy"><h2>${esc(tab)}</h2>${P(PROFILE_DOCUMENT_COPY[tab])}</div>`+
+      `<footer class="ux-profile-document-footer">${B('Nous contacter','PRF-10','secondary')}</footer>`,'ux-profile-document-card'),'ux-profile-screen ux-profile-documents-screen');
 };
 function profileViewportHeight(){
   const viewport=window.visualViewport;
