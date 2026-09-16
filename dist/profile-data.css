@@ -1,0 +1,12 @@
+/* PRF-07 reuses the help screen's geometry, type and glass surfaces. */
+#phone-surface #app:has(.pd-page) { background:linear-gradient(#f3e4dd26,#f3e4dd26),#f6dcd5 url('/assets/profile-data/background.png?v=1') center top/100% 100% no-repeat; }
+#phone-surface #app .pd-page .ph-heading h1 { font-size:calc(62 * var(--hu)); line-height:1.186; }
+#phone-surface #app .pd-page .pd-topics { height:calc(344 * var(--hu)); }
+#phone-surface #app .pd-page .ph-copy>span { white-space:normal; text-wrap:pretty; }
+#phone-surface #app .pd-page .ph-topic:disabled { opacity:1; cursor:default; }
+#phone-surface #app .pd-page .ph-topic:disabled .ph-medallion { opacity:.65; }
+#phone-surface #app .pd-page .ph-topic:disabled .ph-copy strong { color:#80675c; }
+#phone-surface #app .pd-page .ph-topic:disabled .ph-arrow { opacity:.4; }
+#phone-surface #app .pd-page .ph-topic:disabled:active { filter:none; }
+#phone-surface #app .pd-page .pd-medallion-export img,
+#phone-surface #app .pd-page .pd-medallion-delete img { clip-path:ellipse(46.7% 45.7% at 50% 48.4%); }

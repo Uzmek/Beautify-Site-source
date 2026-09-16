@@ -31,6 +31,8 @@ r.run(`
     assert.ok(V['PRF-01']().includes('data-go="'+target+'"'));
     go(target);assert.equal(route,target);back();assert.equal(route,'PRF-01');
   }
+  go('PRF-07',{replace:true});assert.match(V['PRF-07'](),/data-act="profile-return"[^>]*aria-label="Retour"/);
+  go('PRF-10',{replace:true});assert.match(V['PRF-10'](),/data-act="profile-return"[^>]*aria-label="Retour"/);
   assert.equal((V['PRF-01']().match(/data-go="PRF-06"/g)||[]).length,1);
 `);
 console.log('Profile reference: six entitlement states, real account data, escaped names, unchanged destinations and return navigation passed.');

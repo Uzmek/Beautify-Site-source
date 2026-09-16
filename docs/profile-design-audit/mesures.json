@@ -1,0 +1,3020 @@
+[
+  {
+    "name": "01-profil",
+    "buttons": [
+      {
+        "class": "pf-card pf-account",
+        "font": "ProfileText, sans-serif",
+        "height": 101,
+        "line": "22.4px",
+        "radius": "27.6761px",
+        "size": "16px",
+        "text": "Mon compte\nInvité\nSans compte",
+        "weight": "500",
+        "width": 356,
+        "x": 18,
+        "y": 173
+      },
+      {
+        "class": "pf-manage",
+        "font": "ProfileText, sans-serif",
+        "height": 52,
+        "line": "20.1805px",
+        "radius": "28.5986px",
+        "size": "16.1444px",
+        "text": "Découvrir Beautify Plus",
+        "weight": "700",
+        "width": 328,
+        "x": 32,
+        "y": 395
+      },
+      {
+        "class": "pf-card pf-row",
+        "font": "ProfileText, sans-serif",
+        "height": 96,
+        "line": "22.4px",
+        "radius": "27.6761px",
+        "size": "16px",
+        "text": "Photos et données\nGérer mes fichiers",
+        "weight": "500",
+        "width": 356,
+        "x": 18,
+        "y": 471
+      },
+      {
+        "class": "pf-card pf-row",
+        "font": "ProfileText, sans-serif",
+        "height": 95,
+        "line": "22.4px",
+        "radius": "27.6761px",
+        "size": "16px",
+        "text": "Aide et contact\nObtenir de l’aide",
+        "weight": "500",
+        "width": 356,
+        "x": 18,
+        "y": 576
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "13.838px",
+        "radius": "0px",
+        "size": "11.5317px",
+        "text": "À propos",
+        "weight": "600",
+        "width": 67,
+        "x": 30,
+        "y": 684
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "13.838px",
+        "radius": "0px",
+        "size": "11.5317px",
+        "text": "Confidentialité",
+        "weight": "600",
+        "width": 95,
+        "x": 106,
+        "y": 684
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "13.838px",
+        "radius": "0px",
+        "size": "11.5317px",
+        "text": "Abonnement",
+        "weight": "600",
+        "width": 86,
+        "x": 210,
+        "y": 684
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "13.838px",
+        "radius": "0px",
+        "size": "11.5317px",
+        "text": "Crédits",
+        "weight": "600",
+        "width": 58,
+        "x": 305,
+        "y": 684
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 48,
+        "line": "47.8118px",
+        "radius": "0px",
+        "size": "45.6655px",
+        "text": "Mon profil",
+        "weight": "400",
+        "width": 334,
+        "x": 30,
+        "y": 88
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-01",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "02-compte",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 46,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 46,
+        "x": 24,
+        "y": 66
+      },
+      {
+        "class": "secondary ux-profile-photo-action",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 59,
+        "line": "20.2035px",
+        "radius": "34.5951px",
+        "size": "16.8363px",
+        "text": "Ajouter une photo",
+        "weight": "400",
+        "width": 318,
+        "x": 38,
+        "y": 314
+      },
+      {
+        "class": "primary",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 55,
+        "line": "21.8641px",
+        "radius": "34.5951px",
+        "size": "18.2201px",
+        "text": "Enregistrer",
+        "weight": "400",
+        "width": 318,
+        "x": 38,
+        "y": 384
+      },
+      {
+        "class": "primary",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 54,
+        "line": "19.9268px",
+        "radius": "34.5951px",
+        "size": "16.6056px",
+        "text": "Créer un compte",
+        "weight": "700",
+        "width": 318,
+        "x": 38,
+        "y": 593
+      },
+      {
+        "class": "secondary",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 50,
+        "line": "19.3732px",
+        "radius": "34.5951px",
+        "size": "16.1444px",
+        "text": "J’ai déjà un compte",
+        "weight": "400",
+        "width": 318,
+        "x": 38,
+        "y": 656
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 48,
+        "line": "48.4331px",
+        "radius": "0px",
+        "size": "46.1268px",
+        "text": "Mon compte",
+        "weight": "400",
+        "width": 340,
+        "x": 26,
+        "y": 123
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 26,
+        "line": "25.831px",
+        "radius": "0px",
+        "size": "23.0634px",
+        "text": "Retrouvez tout, partout.",
+        "weight": "400",
+        "width": 235,
+        "x": 122,
+        "y": 514
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-02",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "03-creer-compte",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--apple",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "\nContinuer avec Apple",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 374
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--google",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "G\nContinuer avec Google",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 431
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--facebook",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "f\nContinuer avec Facebook",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 488
+      },
+      {
+        "class": "primary ux-auth-email",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 50,
+        "line": "20.25px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Créer avec mon e-mail",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 576
+      },
+      {
+        "class": "text-button",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 27,
+        "line": "18.85px",
+        "radius": "0px",
+        "size": "13px",
+        "text": "Se connecter",
+        "weight": "700",
+        "width": 93,
+        "x": 237,
+        "y": 641
+      },
+      {
+        "class": "text-button ux-auth-cancel",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 42,
+        "line": "19.6px",
+        "radius": "0px",
+        "size": "14px",
+        "text": "Continuer sans compte",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 681
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.56px",
+        "radius": "0px",
+        "size": "32px",
+        "text": "Créer un compte",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 120
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#ENT-05",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "04-inscription-email",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "primary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 55,
+        "line": "20.25px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Créer mon compte",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 529
+      },
+      {
+        "class": "text-button",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 27,
+        "line": "18.85px",
+        "radius": "0px",
+        "size": "13px",
+        "text": "Se connecter",
+        "weight": "700",
+        "width": 93,
+        "x": 237,
+        "y": 598
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.56px",
+        "radius": "0px",
+        "size": "32px",
+        "text": "Créer mon compte",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 120
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#ENT-07",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "05-connexion",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 36,
+        "y": 62
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--apple",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "\nContinuer avec Apple",
+        "weight": "600",
+        "width": 353,
+        "x": 36,
+        "y": 198
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--google",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "G\nContinuer avec Google",
+        "weight": "600",
+        "width": 353,
+        "x": 36,
+        "y": 255
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--facebook",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "f\nContinuer avec Facebook",
+        "weight": "600",
+        "width": 353,
+        "x": 36,
+        "y": 312
+      },
+      {
+        "class": "primary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 55,
+        "line": "20.25px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Se connecter",
+        "weight": "600",
+        "width": 353,
+        "x": 36,
+        "y": 577
+      },
+      {
+        "class": "text-button ux-auth-forgot",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 42,
+        "line": "19.6px",
+        "radius": "0px",
+        "size": "14px",
+        "text": "Mot de passe oublié ?",
+        "weight": "600",
+        "width": 353,
+        "x": 36,
+        "y": 646
+      },
+      {
+        "class": "text-button",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 27,
+        "line": "18.85px",
+        "radius": "0px",
+        "size": "13px",
+        "text": "Créer un compte",
+        "weight": "700",
+        "width": 116,
+        "x": 230,
+        "y": 702
+      },
+      {
+        "class": "text-button ux-auth-cancel",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 42,
+        "line": "19.6px",
+        "radius": "0px",
+        "size": "14px",
+        "text": "Annuler",
+        "weight": "600",
+        "width": 353,
+        "x": 36,
+        "y": 743
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.56px",
+        "radius": "0px",
+        "size": "32px",
+        "text": "Se connecter",
+        "weight": "700",
+        "width": 353,
+        "x": 36,
+        "y": 120
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#ENT-06",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "05-connexion",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--apple",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "\nContinuer avec Apple",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 198
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--google",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "G\nContinuer avec Google",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 255
+      },
+      {
+        "class": "secondary ux-auth-provider ux-auth-provider--facebook",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "f\nContinuer avec Facebook",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 312
+      },
+      {
+        "class": "primary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 55,
+        "line": "20.25px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Se connecter",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 577
+      },
+      {
+        "class": "text-button ux-auth-forgot",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 42,
+        "line": "19.6px",
+        "radius": "0px",
+        "size": "14px",
+        "text": "Mot de passe oublié ?",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 646
+      },
+      {
+        "class": "text-button",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 27,
+        "line": "18.85px",
+        "radius": "0px",
+        "size": "13px",
+        "text": "Créer un compte",
+        "weight": "700",
+        "width": 116,
+        "x": 214,
+        "y": 702
+      },
+      {
+        "class": "text-button ux-auth-cancel",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 42,
+        "line": "19.6px",
+        "radius": "0px",
+        "size": "14px",
+        "text": "Annuler",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 743
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.56px",
+        "radius": "0px",
+        "size": "32px",
+        "text": "Se connecter",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 120
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#ENT-06",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "06-mot-de-passe",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "primary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 55,
+        "line": "20.25px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Envoyer le lien",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 287
+      },
+      {
+        "class": "secondary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 50,
+        "line": "19.6px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Retour à la connexion",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 356
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.56px",
+        "radius": "0px",
+        "size": "32px",
+        "text": "Mot de passe oublié",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 120
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#ENT-08",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "07-acces",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 28,
+        "y": 56
+      },
+      {
+        "class": "pa-card pa-row",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 62,
+        "line": "22.4px",
+        "radius": "23.7774px",
+        "size": "16px",
+        "text": "Découvrir Beautify Plus",
+        "weight": "500",
+        "width": 343,
+        "x": 25,
+        "y": 398
+      },
+      {
+        "class": "pa-card pa-row",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 62,
+        "line": "22.4px",
+        "radius": "23.7774px",
+        "size": "16px",
+        "text": "Restaurer mes achats",
+        "weight": "500",
+        "width": 343,
+        "x": 25,
+        "y": 472
+      },
+      {
+        "class": "pa-card pa-row pa-information",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 62,
+        "line": "22.4px",
+        "radius": "23.7774px",
+        "size": "16px",
+        "text": "Informations sur l’abonnement",
+        "weight": "500",
+        "width": 343,
+        "x": 25,
+        "y": 547
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 68,
+        "line": "34.0959px",
+        "radius": "0px",
+        "size": "35.8904px",
+        "text": "Mon accès\nBeautify",
+        "weight": "400",
+        "width": 325,
+        "x": 34,
+        "y": 111
+      }
+    ],
+    "overflows": [
+      {
+        "class": "pa-heading",
+        "scroll": 347,
+        "text": "Mon accèsBeautifyTout pour révéler votre beauté.",
+        "width": 343
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-06",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "08-restaurer",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "primary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 54,
+        "line": "20.25px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Vérifier mon accès",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 281
+      },
+      {
+        "class": "secondary mt",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 54,
+        "line": "19.6px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Mon abonnement",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 350
+      },
+      {
+        "class": "text-button mt",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "19.6px",
+        "radius": "0px",
+        "size": "14px",
+        "text": "Changer de compte",
+        "weight": "600",
+        "width": 140,
+        "x": 20,
+        "y": 419
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5px",
+        "radius": "0px",
+        "size": "30px",
+        "text": "Retrouver mon accès",
+        "weight": "700",
+        "width": 297,
+        "x": 76,
+        "y": 66
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRE-04",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "09-paywall",
+    "buttons": [
+      {
+        "class": "pv2-close",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "50%",
+        "size": "16px",
+        "text": "Fermer le paywall",
+        "weight": "400",
+        "width": 44,
+        "x": 333,
+        "y": 24
+      },
+      {
+        "class": "pv2-plan pv2-year pv2-glass",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 86,
+        "line": "22.4px",
+        "radius": "12.9155px",
+        "size": "16px",
+        "text": "MEILLEURE OFFRE\n−50%\nAnnuel\n59,99 €\npar an\nsoit 4,99 €\n/ mois",
+        "weight": "400",
+        "width": 349,
+        "x": 22,
+        "y": 551
+      },
+      {
+        "class": "pv2-plan pv2-month pv2-glass",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 58,
+        "line": "22.4px",
+        "radius": "12.9155px",
+        "size": "16px",
+        "text": "Mensuel\n9,99 €\npar mois",
+        "weight": "400",
+        "width": 349,
+        "x": 22,
+        "y": 647
+      },
+      {
+        "class": "pv2-cta",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 54,
+        "line": "20.8px",
+        "radius": "8.1% / 50%",
+        "size": "16px",
+        "text": "Commencer mes 3 jours offerts",
+        "weight": "700",
+        "width": 349,
+        "x": 22,
+        "y": 717
+      },
+      {
+        "class": "pv2-text-link",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 44,
+        "line": "16.5px",
+        "radius": "0px",
+        "size": "11px",
+        "text": "Conditions",
+        "weight": "400",
+        "width": 53,
+        "x": 22,
+        "y": 837
+      },
+      {
+        "class": "pv2-text-link",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 44,
+        "line": "16.5px",
+        "radius": "0px",
+        "size": "11px",
+        "text": "Confidentialité",
+        "weight": "400",
+        "width": 71,
+        "x": 134,
+        "y": 837
+      },
+      {
+        "class": "pv2-text-link",
+        "font": "PaywallSans, Arial, sans-serif",
+        "height": 44,
+        "line": "16.5px",
+        "radius": "0px",
+        "size": "11px",
+        "text": "Restaurer mes achats",
+        "weight": "400",
+        "width": 107,
+        "x": 264,
+        "y": 837
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 23,
+        "line": "9px",
+        "radius": "999px",
+        "size": "9px",
+        "text": "V1",
+        "weight": "700",
+        "width": 28,
+        "x": 327,
+        "y": 822
+      },
+      {
+        "class": "is-active",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 23,
+        "line": "9px",
+        "radius": "999px",
+        "size": "9px",
+        "text": "V2",
+        "weight": "700",
+        "width": 28,
+        "x": 357,
+        "y": 822
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "PaywallBodoni, Georgia, serif",
+        "height": 110,
+        "line": "36.5883px",
+        "radius": "0px",
+        "size": "37.335px",
+        "text": "Tes couleurs.\nTa coupe.\nTa routine.",
+        "weight": "600",
+        "width": 349,
+        "x": 22,
+        "y": 69
+      },
+      {
+        "class": "",
+        "font": "PaywallBodoni, Georgia, serif",
+        "height": 26,
+        "line": "26.45px",
+        "radius": "0px",
+        "size": "23px",
+        "text": "Palette 12 saisons",
+        "weight": "600",
+        "width": 320,
+        "x": 37,
+        "y": 308
+      }
+    ],
+    "overflows": [
+      {
+        "class": "pv2-hero",
+        "scroll": 371,
+        "text": "\n      \n      \n      Beautify Plus\n      Tes couleurs.Ta cou",
+        "width": 349
+      }
+    ],
+    "url": "http://localhost:5173/#PRE-01",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "10-donnees",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 30,
+        "y": 59
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 81,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Exporter mes données\nFichier JSON, sans les images.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 174
+      },
+      {
+        "class": "ph-topic pd-photos",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Supprimer mes photos\nAucune photo ajoutée.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 322
+      },
+      {
+        "class": "ph-topic pd-delete",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Tout supprimer\nDonnées et profil.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 392
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nComprendre la gestion des données.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 487
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 34,
+        "line": "33.9578px",
+        "radius": "0px",
+        "size": "28.6322px",
+        "text": "Photos et données",
+        "weight": "400",
+        "width": 328,
+        "x": 32,
+        "y": 119
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 23,
+        "line": "22.8365px",
+        "radius": "0px",
+        "size": "21.2432px",
+        "text": "Gérer mes fichiers",
+        "weight": "400",
+        "width": 166,
+        "x": 32,
+        "y": 279
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-07",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "11-suppression",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "secondary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 52,
+        "line": "22.4px",
+        "radius": "999px",
+        "size": "16px",
+        "text": "Exporter avant de supprimer",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 400
+      },
+      {
+        "class": "primary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 55,
+        "line": "21.6px",
+        "radius": "999px",
+        "size": "16px",
+        "text": "Supprimer définitivement",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 556
+      },
+      {
+        "class": "text-button ux-profile-details",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "19.5px",
+        "radius": "0px",
+        "size": "13px",
+        "text": "Annuler",
+        "weight": "600",
+        "width": 353,
+        "x": 20,
+        "y": 627
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5057px",
+        "radius": "0px",
+        "size": "30.005px",
+        "text": "Tout supprimer",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 122
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 24,
+        "line": "23.8px",
+        "radius": "0px",
+        "size": "17px",
+        "text": "Sans compte",
+        "weight": "700",
+        "width": 321,
+        "x": 36,
+        "y": 223
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-09",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "12-aide",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 30,
+        "y": 59
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 81,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Nous contacter\nNotre équipe vous répond rapidement.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 174
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Ma photo ne s’importe pas\nSolutions et conseils.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 322
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon analyse ne s’affiche pas\nQue faire ?",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 392
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon accès Plus n’est pas reconnu\nVérifiez votre compte.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 462
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nVos données sont en sécurité.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 557
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 34,
+        "line": "33.9481px",
+        "radius": "0px",
+        "size": "33.7121px",
+        "text": "Aide et contact",
+        "weight": "400",
+        "width": 328,
+        "x": 32,
+        "y": 119
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 23,
+        "line": "22.8365px",
+        "radius": "0px",
+        "size": "21.2432px",
+        "text": "Un problème ?",
+        "weight": "400",
+        "width": 131,
+        "x": 32,
+        "y": 279
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-10",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "13-aide-photo",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 30,
+        "y": 59
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 81,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Nous contacter\nNotre équipe vous répond rapidement.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 174
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Ma photo ne s’importe pas\nSolutions et conseils.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 322
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon analyse ne s’affiche pas\nQue faire ?",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 392
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon accès Plus n’est pas reconnu\nVérifiez votre compte.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 462
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nVos données sont en sécurité.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 557
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 34,
+        "line": "33.9481px",
+        "radius": "0px",
+        "size": "33.7121px",
+        "text": "Aide et contact",
+        "weight": "400",
+        "width": 328,
+        "x": 32,
+        "y": 119
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 23,
+        "line": "22.8365px",
+        "radius": "0px",
+        "size": "21.2432px",
+        "text": "Un problème ?",
+        "weight": "400",
+        "width": 131,
+        "x": 32,
+        "y": 279
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 29,
+        "line": "28.8px",
+        "radius": "0px",
+        "size": "24px",
+        "text": "Ma photo ne s’importe pas",
+        "weight": "700",
+        "width": 351,
+        "x": 21,
+        "y": 543
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-10",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "14-aide-analyse",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 30,
+        "y": 59
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 81,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Nous contacter\nNotre équipe vous répond rapidement.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 174
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Ma photo ne s’importe pas\nSolutions et conseils.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 322
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon analyse ne s’affiche pas\nQue faire ?",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 392
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon accès Plus n’est pas reconnu\nVérifiez votre compte.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 462
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nVos données sont en sécurité.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 557
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 34,
+        "line": "33.9481px",
+        "radius": "0px",
+        "size": "33.7121px",
+        "text": "Aide et contact",
+        "weight": "400",
+        "width": 328,
+        "x": 32,
+        "y": 119
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 23,
+        "line": "22.8365px",
+        "radius": "0px",
+        "size": "21.2432px",
+        "text": "Un problème ?",
+        "weight": "400",
+        "width": 131,
+        "x": 32,
+        "y": 279
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 58,
+        "line": "28.8px",
+        "radius": "0px",
+        "size": "24px",
+        "text": "Mon analyse ne s’affiche pas",
+        "weight": "700",
+        "width": 351,
+        "x": 21,
+        "y": 492
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-10",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "15-aide-acces",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 30,
+        "y": 59
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 81,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Nous contacter\nNotre équipe vous répond rapidement.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 174
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Ma photo ne s’importe pas\nSolutions et conseils.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 322
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon analyse ne s’affiche pas\nQue faire ?",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 392
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon accès Plus n’est pas reconnu\nVérifiez votre compte.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 462
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nVos données sont en sécurité.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 557
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 34,
+        "line": "33.9481px",
+        "radius": "0px",
+        "size": "33.7121px",
+        "text": "Aide et contact",
+        "weight": "400",
+        "width": 328,
+        "x": 32,
+        "y": 119
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 23,
+        "line": "22.8365px",
+        "radius": "0px",
+        "size": "21.2432px",
+        "text": "Un problème ?",
+        "weight": "400",
+        "width": 131,
+        "x": 32,
+        "y": 279
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 58,
+        "line": "28.8px",
+        "radius": "0px",
+        "size": "24px",
+        "text": "Mon accès Plus n’est pas reconnu",
+        "weight": "700",
+        "width": 351,
+        "x": 21,
+        "y": 479
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-10",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "16-contact",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 30,
+        "y": 59
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 81,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Nous contacter\nNotre équipe vous répond rapidement.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 174
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Ma photo ne s’importe pas\nSolutions et conseils.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 322
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon analyse ne s’affiche pas\nQue faire ?",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 392
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 64,
+        "line": "22.4px",
+        "radius": "19.396px",
+        "size": "16px",
+        "text": "Mon accès Plus n’est pas reconnu\nVérifiez votre compte.",
+        "weight": "500",
+        "width": 331,
+        "x": 31,
+        "y": 462
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "20.7814px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nVos données sont en sécurité.",
+        "weight": "500",
+        "width": 348,
+        "x": 23,
+        "y": 557
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 34,
+        "line": "33.9481px",
+        "radius": "0px",
+        "size": "33.7121px",
+        "text": "Aide et contact",
+        "weight": "400",
+        "width": 328,
+        "x": 32,
+        "y": 119
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 23,
+        "line": "22.8365px",
+        "radius": "0px",
+        "size": "21.2432px",
+        "text": "Un problème ?",
+        "weight": "400",
+        "width": 131,
+        "x": 32,
+        "y": 279
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 29,
+        "line": "28.8px",
+        "radius": "0px",
+        "size": "24px",
+        "text": "Nous contacter",
+        "weight": "700",
+        "width": 351,
+        "x": 21,
+        "y": 555
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-10",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "17-informations-donnees",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "À propos",
+        "weight": "600",
+        "width": 76,
+        "x": 20,
+        "y": 181
+      },
+      {
+        "class": "choice-chip selected",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Données",
+        "weight": "700",
+        "width": 76,
+        "x": 102,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Abonnement",
+        "weight": "600",
+        "width": 107,
+        "x": 184,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Crédits",
+        "weight": "600",
+        "width": 76,
+        "x": 297,
+        "y": 181
+      },
+      {
+        "class": "secondary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Nous contacter",
+        "weight": "600",
+        "width": 311,
+        "x": 41,
+        "y": 718
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5057px",
+        "radius": "0px",
+        "size": "30.005px",
+        "text": "Informations",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 122
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 28,
+        "line": "27.5px",
+        "radius": "0px",
+        "size": "22px",
+        "text": "Données",
+        "weight": "700",
+        "width": 311,
+        "x": 41,
+        "y": 266
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-11",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "18-a-propos",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "choice-chip selected",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "À propos",
+        "weight": "700",
+        "width": 76,
+        "x": 20,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Données",
+        "weight": "600",
+        "width": 76,
+        "x": 102,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Abonnement",
+        "weight": "600",
+        "width": 107,
+        "x": 184,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Crédits",
+        "weight": "600",
+        "width": 76,
+        "x": 297,
+        "y": 181
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5057px",
+        "radius": "0px",
+        "size": "30.005px",
+        "text": "Informations",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 122
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 28,
+        "line": "27.5px",
+        "radius": "0px",
+        "size": "22px",
+        "text": "À propos",
+        "weight": "700",
+        "width": 311,
+        "x": 41,
+        "y": 266
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-11",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "19-informations-abonnement",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "À propos",
+        "weight": "600",
+        "width": 76,
+        "x": 20,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Données",
+        "weight": "600",
+        "width": 76,
+        "x": 102,
+        "y": 181
+      },
+      {
+        "class": "choice-chip selected",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Abonnement",
+        "weight": "700",
+        "width": 107,
+        "x": 184,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Crédits",
+        "weight": "600",
+        "width": 76,
+        "x": 297,
+        "y": 181
+      },
+      {
+        "class": "secondary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Nous contacter",
+        "weight": "600",
+        "width": 311,
+        "x": 41,
+        "y": 670
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5057px",
+        "radius": "0px",
+        "size": "30.005px",
+        "text": "Informations",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 122
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 28,
+        "line": "27.5px",
+        "radius": "0px",
+        "size": "22px",
+        "text": "Abonnement",
+        "weight": "700",
+        "width": 311,
+        "x": 41,
+        "y": 266
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-11",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "20-credits",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "À propos",
+        "weight": "600",
+        "width": 76,
+        "x": 20,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Données",
+        "weight": "600",
+        "width": 76,
+        "x": 102,
+        "y": 181
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Abonnement",
+        "weight": "600",
+        "width": 107,
+        "x": 184,
+        "y": 181
+      },
+      {
+        "class": "choice-chip selected",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Crédits",
+        "weight": "700",
+        "width": 76,
+        "x": 297,
+        "y": 181
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5057px",
+        "radius": "0px",
+        "size": "30.005px",
+        "text": "Informations",
+        "weight": "700",
+        "width": 353,
+        "x": 20,
+        "y": 122
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 28,
+        "line": "27.5px",
+        "radius": "0px",
+        "size": "22px",
+        "text": "Crédits",
+        "weight": "700",
+        "width": 311,
+        "x": 41,
+        "y": 266
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-11",
+    "viewport": [
+      393,
+      852
+    ]
+  },
+  {
+    "name": "21-profil-320",
+    "buttons": [
+      {
+        "class": "pf-card pf-account",
+        "font": "ProfileText, sans-serif",
+        "height": 83,
+        "line": "22.4px",
+        "radius": "22.5352px",
+        "size": "16px",
+        "text": "Mon compte\nInvité\nSans compte",
+        "weight": "500",
+        "width": 290,
+        "x": 15,
+        "y": 141
+      },
+      {
+        "class": "pf-manage",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "16.4319px",
+        "radius": "23.2864px",
+        "size": "13.1455px",
+        "text": "Découvrir Beautify Plus",
+        "weight": "700",
+        "width": 267,
+        "x": 26,
+        "y": 321
+      },
+      {
+        "class": "pf-card pf-row",
+        "font": "ProfileText, sans-serif",
+        "height": 78,
+        "line": "22.4px",
+        "radius": "22.5352px",
+        "size": "16px",
+        "text": "Photos et données\nGérer mes fichiers",
+        "weight": "500",
+        "width": 290,
+        "x": 15,
+        "y": 384
+      },
+      {
+        "class": "pf-card pf-row",
+        "font": "ProfileText, sans-serif",
+        "height": 77,
+        "line": "22.4px",
+        "radius": "22.5352px",
+        "size": "16px",
+        "text": "Aide et contact\nObtenir de l’aide",
+        "weight": "500",
+        "width": 290,
+        "x": 15,
+        "y": 469
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "11.2676px",
+        "radius": "0px",
+        "size": "9.38967px",
+        "text": "À propos",
+        "weight": "600",
+        "width": 54,
+        "x": 24,
+        "y": 558
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "11.2676px",
+        "radius": "0px",
+        "size": "9.38967px",
+        "text": "Confidentialité",
+        "weight": "600",
+        "width": 77,
+        "x": 86,
+        "y": 558
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "11.2676px",
+        "radius": "0px",
+        "size": "9.38967px",
+        "text": "Abonnement",
+        "weight": "600",
+        "width": 70,
+        "x": 171,
+        "y": 558
+      },
+      {
+        "class": "text-button",
+        "font": "ProfileText, sans-serif",
+        "height": 44,
+        "line": "11.2676px",
+        "radius": "0px",
+        "size": "9.38967px",
+        "text": "Crédits",
+        "weight": "600",
+        "width": 47,
+        "x": 249,
+        "y": 558
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 39,
+        "line": "38.9307px",
+        "radius": "0px",
+        "size": "37.1831px",
+        "text": "Mon profil",
+        "weight": "400",
+        "width": 272,
+        "x": 24,
+        "y": 71
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-01",
+    "viewport": [
+      320,
+      693
+    ]
+  },
+  {
+    "name": "22-aide-320",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 24,
+        "y": 48
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 66,
+        "line": "22.4px",
+        "radius": "16.9213px",
+        "size": "16px",
+        "text": "Nous contacter\nNotre équipe vous répond rapidement.",
+        "weight": "500",
+        "width": 283,
+        "x": 18,
+        "y": 142
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 52,
+        "line": "22.4px",
+        "radius": "15.7932px",
+        "size": "16px",
+        "text": "Ma photo ne s’importe pas\nSolutions et conseils.",
+        "weight": "500",
+        "width": 270,
+        "x": 25,
+        "y": 262
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 52,
+        "line": "22.4px",
+        "radius": "15.7932px",
+        "size": "16px",
+        "text": "Mon analyse ne s’affiche pas\nQue faire ?",
+        "weight": "500",
+        "width": 270,
+        "x": 25,
+        "y": 319
+      },
+      {
+        "class": "ph-topic",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 52,
+        "line": "22.4px",
+        "radius": "15.7932px",
+        "size": "16px",
+        "text": "Mon accès Plus n’est pas reconnu\nVérifiez votre compte.",
+        "weight": "500",
+        "width": 270,
+        "x": 25,
+        "y": 376
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 63,
+        "line": "22.4px",
+        "radius": "16.9213px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nVos données sont en sécurité.",
+        "weight": "500",
+        "width": 283,
+        "x": 18,
+        "y": 453
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 28,
+        "line": "27.6422px",
+        "radius": "0px",
+        "size": "27.4501px",
+        "text": "Aide et contact",
+        "weight": "400",
+        "width": 267,
+        "x": 26,
+        "y": 97
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 19,
+        "line": "18.5946px",
+        "radius": "0px",
+        "size": "17.2973px",
+        "text": "Un problème ?",
+        "weight": "400",
+        "width": 107,
+        "x": 26,
+        "y": 227
+      }
+    ],
+    "overflows": [
+      {
+        "class": "lg-brand lg-page-controls",
+        "scroll": 44,
+        "text": "Retour",
+        "width": 34
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-10",
+    "viewport": [
+      320,
+      693
+    ]
+  },
+  {
+    "name": "23-compte-320",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 19,
+        "y": 54
+      },
+      {
+        "class": "secondary ux-profile-photo-action",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 48,
+        "line": "16.4507px",
+        "radius": "28.169px",
+        "size": "13.7089px",
+        "text": "Ajouter une photo",
+        "weight": "400",
+        "width": 259,
+        "x": 30,
+        "y": 262
+      },
+      {
+        "class": "primary",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 45,
+        "line": "17.8028px",
+        "radius": "28.169px",
+        "size": "14.8357px",
+        "text": "Enregistrer",
+        "weight": "400",
+        "width": 259,
+        "x": 30,
+        "y": 319
+      },
+      {
+        "class": "primary",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "16.2254px",
+        "radius": "28.169px",
+        "size": "13.5211px",
+        "text": "Créer un compte",
+        "weight": "700",
+        "width": 259,
+        "x": 30,
+        "y": 494
+      },
+      {
+        "class": "secondary",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "15.7746px",
+        "radius": "28.169px",
+        "size": "13.1455px",
+        "text": "J’ai déjà un compte",
+        "weight": "400",
+        "width": 259,
+        "x": 30,
+        "y": 547
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 39,
+        "line": "39.4366px",
+        "radius": "0px",
+        "size": "37.5587px",
+        "text": "Mon compte",
+        "weight": "400",
+        "width": 277,
+        "x": 21,
+        "y": 100
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 21,
+        "line": "21.0329px",
+        "radius": "0px",
+        "size": "18.7793px",
+        "text": "Retrouvez tout, partout.",
+        "weight": "400",
+        "width": 192,
+        "x": 99,
+        "y": 424
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-02",
+    "viewport": [
+      320,
+      693
+    ]
+  },
+  {
+    "name": "24-donnees-320",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 24,
+        "y": 48
+      },
+      {
+        "class": "ph-card ph-contact",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 66,
+        "line": "22.4px",
+        "radius": "16.9213px",
+        "size": "16px",
+        "text": "Exporter mes données\nFichier JSON, sans les images.",
+        "weight": "500",
+        "width": 283,
+        "x": 18,
+        "y": 142
+      },
+      {
+        "class": "ph-topic pd-photos",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 53,
+        "line": "22.4px",
+        "radius": "15.7932px",
+        "size": "16px",
+        "text": "Supprimer mes photos\nAucune photo ajoutée.",
+        "weight": "500",
+        "width": 270,
+        "x": 25,
+        "y": 262
+      },
+      {
+        "class": "ph-topic pd-delete",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 53,
+        "line": "22.4px",
+        "radius": "15.7932px",
+        "size": "16px",
+        "text": "Tout supprimer\nDonnées et profil.",
+        "weight": "500",
+        "width": 270,
+        "x": 25,
+        "y": 319
+      },
+      {
+        "class": "ph-card ph-privacy",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 63,
+        "line": "22.4px",
+        "radius": "16.9213px",
+        "size": "16px",
+        "text": "Informations et confidentialité\nComprendre la gestion des données.",
+        "weight": "500",
+        "width": 283,
+        "x": 18,
+        "y": 397
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 28,
+        "line": "27.6501px",
+        "radius": "0px",
+        "size": "23.3137px",
+        "text": "Photos et données",
+        "weight": "400",
+        "width": 267,
+        "x": 26,
+        "y": 97
+      },
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 19,
+        "line": "18.5946px",
+        "radius": "0px",
+        "size": "17.2973px",
+        "text": "Gérer mes fichiers",
+        "weight": "400",
+        "width": 135,
+        "x": 26,
+        "y": 227
+      }
+    ],
+    "overflows": [
+      {
+        "class": "lg-brand lg-page-controls",
+        "scroll": 44,
+        "text": "Retour",
+        "width": 34
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-07",
+    "viewport": [
+      320,
+      693
+    ]
+  },
+  {
+    "name": "25-informations-320",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 20,
+        "y": 62
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "À propos",
+        "weight": "600",
+        "width": 136,
+        "x": 20,
+        "y": 173
+      },
+      {
+        "class": "choice-chip selected",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Données",
+        "weight": "700",
+        "width": 136,
+        "x": 164,
+        "y": 173
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Abonnement",
+        "weight": "600",
+        "width": 136,
+        "x": 20,
+        "y": 225
+      },
+      {
+        "class": "choice-chip ",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 44,
+        "line": "18.9px",
+        "radius": "999px",
+        "size": "14px",
+        "text": "Crédits",
+        "weight": "600",
+        "width": 136,
+        "x": 164,
+        "y": 225
+      },
+      {
+        "class": "secondary",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 49,
+        "line": "21px",
+        "radius": "999px",
+        "size": "15px",
+        "text": "Nous contacter",
+        "weight": "600",
+        "width": 238,
+        "x": 41,
+        "y": 857
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 35,
+        "line": "34.5px",
+        "radius": "0px",
+        "size": "30px",
+        "text": "Informations",
+        "weight": "700",
+        "width": 280,
+        "x": 20,
+        "y": 118
+      },
+      {
+        "class": "",
+        "font": "\"DM Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Arial, sans-serif",
+        "height": 28,
+        "line": "27.5px",
+        "radius": "0px",
+        "size": "22px",
+        "text": "Données",
+        "weight": "700",
+        "width": 238,
+        "x": 41,
+        "y": 306
+      }
+    ],
+    "overflows": [],
+    "url": "http://localhost:5173/#PRF-11",
+    "viewport": [
+      320,
+      693
+    ]
+  },
+  {
+    "name": "26-acces-320",
+    "buttons": [
+      {
+        "class": "lg-brand-control flow-exit",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 44,
+        "line": "22.4px",
+        "radius": "24px",
+        "size": "16px",
+        "text": "Retour",
+        "weight": "500",
+        "width": 44,
+        "x": 23,
+        "y": 46
+      },
+      {
+        "class": "pa-card pa-row",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 50,
+        "line": "22.4px",
+        "radius": "19.3607px",
+        "size": "16px",
+        "text": "Découvrir Beautify Plus",
+        "weight": "500",
+        "width": 279,
+        "x": 20,
+        "y": 324
+      },
+      {
+        "class": "pa-card pa-row",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 50,
+        "line": "22.4px",
+        "radius": "19.3607px",
+        "size": "16px",
+        "text": "Restaurer mes achats",
+        "weight": "500",
+        "width": 279,
+        "x": 20,
+        "y": 385
+      },
+      {
+        "class": "pa-card pa-row pa-information",
+        "font": "ProfileText, Arial, sans-serif",
+        "height": 50,
+        "line": "22.4px",
+        "radius": "19.3607px",
+        "size": "16px",
+        "text": "Informations sur l’abonnement",
+        "weight": "500",
+        "width": 279,
+        "x": 20,
+        "y": 445
+      }
+    ],
+    "headings": [
+      {
+        "class": "",
+        "font": "ProfileDisplay, Georgia, serif",
+        "height": 56,
+        "line": "27.7626px",
+        "radius": "0px",
+        "size": "29.2237px",
+        "text": "Mon accès\nBeautify",
+        "weight": "400",
+        "width": 264,
+        "x": 28,
+        "y": 90
+      }
+    ],
+    "overflows": [
+      {
+        "class": "lg-brand lg-page-controls",
+        "scroll": 44,
+        "text": "Retour",
+        "width": 35
+      },
+      {
+        "class": "pa-heading",
+        "scroll": 282,
+        "text": "Mon accèsBeautifyTout pour révéler votre beauté.",
+        "width": 279
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-06",
+    "viewport": [
+      320,
+      693
+    ]
+  }
+]

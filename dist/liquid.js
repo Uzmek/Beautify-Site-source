@@ -14,12 +14,15 @@ const lgModuleArt=domain=>`<span class="lg-module-art" aria-hidden="true"><img s
 const lgLatest=domain=>M.analyses.filter(x=>x.domain===domain&&x.status==='complete').slice(-1)[0];
 const lgSeasonNames={light_spring:'Printemps clair',warm_spring:'Printemps chaud',bright_spring:'Printemps lumineux',light_summer:'Été clair',cool_summer:'Été froid',soft_summer:'Été doux',soft_autumn:'Automne doux',warm_autumn:'Automne chaud',deep_autumn:'Automne profond',deep_winter:'Hiver profond',cool_winter:'Hiver froid',bright_winter:'Hiver lumineux'};
 const lgSeasonName=season=>lgSeasonNames[M.colorProfile?.season]||season?.name||'Votre palette';
+ACTIONS['profile-return']=()=>go('PRF-01',{root:true});
 
 function lgBrand(plus=false){
   const profile=route==='PRF-01',root=ROOTS.includes(route);
   const branded=route==='ENT-02'||route==='ACC-01';
   const word='Beautify'+(route==='ACC-01'&&canonicalOwned()?' Plus':'');
-  const control=route==='ENT-02'||profile||root?'':
+  const profileRootReturn=['PRF-07','PRF-10'].includes(route);
+  const control=route==='ENT-02'||profile||root?'':profileRootReturn?
+    A(lgBubble('back')+'<span>Retour</span>','profile-return',{label:'Retour'},'lg-brand-control flow-exit'):
     A(lgBubble(plus?'x':'back')+'<span>'+(plus?'Fermer':'Retour')+'</span>',plus?'premium-return':'back',{label:plus?'Fermer l’abonnement':'Retour'},'lg-brand-control flow-exit');
   if(!branded&&!control)return '';
   return `<div class="lg-brand${branded?'':' lg-page-controls'}">${branded?`<button type="button" class="lg-wordmark" data-act="home" aria-label="Accueil Beautify">${word}</button>`:''}${control}</div>`;
