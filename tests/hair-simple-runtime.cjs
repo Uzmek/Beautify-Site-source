@@ -38,7 +38,7 @@ test('Hair prepay opens the unchanged shared paywall and returns to the simple r
   ACTIONS.subscribe();assert.equal(canonicalOwned(),true);assert.equal(report().id,id);
   const result=V[route]();assert.match(result,/Les coupes faites pour vous/);
   assert.equal((result.match(/class="hair-simple-recommendation(?: |")/g)||[]).length,3);
-  assert.doesNotMatch(result,/canonical-report-rail|data-act="canonical-report-jump"|>À éviter<|>Essais</);
+  assert.doesNotMatch(result,/canonical-report-rail|data-act="canonical-report-jump"|>À éviter<|>Essais|>Historique<|>Nouvelle analyse</);
 `));
 
 test('cut page exposes three facts and salon guidance without a model step',({run})=>run(complete+`
@@ -47,7 +47,7 @@ test('cut page exposes three facts and salon guidance without a model step',({ru
   assert.match(html,/Pourquoi elle fonctionne/);assert.match(html,/Textures adaptées/);assert.match(html,/Longueur et effet/);
   assert.match(html,/Consigne salon/);assert.match(html,/Essayer sur ma photo/);
   assert.match(html,/Changer le portrait de référence/);
-  assert.doesNotMatch(html,/Choisissez un mannequin|10 essais|restants/);
+  assert.doesNotMatch(html,/Choisissez un mannequin|10 essais|restants|Voir une autre coupe/);
 `));
 
 test('existing analysis photo starts generation directly and result is the visual priority',({run,tick})=>{
@@ -57,7 +57,7 @@ test('existing analysis photo starts generation directly and result is the visua
   tick(1800);
   run(`assert.equal(route,'ESS-03');assert.equal(M.hairGenerations.used,1);assert.equal(M.simulations.length,1);
     const html=V['ESS-03']();assert.match(html,/Consigne salon/);assert.match(html,/Copier/);assert.match(html,/Partager/);assert.match(html,/Essayer une autre coupe/);
-    assert.doesNotMatch(html,/Enregistré|essais restants|quota/);`);
+    assert.doesNotMatch(html,/Enregistré|essais restants|quota|Voir tous mes looks/);`);
 });
 
 test('generation failure consumes nothing and retry succeeds once',({run,tick})=>{

@@ -16,13 +16,16 @@
 #phone-surface .hair-simple-cut-copy{display:flex;flex:none;flex-direction:column;gap:4px;padding:10px}
 #phone-surface .hair-simple-cut-copy small{font:600 10px/1.2 var(--sans);color:#9a745c}
 #phone-surface .hair-simple-cut-copy strong{font:700 16px/1.1 var(--sans);letter-spacing:-.3px}
-#phone-surface .hair-simple-cut-copy p{display:-webkit-box;overflow:hidden;margin:0;color:#80614d;font:500 11px/1.35 var(--sans);-webkit-box-orient:vertical;-webkit-line-clamp:3}
+#phone-surface .hair-simple-cut-copy p{display:-webkit-box;overflow:hidden;margin:0;color:#80614d;font:500 11px/1.35 var(--sans);white-space:normal;overflow-wrap:anywhere;-webkit-box-orient:vertical;-webkit-line-clamp:3}
 #phone-surface .hair-simple-recommendation:not(.is-best) .hair-simple-cut-copy p{display:none}
+#phone-surface .hair-simple-result .hair-simple-recommendations{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(142px,1.15fr) minmax(118px,.85fr)}
+#phone-surface .hair-simple-result .hair-simple-recommendation.is-best{grid-column:1/-1;flex-direction:row}
+#phone-surface .hair-simple-result .hair-simple-recommendation.is-best .hair-simple-cut-art{flex:0 0 45%}
+#phone-surface .hair-simple-result .hair-simple-recommendation.is-best .hair-simple-cut-copy{flex:1;min-width:0;justify-content:center;padding:13px}
+#phone-surface .hair-simple-result .hair-simple-recommendation:not(.is-best) .hair-simple-cut-art{min-height:70px}
+#phone-surface .hair-simple-result .hair-simple-recommendation:not(.is-best) .hair-simple-cut-copy{padding:8px 10px}
 #phone-surface .hair-simple-secondary-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;flex:none}
 #phone-surface .hair-simple-secondary-actions button{min-height:42px;padding:6px 4px;font-size:13px}
-#phone-surface .hair-simple-report-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:none}
-#phone-surface .hair-simple-report-actions button{min-height:44px}
-
 #phone-surface .hair-prepay{gap:10px}
 #phone-surface .hair-prepay-proof{display:grid;grid-template-columns:47% 1fr;gap:11px;min-height:185px;padding:9px;border:1px solid #fff;border-radius:26px;background:var(--hair-pane);box-shadow:inset 0 1px 2px #fff,0 9px 24px #8a583d17}
 #phone-surface .hair-prepay-proof .hair-simple-cut-art{border-radius:19px}
@@ -68,6 +71,12 @@
 #phone-surface :is(.hair-home-resume,.hair-home-last-look) small{font:600 11px/1.2 var(--sans);color:#99735a}
 #phone-surface :is(.hair-home-resume,.hair-home-last-look) h2{margin:0;font:750 23px/1.05 var(--sans)}
 #phone-surface :is(.hair-home-resume,.hair-home-last-look) p{margin:0;color:#82614e;font:500 13px/1.4 var(--sans)}
+#phone-surface .hair-home-last-look{position:relative;display:block;padding:8px;overflow:hidden}
+#phone-surface .hair-home-last-look>span{width:100%;height:100%;border-radius:21px}
+#phone-surface .hair-home-last-look>div{position:absolute;right:16px;bottom:16px;left:16px;display:block;padding:12px 14px;border:1px solid #fff;border-radius:18px;background:#fff9;backdrop-filter:blur(16px);box-shadow:0 8px 24px #75462d18}
+#phone-surface .hair-home-last-look>div small{display:block;margin-bottom:3px}
+#phone-surface .hair-home-last-look>div h2{font-size:20px}
+#phone-surface .hair-home-last-look>div p{display:none}
 #phone-surface .hair-home-secondary{align-self:center;min-height:40px}
 #phone-surface .hair-home-previous{display:flex;flex-direction:column;gap:8px;flex:none}
 #phone-surface .hair-home-previous>header{display:flex;align-items:center;justify-content:space-between}
@@ -77,8 +86,10 @@
 #phone-surface .hair-home-look span{height:84px;overflow:hidden;border-radius:13px;background:#f2e4da}
 #phone-surface .hair-home-look img{width:100%;height:100%;object-fit:contain}
 #phone-surface .hair-home-look strong{font:650 12px/1.2 var(--sans)}
-#phone-surface .hair-home-suggestions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;flex:1;min-height:0}
-#phone-surface .hair-home-suggestions .hair-simple-recommendation{min-height:190px}
+#phone-surface .hair-home-suggestions{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:8px;flex:1;min-height:0}
+#phone-surface .hair-home-suggestions .hair-simple-recommendation{min-height:175px}
+#phone-surface .hair-home-ready>.beauty-button{width:100%;min-height:50px;justify-content:center;border-radius:25px}
+#phone-surface .hair-home-ready>.hair-home-secondary{min-height:30px}
 
 #phone-surface .hair-simple-catalogue-shell{overflow:hidden}
 #phone-surface .hair-simple-catalogue-filters{display:flex;gap:6px;flex:none;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
@@ -91,18 +102,21 @@
 #phone-surface .hair-simple-catalogue-card strong{font:700 15px/1.2 var(--sans)}
 #phone-surface .hair-simple-catalogue-card small{font:550 12px/1.2 var(--sans);color:#906b53}
 
-#phone-surface .hair-cut-visual{display:flex;flex:1;min-height:235px;align-items:center;justify-content:center;overflow:hidden;border:1px solid #fff;border-radius:29px;background:radial-gradient(circle at 50% 28%,#fffaf5,#ead8cd)}
+#phone-surface .hair-simple-cut-page{gap:9px}
+#phone-surface .hair-cut-visual{position:relative;display:flex;flex:1;min-height:210px;align-items:center;justify-content:center;overflow:hidden;border:1px solid #fff;border-radius:29px;background:radial-gradient(circle at 50% 28%,#fffaf5,#ead8cd)}
 #phone-surface .hair-simple-cut-page{overflow-y:auto;padding-bottom:8px;scrollbar-width:none}
 #phone-surface .hair-simple-cut-page::-webkit-scrollbar{display:none}
 #phone-surface .hair-simple-cut-page>*{flex-shrink:0}
-#phone-surface .hair-simple-cut-page .hair-cut-visual{height:235px;flex:none}
+#phone-surface .hair-simple-cut-page .hair-cut-visual{height:210px;flex:none}
 #phone-surface .hair-cut-visual>:is(img,.hair-atlas){width:100%;height:100%;object-fit:contain}
-#phone-surface .hair-simple-cut-page .hair-simple-heading{gap:2px}
+#phone-surface .hair-cut-overlay{position:absolute;right:11px;bottom:11px;left:11px;gap:1px;padding:9px 12px;border:1px solid #fff;border-radius:17px;background:#fff9;backdrop-filter:blur(15px);box-shadow:0 7px 20px #75462e18}
+#phone-surface .hair-cut-overlay>span{font-size:9px}
+#phone-surface .hair-cut-overlay h1{font-size:22px;line-height:1}
 #phone-surface .hair-cut-facts{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:7px;flex:none}
-#phone-surface .hair-cut-facts>div{display:flex;min-width:0;min-height:72px;flex-direction:column;gap:5px;padding:10px;border:1px solid #fff;border-radius:18px;background:#fff7}
+#phone-surface .hair-cut-facts>div{display:flex;min-width:0;min-height:68px;flex-direction:column;gap:4px;padding:8px;border:1px solid #fff;border-radius:18px;background:#fff7}
 #phone-surface .hair-cut-facts small{font:550 10px/1.2 var(--sans);color:#99755d}
 #phone-surface .hair-cut-facts strong{font:650 11px/1.3 var(--sans)}
-#phone-surface .hair-salon-card{display:grid;grid-template-columns:35px 1fr auto;gap:10px;align-items:start;padding:13px;border:1px solid #fff;border-radius:22px;background:linear-gradient(145deg,#fffaf5,#f3e1d5);box-shadow:inset 0 1px 2px #fff}
+#phone-surface .hair-salon-card{display:grid;grid-template-columns:35px 1fr auto;gap:9px;align-items:start;padding:11px;border:1px solid #fff;border-radius:22px;background:linear-gradient(145deg,#fffaf5,#f3e1d5);box-shadow:inset 0 1px 2px #fff}
 #phone-surface .hair-salon-card>span{display:grid;place-items:center;width:35px;height:35px;border-radius:50%;background:#b47c5722;color:#955f3c}
 #phone-surface .hair-salon-card>span .b-icon{width:20px;height:20px}
 #phone-surface .hair-salon-card small{font:600 10px/1.2 var(--sans);color:#9a745b}
@@ -110,7 +124,7 @@
 #phone-surface .hair-salon-card p{margin:0;color:#74523f;font:500 12px/1.35 var(--sans)}
 #phone-surface .hair-salon-copy,#phone-surface .hair-salon-action{min-height:36px;padding:6px 9px;border:1px solid #fff;border-radius:14px;background:#fff9;color:#85563a;font:650 11px/1 var(--sans)}
 #phone-surface .hair-cut-model{flex:none;border-top:1px solid #a77b5e33;padding-top:3px}
-#phone-surface .hair-cut-model summary{min-height:40px;display:flex;align-items:center;color:#89634c;font:600 12px/1.2 var(--sans);cursor:pointer}
+#phone-surface .hair-cut-model summary{min-height:34px;display:flex;align-items:center;color:#89634c;font:600 12px/1.2 var(--sans);cursor:pointer}
 #phone-surface .hair-cut-model p{margin:0 0 8px;color:#92715c;font:500 11px/1.35 var(--sans)}
 #phone-surface .hair-cut-model>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 #phone-surface .hair-cut-model>div button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px;border:1px solid transparent;border-radius:15px;background:transparent;color:#76503b;font:600 10px/1.2 var(--sans)}
