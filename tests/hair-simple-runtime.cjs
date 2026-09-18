@@ -1,0 +1,100 @@
+const fs=require('node:fs');
+const assert=require('node:assert/strict');
+const prefix=fs.readFileSync('tests/flow-runtime.cjs','utf8').split('let checks = 0;')[0];
+const runtime=new Function('require',prefix+'\nreturn runtime;')(require);
+let checks=0;
+function test(name,fn){try{fn(runtime());checks++;}catch(error){error.message=name+': '+error.message;throw error;}}
+const complete=`ACTIONS['hair-start-analysis']();M.draft.photo='portrait';M.draft.answers=canonicalEngineAnswers('Cheveux');ACTIONS['canonical-analyze-photo']();ACTIONS['finish-analysis']();`;
+
+test('first Hair visit has one clear analysis action',({run})=>run(`
+  go('ANA-01');ACTIONS['studio-analysis']({domain:'Cheveux'});assert.equal(route,'HAI-01');const html=V['HAI-01']();
+  assert.match(html,/Votre prochaine coupe commence ici/);
+  assert.match(html,/Analyser mes cheveux/);
+  assert.doesNotMatch(html,/canonical-report-rail|hair-trials-grid|quota/);
+`));
+
+test('variant A shows real proof, three tokens and five locked alternatives',({run})=>run(complete+`
+  assert.equal(route,'ANA-09');M.hairPrepayVariant='A';const html=V['ANA-09']();
+  assert.match(html,/Une première coupe se révèle/);
+  assert.equal((html.match(/hair-simple-tokens/g)||[]).length,1);
+  assert.equal((html.match(/hair-prepay-locked-cut/g)||[]).length,5);
+  assert.match(html,/Votre meilleure correspondance/);
+  assert.match(html,/Voir les 6 coupes et essayer sur ma photo/);
+  assert.doesNotMatch(html,/Consigne salon|Essayer sur ma photo/);
+`));
+
+test('variant B uses the analysis photo and keeps every look obscured',({run})=>run(complete+`
+  M.hairPrepayVariant='B';const html=V['ANA-09']();
+  assert.match(html,/6 coupes adaptées à ton visage/);
+  assert.match(html,/hair-prepay-user-photo/);
+  assert.equal((html.match(/hair-prepay-mini"/g)||[]).length,5);
+  assert.match(html,/Afficher mon résultat et débloquer 10 essais/);
+  assert.doesNotMatch(html,/Consigne salon|Pourquoi elle fonctionne/);
+`));
+
+test('Hair prepay opens the unchanged shared paywall and returns to the simple result',({run})=>run(complete+`
+  const id=report().id;ACTIONS['hair-prepay-unlock']({id});assert.equal(route,'PRE-01');
+  const paywall=V['PRE-01']();assert.match(paywall,/59,99/);assert.match(paywall,/9,99/);
+  ACTIONS.subscribe();assert.equal(canonicalOwned(),true);assert.equal(report().id,id);
+  const result=V[route]();assert.match(result,/Les coupes faites pour vous/);
+  assert.equal((result.match(/class="hair-simple-recommendation(?: |")/g)||[]).length,3);
+  assert.doesNotMatch(result,/canonical-report-rail|data-act="canonical-report-jump"|>À éviter<|>Essais</);
+`));
+
+test('cut page exposes three facts and salon guidance without a model step',({run})=>run(complete+`
+  uxActivatePremium();const id=report().id;ACTIONS['hair-simple-cut']({id:'lob-soft',analysis:id});
+  assert.equal(route,'HAI-03');const html=V['HAI-03']();
+  assert.match(html,/Pourquoi elle fonctionne/);assert.match(html,/Textures adaptées/);assert.match(html,/Longueur et effet/);
+  assert.match(html,/Consigne salon/);assert.match(html,/Essayer sur ma photo/);
+  assert.match(html,/Changer le portrait de référence/);
+  assert.doesNotMatch(html,/Choisissez un mannequin|10 essais|restants/);
+`));
+
+test('existing analysis photo starts generation directly and result is the visual priority',({run,tick})=>{
+  run(complete+`uxActivatePremium();const id=report().id;report().photo='photo-current';memoryPhotos['photo-current']='blob:current';ACTIONS['hair-simple-cut']({id:'lob-soft',analysis:id});ACTIONS['haircut-simulate']({id:'lob-soft',analysis:id});
+    assert.equal(route,'ESS-02');assert.ok(M.haircutDraft);assert.equal(M.hairGenerations.used,0);
+    const loader=V['ESS-02']();assert.match(loader,/Votre look se crée/);assert.doesNotMatch(loader,/Quitter|quota/);`);
+  tick(1800);
+  run(`assert.equal(route,'ESS-03');assert.equal(M.hairGenerations.used,1);assert.equal(M.simulations.length,1);
+    const html=V['ESS-03']();assert.match(html,/Consigne salon/);assert.match(html,/Copier/);assert.match(html,/Partager/);assert.match(html,/Essayer une autre coupe/);
+    assert.doesNotMatch(html,/Enregistré|essais restants|quota/);`);
+});
+
+test('generation failure consumes nothing and retry succeeds once',({run,tick})=>{
+  run(complete+`uxActivatePremium();const id=report().id;report().photo='photo-current';memoryPhotos['photo-current']='blob:current';M.scenario='error';ACTIONS['hair-simple-cut']({id:'bob',analysis:id});ACTIONS['haircut-simulate']({id:'bob',analysis:id});
+    assert.equal(route,'ESS-02');assert.equal(M.hairGenerations.used,0);assert.equal(M.simulations.length,0);
+    const html=V['ESS-02']();assert.match(html,/Rien n’a été consommé/);assert.match(html,/Réessayer/);assert.match(html,/Retour à la coupe/);
+    ACTIONS['hair-generation-retry']();assert.equal(M.scenario,'normal');`);
+  tick(1800);
+  run(`assert.equal(route,'ESS-03');assert.equal(M.hairGenerations.used,1);assert.equal(M.simulations.length,1);ACTIONS['finish-haircut']();assert.equal(M.hairGenerations.used,1);`);
+});
+
+test('Hair home prioritizes draft then latest look and keeps Mes looks in natural scroll',({run})=>run(complete+`
+  uxActivatePremium();const id=report().id;M.haircutDraft={id:'draft',haircut:'bob',source:'portrait',analysis:id};go('HAI-01');assert.match(V['HAI-01'](),/Continuer mon essai/);
+  M.haircutDraft=null;M.simulations=[{id:'look',domain:'Cheveux',haircut:'bob',source:'portrait',date:DATE(),previewModel:'clara'}];render();
+  const home=V['HAI-01']();assert.match(home,/Votre dernier look/);assert.match(home,/Essayer une autre coupe/);assert.match(home,/Mes looks/);
+  ACTIONS['saved-hair-sims']();assert.equal(route,'HAI-01');assert.match(V['HAI-01'](),/Mes looks/);
+`));
+
+test('an expired temporary photo resumes on the chosen cut instead of looping',({run})=>run(complete+`
+  uxActivatePremium();const id=report().id;M.haircutDraft={id:'draft',haircut:'cascade',source:'photo-expired',analysis:id};go('HAI-01');
+  ACTIONS['hair-simple-resume']();assert.equal(route,'HAI-03');assert.equal(M.haircutSelected,'cascade');assert.equal(M.haircutDraft,null);
+  const html=V['HAI-03']();assert.match(html,/Dégradé cascade/);assert.match(html,/Essayer sur ma photo/);
+`));
+
+test('catalogue is secondary, naturally scrollable and cards are fully clickable',({run})=>run(complete+`
+  uxActivatePremium();ACTIONS['hair-simple-catalog']({analysis:report().id});assert.equal(route,'HAI-02');let html=V['HAI-02']();
+  assert.match(html,/Toutes les coupes/);assert.equal((html.match(/hair-simple-catalogue-card/g)||[]).length,6);
+  assert.doesNotMatch(html,/hair-carousel|Aperçu adapté automatiquement|data-act="hair-model"/);
+  ACTIONS['hair-simple-filter']({value:'Toutes'});html=V['HAI-02']();assert.equal((html.match(/hair-simple-catalogue-card/g)||[]).length,12);
+`));
+
+test('global navigation and non-Hair modules keep their destinations',({run})=>run(`
+  const navigation=nav();assert.match(navigation,/Accueil/);assert.match(navigation,/Analyses/);assert.match(navigation,/Profil/);
+  assert.match(navigation,/data-go="ACC-01"/);assert.match(navigation,/data-go="ANA-01"/);assert.match(navigation,/data-go="PRF-01"/);
+  assert.doesNotMatch(V['COL-01'](),/hair-simple-/);assert.doesNotMatch(V['PEA-01'](),/hair-simple-/);
+  M.simulations=[{id:'generic-look',name:'Aperçu générique',source:'bun',image:'layers',look:'layers',type:'Simulation',domain:'Maquillage'}];M.context.simulation='generic-look';
+  const genericResult=V['ESS-03']();assert.doesNotMatch(genericResult,/hair-look-result|hair-simple-home/);
+`));
+
+console.log(checks+' simplified Hair journey checks passed');
