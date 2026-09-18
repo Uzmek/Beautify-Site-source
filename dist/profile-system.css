@@ -1,0 +1,556 @@
+/* Profile design system. One shell, one type scale, shared controls and artwork.
+   Content grows and scrolls; text and touch targets never scale with a mockup. */
+#phone-surface:has(.profile-system) {
+  --profile-ink:#351e15;
+  --profile-muted:#705347;
+  --profile-accent:#87482f;
+  --profile-radius:26px;
+  --profile-glass:linear-gradient(135deg,#ffffff38,#edbba521 48%,#ffffff26);
+  --profile-shadow:inset 1px 1px 0 #fffffff2,inset -1px -1px 0 #ffffff73,inset 0 -3px 7px -5px #7c443e70,0 12px 24px -14px #713e354d;
+  --profile-background:#fae6df url('/assets/profile-reference/background.png') center top / cover no-repeat;
+  /* Approved reference: pale peach body, fine white lip and diffused rose shadow. */
+  --profile-control-glass:linear-gradient(155deg,#fff8f052,#f4d7cc26 55%,#ffe9dd45);
+  --profile-control-warm:linear-gradient(160deg,#ffe9dd85,#edb8a870 58%,#f8d3c378);
+  --profile-control-shadow:inset 0 1px 1px #fffffff0,inset 0 -1px 1px #ffffff73,0 1px 0 #d99c8140,0 8px 16px -10px #ad6c545c;
+  --profile-control-highlight:linear-gradient(160deg,#fffffff0,#ffffff26 48%,#ffffff99);
+  --profile-control-filter:blur(2px) saturate(1.1);
+}
+#phone-surface #app:has(.profile-system) {
+  container-type:inline-size;
+  background:var(--profile-background);
+  color:var(--profile-ink);
+  font-family:ProfileText,Arial,sans-serif;
+}
+#phone-surface #app:has(.profile-system)::before,
+#phone-surface #app:has(.profile-system)::after { display:none; }
+
+/* The phone chrome belongs to the shell, never to an individual screen. */
+#phone-surface #app:has(.profile-system)>.statusbar {
+  height:54px; min-height:54px; padding:10px 28px 8px 32px;
+  align-items:center; color:#23170f; font:700 15px/1 ProfileText,Arial,sans-serif;
+}
+#phone-surface #app:has(.profile-system)>.statusbar .island {
+  display:block; position:absolute; transform:none; top:10px; left:calc(50% - 60px);
+  width:120px; height:34px; border-radius:24px; background:#000;
+}
+#phone-surface #app:has(.profile-system)>.statusbar .island:after {
+  content:''; position:absolute; right:12px; top:9px; width:16px; height:16px;
+  border-radius:50%; background:radial-gradient(circle at 45% 40%,#263b79 0 9%,#111b36 15% 28%,#08090e 42% 65%,#13141a 72%);
+}
+#phone-surface #app:has(.profile-system)>.statusbar .status-icons { gap:6px; }
+#phone-surface #app:has(.profile-system)>.statusbar .icon { width:17px; height:17px; color:#23170f; }
+#phone-surface #app:has(.profile-system)>.statusbar .icon:last-child { width:24px; }
+#phone-surface #app:has(.profile-system)>.statusbar .b-icon-solid { fill:currentColor; stroke:currentColor; }
+#phone-surface #app:has(.profile-system)>.statusbar .b-icon-line { stroke-width:2.5; }
+#phone-surface #app>.mock-screen:has(>.profile-system) {
+  padding:0!important; min-height:0; max-width:none; overflow-y:auto; overflow-x:hidden;
+  container-type:normal; scrollbar-width:none;
+}
+#phone-surface #app>.mock-screen>.profile-system {
+  display:flex; flex-direction:column; gap:16px; min-height:100%; height:auto;
+  padding:10px 20px 28px; color:var(--profile-ink); font-family:ProfileText,Arial,sans-serif;
+  --pu:.46px;
+}
+#phone-surface #app>.mock-screen>.profile-system>* { flex-shrink:0; min-width:0; }
+#phone-surface #app .profile-system :is(h1,h2,h3,p) { overflow-wrap:break-word; }
+#phone-surface #app .profile-system>.lg-page-controls {
+  position:static; inset:auto; width:48px; height:48px; min-height:48px; margin:0; padding:0;
+}
+#phone-surface #app .profile-system>.lg-page-controls .flow-exit {
+  display:grid; place-items:center; width:48px; height:48px; min-width:48px; min-height:48px;
+  padding:0; margin:0; border:0; background:none; box-shadow:none;
+}
+#phone-surface #app .profile-system>.lg-page-controls .flow-exit>span:last-child { display:none; }
+#phone-surface #app .profile-system>.lg-page-controls .lg-bubble {
+  display:grid; place-items:center; width:46px; height:46px; flex:none; color:var(--profile-ink);
+  border:1px solid #ffffff73; border-radius:50%;
+  background:var(--profile-control-glass); box-shadow:var(--profile-control-shadow);
+  backdrop-filter:var(--profile-control-filter); -webkit-backdrop-filter:var(--profile-control-filter);
+}
+#phone-surface #app .profile-system>.lg-page-controls .icon { width:22px; height:22px; }
+#phone-surface #app .profile-system>.lg-page-controls .b-icon-line { stroke-width:1.8; }
+#phone-surface #app .profile-system>:is(.lg-title,.pi-heading,.pa-heading,.ph-heading) {
+  position:relative; height:auto; min-height:0; padding:0 6px 4px; margin:0; text-align:left;
+}
+#phone-surface #app .profile-system.profile-subpage h1 {
+  margin:0; padding:0; font:400 34px/1.1 ProfileDisplay,Georgia,serif;
+  letter-spacing:-.025em; color:var(--profile-ink); text-wrap:wrap;
+}
+#phone-surface #app .profile-system>:is(.lg-title,.pi-heading,.pa-heading,.ph-heading)>p {
+  margin:8px 0 0; font:400 15px/1.45 ProfileText,Arial,sans-serif;
+  color:var(--profile-muted); white-space:normal;
+}
+#phone-surface #app .profile-system h2 { font:400 24px/1.2 ProfileDisplay,Georgia,serif; margin:0 0 12px; color:var(--profile-ink); }
+#phone-surface #app .profile-system h3 { font:700 18px/1.3 ProfileText,Arial,sans-serif; }
+#phone-surface #app .profile-system :is(.body-copy,.ux-sync-copy,.ux-profile-delete-summary p) {
+  font:400 15px/1.55 ProfileText,Arial,sans-serif; color:var(--profile-muted);
+}
+
+/* Clear surfaces: put card blur on a separate layer so nested controls can
+   still sample the page backdrop instead of an opaque backdrop root. */
+#phone-surface #app .profile-system :is(.lg-card,.pf-card,.pa-card,.ph-card,.ux-auth-benefits) {
+  position:relative; width:100%; min-width:0; margin:0; padding:20px;
+  border:1px solid #ffffffb3; border-radius:var(--profile-radius); color:var(--profile-ink);
+  background:var(--profile-glass); box-shadow:var(--profile-shadow);
+  backdrop-filter:none; -webkit-backdrop-filter:none; isolation:isolate;
+}
+#phone-surface #app .profile-system :is(.lg-card,.pf-card,.pa-card,.ph-card,.ux-auth-benefits)::before {
+  content:''; position:absolute; z-index:-1; inset:0; border:0;
+  border-radius:inherit; background:linear-gradient(135deg,#ffffff0a,#ffffff14); box-shadow:none; pointer-events:none;
+  backdrop-filter:blur(4px) saturate(1.2); -webkit-backdrop-filter:blur(4px) saturate(1.2);
+}
+#phone-surface #app .profile-system :is(.primary,.secondary,.text-button),
+#phone-surface:has(.profile-system) #overlay :is(.primary,.secondary,.text-button) {
+  min-height:48px; margin-top:0; padding:12px 18px; border-radius:999px;
+  font:600 16px/1.35 ProfileText,Arial,sans-serif; letter-spacing:0; white-space:normal;
+}
+#phone-surface #app .profile-system :is(.primary,.secondary),
+#phone-surface:has(.profile-system) #overlay :is(.primary,.secondary) {
+  position:relative; isolation:isolate; overflow:hidden;
+  border:1px solid #ffffff99; box-shadow:var(--profile-control-shadow);
+  backdrop-filter:var(--profile-control-filter); -webkit-backdrop-filter:var(--profile-control-filter);
+}
+#phone-surface #app .profile-system :is(.primary,.secondary,.pf-manage)::before,
+#phone-surface:has(.profile-system) #overlay :is(.primary,.secondary)::before {
+  content:''; position:absolute; z-index:-1; inset:1px; pointer-events:none;
+  border:0; padding:1px; border-radius:inherit; background:var(--profile-control-highlight);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask-composite:exclude;
+}
+#phone-surface #app .profile-system .primary,
+#phone-surface:has(.profile-system) #overlay .primary {
+  background:var(--profile-control-warm);
+  color:#51200d;
+  border-color:#fff5eb;
+  box-shadow:var(--profile-control-shadow),0 0 0 .5px #d8957c52;
+}
+/* The reference centers the label alone on submit actions. */
+#phone-surface #app .profile-system .primary>[data-icon=arrow],
+#phone-surface:has(.profile-system) #overlay .primary>[data-icon=arrow] { display:none; }
+#phone-surface #app .profile-system .secondary,
+#phone-surface:has(.profile-system) #overlay .secondary { background:var(--profile-control-glass); color:#61331f; }
+#phone-surface #app .profile-system .text-button,
+#phone-surface:has(.profile-system) #overlay .text-button { background:none; border:0; box-shadow:none; color:var(--profile-accent); font-size:14px; }
+#phone-surface #app .profile-system>.text-button,
+#phone-surface #app .profile-system .ux-sync-signout,
+#phone-surface:has(.profile-system) #overlay .text-button {
+  position:relative; border:1px solid transparent;
+  background:none; box-shadow:none;
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+#phone-surface #app .profile-system :is(button,input,textarea,a):focus-visible,
+#phone-surface:has(.profile-system) #overlay :is(button,input,textarea,a):focus-visible { outline:2px solid #87482f; outline-offset:3px; }
+#phone-surface #app .profile-system :is(button,input,textarea) { -webkit-text-stroke:0; }
+#phone-surface #app .profile-system button:disabled { cursor:default; }
+
+/* Shared illustrations and navigation arrows, identical across sections. */
+#phone-surface #app .profile-system .profile-art {
+  display:block; position:static; flex:0 0 64px; width:64px; height:64px; margin:0;
+  transform:none; pointer-events:none; filter:drop-shadow(0 4px 7px #a7745526);
+}
+#phone-surface #app .profile-system .profile-art img { display:block; width:100%; height:100%; object-fit:contain; }
+#phone-surface #app .profile-system .profile-art-shield img { clip-path:ellipse(42.4% 41% at 49.5% 47.8%); }
+#phone-surface #app .profile-system :is(.profile-art-mail,.profile-art-analysis,.profile-art-export,.profile-art-delete) img { clip-path:ellipse(46.7% 45.7% at 50% 48.4%); }
+#phone-surface #app .profile-system .profile-art-lock img { clip-path:ellipse(43.7% 43% at 50% 49.1%); }
+#phone-surface #app .profile-system .profile-art-scissors img { clip-path:ellipse(45.7% 44.7% at 49.7% 48.2%); }
+#phone-surface #app .profile-system .profile-art-credit img { clip-path:ellipse(45.6% 44.8% at 49.9% 48.8%); }
+#phone-surface #app .profile-system .profile-art-bag img { clip-path:ellipse(46.4% 45.6% at 49.8% 48%); }
+#phone-surface #app .profile-system .profile-art-information img { clip-path:ellipse(45.8% 44.5% at 50% 48.6%); }
+#phone-surface #app .profile-system .profile-arrow {
+  position:static; display:grid; place-items:center; flex:0 0 32px; width:32px; height:32px;
+  transform:none; border:0; border-radius:0; color:#74432e;
+  background:none; box-shadow:none;
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+#phone-surface #app .profile-system .profile-arrow .icon { width:20px; height:20px; }
+#phone-surface #app .profile-system .profile-arrow .b-icon-line { stroke-width:1.8; }
+
+/* Root composition retains the supplied profile reference. */
+#phone-surface #app>.mock-screen>.profile-system.profile-root { padding:10px 18px 20px; gap:12px; }
+#phone-surface #app .profile-system .pf-heading { height:auto; padding:22px 8px 12px; margin:0; }
+#phone-surface #app .profile-system .pf-heading h1 { font-size:46px; line-height:1.06; text-wrap:wrap; }
+#phone-surface #app .profile-system .pf-heading p { font-size:16px; line-height:1.4; margin:8px 0 0; white-space:normal; }
+#phone-surface #app .profile-system :is(.pf-account,.pf-row) {
+  display:flex; align-items:center; gap:10px; height:auto; min-height:96px; padding:12px;
+}
+#phone-surface #app .profile-system .pf-copy { flex:1; min-width:0; margin:0; gap:0; }
+#phone-surface #app .profile-system .pf-copy strong { font:700 20px/1.2 ProfileText,Arial,sans-serif; white-space:normal; text-wrap:wrap; }
+#phone-surface #app .profile-system .pf-row .pf-copy strong { font-size:18px; }
+#phone-surface #app .profile-system .pf-subtitle { margin-top:6px; font:400 15px/1.3 ProfileText,Arial,sans-serif; }
+#phone-surface #app .profile-system .pf-account-badges { gap:5px; margin-top:10px; flex-wrap:wrap; max-width:100%; }
+#phone-surface #app .profile-system .pf-badge { width:auto; max-width:100%; height:30px; padding:0 8px; gap:4px; font:400 12px/1.25 ProfileText,Arial,sans-serif; }
+#phone-surface #app .profile-system .pf-badge { background:var(--profile-control-glass); border:1px solid #ffffff99; box-shadow:inset 0 1px 0 #ffffff80; }
+#phone-surface #app .profile-system .pf-badge::before,
+#phone-surface #app .profile-system .pf-badge::after { display:none; }
+#phone-surface #app .profile-system .pf-badge-art { width:18px; height:22px; }
+#phone-surface #app .profile-system .pf-plus { min-height:0; padding:12px; }
+#phone-surface #app .profile-system .pf-plus-summary { min-height:84px; display:flex; gap:12px; padding:0 0 12px; }
+#phone-surface #app .profile-system .pf-plus-summary .profile-art { width:78px; height:78px; flex-basis:78px; }
+#phone-surface #app .profile-system .pf-manage { position:relative; isolation:isolate; display:grid; grid-template-columns:32px minmax(0,1fr) 20px; gap:8px; min-height:52px; padding:8px 12px; font:700 16px/1.3 ProfileText,Arial,sans-serif; border:1px solid #ffffff99; background:var(--profile-control-glass); box-shadow:var(--profile-control-shadow); backdrop-filter:var(--profile-control-filter); -webkit-backdrop-filter:var(--profile-control-filter); }
+#phone-surface #app .profile-system .pf-manage>span { padding:0; white-space:normal; }
+#phone-surface #app .profile-system .pf-manage .profile-art { width:32px; height:32px; }
+#phone-surface #app .profile-system .pf-manage>.icon { width:20px; height:20px; }
+#phone-surface #app .profile-system .ux-profile-documents { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); padding:0; margin:4px 0 0; width:100%; gap:0; }
+#phone-surface #app .profile-system .ux-profile-documents button { padding:6px 3px; min-height:44px; width:100%; font:600 12px/1.3 ProfileText,Arial,sans-serif; white-space:normal; }
+
+/* One badge implementation and geometry for every subscription state. */
+#phone-surface #app .profile-system .profile-status {
+  --status-ink:#75452f; --status-fill:#f8d7c547; --status-glow:#af795938;
+  --orb-light:#f9d5b0; --orb-mid:#b66d47; --orb-deep:#85432a;
+  position:relative; display:inline-flex; align-items:center; isolation:isolate;
+  width:fit-content; max-width:100%; min-width:0; min-height:32px; gap:6px; margin-top:8px;
+  padding:4px 10px 4px 5px; border:1.3px solid #fffaf2; border-radius:999px;
+  background:linear-gradient(120deg,#ffffff38,var(--status-fill));
+  box-shadow:inset 0 1px 0 #ffffff80;
+  color:var(--status-ink); font:700 13px/1.25 ProfileText,Arial,sans-serif;
+}
+#phone-surface #app .profile-system .profile-status:before { display:none; }
+#phone-surface #app .profile-system .profile-status>span:last-child { min-width:0; white-space:normal; overflow-wrap:anywhere; text-align:left; }
+#phone-surface #app .profile-system .profile-status.is-active { --status-ink:#12551e; --status-fill:#d4f4bc80; --status-glow:#799b4145; --orb-light:#b1ee96; --orb-mid:#329c40; --orb-deep:#247832; }
+#phone-surface #app .profile-system .profile-status:is(.is-cancelled,.is-pending) { --status-ink:#75502a; --status-fill:#f4deb066; --orb-light:#f7d99b; --orb-mid:#c19249; --orb-deep:#8d622d; }
+#phone-surface #app .profile-system .profile-status.is-failed { --status-ink:#87463a; --status-fill:#f5d0c966; --orb-light:#f5c3b5; --orb-mid:#ba7667; --orb-deep:#8c483e; }
+#phone-surface #app .profile-system .profile-status:is(.is-expired,.is-unknown) { --status-ink:#6c574e; --status-fill:#e7d8cf66; --orb-light:#e9d4c2; --orb-mid:#ad8c75; --orb-deep:#776050; }
+#phone-surface #app .profile-system .profile-status .pf-check {
+  display:grid; place-items:center; position:relative; width:23px; height:23px; flex:0 0 23px;
+  border:1px solid #fff8e9; border-radius:50%; color:#fff;
+  background:radial-gradient(ellipse at 27% 18%,#fff6e6 0%,var(--orb-light) 16%,var(--orb-mid) 49%,var(--orb-deep) 80%,var(--orb-light) 100%);
+  box-shadow:inset 0 0 3px #fff9,inset -1px -2px 3px #693b2040;
+}
+#phone-surface #app .profile-system .profile-status .pf-check .icon { width:15px; height:15px; }
+
+/* Account forms and their continuation screens. */
+#phone-surface #app .profile-system .form-stack { display:flex; flex-direction:column; gap:16px; margin:0; }
+#phone-surface #app .profile-system .field { display:flex; flex-direction:column; gap:8px; margin:0; padding:0; }
+#phone-surface #app .profile-system .field>span { color:var(--profile-ink); font:500 15px/1.4 ProfileText,Arial,sans-serif; }
+#phone-surface #app .profile-system :is(input:not([type=checkbox]),select,textarea),
+#phone-surface:has(.profile-system) #overlay :is(input:not([type=checkbox]),textarea) {
+  width:100%; min-height:50px; margin:0; padding:13px 16px; border:1.5px solid #fffc;
+  border-radius:18px; background:#ffffff21; box-shadow:inset 0 1px 4px #7448391f,0 1px 0 #ffffffb3;
+  backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+  color:var(--profile-ink); font:400 16px/1.4 ProfileText,Arial,sans-serif;
+}
+#phone-surface #app .profile-system input[type=checkbox] { accent-color:var(--profile-accent); }
+#phone-surface #app .profile-system input::placeholder { color:#906f5e; font-style:normal; opacity:1; }
+#phone-surface #app .profile-system .pi-name-label { display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+#phone-surface #app .profile-system .pi-optional { font:400 12px/1.3 ProfileText,Arial,sans-serif; padding:3px 8px; border-radius:999px; background:#fff5; color:var(--profile-muted); }
+#phone-surface #app .profile-system .ux-profile-photo-action { display:flex; align-items:center; justify-content:center; gap:10px; }
+#phone-surface #app .profile-system .ux-profile-photo-action .icon { width:24px; height:24px; }
+#phone-surface #app .profile-system .ux-account-sync-card { display:flex; flex-direction:column; gap:18px; }
+#phone-surface #app .profile-system .pi-sync-intro { display:flex; align-items:flex-start; gap:12px; }
+#phone-surface #app .profile-system .pi-sync-copy { min-width:0; flex:1; }
+#phone-surface #app .profile-system .pi-sync-copy .eyebrow { font:500 12px/1.4 ProfileText,Arial,sans-serif; letter-spacing:.08em; color:var(--profile-muted); }
+#phone-surface #app .profile-system .pi-sync-copy h2 { margin:5px 0 8px; font-size:24px; }
+#phone-surface #app .profile-system .ux-sync-copy { margin:0; font-size:14px; }
+#phone-surface #app .profile-system .ux-sync-actions { display:grid; gap:10px; margin:0; }
+#phone-surface #app .profile-system .ux-auth-switch { font:400 14px/1.45 ProfileText,Arial,sans-serif; margin:0; }
+#phone-surface #app .profile-system .ux-auth-switch .text-button { min-height:44px; padding:8px; font-size:14px; }
+/* Leave the final escape action clear of the home indicator when content scrolls. */
+#phone-surface #app>.mock-screen>.profile-system.profile-subpage.ux-account-flow.ux-account-choice { padding-bottom:28px; }
+/* Equal rows keep icons and title baselines aligned when descriptions wrap. */
+#phone-surface #app .profile-system .ux-auth-benefits {
+  --benefit-icon:36px; --benefit-column-gap:12px;
+  display:grid; grid-auto-rows:1fr; gap:1px; padding:12px 16px;
+}
+#phone-surface #app .profile-system .ux-auth-benefits>.ux-auth-benefit {
+  display:grid; grid-template-columns:var(--benefit-icon) minmax(0,1fr);
+  align-items:start; gap:var(--benefit-column-gap); min-width:0;
+}
+#phone-surface #app .profile-system .ux-auth-benefits .lg-bubble {
+  display:grid; place-items:center; width:var(--benefit-icon); height:var(--benefit-icon);
+  min-width:0; margin:0; padding:0; transform:none;
+}
+#phone-surface #app .profile-system .ux-auth-benefits .lg-bubble .icon { width:20px; height:20px; margin:0; }
+#phone-surface #app .profile-system .ux-auth-benefit-copy { display:grid; align-content:start; gap:4px; min-width:0; }
+#phone-surface #app .profile-system .ux-auth-benefits strong {
+  display:block; margin:0; font:700 14px/1.35 ProfileText,Arial,sans-serif; color:var(--profile-ink);
+}
+#phone-surface #app .profile-system .ux-auth-benefits small {
+  display:block; margin:0; font:400 13px/1.4 ProfileText,Arial,sans-serif; color:var(--profile-muted);
+}
+#phone-surface #app .profile-system .ux-auth-provider { padding-left:24px; padding-right:24px; gap:10px; }
+#phone-surface #app .profile-system .ux-auth-provider-mark { position:static; flex:0 0 22px; transform:none; }
+#phone-surface #app .profile-system .ux-auth-provider-mark--apple { color:var(--profile-ink); }
+#phone-surface #app .profile-system .ux-auth-divider { font-size:12px; }
+#phone-surface #app .profile-system .ux-sync-heading .eyebrow { font-size:12px; }
+
+/* Access, help and data use the same row anatomy. */
+#phone-surface #app .profile-system .pa-plus { padding:14px; }
+#phone-surface #app .profile-system .pa-plus-summary { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+#phone-surface #app .profile-system .pa-plus-copy { flex:1; min-width:0; display:flex; flex-direction:column; align-items:flex-start; }
+#phone-surface #app .profile-system .pa-plus-copy>strong { font:700 20px/1.2 ProfileText,Arial,sans-serif; }
+#phone-surface #app .profile-system .pa-quota { display:flex; align-items:center; gap:10px; padding:12px 8px; border:1px solid #fffc; border-radius:20px; background:#fff4; }
+#phone-surface #app .profile-system .pa-quota .profile-art { width:40px; height:40px; flex-basis:40px; }
+#phone-surface #app .profile-system .pa-quota-copy { flex:1; min-width:0; font-size:14px; }
+#phone-surface #app .profile-system .pa-meter { display:flex; gap:2px; height:9px; margin-top:10px; }
+#phone-surface #app .profile-system .pa-meter>span { flex:1; min-width:0; background:#dbb6a966; border-radius:4px; }
+#phone-surface #app .profile-system .pa-meter>.is-filled { background:linear-gradient(125deg,#c98b6c,#a55d3e 58%,#cc8968); }
+#phone-surface #app .profile-system .pa-count { flex:none; text-align:center; font-size:16px; }
+#phone-surface #app .profile-system .pa-count small { display:block; margin-top:4px; font-size:12px; color:var(--profile-muted); }
+#phone-surface #app .profile-system .pa-actions { display:grid; gap:12px; }
+#phone-surface #app .profile-system :is(.pa-row,.ph-contact,.ph-privacy,.ph-topic) {
+  display:flex; align-items:center; gap:10px; width:100%; min-height:88px; height:auto;
+  padding:12px; text-align:left; font-family:ProfileText,Arial,sans-serif;
+}
+#phone-surface #app .profile-system :is(.pa-row,.ph-contact,.ph-privacy,.ph-topic) .profile-art { width:56px; height:56px; flex-basis:56px; }
+#phone-surface #app .profile-system :is(.pa-row-label,.ph-copy) { flex:1; min-width:0; margin:0; padding:0; }
+#phone-surface #app .profile-system .pa-row-label { font:600 16px/1.3 ProfileText,Arial,sans-serif; }
+#phone-surface #app .profile-system .ph-copy { display:flex; flex-direction:column; gap:5px; }
+#phone-surface #app .profile-system .ph-copy strong { font:700 16px/1.3 ProfileText,Arial,sans-serif; white-space:normal; letter-spacing:0; }
+#phone-surface #app .profile-system .ph-copy>span { font:400 14px/1.4 ProfileText,Arial,sans-serif; color:var(--profile-muted); white-space:normal; }
+#phone-surface #app .profile-system .ph-section-heading { padding:6px 6px 12px; height:auto; }
+#phone-surface #app .profile-system .ph-section-heading h2 { margin:0; }
+#phone-surface #app .profile-system .ph-topics { display:grid; height:auto; padding:6px; gap:4px; }
+/* Grouped navigation rows are flush with one glass sheet, not inflated CTAs. */
+#phone-surface #app .profile-system .ph-topic {
+  position:relative; isolation:isolate; border:0; border-radius:16px;
+  background:none; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+#phone-surface #app .profile-system .ph-topic::before { display:none; }
+#phone-surface #app .profile-system .ph-topic+.ph-topic::after {
+  content:''; position:absolute; top:-2px; left:12px; right:12px; height:1px;
+  background:linear-gradient(90deg,#ffffff40,#ffffffcc 15%,#ffffffcc 85%,#ffffff40);
+  pointer-events:none;
+}
+#phone-surface #app .profile-system .ph-topic:disabled { opacity:.6; }
+#phone-surface #app .profile-system .ph-topic:disabled .profile-arrow { opacity:.5; }
+
+/* Reading, confirmation and overlays retain their parent section's material. */
+#phone-surface #app .profile-system .ux-profile-document-card { min-height:0; padding:22px; gap:20px; }
+#phone-surface #app .profile-system .ux-profile-document-copy>.body-copy { font-size:16px; line-height:1.6; }
+#phone-surface #app .profile-system .choice-chips { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+#phone-surface #app .profile-system .choice-chips button {
+  position:relative; isolation:isolate; overflow:hidden;
+  min-height:48px; padding:11px 10px; border:1px solid #ffffff99; border-radius:999px;
+  font:600 14px/1.3 ProfileText,Arial,sans-serif; color:#75452f;
+  background:var(--profile-control-glass);
+  box-shadow:var(--profile-control-shadow);
+  backdrop-filter:var(--profile-control-filter); -webkit-backdrop-filter:var(--profile-control-filter);
+}
+#phone-surface #app .profile-system .choice-chips button::before {
+  content:''; position:absolute; z-index:-1; inset:1px; pointer-events:none;
+  border:0; padding:1px; border-radius:inherit; background:var(--profile-control-highlight);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask-composite:exclude;
+}
+#phone-surface #app .profile-system .choice-chips button[aria-pressed=true] {
+  color:#542c1e; font-weight:700; border-color:#ffffffb3;
+  background:var(--profile-control-warm);
+  box-shadow:var(--profile-control-shadow);
+}
+#phone-surface #app .profile-system .choice-chips button[aria-pressed=true]::after {
+  content:''; position:absolute; bottom:6px; left:calc(50% - 9px); width:18px; height:2px;
+  border-radius:999px; background:linear-gradient(90deg,#bd8d69,#824b30,#bd8d69);
+  box-shadow:0 1px 1px #fffc; pointer-events:none;
+}
+#phone-surface #app .profile-system form[data-form=delete-account] .primary { color:#762f28; border-color:#ffffff99; background:linear-gradient(145deg,#f5d2c866,#d9948452); box-shadow:var(--profile-control-shadow); }
+#phone-surface #app .profile-system form[data-form=delete-account] .primary .icon { display:none; }
+#phone-surface:has(.profile-system) #overlay .modal {
+  padding:26px 20px 20px; border:1.5px solid #fff; border-radius:28px 28px 0 0;
+  background:linear-gradient(#fff5,#fff5),var(--profile-background);
+  color:var(--profile-ink); font-family:ProfileText,Arial,sans-serif;
+}
+#phone-surface:has(.profile-system) #overlay .modal h2 { padding-right:42px; font:400 28px/1.15 ProfileDisplay,Georgia,serif; color:var(--profile-ink); }
+#phone-surface:has(.profile-system) #overlay .modal :is(p,.ux-help-steps,.ux-help-facts) { font:400 15px/1.5 ProfileText,Arial,sans-serif; color:var(--profile-muted); }
+#phone-surface:has(.profile-system) #overlay .modal .close { width:44px; height:44px; top:16px; right:16px; border:1px solid #ffffff99; background:var(--profile-control-glass); box-shadow:var(--profile-control-shadow); backdrop-filter:var(--profile-control-filter); -webkit-backdrop-filter:var(--profile-control-filter); }
+#phone-surface:has(.profile-system) #overlay .modal textarea { min-height:130px; }
+
+@media(max-width:350px) {
+  #phone-surface #app:has(.profile-system)>.statusbar { padding-left:24px; padding-right:20px; }
+  #phone-surface #app:has(.profile-system)>.statusbar .island { width:96px; left:calc(50% - 48px); }
+  #phone-surface #app>.mock-screen>.profile-system { padding-inline:16px; }
+  #phone-surface #app>.mock-screen>.profile-system.profile-root { padding-inline:14px; }
+  #phone-surface #app .profile-system .pf-heading h1 { font-size:42px; }
+  #phone-surface #app .profile-system :is(.pf-account,.pf-row) { gap:8px; padding:10px; }
+  #phone-surface #app .profile-system :is(.pf-account,.pf-row) .profile-art { width:50px; height:50px; flex-basis:50px; }
+  #phone-surface #app .profile-system .pf-account .profile-arrow { width:28px; height:28px; flex-basis:28px; }
+  #phone-surface #app .profile-system .pf-account .pf-copy strong { font-size:19px; }
+  #phone-surface #app .profile-system .ux-profile-documents { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #phone-surface #app .profile-system .ux-profile-documents button:nth-child(3):before { display:none; }
+  #phone-surface #app .profile-system :is(.pa-row,.ph-contact,.ph-privacy,.ph-topic) { gap:8px; padding:10px; }
+  #phone-surface #app .profile-system :is(.pa-row,.ph-contact,.ph-privacy,.ph-topic) .profile-art { width:44px; height:44px; flex-basis:44px; }
+  #phone-surface #app .profile-system .pi-sync-intro { flex-direction:column; gap:6px; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  #phone-surface #app .profile-system button:not(:disabled):active { filter:brightness(.97); }
+}
+
+/* Fit the complete profile journey inside the available phone viewport.
+   The screen itself is the sizing container, so compact spacing follows the
+   real space left by the status bar and bottom navigation. */
+#phone-surface #app>.mock-screen:has(>.profile-system) {
+  container:profile-system-screen / size;
+}
+#phone-surface #app>.mock-screen>.profile-system {
+  gap:clamp(10px,2cqh,14px);
+  padding:clamp(8px,1.3cqh,10px) 20px clamp(10px,2cqh,16px);
+}
+#phone-surface #app .profile-system>.lg-page-controls,
+#phone-surface #app .profile-system>.lg-page-controls .flow-exit {
+  width:44px; height:44px; min-width:44px; min-height:44px;
+}
+#phone-surface #app .profile-system>.lg-page-controls .lg-bubble { width:44px; height:44px; }
+#phone-surface #app>.mock-screen>.profile-system.profile-root { padding-bottom:8px; }
+
+@container profile-system-screen (max-height:720px) {
+  #phone-surface #app>.mock-screen>.profile-system.profile-subpage { gap:12px; padding-top:8px; padding-bottom:10px; }
+
+  /* Account identity and synchronisation remain two distinct cards, with the
+     same 44px native controls in a denser vertical rhythm. */
+  #phone-surface #app .profile-system.ux-profile-account-screen { gap:10px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-heading { padding-bottom:0; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-heading h1 { font-size:32px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-heading p { margin-top:4px; font-size:13px; line-height:1.35; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-profile-identity-card { padding:12px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .form-stack { gap:9px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .field { gap:5px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-name input { min-height:44px; height:44px; padding:9px 13px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-profile-photo-action,
+  #phone-surface #app .profile-system.ux-profile-account-screen .form-stack>.primary { min-height:44px; height:44px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-profile-photo-action { font-size:14px; padding:8px 14px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-profile-photo-action .icon { width:22px; height:22px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-account-sync-card { gap:10px; padding:12px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-sync-intro { align-items:center; gap:8px; min-height:0; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-shield { width:52px; height:52px; flex-basis:52px; margin:0; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-sync-copy { padding:0; transform:none; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-sync-copy .eyebrow { font-size:10px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-sync-copy h2 { margin:2px 0 4px; font-size:21px; line-height:1.1; white-space:normal; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-sync-copy { margin:0; font-size:13px; line-height:1.35; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-sync-actions { gap:7px; margin:0; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-sync-actions>:is(.primary,.secondary) { min-height:44px; height:44px; font-size:14px; }
+
+  /* Four document tabs fit on one line; the longest legal copy then remains
+     visible with its contact action without requiring a page scroll. */
+  #phone-surface #app .profile-system.ux-profile-documents-screen { gap:10px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen>.choice-chips { grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen>.choice-chips button { min-height:44px; padding:8px 3px; font-size:11.5px; line-height:1.2; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen>.ux-profile-document-card { gap:12px; min-height:0; padding:16px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-copy>h2 { margin-bottom:8px; font-size:21px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-copy>.body-copy { font-size:14px; line-height:1.42; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-footer { padding-top:10px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-footer>.secondary { min-height:44px; }
+}
+
+@container profile-system-screen (max-height:820px) {
+  /* Sign-in is the tallest account branch. Keep every provider, field and
+     escape action on screen while preserving 44px touch targets. */
+  #phone-surface #app .profile-system.ux-account-login { gap:10px; padding-top:8px; padding-bottom:10px; }
+  #phone-surface #app .profile-system.ux-account-login>.lg-title h1 { font-size:30px; }
+  #phone-surface #app .profile-system.ux-account-login>.lg-title p { margin-top:4px; font-size:13px; line-height:1.35; }
+  #phone-surface #app .profile-system.ux-account-login .ux-auth-provider-stack { gap:6px; }
+  #phone-surface #app .profile-system.ux-account-login .ux-auth-provider { min-height:44px; padding-block:8px; }
+  #phone-surface #app .profile-system.ux-account-login .form-stack { gap:8px; }
+  #phone-surface #app .profile-system.ux-account-login .field { gap:5px; }
+  #phone-surface #app .profile-system.ux-account-login .field input { min-height:44px; padding-block:9px; }
+  #phone-surface #app .profile-system.ux-account-login .form-stack>.primary { min-height:46px; }
+  #phone-surface #app .profile-system.ux-account-login :is(.ux-auth-forgot,.ux-auth-cancel) { min-height:44px; }
+  #phone-surface #app .profile-system.ux-account-login .ux-auth-switch { min-height:40px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; }
+}
+
+/* Short phones receive a second, route-aware density step. Components reflow
+   instead of being clipped, and every direct action keeps at least 44px. */
+@container profile-system-screen (max-height:600px) {
+  #phone-surface #app>.mock-screen>.profile-system { gap:8px; padding:5px 12px 6px; }
+
+  #phone-surface #app>.mock-screen>.profile-system.profile-root { gap:8px; padding:5px 12px 4px; }
+  #phone-surface #app .profile-system.profile-root .pf-heading { height:auto; padding:6px 5px 4px; }
+  #phone-surface #app .profile-system.profile-root .pf-heading h1 { font-size:36px; }
+  #phone-surface #app .profile-system.profile-root .pf-heading p { margin-top:3px; font-size:13px; }
+  #phone-surface #app .profile-system.profile-root :is(.pf-account,.pf-row) { min-height:64px; height:64px; gap:6px; padding:7px; }
+  #phone-surface #app .profile-system.profile-root :is(.pf-account,.pf-row) .profile-art { width:40px; height:40px; flex-basis:40px; }
+  #phone-surface #app .profile-system.profile-root .pf-account .profile-arrow,
+  #phone-surface #app .profile-system.profile-root .pf-row .profile-arrow { width:26px; height:26px; flex-basis:26px; }
+  #phone-surface #app .profile-system.profile-root .pf-copy strong,
+  #phone-surface #app .profile-system.profile-root .pf-row .pf-copy strong { font-size:15px; }
+  #phone-surface #app .profile-system.profile-root .pf-subtitle { margin-top:2px; font-size:12px; }
+  #phone-surface #app .profile-system.profile-root .pf-account-badges { flex-wrap:nowrap; gap:3px; margin-top:4px; }
+  #phone-surface #app .profile-system.profile-root .pf-badge { height:24px; padding:0 5px; gap:2px; font-size:10px; }
+  #phone-surface #app .profile-system.profile-root .pf-badge-art { width:14px; height:17px; }
+  #phone-surface #app .profile-system.profile-root .pf-plus { min-height:0; padding:7px; }
+  #phone-surface #app .profile-system.profile-root .pf-plus-summary { min-height:62px; gap:7px; padding-bottom:5px; }
+  #phone-surface #app .profile-system.profile-root .pf-plus-summary .profile-art { width:52px; height:52px; flex-basis:52px; }
+  #phone-surface #app .profile-system.profile-root .profile-status { min-height:26px; margin-top:3px; padding-block:2px; font-size:11px; }
+  #phone-surface #app .profile-system.profile-root .profile-status .pf-check { width:19px; height:19px; flex-basis:19px; }
+  #phone-surface #app .profile-system.profile-root .pf-manage { min-height:44px; padding:6px 9px; font-size:13px; }
+  #phone-surface #app .profile-system.profile-root .ux-profile-documents { grid-template-columns:repeat(4,minmax(0,1fr)); margin-top:0; }
+  #phone-surface #app .profile-system.profile-root .ux-profile-documents button { min-height:44px; padding:4px 1px; font-size:9.5px; }
+  #phone-surface #app .profile-system.profile-root .ux-profile-documents button:nth-child(3):before { display:block; }
+
+  #phone-surface #app .profile-system.ux-profile-account-screen { gap:7px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-heading h1 { font-size:28px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-heading p { font-size:12px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-profile-identity-card { padding:6px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .form-stack { gap:5px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-account-sync-card { gap:6px; padding:8px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-sync-intro { flex-direction:row; gap:6px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-shield { width:40px; height:40px; flex-basis:40px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .pi-sync-copy h2 { font-size:18px; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-sync-copy { font-size:12px; line-height:1.25; }
+  #phone-surface #app .profile-system.ux-profile-account-screen .ux-sync-actions { gap:6px; }
+
+  #phone-surface #app .profile-system.pa-page { gap:8px; }
+  #phone-surface #app .profile-system.pa-page .pa-heading { padding:0 4px; }
+  #phone-surface #app .profile-system.pa-page .pa-heading h1 { font-size:28px; line-height:1.05; }
+  #phone-surface #app .profile-system.pa-page .pa-heading p { margin-top:3px; font-size:12px; line-height:1.3; }
+  #phone-surface #app .profile-system.pa-page .pa-plus { padding:8px; }
+  #phone-surface #app .profile-system.pa-page .pa-plus-summary { gap:7px; margin-bottom:7px; }
+  #phone-surface #app .profile-system.pa-page .pa-plus-summary .profile-art { width:44px; height:44px; flex-basis:44px; }
+  #phone-surface #app .profile-system.pa-page .pa-plus-copy>strong { font-size:17px; }
+  #phone-surface #app .profile-system.pa-page .pa-quota { padding:7px 5px; gap:6px; }
+  #phone-surface #app .profile-system.pa-page .pa-quota .profile-art { width:32px; height:32px; flex-basis:32px; }
+  #phone-surface #app .profile-system.pa-page .pa-quota-copy { font-size:12px; }
+  #phone-surface #app .profile-system.pa-page .pa-meter { height:6px; margin-top:5px; }
+  #phone-surface #app .profile-system.pa-page .pa-count { font-size:13px; }
+  #phone-surface #app .profile-system.pa-page .pa-actions { gap:6px; margin:0; }
+  #phone-surface #app .profile-system.pa-page .pa-row { min-height:58px; padding:6px; }
+  #phone-surface #app .profile-system.pa-page .pa-row .profile-art { width:38px; height:38px; flex-basis:38px; }
+  #phone-surface #app .profile-system.pa-page .pa-row-label { font-size:13px; }
+
+  #phone-surface #app .profile-system.ph-page { gap:8px; }
+  #phone-surface #app .profile-system.ph-page .ph-heading { padding:0 4px; }
+  #phone-surface #app .profile-system.ph-page .ph-heading h1 { font-size:29px; }
+  #phone-surface #app .profile-system.ph-page .ph-section-heading { padding:2px 4px 6px; }
+  #phone-surface #app .profile-system.ph-page .ph-section-heading h2 { font-size:20px; }
+  #phone-surface #app .profile-system.ph-page .ph-topics { padding:3px; gap:3px; }
+  #phone-surface #app .profile-system.ph-page :is(.ph-contact,.ph-privacy,.ph-topic) { min-height:64px; padding:6px; gap:6px; }
+  #phone-surface #app .profile-system.ph-page :is(.ph-contact,.ph-privacy,.ph-topic) .profile-art { width:40px; height:40px; flex-basis:40px; }
+  #phone-surface #app .profile-system.ph-page .ph-copy { gap:2px; }
+  #phone-surface #app .profile-system.ph-page .ph-copy strong { font-size:13px; line-height:1.2; }
+  #phone-surface #app .profile-system.ph-page .ph-copy>span { font-size:11.5px; line-height:1.25; }
+  #phone-surface #app .profile-system.ph-page .profile-arrow { width:27px; height:27px; flex-basis:27px; }
+
+  #phone-surface #app .profile-system.ux-profile-delete { gap:8px; }
+  #phone-surface #app .profile-system.ux-profile-delete>.lg-title h1 { font-size:28px; }
+  #phone-surface #app .profile-system.ux-profile-delete>.lg-title p { margin-top:3px; font-size:12px; }
+  #phone-surface #app .profile-system.ux-profile-delete .ux-profile-delete-summary { padding:10px; }
+  #phone-surface #app .profile-system.ux-profile-delete .ux-profile-delete-summary h2 { margin-bottom:5px; font-size:15px; }
+  #phone-surface #app .profile-system.ux-profile-delete .ux-profile-delete-summary p { font-size:12px; line-height:1.35; }
+  #phone-surface #app .profile-system.ux-profile-delete .ux-profile-delete-summary p+p { margin-top:5px; }
+  #phone-surface #app .profile-system.ux-profile-delete :is(.secondary,.text-button,.form-stack>.primary) { min-height:44px; }
+  #phone-surface #app .profile-system.ux-profile-delete .form-stack { gap:7px; }
+  #phone-surface #app .profile-system.ux-profile-delete .field { gap:4px; }
+  #phone-surface #app .profile-system.ux-profile-delete .field input { min-height:44px; }
+
+  #phone-surface #app .profile-system.ux-profile-documents-screen>.ux-profile-document-card { gap:6px; padding:10px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen>.choice-chips button { padding-inline:1px; font-size:10.5px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-copy>h2 { margin-bottom:5px; font-size:18px; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-copy>.body-copy { font-size:12px; line-height:1.35; }
+  #phone-surface #app .profile-system.ux-profile-documents-screen .ux-profile-document-footer { padding-top:6px; }
+}
+
+@container profile-system-screen (max-height:720px) {
+  #phone-surface #app>.mock-screen>.profile-system.profile-subpage.ux-account-flow { gap:4px; padding:4px 12px; }
+  #phone-surface #app .profile-system.ux-account-flow>.lg-title h1 { font-size:28px; }
+  #phone-surface #app .profile-system.ux-account-flow>.lg-title p { margin-top:3px; font-size:12px; line-height:1.3; }
+  #phone-surface #app .profile-system.ux-account-flow .ux-auth-benefits {
+    --benefit-icon:32px; --benefit-column-gap:10px; gap:1px; padding:10px 12px;
+  }
+  #phone-surface #app .profile-system.ux-account-flow .ux-auth-provider-stack { gap:5px; }
+  #phone-surface #app .profile-system.ux-account-flow .ux-auth-provider { min-height:44px; padding-block:7px; font-size:13px; }
+  #phone-surface #app .profile-system.ux-account-flow .form-stack { gap:7px; }
+  #phone-surface #app .profile-system.ux-account-flow .field { gap:4px; }
+  #phone-surface #app .profile-system.ux-account-flow .field input { box-sizing:border-box; min-height:44px; height:44px; padding:6px 12px; }
+  #phone-surface #app .profile-system.ux-account-flow .form-stack>.primary,
+  #phone-surface #app .profile-system.ux-account-flow .ux-auth-email { box-sizing:border-box; min-height:44px; height:44px; padding-block:8px; }
+  #phone-surface #app .profile-system.ux-account-flow :is(.ux-auth-forgot,.ux-auth-cancel) { box-sizing:border-box; min-height:44px; height:44px; padding-block:8px; }
+  #phone-surface #app .profile-system.ux-account-flow .ux-auth-switch { min-height:36px; height:36px; }
+}

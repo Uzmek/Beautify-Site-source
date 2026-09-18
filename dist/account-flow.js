@@ -17,7 +17,14 @@ function authProviderStack(intent){
   return `<div class="ux-auth-provider-stack" aria-label="Options de connexion">${['apple','google','facebook'].map(provider=>authProviderButton(provider,intent)).join('')}</div>`;
 }
 function authBenefits(){
-  return `<div class="ux-auth-benefits"><div>${lgBubble('bars')}<span><strong>Retrouvez vos analyses</strong><small>Sur tous vos appareils.</small></span></div><div>${lgBubble('sparkles')}<span><strong>Conservez vos routines</strong><small>Vos favoris et vos progrès restent avec vous.</small></span></div><div>${lgBubble('shield')}<span><strong>Gardez le contrôle</strong><small>Exportez ou supprimez vos données à tout moment.</small></span></div></div>`;
+  const benefits=[
+    ['bars','Retrouvez vos analyses','Sur tous vos appareils.'],
+    ['sparkles','Conservez vos routines','Vos favoris et vos progrès restent avec vous.'],
+    ['shield','Gardez le contrôle','Exportez ou supprimez vos données à tout moment.']
+  ];
+  return `<div class="ux-auth-benefits" role="list" aria-label="Avantages du compte">${benefits.map(([glyph,title,description])=>
+    `<div class="ux-auth-benefit" role="listitem">${lgBubble(glyph)}<span class="ux-auth-benefit-copy"><strong>${title}</strong><small>${description}</small></span></div>`
+  ).join('')}</div>`;
 }
 function authDivider(label='ou'){return `<div class="ux-auth-divider"><span>${esc(label)}</span></div>`;}
 
@@ -42,7 +49,7 @@ function profileSyncCard(){
     const detail=M.profile.email||'Connexion avec '+provider;
     return lgCard(`<div class="ux-sync-heading">${lgBubble('check')}<div><span class="eyebrow">Sauvegarde et synchronisation</span><h2>Données synchronisées</h2></div></div><div class="ux-sync-account"><span>${esc(detail)}</span><small>Compte ${esc(provider)}</small></div>${A('Se déconnecter','logout-request',{},'text-button ux-sync-signout')}`,'ux-account-sync-card is-connected');
   }
-  return lgCard(`<div class="pi-sync-intro"><img class="pi-shield" src="/assets/profile-information/shield.png" width="1024" height="1024" alt="" aria-hidden="true"><div class="pi-sync-copy"><span class="eyebrow">Sauvegarde</span><h2>Retrouvez tout, partout.</h2><p class="ux-sync-copy">Analyses, essais et routines synchronisés sur tous vos appareils.</p></div></div><div class="ux-sync-actions">${B('Créer un compte','ENT-05','primary')}${B('J’ai déjà un compte','ENT-06','secondary')}</div>`,'ux-account-sync-card pi-card');
+  return lgCard(`<div class="pi-sync-intro">${profileArt('shield','pi-shield')}<div class="pi-sync-copy"><span class="eyebrow">Sauvegarde</span><h2>Retrouvez tout, partout.</h2><p class="ux-sync-copy">Analyses, essais et routines synchronisés sur tous vos appareils.</p></div></div><div class="ux-sync-actions">${B('Créer un compte','ENT-05','primary')}${B('J’ai déjà un compte','ENT-06','secondary')}</div>`,'ux-account-sync-card pi-card');
 }
 
 // PRF-01 keeps the supplied reference copy, explicitly confirmed by the user.

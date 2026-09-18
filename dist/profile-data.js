@@ -1,7 +1,7 @@
 'use strict';
 
 // The data screen shares the help screen's glass components and existing actions.
-const profileDataArt = kind => `<span class="ph-medallion pd-medallion-${kind}" aria-hidden="true"><img src="/assets/profile-data/${kind}.png?v=1" width="1254" height="1254" alt="" draggable="false"></span>`;
+const profileDataArt = kind => profileArt(kind,'ph-medallion');
 V['PRF-07'] = () => {
   const count = Object.keys(memoryPhotos).length;
   const photoSummary = count ? `${count} photo${count>1?'s':''} ajoutée${count>1?'s':''}, analyses conservées.` : 'Aucune photo ajoutée.';

@@ -64,35 +64,35 @@
 }
 @keyframes ux-help-rise { from { transform:translateY(24px); opacity:0; } to { transform:translateY(0); opacity:1; } }
 /* Profile layouts use the available phone space instead of forced page heights. */
-#phone-surface #app>.mock-screen[data-route^="PRF-"] {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system)) {
   container:profile-screen / size; min-height:0; padding:6px 16px 12px;
   overflow-y:auto; overflow-x:hidden; scroll-padding-block:14px; box-sizing:border-box;
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page {
   display:flex; flex-direction:column; min-height:100%; height:auto; margin:0; padding:0;
   box-sizing:border-box;
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>* { flex-shrink:0; }
-#phone-surface #app>.mock-screen[data-route^="PRF-"] .lg-brand {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page>* { flex-shrink:0; }
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system)) .lg-brand {
   min-height:52px; margin:0 2px clamp(6px,1.4cqh,12px);
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"] .lg-title {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system)) .lg-title {
   margin:0 0 clamp(10px,1.8cqh,16px);
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"] .lg-title h1 {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system)) .lg-title h1 {
   font-size:clamp(28px,8cqw,30px); line-height:1.15; overflow-wrap:anywhere;
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"] .lg-title>p { font-size:14px; line-height:1.45; margin-top:6px; }
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system)) .lg-title>p { font-size:14px; line-height:1.45; margin-top:6px; }
 /* Separate navigation from the page heading; keep both in the normal flow.
    Larger gaps divide sections, while headings stay close to their content. */
-#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page:has(>.lg-page-controls) { gap:16px; }
-#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>.lg-page-controls {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page:has(>.lg-page-controls) { gap:16px; }
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page>.lg-page-controls {
   position:static; inset:auto; width:100%; min-height:44px; margin:0; justify-content:flex-start;
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>.lg-page-controls+.lg-title {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page>.lg-page-controls+.lg-title {
   min-height:0; padding:0; margin:0 0 8px; text-align:left;
 }
-#phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page>.lg-page-controls+.lg-title h1 {
+#phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page>.lg-page-controls+.lg-title h1 {
   font-size:clamp(30px,8.5cqw,32px); line-height:1.15; margin:0; text-wrap:balance;
 }
 #phone-surface #app .ux-profile-screen { gap:clamp(8px,1.5cqh,12px); }
@@ -161,7 +161,7 @@
   #phone-surface #app .ux-profile-documents-screen>.choice-chips button { padding:10px 6px; }
 }
 @container profile-screen (max-height:580px) {
-  #phone-surface #app>.mock-screen[data-route^="PRF-"]>.lg-page:has(>.lg-page-controls) { gap:12px; }
+  #phone-surface #app>.mock-screen[data-route^="PRF-"]:not(:has(>.profile-system))>.lg-page:has(>.lg-page-controls) { gap:12px; }
   #phone-surface #app .ux-profile-documents-screen>.ux-profile-document-card { min-height:0; padding:20px; }
   #phone-surface #app .ux-profile-documents-screen .body-copy { font-size:16px; line-height:1.55; }
   #phone-surface #app .ux-profile-v1 .lg-row { min-height:56px; }

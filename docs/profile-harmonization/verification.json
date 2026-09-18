@@ -1,0 +1,466 @@
+[
+  {
+    "name": "profil-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-01",
+    "width": 320
+  },
+  {
+    "name": "donnees-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Photos et données"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-07",
+    "width": 320
+  },
+  {
+    "name": "suppression-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Tout supprimer"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-09",
+    "width": 320
+  },
+  {
+    "name": "informations-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Informations"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-11",
+    "width": 320
+  },
+  {
+    "name": "compte-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon compte"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-02",
+    "width": 320
+  },
+  {
+    "name": "connexion-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Se connecter"
+      }
+    ],
+    "url": "http://localhost:5173/#ENT-06",
+    "width": 320
+  },
+  {
+    "name": "recuperation-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mot de passe oublié"
+      }
+    ],
+    "url": "http://localhost:5173/#ENT-08",
+    "width": 320
+  },
+  {
+    "name": "inscription-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Créer mon compte"
+      }
+    ],
+    "url": "http://localhost:5173/#ENT-07",
+    "width": 320
+  },
+  {
+    "name": "acces-renouvellement-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon accès Beautify"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-06-cancelled.html",
+    "width": 320
+  },
+  {
+    "name": "profil-renouvellement-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-01-cancelled.html",
+    "width": 320
+  },
+  {
+    "name": "compte-connecte-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon compte"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-02-connected.html",
+    "width": 320
+  },
+  {
+    "name": "profil-actif-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-01-active.html",
+    "width": 320
+  },
+  {
+    "name": "acces-actif-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon accès Beautify"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-06-active.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-01-connected-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-01-connected.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-01-pending-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-01-pending.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-01-failed-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-01-failed.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-01-expired-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 14px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "42px / 44.52px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-01-expired.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-06-pending-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon accès Beautify"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-06-pending.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-06-failed-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon accès Beautify"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-06-failed.html",
+    "width": 320
+  },
+  {
+    "name": "etat-PRF-06-expired-320",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 16px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon accès Beautify"
+      }
+    ],
+    "url": "http://localhost:5173/@fs/Users/ka/Documents/ChatGPT/beautify/docs/profile-harmonization/fixtures/PRF-06-expired.html",
+    "width": 320
+  },
+  {
+    "name": "profil-final-393",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 18px 20px",
+    "returnButtons": [],
+    "smallText": [],
+    "title": [
+      {
+        "font": "46px / 48.76px ProfileDisplay, Georgia, serif",
+        "text": "Mon profil"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-01",
+    "width": 393
+  },
+  {
+    "name": "donnees-final-393",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 20px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Photos et données"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-07",
+    "width": 393
+  },
+  {
+    "name": "informations-final-393",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 20px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Informations"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-11",
+    "width": 393
+  },
+  {
+    "name": "acces-final-393",
+    "background": "url(\"http://localhost:5173/assets/profile-reference/background.png\")",
+    "overflow": [],
+    "padding": "10px 20px 28px",
+    "returnButtons": [
+      {
+        "h": 48,
+        "w": 48
+      }
+    ],
+    "smallText": [],
+    "title": [
+      {
+        "font": "34px / 37.4px ProfileDisplay, Georgia, serif",
+        "text": "Mon accès Beautify"
+      }
+    ],
+    "url": "http://localhost:5173/#PRF-06",
+    "width": 393
+  }
+]

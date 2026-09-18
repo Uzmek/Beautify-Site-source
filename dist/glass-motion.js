@@ -109,7 +109,12 @@
 
   function enter(element, axis = 'y', distance = 14, duration = 320) {
     const shift = value => axis === 'x' ? `translateX(${value}px)` : `translateY(${value}px)`;
-    return play(element, [
+    // Fading a glass ancestor creates a temporary backdrop root: its controls
+    // lose the page background, then snap back to glass when opacity reaches 1.
+    const glass = element?.matches('.profile-system');
+    return play(element, glass ? [
+      { transform: shift(distance) }, { transform: shift(0) }
+    ] : [
       { opacity: 0, transform: shift(distance) },
       { opacity: 1, transform: shift(0) }
     ], duration);
@@ -274,8 +279,12 @@
     const result = baseModal(...args);
     cleanDetached();
     const sheet = query('#overlay .modal');
-    if (!replacing) play(query('#overlay .modal-backdrop'), [{ opacity: 0 }, { opacity: 1 }], 240);
-    play(sheet, replacing ? [
+    const glass = !!query('#app .profile-system');
+    if (!replacing && !glass) play(query('#overlay .modal-backdrop'), [{ opacity: 0 }, { opacity: 1 }], 240);
+    play(sheet, glass ? [
+      { transform: replacing ? 'translateX(8px)' : 'translateY(42px) scale(.985)' },
+      { transform: 'none' }
+    ] : replacing ? [
       { opacity: .35, transform: 'translateX(8px)' }, { opacity: 1, transform: 'none' }
     ] : [
       { opacity: 0, transform: 'translateY(42px) scale(.985)', offset: 0, easing: settle },
@@ -293,9 +302,10 @@
     if (closingSheet === backdrop) return;
     closingSheet = backdrop;
     const style = window.getComputedStyle?.(sheet);
-    play(sheet, [{ transform: style?.transform || 'none' }, { transform: 'translateY(48px) scale(.98)' }],
+    const slide = play(sheet, [{ transform: style?.transform || 'none' }, { transform: 'translateY(48px) scale(.98)' }],
       180, { easing: 'cubic-bezier(.4,0,1,1)' });
-    const exit = play(backdrop, [{ opacity: 1 }, { opacity: 0 }], 180, { easing: 'ease-out' });
+    const exit = query('#app .profile-system') ? slide :
+      play(backdrop, [{ opacity: 1 }, { opacity: 0 }], 180, { easing: 'ease-out' });
     const finish = () => {
       if (closingSheet === backdrop && query('#overlay .modal-backdrop') === backdrop) {
         closingSheet = null; baseClose(restore); cleanDetached();

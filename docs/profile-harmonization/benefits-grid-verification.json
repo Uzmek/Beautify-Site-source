@@ -1,0 +1,30 @@
+{
+  "overflow": false,
+  "rows": [
+    {
+      "descriptionFont": "13px",
+      "height": 59.2890625,
+      "iconTop": 191.984375,
+      "textLeft": 67,
+      "textTop": 191.984375,
+      "top": 191.984375
+    },
+    {
+      "descriptionFont": "13px",
+      "height": 59.2890625,
+      "iconTop": 261.2734375,
+      "textLeft": 67,
+      "textTop": 261.2734375,
+      "top": 261.2734375
+    },
+    {
+      "descriptionFont": "13px",
+      "height": 59.2890625,
+      "iconTop": 330.5625,
+      "textLeft": 67,
+      "textTop": 330.5625,
+      "top": 330.5625
+    }
+  ],
+  "viewport": 320
+}

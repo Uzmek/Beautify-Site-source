@@ -26,7 +26,7 @@ async function scenario(reduced = false, supported = true) {
   const make = (name, dataset = {}, attributes = {}) => {
     const classes = new Set();
     const el = { name, dataset, attributes, isConnected: true, children: [], hidden: false, tagName: 'DIV', className: '', textContent: '',
-      querySelector: () => null, querySelectorAll: () => [], matches(selector) { return selector === '.ss-mini-progress' && this.className.includes('ss-mini-progress'); },
+      querySelector: () => null, querySelectorAll: () => [], matches(selector) { if (selector === '.profile-system') return this.className.includes('profile-system'); return selector === '.ss-mini-progress' && this.className.includes('ss-mini-progress'); },
       getAttribute: attr => attr in attributes ? attributes[attr] : attr === 'aria-label' ? name : null,
       classList: { add: value => classes.add(value), remove: value => classes.delete(value) },
       append(...children) { this.children.push(...children); children.forEach(child => child.parentElement = this); },
@@ -46,7 +46,7 @@ async function scenario(reduced = false, supported = true) {
     detach(screen); detach(lens); detach(report); selections.forEach(detach);
     progresses.forEach(detach); counters.forEach(detach); toggles.forEach(detach);
     screen = make('screen', { route });
-    const content = make('content'); content.children = [make('card1'), make('card2'), make('card3')];
+    const content = make('content'); content.className = route.startsWith('PRF-') ? 'profile-system' : ''; content.children = [make('card1'), make('card2'), make('card3')];
     screen.children = [content]; screen.firstElementChild = content; screen.querySelector = () => content;
     lens = make('lens', { index: String(index) }); report = make(label);
     selections = chosen ? [make('choice', { act: 'offer', value: 'monthly' })] : [];
@@ -62,7 +62,7 @@ async function scenario(reduced = false, supported = true) {
     }
   }
   const lookup = selector => ({ '#app > .mock-screen': screen, '.lg-nav-lens': lens,
-    '.canonical-report-panel': report, '#overlay .modal-backdrop': backdrop,
+    '.canonical-report-panel': report, '#app .profile-system': screen?.firstElementChild?.matches('.profile-system') ? screen.firstElementChild : null, '#overlay .modal-backdrop': backdrop,
     '#overlay .modal': sheet, '#toast': notification })[selector] || null;
   const context = { Set, Map, WeakMap, Date, Math, window: { matchMedia: () => preference,
       getComputedStyle: () => ({ scale: '1', translate: '0 0', transform: 'none' }),
@@ -135,6 +135,25 @@ async function scenario(reduced = false, supported = true) {
   assert.equal(calls.length, before, 'Disabled History never gets a pressure effect'); button.disabled = false;
   fire('keydown', { target: button, key: ' ', repeat: false }); fire('keyup', { target: button, key: ' ' });
   if (enabled) assert.equal(calls.at(-1).options.duration, 260, 'Keyboard activation has the same release');
+
+  before = calls.length;
+  next = ['PRF-02', 2]; context.render();
+  if (enabled) {
+    const arrival = calls.slice(before).find(a => a.effect.target === screen.firstElementChild);
+    assert.ok(arrival, 'Profile retains its directional entrance');
+    assert.ok(arrival.frames.every(frame => !('opacity' in frame)), 'Glass page never fades its backdrop root');
+  }
+  before = calls.length; context.modal(); context.modal();
+  if (enabled) assert.ok(calls.slice(before).every(a => a.frames.every(frame => !('opacity' in frame))),
+    'Opening and replacing profile dialogs preserve backdrop opacity');
+  before = calls.length; context.closeModal();
+  if (enabled) {
+    assert.ok(calls.slice(before).every(a => a.frames.every(frame => !('opacity' in frame))),
+      'Closing a profile dialog preserves backdrop opacity');
+    calls.at(-1).finish(); await Promise.resolve(); await Promise.resolve();
+  }
+  assert.equal(backdrop, null, 'Profile dismissal completes');
+  next = ['ANA-01', 1]; context.render();
 
   context.modal(); const previous = closes; context.closeModal(false);
   assert.equal(closes, previous+1, 'Route changes close sheets synchronously');

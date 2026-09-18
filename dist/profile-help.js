@@ -1,9 +1,9 @@
 'use strict';
 
 // PRF-10: decorative artwork is separate from the existing native actions.
-const helpReferenceArt = kind => `<span class="ph-medallion ph-medallion-${kind}" aria-hidden="true"><img src="/assets/profile-help/${kind}.png?v=3" width="1254" height="1254" alt="" draggable="false"></span>`;
-const helpReferenceArrow = () => `<span class="ph-arrow" aria-hidden="true">${icon('chev')}</span>`;
-const helpReferenceCopy = (title,subtitle) => `<span class="ph-copy"><strong>${esc(title)}</strong><span>${esc(subtitle)}</span></span>`;
+const helpReferenceArt = kind => profileArt(kind,'ph-medallion');
+const helpReferenceArrow = () => profileArrow('ph-arrow');
+const helpReferenceCopy = profileRowCopy;
 V['PRF-10'] = () => {
   const subtitles = {photo:'Solutions et conseils.',analyse:'Que faire ?',acces:'Vérifiez votre compte.'};
   const artwork = {photo:'photo',analyse:'analysis',acces:'crown'};

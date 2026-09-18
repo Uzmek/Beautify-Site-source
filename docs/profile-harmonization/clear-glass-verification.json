@@ -1,0 +1,86 @@
+[
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#PRF-01",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 4,
+    "overflow": false,
+    "route": "#PRF-02",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 2,
+    "overflow": false,
+    "route": "#PRF-06",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#PRF-07",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 2,
+    "overflow": false,
+    "route": "#PRF-09",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#PRF-10",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#PRF-11",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#ENT-05",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#ENT-06",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 2,
+    "overflow": false,
+    "route": "#ENT-07",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 3,
+    "overflow": false,
+    "route": "#ENT-08",
+    "smallControls": [],
+    "width": 320
+  },
+  {
+    "filters": 2,
+    "overflow": false,
+    "route": "#PRE-04",
+    "smallControls": [],
+    "width": 320
+  }
+]
