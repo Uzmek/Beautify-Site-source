@@ -25,7 +25,7 @@ test('variant A shows real proof, three tokens and five locked alternatives',({r
 
 test('variant B uses the analysis photo and keeps every look obscured',({run})=>run(complete+`
   M.hairPrepayVariant='B';const html=V['ANA-09']();
-  assert.match(html,/6 coupes adaptées à ton visage/);
+  assert.match(html,/6 coupes adaptées à votre visage/);
   assert.match(html,/hair-prepay-user-photo/);
   assert.equal((html.match(/hair-prepay-mini"/g)||[]).length,5);
   assert.match(html,/Afficher mon résultat et débloquer 10 essais/);
@@ -80,6 +80,22 @@ test('an expired temporary photo resumes on the chosen cut instead of looping',(
   uxActivatePremium();const id=report().id;M.haircutDraft={id:'draft',haircut:'cascade',source:'photo-expired',analysis:id};go('HAI-01');
   ACTIONS['hair-simple-resume']();assert.equal(route,'HAI-03');assert.equal(M.haircutSelected,'cascade');assert.equal(M.haircutDraft,null);
   const html=V['HAI-03']();assert.match(html,/Dégradé cascade/);assert.match(html,/Essayer sur ma photo/);
+`));
+
+test('home recommendations reuse the same three readable cards as the report',({run})=>run(complete+`
+  uxActivatePremium();go('HAI-01');const html=V['HAI-01']();
+  assert.match(html,/hair-simple-home hair-simple-result hair-home-ready/);
+  assert.equal((html.match(/class="hair-simple-recommendation(?: |")/g)||[]).length,3);
+  assert.match(html,/hair-result-action-art/);assert.doesNotMatch(html,/hair-home-suggestions/);
+`));
+
+test('cut controls preserve the expanded chooser and separate scrolling from the primary action',({run})=>run(complete+`
+  uxActivatePremium();ACTIONS['hair-simple-cut']({id:'lob-soft',analysis:report().id});
+  let html=V['HAI-03']();assert.match(html,/hair-cut-content/);assert.doesNotMatch(html,/hair-cut-model" open/);
+  hairSimpleModelExpanded=true;ACTIONS['hair-simple-model']({id:'amina'});
+  html=V['HAI-03']();assert.match(html,/hair-cut-model" open/);assert.match(html,/scissors-real.png/);
+  assert.ok(html.includes('</details></div><button'));assert.match(html,/hair-cut-try/);
+  ACTIONS['hair-simple-cut']({id:'cascade',analysis:report().id});assert.equal(hairSimpleModelExpanded,false);
 `));
 
 test('catalogue is secondary, naturally scrollable and cards are fully clickable',({run})=>run(complete+`

@@ -16,6 +16,15 @@ const HAIR_SIMPLE_FINISH=ACTIONS['finish-haircut'];
 const HAIR_SIMPLE_MODEL=ACTIONS['hair-model'];
 const HAIR_SIMPLE_MODEL_AUTO=ACTIONS['hair-model-auto'];
 let hairSimpleGenerationTimer=null;
+let hairSimpleModelExpanded=false;
+// Keep the expanded chooser visible inside its own scroll area, including after
+// selecting a model (which re-renders the page). Never move the fixed try button.
+document.addEventListener('toggle',event=>{
+  const details=event.target;
+  if(!details?.matches?.('.hair-cut-model'))return;
+  hairSimpleModelExpanded=details.open;
+  if(details.open)details.scrollIntoView({block:'nearest',behavior:'auto'});
+},true);
 
 function hairSimpleQueryVariant(){
   if(typeof location==='undefined'||typeof location.search!=='string'||typeof URLSearchParams!=='function')return '';
@@ -73,9 +82,6 @@ function hairSimpleEffect(cut){
 function hairSimpleCutImage(cut,record=null,large=false){
   if(record&&typeof hairTrialRecordTile==='function')return hairTrialRecordTile(cut,record);
   return studioHairTile(cut,large);
-}
-function hairSimpleRecommendation(cut,result,index){
-  return A(`<span class="hair-simple-cut-art">${hairSimpleCutImage(cut)}</span><span class="hair-simple-cut-copy"><small>${index===0?'Notre sélection':'Recommandation '+(index+1)}</small><strong>${esc(cut.name)}</strong><p>${esc(hairSimpleReason(cut,result))}</p></span>`,'hair-simple-cut',{id:cut.id,analysis:result?.id||'',label:'Voir '+cut.name},'hair-simple-recommendation'+(index===0?' is-best':''));
 }
 function hairSimpleSecondaryActions(result){
   const art=(src)=>`<span class="hair-result-action-art" aria-hidden="true"><img src="${src}" width="56" height="56" alt="" draggable="false"></span>`;
@@ -141,7 +147,7 @@ function hairSimpleUserPhoto(result){
 function hairSimplePrepayB(result){
   const cuts=hairSimpleCuts(result).slice(0,6),best=cuts[0];
   return beautyPage(`<main class="hair-prepay hair-prepay-b">
-    <header class="hair-simple-heading"><span>Votre analyse est prête</span><h1 tabindex="-1">6 coupes adaptées à ton visage</h1></header>
+    <header class="hair-simple-heading"><span>Votre analyse est prête</span><h1 tabindex="-1">6 coupes adaptées à votre visage.</h1></header>
     ${A(`<span class="hair-prepay-photo-base">${hairSimpleUserPhoto(result)}</span><span class="hair-prepay-hair-overlay">${hairSimpleCutImage(best)}</span><span class="hair-prepay-own-photo">Votre photo</span><span class="hair-prepay-reveal">${icon('lock')} Afficher le look</span>`,'hair-prepay-unlock',{id:result.id,label:'Afficher mon résultat'},'hair-prepay-look')}
     <section class="hair-prepay-miniatures" aria-label="Autres looks verrouillés">${cuts.slice(1).map(cut=>A(`<span>${hairSimpleCutImage(cut)}</span>${icon('lock')}`,'hair-prepay-unlock',{id:result.id,label:'Débloquer '+cut.name},'hair-prepay-mini')).join('')}</section>
     ${A('Afficher mon résultat et débloquer 10 essais','hair-prepay-unlock',{id:result.id},'beauty-button is-copper hair-prepay-cta')}
@@ -166,7 +172,7 @@ function hairSimpleHome(){
     return beautyPage(`<main class="hair-simple-home hair-home-looks"><header class="hair-simple-heading"><span>Hair</span><h1 tabindex="-1">Votre dernier look.</h1></header><section class="hair-home-last-look"><span>${cut?hairSimpleCutImage(cut,latest):icon('hair')}</span><div><small>Dernier essai</small><h2>${esc(cut?.name||latest.name||'Votre look')}</h2><p>${cut?esc(hairSimpleReason(cut,result)):'Retrouvez votre résultat.'}</p></div></section>${A('Essayer une autre coupe','hair-simple-catalog',{analysis:result.id},'beauty-button is-copper')}<section class="hair-home-previous"><header><h2>Mes looks</h2></header><div>${looks.map(item=>{const itemCut=STUDIO_HAIRCUTS.find(x=>x.id===item.haircut);return A(`<span>${itemCut?hairSimpleCutImage(itemCut,item):icon('hair')}</span><strong>${esc(itemCut?.name||item.name||'Look')}</strong>`,'hair-simple-look',{id:item.id},'hair-home-look');}).join('')}</div></section>${A('Nouvelle analyse','hair-start-analysis',{},'text-button hair-home-secondary')}</main>`,'hair-simple-shell');
   }
   const cuts=hairSimpleCuts(result).slice(0,3);
-  return beautyPage(`<main class="hair-simple-home hair-home-ready"><header class="hair-simple-heading"><span>Votre dernière analyse</span><h1 tabindex="-1">Vos meilleures coupes.</h1></header>${hairSimpleTokens(result)}<section class="hair-home-suggestions">${cuts.map((cut,index)=>hairSimpleRecommendation(cut,result,index)).join('')}</section>${A('Essayer '+cuts[0].name,'hair-simple-cut',{id:cuts[0]?.id||'',analysis:result.id},'beauty-button is-copper')}${A('Voir toutes les coupes','hair-simple-catalog',{analysis:result.id},'text-button hair-home-secondary')}${A('Nouvelle analyse','hair-start-analysis',{},'text-button hair-home-secondary')}</main>`,'hair-simple-shell');
+  return beautyPage(`<main class="hair-simple-home hair-simple-result hair-home-ready"><header class="hair-simple-heading"><span>Votre dernière analyse</span><h1 tabindex="-1">Vos meilleures coupes.</h1></header>${hairSimpleTokens(result)}<section class="hair-simple-recommendations" aria-label="Vos recommandations">${cuts.map((cut,index)=>hairSimpleResultRecommendation(cut,result,index)).join('')}</section>${hairSimpleSecondaryActions(result)}${A('Nouvelle analyse','hair-start-analysis',{},'text-button hair-home-secondary')}</main>`,'hair-simple-shell');
 }
 
 function hairSimpleCatalogue(){
@@ -180,13 +186,16 @@ function hairSimpleCatalogue(){
 function hairSimpleModelControls(){
   if(typeof HAIR_MODELS==='undefined')return '';
   const active=hairActiveModel();
-  return `<details class="hair-cut-model"><summary>Changer le portrait de référence</summary><p>Ce choix change seulement l’aperçu catalogue, jamais votre classement.</p><div>${HAIR_MODELS.map(model=>A(`<span><img src="/assets/hair-models-v2/${model.id}/lob-soft.webp" alt="" width="48" height="48"></span><strong>${esc(model.name)}</strong>`,'hair-simple-model',{id:model.id,pressed:model.id===active.id},model.id===active.id?'is-active':'')).join('')}</div>${A('Suggestion automatique','hair-simple-model-auto',{},'text-button')}</details>`;
+  return `<details class="hair-cut-model"${hairSimpleModelExpanded?' open':''}><summary>Changer le portrait de référence<span aria-hidden="true">${icon('chev')}</span></summary><p>Ce choix change seulement l’aperçu catalogue, jamais votre classement.</p><div>${HAIR_MODELS.map(model=>A(`<span><img src="/assets/hair-models-v2/${model.id}/lob-soft.webp" alt="" width="48" height="48"></span><strong>${esc(model.name)}</strong>`,'hair-simple-model',{id:model.id,pressed:model.id===active.id},model.id===active.id?'is-active':'')).join('')}</div>${A('Suggestion automatique','hair-simple-model-auto',{},'text-button')}</details>`;
+}
+function hairSimpleSalonCard(cut,share=false){
+  return `<section class="hair-salon-card${share?' hair-salon-result':''}"><header><img src="/assets/profile-access/scissors-real.png" width="44" height="44" alt="" aria-hidden="true"><div><small>Consigne salon</small><h2>À montrer au coiffeur</h2></div>${!share?A('Copier','hair-salon-copy',{id:cut.id},'hair-salon-copy'):''}</header><p>${esc(cut.salon)}</p>${share?`<div class="hair-salon-actions">${A('Copier la consigne','hair-salon-copy',{id:cut.id},'hair-salon-action')}${A('Partager','hair-salon-share',{id:cut.id},'hair-salon-action')}</div>`:''}</section>`;
 }
 function hairSimpleCutPage(){
   const cut=STUDIO_HAIRCUTS.find(x=>x.id===M.haircutSelected),result=M.haircutAnalysis?M.analyses.find(x=>x.id===M.haircutAnalysis&&x.domain==='Cheveux'):hairSimpleLatestReport();
   if(!cut)return beautyPage(`<main class="hair-simple-empty"><h1>Choisissez une coupe</h1>${A('Voir les coupes','hair-simple-catalog',{},'beauty-button is-copper')}</main>`,'hair-simple-shell');
   const textures=cut.textures.join(', ');
-  return beautyPage(`<main class="hair-simple-cut-page"><div class="hair-cut-visual">${hairSimpleCutImage(cut,null,true)}<header class="hair-simple-heading hair-cut-overlay"><span>Votre coupe</span><h1 tabindex="-1">${esc(cut.name)}</h1></header></div><section class="hair-cut-facts"><div><small>Pourquoi elle fonctionne</small><strong>${esc(hairSimpleReason(cut,result))}</strong></div><div><small>Textures adaptées</small><strong>${esc(textures)}</strong></div><div><small>Longueur et effet</small><strong>${esc(hairSimpleEffect(cut))}</strong></div></section><section class="hair-salon-card"><span>${icon('scissors')}</span><div><small>Consigne salon</small><h2>À montrer à votre coiffeur</h2><p>${esc(cut.salon)}</p></div>${A('Copier','hair-salon-copy',{id:cut.id},'hair-salon-copy')}</section>${hairSimpleModelControls()}${A('Essayer sur ma photo','haircut-simulate',{id:cut.id,analysis:result?.id||''},'beauty-button is-copper hair-cut-try')}</main>`,'hair-simple-shell hair-simple-cut-shell');
+  return beautyPage(`<main class="hair-simple-cut-page"><div class="hair-cut-content"><div class="hair-cut-visual">${hairSimpleCutImage(cut,null,true)}<header class="hair-simple-heading hair-cut-overlay"><span>Votre coupe</span><h1 tabindex="-1">${esc(cut.name)}</h1></header></div><section class="hair-cut-facts" aria-label="Les repères de cette coupe"><div><small>Pourquoi elle fonctionne</small><strong>${esc(hairSimpleReason(cut,result))}</strong></div><div><small>Textures adaptées</small><strong>${esc(textures)}</strong></div><div><small>Longueur et effet</small><strong>${esc(hairSimpleEffect(cut))}</strong></div></section>${hairSimpleSalonCard(cut)}${hairSimpleModelControls()}</div>${A('Essayer sur ma photo','haircut-simulate',{id:cut.id,analysis:result?.id||''},'beauty-button is-copper hair-cut-try')}</main>`,'hair-simple-shell hair-simple-cut-shell');
 }
 
 function hairSimpleScheduleGeneration(){
@@ -211,7 +220,7 @@ function hairSimpleLookResult(){
   const record=M.simulations.find(x=>x.id===M.context.simulation),cut=STUDIO_HAIRCUTS.find(x=>x.id===record?.haircut);
   if(!record||!cut)return HAIR_SIMPLE_LOOK_VIEW();
   const visual=record.resultImage?imageFor(record.resultImage,'','Votre résultat coiffure'):hairSimpleCutImage(cut,record,true);
-  return beautyPage(`<main class="hair-look-result"><header class="hair-simple-heading"><span>Votre nouveau look</span><h1 tabindex="-1">${esc(cut.name)}</h1></header><div class="hair-look-visual">${visual}</div><section class="hair-salon-card hair-salon-result"><span>${icon('scissors')}</span><div><small>Consigne salon</small><h2>Montrez ceci à votre coiffeur</h2><p>${esc(cut.salon)}</p><div class="hair-salon-actions">${A('Copier','hair-salon-copy',{id:cut.id},'hair-salon-action')}${A('Partager','hair-salon-share',{id:cut.id},'hair-salon-action')}</div></div></section>${A('Essayer une autre coupe','hair-simple-catalog',{analysis:M.haircutAnalysis||''},'beauty-button is-copper')}</main>`,'hair-simple-shell hair-look-shell');
+  return beautyPage(`<main class="hair-look-result"><header class="hair-simple-heading"><span>Votre nouveau look</span><h1 tabindex="-1">${esc(cut.name)}</h1></header><div class="hair-look-visual">${visual}</div>${hairSimpleSalonCard(cut,true)}${A('Essayer une autre coupe','hair-simple-catalog',{analysis:M.haircutAnalysis||''},'beauty-button is-copper')}</main>`,'hair-simple-shell hair-look-shell');
 }
 
 V['HAI-01']=hairSimpleHome;
@@ -275,6 +284,7 @@ ACTIONS['hair-simple-understand']=data=>{
 };
 ACTIONS['hair-simple-cut']=data=>{
   const cut=STUDIO_HAIRCUTS.find(x=>x.id===data.id);if(!cut)return;
+  hairSimpleModelExpanded=false;
   const analysis=data.analysis||hairSimpleLatestReport()?.id||'';
   M.haircutSelected=cut.id;M.haircutAnalysis=analysis;go('HAI-03',{context:{analysis}});
 };
