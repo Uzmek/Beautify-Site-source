@@ -37,3 +37,17 @@ Dans l’application interactive : ouverture de coupes, filtre Court, changement
 Depuis la racine du dépôt : `node tests/hair-visual-review.cjs`, puis ouvrir `http://127.0.0.1:5174`. Les liens affichent chaque état simultanément aux trois tailles. Le serveur ne modifie pas le stockage du navigateur et ne fait pas partie du site publié.
 
 Ces contrôles valident le mockup, pas une génération IA réelle, un paiement réel ou tous les navigateurs et appareils physiques.
+
+## Deuxième passe — typographie et finition
+
+Comparaison visuelle avec Accueil, Analyses et Profil. Une règle de `liquid.css` à deux identifiants forçait tous les titres et les éléments `strong` à 700 ; elle prenait le dessus sur les règles Hair et épaississait artificiellement DM Serif Display. Correction locale de la spécificité et désactivation de la synthèse de graisse, sans modifier la feuille globale.
+
+- Titres de page : DM Serif Display regular 400, 30 px (28 px sur petit écran).
+- Noms des coupes : DM Sans 600, 18 px dans les recommandations, 16 px au catalogue ; les noms ne sont plus traités comme des titres éditoriaux.
+- Texte courant et contrôles : DM Sans, identique à Accueil / Analyses ; descriptions conservées à 13–14 px.
+- Informations de profil et repères : graisse 500 ; titre de fiche à 22 px.
+- Fenêtres Hair : titre regular 28 px, corps 14 px.
+- Suppression des contours imbriqués autour des portraits, ombres plus diffuses, badge de sélection et contrôles secondaires allégés.
+- Retours de pression/survol discrets ; focus clavier explicite et transitions désactivées si la réduction des animations est demandée.
+
+Nouvelle vérification des 39 configurations : aucun dépassement détecté dans les éléments contrôlés, aucune graisse ou taille inattendue pour les titres. Styles calculés du résultat : titre 30 px / 400, noms 18 px / 600, repères 12 px / 500. Les 13 tests de parcours restent passants. Aucun changement fonctionnel dans cette passe.
