@@ -78,9 +78,10 @@ function hairSimpleRecommendation(cut,result,index){
   return A(`<span class="hair-simple-cut-art">${hairSimpleCutImage(cut)}</span><span class="hair-simple-cut-copy"><small>${index===0?'Notre sélection':'Recommandation '+(index+1)}</small><strong>${esc(cut.name)}</strong><p>${esc(hairSimpleReason(cut,result))}</p></span>`,'hair-simple-cut',{id:cut.id,analysis:result?.id||'',label:'Voir '+cut.name},'hair-simple-recommendation'+(index===0?' is-best':''));
 }
 function hairSimpleSecondaryActions(result){
-  return `<div class="hair-simple-secondary-actions">
-    ${A('Voir les autres coupes','hair-simple-catalog',{analysis:result?.id||''},'text-button')}
-    ${A('Comprendre mon analyse','hair-simple-understand',{analysis:result?.id||''},'text-button')}
+  const art=(src)=>`<span class="hair-result-action-art" aria-hidden="true"><img src="${src}" width="56" height="56" alt="" draggable="false"></span>`;
+  return `<div class="hair-simple-secondary-actions" aria-label="Explorer votre résultat">
+    ${A(art('/assets/profile-access/scissors-real.png')+'<span>Voir les autres<br>coupes</span>','hair-simple-catalog',{analysis:result?.id||'',label:'Voir les autres coupes'},'hair-result-action')}
+    ${A(art('/assets/profile-help/analysis.png')+'<span>Comprendre<br>mon analyse</span>','hair-simple-understand',{analysis:result?.id||'',label:'Comprendre mon analyse'},'hair-result-action')}
   </div>`;
 }
 function hairSimpleAnalysisResult(result){
