@@ -85,12 +85,30 @@ function hairSimpleSecondaryActions(result){
 }
 function hairSimpleAnalysisResult(result){
   const cuts=hairSimpleCuts(result).slice(0,3);
-  return beautyPage(`<main class="hair-simple-result canonical-report-panel">
-    <header class="hair-simple-heading"><span>Analyse cheveux</span><h1 tabindex="-1">Les coupes faites pour vous.</h1><p>Trois directions simples, classées à partir de votre photo.</p></header>
+  return beautyPage(`<main class="hair-simple-result">
+    <header class="hair-simple-heading"><h1 tabindex="-1">Les coupes faites pour vous.</h1><p>Selon votre visage et vos cheveux.</p></header>
     ${hairSimpleTokens(result)}
-    <section class="hair-simple-recommendations" aria-label="Vos recommandations">${cuts.map((cut,index)=>hairSimpleRecommendation(cut,result,index)).join('')}</section>
+    <section class="hair-simple-recommendations" aria-label="Vos recommandations">${cuts.map((cut,index)=>hairSimpleResultRecommendation(cut,result,index)).join('')}</section>
     ${hairSimpleSecondaryActions(result)}
   </main>`,'hair-simple-shell hair-simple-analysis');
+}
+
+function hairSimpleResultRecommendation(cut,result,index){
+  const reasons={
+    'lob-soft':'Une ligne souple qui encadre votre visage.',
+    cascade:'Du mouvement en gardant vos longueurs.',
+    bob:'Une ligne nette qui souligne votre visage.',
+    'curly-shag':'Un dégradé qui laisse vivre vos boucles.',
+    'pixie-soft':'Une coupe courte au volume léger.',
+    butterfly:'Du volume et des mèches autour du visage.',
+    'crop-soft':'Une ligne courte, douce et structurée.',
+    'rounded-curls':'Un volume arrondi pour vos boucles.',
+    'long-waves':'Des longueurs au mouvement souple.',
+    'french-bob':'Un carré court qui dégage le visage.',
+    'shag-soft':'Un dégradé léger pour plus de mouvement.',
+    'sleek-long':'Des longueurs lisses à la ligne épurée.'
+  };
+  return A(`<span class="hair-simple-cut-art">${hairSimpleCutImage(cut)}</span><span class="hair-simple-cut-copy">${index===0?'<small>Notre sélection</small>':''}<strong>${esc(cut.name)}</strong><p>${esc(reasons[cut.id]||hairSimpleReason(cut,result))}</p></span>`,'hair-simple-cut',{id:cut.id,analysis:result.id,label:'Voir '+cut.name},'hair-simple-recommendation'+(index===0?' is-best':''));
 }
 
 function hairSimpleDevSwitch(){
