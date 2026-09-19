@@ -114,6 +114,7 @@
 #phone-surface .hair-home-resume{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(180px,1fr) auto;min-height:300px;flex-basis:300px}
 #phone-surface .hair-home-resume>div{padding:6px 10px 8px;gap:5px}
 #phone-surface .hair-home-last-look{position:relative;display:block;padding:8px;overflow:hidden}
+#phone-surface button.hair-home-last-look{width:100%;min-width:0;min-height:270px;color:var(--hair-ink);text-align:left;cursor:pointer}
 #phone-surface .hair-home-last-look>span{width:100%;height:100%;border-radius:21px}
 #phone-surface .hair-home-last-look>div{position:absolute;right:16px;bottom:16px;left:16px;display:block;padding:12px 14px;border:1px solid #fff;border-radius:18px;background:#fff9;backdrop-filter:blur(16px);box-shadow:0 8px 24px #75462d18}
 #phone-surface .hair-home-last-look>div small{display:block;margin-bottom:3px}
@@ -123,6 +124,7 @@
 #phone-surface .hair-home-previous{display:flex;flex-direction:column;gap:8px;flex:none}
 #phone-surface .hair-home-previous>header{display:flex;align-items:center;justify-content:space-between}
 #phone-surface .hair-home-previous h2{margin:0;font:600 17px/1.3 var(--sans);letter-spacing:-.15px}
+#phone-surface .hair-home-previous>header small{font:500 12px/1.2 var(--sans);color:#876657}
 #phone-surface .hair-home-previous>div{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}
 #phone-surface .hair-home-look{display:flex;flex:0 0 118px;flex-direction:column;gap:7px;padding:7px;border:1px solid #fff;border-radius:19px;background:var(--hair-pane);color:var(--hair-ink);scroll-snap-align:start;text-align:left;box-shadow:var(--hair-result-shadow)}
 #phone-surface .hair-home-look span{height:84px;overflow:hidden;border-radius:13px;background:#f2e4da}
@@ -148,18 +150,16 @@
 #phone-surface .hair-cut-overlay{position:absolute;right:10px;bottom:10px;left:10px;gap:2px;padding:9px 12px;border:1px solid #fff;border-radius:18px;background:#fff8;backdrop-filter:blur(15px);box-shadow:0 7px 20px #75462e18}
 #phone-surface .hair-cut-overlay>span{font-size:10px}
 #phone-surface .hair-cut-overlay h1{font:600 22px/1.25 var(--sans);letter-spacing:-.25px;text-wrap:initial;padding-bottom:0}
-#phone-surface .hair-cut-facts{display:grid;grid-template-columns:1fr 1fr;gap:0;flex:none;border:1px solid #ffffffb3;border-radius:22px;background:var(--hair-pane);box-shadow:var(--hair-result-shadow);overflow:hidden}
+#phone-surface .hair-cut-facts{display:grid;grid-template-columns:minmax(0,1fr) 94px;gap:0;flex:none;border:1px solid #ffffffb3;border-radius:22px;background:var(--hair-pane);box-shadow:var(--hair-result-shadow);overflow:hidden}
 #phone-surface .hair-cut-facts>div{display:flex;min-width:0;flex-direction:column;gap:4px;padding:10px 12px}
-#phone-surface .hair-cut-facts>div:first-child{grid-column:1/-1;border-bottom:1px solid #af786125}
 #phone-surface .hair-cut-facts>div:last-child{border-left:1px solid #af786125}
 #phone-surface .hair-cut-facts small{font:400 11px/1.3 var(--sans);color:#876657}
 #phone-surface .hair-cut-facts strong{font:500 13px/1.35 var(--sans);color:#593829}
 #phone-surface .hair-salon-card{display:flex;flex:none;flex-direction:column;gap:6px;padding:10px 12px 12px;border:1px solid #ffffffb3;border-radius:23px;background:var(--hair-pane);box-shadow:var(--hair-result-shadow)}
 #phone-surface .hair-salon-card>header{display:flex;gap:8px;align-items:center}
 #phone-surface .hair-salon-card>header>img{width:40px;height:40px;flex:none;object-fit:contain;clip-path:ellipse(45.7% 44.7% at 49.7% 48.2%)}
-#phone-surface .hair-salon-card>header>div{flex:1;min-width:0}
 #phone-surface .hair-salon-card small{font:400 10px/1.2 var(--sans);color:#876657}
-#phone-surface .hair-salon-card h2{margin:3px 0 0;font:600 14px/1.3 var(--sans);color:#593829}
+#phone-surface .hair-salon-card h2{flex:1;min-width:0;margin:0;font:600 14px/1.3 var(--sans);color:#593829}
 #phone-surface .hair-salon-card p{margin:0;color:#705347;font:400 13px/1.4 var(--sans)}
 #phone-surface .hair-salon-copy,#phone-surface .hair-salon-action{min-height:44px;padding:9px 11px;border:1px solid #fff;border-radius:16px;background:linear-gradient(145deg,#fff9,#f4d7cc40);box-shadow:inset 0 1px 1px #fff,0 4px 10px #9154430d;color:#694432;font:500 12px/1.3 var(--sans)}
 #phone-surface .hair-cut-model{flex:none;padding:0 10px;border:1px solid #ffffff9c;border-radius:18px;background:#fff3}
@@ -174,6 +174,8 @@
 #phone-surface .hair-cut-model>div button.is-active{border-color:#b47d58;background:#fff8}
 #phone-surface .hair-cut-model img{width:44px;height:44px;border-radius:50%;object-fit:cover}
 #phone-surface .hair-cut-try{width:100%;min-height:52px;justify-content:center;border-radius:26px}
+#phone-surface .hair-cut-footer{display:flex;flex:none;flex-direction:column;align-items:center;gap:5px}
+#phone-surface .hair-cut-footer small{color:#876657;text-align:center;font:400 10px/1.25 var(--sans)}
 
 #phone-surface .hair-generation-shell .beauty-brand{visibility:hidden}
 #phone-surface #app>.mock-screen:has(.hair-generation-error)>.state-banner{display:none}
@@ -195,6 +197,7 @@
 
 #phone-surface .hair-look-visual{position:relative;display:flex;flex:1 0 260px;min-height:260px;align-items:center;justify-content:center;overflow:hidden;border:1px solid #fff;border-radius:30px;background:radial-gradient(ellipse at 50% 25%,#fffaf375,#dfbaa64d);box-shadow:var(--hair-result-shadow)}
 #phone-surface .hair-look-visual>:is(img,.hair-atlas){position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+#phone-surface .hair-look-reference{position:absolute;right:12px;bottom:12px;left:12px;z-index:1;padding:8px 11px;border:1px solid #fff;border-radius:14px;background:#fff9;backdrop-filter:blur(12px);color:#705347;text-align:center;font:500 11px/1.2 var(--sans)}
 #phone-surface .hair-salon-actions{display:flex;gap:8px;margin-top:4px}
 #phone-surface .hair-salon-actions>*{flex:1}
 #phone-surface .hair-look-result>.beauty-button{width:100%;min-height:51px;justify-content:center;border-radius:26px}
@@ -209,6 +212,11 @@
 @keyframes hair-simple-pulse{0%,100%{transform:scale(.96);opacity:.35}50%{transform:scale(1.04);opacity:1}}
 @keyframes hair-simple-dot{0%,100%{transform:translateY(0);opacity:.35}50%{transform:translateY(-5px);opacity:1}}
 @media(prefers-reduced-motion:reduce){#phone-surface .hair-generation-orb>i,#phone-surface .hair-generation-progress i{animation:none}}
+@media(max-height:650px){
+  #phone-surface .hair-home-looks .hair-home-last-look{flex:0 0 190px;min-height:190px}
+  #phone-surface .hair-home-looks .hair-home-last-look>div{right:12px;bottom:12px;left:12px;padding:9px 11px}
+  #phone-surface .hair-home-resume{flex-basis:230px;min-height:230px}
+}
 /* Reflow uses the actual module width, including in the desktop phone preview. */
 @container(max-width:330px){
   #phone-surface .hair-simple-heading h1{font-size:28px}
@@ -227,7 +235,7 @@
 }
 
 /* Quiet feedback: the interactive surface responds, not the entire page. */
-#phone-surface .hair-simple-shell :is(.hair-simple-recommendation,.hair-simple-catalogue-card,.hair-result-action,.hair-home-look,.hair-salon-action,.hair-salon-copy){transition:transform 160ms ease,border-color 160ms ease,box-shadow 160ms ease}
+#phone-surface .hair-simple-shell :is(.hair-simple-recommendation,.hair-simple-catalogue-card,.hair-result-action,.hair-home-look,.hair-home-last-look,.hair-salon-action,.hair-salon-copy){transition:transform 160ms ease,border-color 160ms ease,box-shadow 160ms ease}
 #phone-surface .hair-simple-shell :is(.hair-simple-catalogue-card,.hair-home-look,.hair-salon-action,.hair-salon-copy):active{transform:scale(.985)}
 #phone-surface .hair-simple-shell :is(button,summary):focus-visible{outline:2px solid #97674e;outline-offset:3px}
 @media(hover:hover) and (pointer:fine){
